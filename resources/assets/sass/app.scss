@@ -1,0 +1,35 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+/**
+ * Site style
+ */
+@import "partials/colors";
+@import "partials/typography";
+@import "partials/materialicons";
+
+// Global and specific page layouts
+@import "partials/layout";
+@import "partials/pagelayout";
+@import "partials/navbar";
+
+// Global Element layouts
+@import "partials/elements";
+@import "partials/buttons";
+@import "partials/forms";
+@import "partials/tables";
+@import "partials/sidebar";
+@import "partials/footer";
+@import "partials/cards";
+@import "partials/sections";
+
+// Page specific layout
+@import "partials/welcome";
+@import "partials/dashboard";

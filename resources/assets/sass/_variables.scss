@@ -1,0 +1,17 @@
+
+// Body
+$body-bg: #ffffff;
+
+// Typography
+$font-family-sans-serif: "Raleway", sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.6;
+
+ .form-control {
+ 	border-radius: 0 !important;
+ }
+
+ .form-control:focus {
+ 	box-shadow: none !important;
+ 	border-color: #11536D !important;
+ }

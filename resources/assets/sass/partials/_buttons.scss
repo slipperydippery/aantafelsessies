@@ -1,0 +1,19 @@
+.btn {
+	border-radius: 0;
+	font-weight: 800;
+}
+
+.btn-outline-noborder {
+	border-color: rgba(255,255,255, 0) !important;
+}
+.btn-outline-primary, .btn-outline-secondary {
+	border-width: 2px;
+}
+
+.fineprint {
+	clear: both;
+    color: #BD6498;
+    margin-top: 1rem;
+    text-style: italic;
+    font-size: 1rem;
+}

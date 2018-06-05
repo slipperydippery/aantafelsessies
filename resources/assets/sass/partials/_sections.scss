@@ -1,0 +1,15 @@
+.section__panel {
+	border: 1px solid rgba(229,35,27,0.1);
+	padding: 1rem;	
+
+	.section__panel--title {
+		box-sizing: content-box;
+		padding: 1rem;
+		margin-top: -1rem;
+		margin-left: -1rem;
+		margin-right: -1rem;
+		margin-bottom: 1rem;
+		width: 100%;
+		background: $primary-muted;
+	}
+}

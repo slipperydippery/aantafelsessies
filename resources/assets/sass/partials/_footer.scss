@@ -1,0 +1,12 @@
+.footer {
+	margin-top: 3rem;
+    background: $primary-muted;
+	.container {
+		padding: 1.6rem; 
+		text-align: center;
+		span {
+			font-size: 1rem;
+			color: $primary-strong;
+		}
+	}
+}

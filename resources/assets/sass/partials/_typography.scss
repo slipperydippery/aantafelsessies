@@ -1,0 +1,24 @@
+.navbar .navbar-brand {
+	// font-family: 'Oswald';
+	// text-transform: uppercase;
+	color: $primary;
+}
+
+.inline-title {
+	display: inline-block;
+}
+
+h1.pagetitle {
+	text-transform: uppercase;
+	font-weight: 800;
+	color: $primary-strong;
+}
+
+h2.subtitle {
+	color: $gray-600;
+}
+
+h5 {
+	color: $primary-strong;
+	font-weight: 800;
+}

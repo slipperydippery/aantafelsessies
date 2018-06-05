@@ -1,0 +1,20 @@
+.row__cards {
+	margin-bottom: 2rem;
+	.card {
+		margin-top: 1rem;
+	}
+}
+
+.card {
+	border-top-left-radius: 6rem;
+	border-color: $primary;
+    overflow: hidden;
+    .card-title {
+    	text-align: right;
+    }
+}
+
+.card__dashboard {
+	text-align: right;
+	min-height: 11rem;
+}
