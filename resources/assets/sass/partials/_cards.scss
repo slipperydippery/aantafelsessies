@@ -18,3 +18,13 @@
 	text-align: right;
 	min-height: 11rem;
 }
+
+.card__login {
+	margin-top: 4rem;
+	// border-radius: 0.25rem;
+	.card-header {
+		text-align: center;
+		background: $primary-muted;
+		color: $primary;
+	}
+}

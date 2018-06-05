@@ -10628,6 +10628,16 @@ nav.navbar ul.navbar-nav {
   min-height: 11rem;
 }
 
+.card__login {
+  margin-top: 4rem;
+}
+
+.card__login .card-header {
+  text-align: center;
+  background: #FDF4F3;
+  color: #ED655F;
+}
+
 .section__panel {
   border: 1px solid rgba(229, 35, 27, 0.1);
   padding: 1rem;
