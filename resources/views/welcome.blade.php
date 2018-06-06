@@ -26,9 +26,9 @@
         <div class="row card-group">
             <div class="col-sm-4">
                 <div class="card">
-                    <img class="card-img-top" src="/img/flims_lg.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Films</h5>
+                        <img class="card-img-top" src="/img/flims_lg.jpg" alt="Card image cap">
                         <p class="card-text">Morbi ac felis. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris.</p>
                         <a href=" # " class="btn btn-outline-primary">Bekijk de films</a>
                     </div>
@@ -36,9 +36,9 @@
             </div>
             <div class="col-sm-4">
                 <div class="card">
-                    <img class="card-img-top" src="/img/idea_lg.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Ideeën</h5>
+                        <img class="card-img-top" src="/img/idea_lg.jpg" alt="Card image cap">
                         <p class="card-text">Morbi ac felis. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris.</p>
                         <a href="#" class="btn btn-outline-primary">Doe inspiratie op</a>
                     </div>
@@ -46,9 +46,9 @@
             </div>
             <div class="col-sm-4">
                 <div class="card">
-                    <img class="card-img-top" src="/img/book_lg.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Kennisbank</h5>
+                        <img class="card-img-top" src="/img/book_lg.jpg" alt="Card image cap">
                         <p class="card-text">Morbi ac felis. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris.</p>
                         <a href="#" class="btn btn-outline-primary">Naar de kennisbank</a>
                     </div>
