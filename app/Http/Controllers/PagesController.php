@@ -17,4 +17,9 @@ class PagesController extends Controller
     {
     	return view('pages.partnersresultaten');
     }
+
+    public function vraag()
+    {
+    	return view('pages.vraag');
+    }
 }

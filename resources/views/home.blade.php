@@ -48,7 +48,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Mijn sessies</h5>
                     <p class="card-text">
-                        <a href="#">Sessie 1</a><br>
+                        <a href=" {{ route('vraag') }} ">Sessie 1</a><br>
                         <a href="#">Sessie 2</a>
                     </p>
                 </div>
