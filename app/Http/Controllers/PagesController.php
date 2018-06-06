@@ -12,4 +12,9 @@ class PagesController extends Controller
     	$instantietypes = Instantietype::with('instanties')->get();
     	return view('pages.partners', compact('instantietypes'));
     }
+
+    public function partnersresultaten(	)
+    {
+    	return view('pages.partnersresultaten');
+    }
 }

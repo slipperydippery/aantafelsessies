@@ -2,6 +2,8 @@
     <div class="container d-flex">
         <a class="navbar-brand mr-4" href="{{ url('/') }}">
             @if(Request::is('/'))
+                    <img src="/img/logo.svg" width="30" height="30" class="d-inline-block align-top mr-1" alt="Logo">
+                    Aantafelsessies
             @else
                     <img src="/img/logo.svg" width="30" height="30" class="d-inline-block align-top mr-1" alt="Logo">
                     Aantafelsessies

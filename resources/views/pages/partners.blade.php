@@ -33,10 +33,10 @@
 						</div>
 						<div class="row row__prevnext justify-content-between">
 							<div class="col-md-4">
-								<a href="#" class="btn btn-primary btn-block"><< vorige</a>
+								<a href="#" class="btn btn-primary btn-block btn__prevnext"><i class="material-icons"> navigate_before </i> vorige</a>
 							</div>
 							<div class="col-md-4">
-								<a href="#" class="btn btn-primary btn-block">volgende >></a>
+								<a href=" {{ route('partnersresultaten') }} " class="btn btn-primary btn-block btn__prevnext">volgende <i class="material-icons"> navigate_next </i></a>
 							</div>
 						</div>
 					</div>

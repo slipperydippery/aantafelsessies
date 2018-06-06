@@ -10486,6 +10486,12 @@ h5 {
   color: rgba(255, 255, 255, 0.3);
 }
 
+.material-icons {
+  font-size: inherit;
+  line-height: inherit;
+  vertical-align: bottom;
+}
+
 body {
   min-height: 100vh;
 }
@@ -10576,6 +10582,10 @@ nav.navbar ul.navbar-nav {
   font-size: 1rem;
 }
 
+.btn__prevnext {
+  text-transform: uppercase;
+}
+
 .sidebar {
   background: white;
   padding: 1.25rem;
@@ -10641,6 +10651,14 @@ nav.navbar ul.navbar-nav {
 .section__panel {
   border: 1px solid rgba(229, 35, 27, 0.1);
   padding: 1rem;
+}
+
+.section__panel .row {
+  padding-top: 1rem;
+}
+
+.section__panel .row:nth-child(odd) {
+  background: #f8f9fa;
 }
 
 .section__panel .section__panel--title {

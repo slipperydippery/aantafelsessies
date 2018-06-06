@@ -2,6 +2,14 @@
 	border: 1px solid rgba(229,35,27,0.1);
 	padding: 1rem;	
 
+	.row {
+		padding-top: 1rem;
+	}
+
+	.row:nth-child(odd){
+		background: $gray-100;
+	}
+
 	.section__panel--title {
 		box-sizing: content-box;
 		padding: 1rem;

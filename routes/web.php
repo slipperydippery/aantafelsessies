@@ -18,3 +18,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/partners', 'PagesController@partners')->name('partners');
+Route::get('/partnersresultaten', 'PagesController@partnersresultaten')->name('partnersresultaten');
