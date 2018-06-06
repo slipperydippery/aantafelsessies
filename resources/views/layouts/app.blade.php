@@ -26,7 +26,7 @@
 
     <footer class="footer">
         <div class="container">
-            <span class="">De Aan Tafel Sessies zijn ontwikkeld in opdracht van ... Concept programmering en uitvoering door EMB AV &copy; </span>
+            <span class="">De Aan Tafel Sessies zijn ontwikkeld in opdracht van Schouders, een samenwerkingsverband tussen Divosa, Landelijke Cliëntenraad, NVVK, Sociaal Werk Nederland en VNG. Concept programmering en uitvoering door EMB AV &copy; </span>
         </div>
     </footer>
 
