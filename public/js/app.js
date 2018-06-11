@@ -13892,6 +13892,8 @@ window.Vue = __webpack_require__(36);
  */
 
 Vue.component('example-component', __webpack_require__(39));
+Vue.component('set-partner', __webpack_require__(48));
+Vue.component('create-group', __webpack_require__(51));
 
 var app = new Vue({
   el: '#app'
@@ -47382,6 +47384,782 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = __webpack_require__(49)
+/* template */
+var __vue_template__ = __webpack_require__(50)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\SetPartner.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-566f9dbd", Component.options)
+  } else {
+    hotAPI.reload("data-v-566f9dbd", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 49 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__app_js__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['instantieid'],
+
+    data: function data() {
+        return {};
+    },
+    mounted: function mounted() {},
+
+
+    computed: {},
+
+    methods: {}
+});
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row row__choice" }, [
+    _c("div", { staticClass: "col-sm-4" }, [
+      _c(
+        "svg",
+        {
+          staticClass: "yes",
+          staticStyle: { "enable-background": "new 0 0 241.096 241.096" },
+          attrs: {
+            version: "1.1",
+            xmlns: "http://www.w3.org/2000/svg",
+            "xmlns:xlink": "http://www.w3.org/1999/xlink",
+            x: "0px",
+            y: "0px",
+            width: "241.096px",
+            height: "241.096px",
+            viewBox: "0 0 241.096 241.096",
+            "xml:space": "preserve"
+          }
+        },
+        [
+          _c("path", {
+            staticStyle: { fill: "#959595" },
+            attrs: {
+              d:
+                "M120.548,0C53.971,0,0,53.971,0,120.548c0,66.576,53.971,120.547,120.548,120.547\n\t\t\t\ts120.548-53.972,120.548-120.547C241.096,53.971,187.125,0,120.548,0z M120.548,233.096C58.489,233.096,8,182.606,8,120.548\n\t\t\t\tC8,58.489,58.489,8,120.548,8c62.059,0,112.548,50.488,112.548,112.548C233.096,182.606,182.607,233.096,120.548,233.096z"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            staticStyle: { fill: "#959595" },
+            attrs: {
+              d:
+                "M87.691,189.796c-1.024,0-2.047-0.391-2.829-1.172c-1.562-1.562-1.562-4.095,0-5.656L201.099,66.732\n\t\t\t\tc1.561-1.562,4.094-1.562,5.656,0c1.563,1.563,1.563,4.095,0,5.657L90.519,188.624C89.738,189.406,88.714,189.796,87.691,189.796z"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            staticStyle: { fill: "#959595" },
+            attrs: {
+              d:
+                "M87.254,189.7c-1.024,0-2.047-0.391-2.829-1.172l-55.961-55.963c-1.562-1.562-1.562-4.095,0-5.656\n\t\t\t\tc1.563-1.562,4.096-1.562,5.657,0l55.961,55.963c1.562,1.562,1.562,4.095,0,5.656C89.302,189.31,88.278,189.7,87.254,189.7z"
+            }
+          })
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-sm-4" }, [
+      _c(
+        "svg",
+        {
+          staticClass: "maeby",
+          staticStyle: { "enable-background": "new 0 0 241.096 241.096" },
+          attrs: {
+            version: "1.1",
+            xmlns: "http://www.w3.org/2000/svg",
+            "xmlns:xlink": "http://www.w3.org/1999/xlink",
+            x: "0px",
+            y: "0px",
+            width: "241.096px",
+            height: "241.096px",
+            viewBox: "0 0 241.096 241.096",
+            "xml:space": "preserve"
+          }
+        },
+        [
+          _c("path", {
+            staticStyle: { fill: "#959595" },
+            attrs: {
+              d:
+                "M203.438,124.548H39.055c-2.209,0-4-1.791-4-4s1.791-4,4-4h164.383c2.209,0,4,1.791,4,4\n\t\t\t\tS205.647,124.548,203.438,124.548z"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            staticStyle: { fill: "#959595" },
+            attrs: {
+              d:
+                "M120.548,0C53.971,0,0,53.971,0,120.548c0,66.576,53.971,120.547,120.548,120.547\n\t\t\t\ts120.548-53.972,120.548-120.547C241.096,53.971,187.125,0,120.548,0z M120.548,233.096C58.489,233.096,8,182.606,8,120.548\n\t\t\t\tC8,58.489,58.489,8,120.548,8c62.059,0,112.548,50.488,112.548,112.548C233.096,182.606,182.607,233.096,120.548,233.096z"
+            }
+          })
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-sm-4" }, [
+      _c(
+        "svg",
+        {
+          staticClass: "no",
+          staticStyle: { "enable-background": "new 0 0 241.096 241.096" },
+          attrs: {
+            version: "1.1",
+            xmlns: "http://www.w3.org/2000/svg",
+            "xmlns:xlink": "http://www.w3.org/1999/xlink",
+            x: "0px",
+            y: "0px",
+            width: "241.096px",
+            height: "241.096px",
+            viewBox: "0 0 241.096 241.096",
+            "xml:space": "preserve"
+          }
+        },
+        [
+          _c("path", {
+            staticStyle: { fill: "#959595" },
+            attrs: {
+              d:
+                "M120.548,0C53.971,0,0,53.971,0,120.548c0,66.576,53.971,120.547,120.548,120.547\n\t\t\t\ts120.548-53.972,120.548-120.547C241.096,53.971,187.125,0,120.548,0z M120.548,233.096C58.489,233.096,8,182.606,8,120.548\n\t\t\t\tC8,58.489,58.489,8,120.548,8s112.548,50.489,112.548,112.548C233.096,182.606,182.607,233.096,120.548,233.096z"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            staticStyle: { fill: "#959595" },
+            attrs: {
+              d:
+                "M62.663,182.666c-1.024,0-2.047-0.391-2.829-1.172c-1.562-1.562-1.562-4.095,0-5.656L176.07,59.602\n\t\t\t\tc1.563-1.562,4.096-1.561,5.657,0c1.562,1.563,1.562,4.095,0,5.657L65.491,181.494C64.71,182.275,63.687,182.666,62.663,182.666z"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            staticStyle: { fill: "#959595" },
+            attrs: {
+              d:
+                "M179.131,182.666c-1.024,0-2.047-0.391-2.829-1.172L60.068,65.259c-1.562-1.563-1.562-4.095,0-5.657\n\t\t\t\tc1.563-1.562,4.095-1.561,5.657,0l116.234,116.236c1.562,1.562,1.562,4.095,0,5.656\n\t\t\t\tC181.178,182.275,180.154,182.666,179.131,182.666z"
+            }
+          })
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-566f9dbd", module.exports)
+  }
+}
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = __webpack_require__(52)
+/* template */
+var __vue_template__ = __webpack_require__(53)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\CreateGroup.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-298937bc", Component.options)
+  } else {
+    hotAPI.reload("data-v-298937bc", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 52 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__app_js__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['instantietypes', 'alldistricts'],
+
+    data: function data() {
+        return {
+            errors: [],
+            title: '',
+            instantie: {},
+            clickedOnce: false,
+            selecteddistricts: [],
+            districtsearch: ''
+        };
+    },
+    mounted: function mounted() {},
+
+
+    computed: {
+        filtereddistricts: function filtereddistricts() {
+            var filteredarray = [];
+            var home = this;
+            if (home.districtsearch != '') {
+                this.alldistricts.forEach(function (thisdistrict) {
+                    if (thisdistrict.title.toLowerCase().includes(home.districtsearch.toLowerCase())) {
+                        filteredarray.push(thisdistrict);
+                    }
+                });
+            }
+            return filteredarray;
+        },
+
+        filteredAndSortedDistricts: function filteredAndSortedDistricts() {
+            function compare(a, b) {
+                if (a.title < b.title) {
+                    return -1;
+                }
+                if (a.title > b.title) {
+                    return 1;
+                }
+                return 0;
+            }
+
+            return this.filtereddistricts.sort(compare);
+        }
+    },
+
+    methods: {
+        sortDistricts: function sortDistricts(thisarray) {
+            function compare(a, b) {
+                if (a.title < b.title) {
+                    return -1;
+                }
+                if (a.title > b.title) {
+                    return 1;
+                }
+                return 0;
+            }
+            return thisarray.sort(compare);
+        },
+
+        addDistrictToSelection: function addDistrictToSelection(thisdistrict) {
+            this.selecteddistricts.push(thisdistrict);
+            this.sortDistricts(this.selecteddistricts);
+            this.alldistricts.splice(this.alldistricts.indexOf(thisdistrict), 1);
+            this.filtereddistricts.splice(this.filtereddistricts.indexOf(thisdistrict), 1);
+            this.$forceUpdate();
+        },
+
+        removeDistrictFromSelection: function removeDistrictFromSelection(thisdistrict) {
+            this.alldistricts.push(thisdistrict);
+            this.filtereddistricts.push(thisdistrict);
+            this.sortDistricts(this.filtereddistricts);
+            this.selecteddistricts.splice(this.selecteddistricts.indexOf(thisdistrict), 1);
+            this.$forceUpdate();
+        },
+
+        isActiveInstantie: function isActiveInstantie(thisinstantie) {
+            return this.instantie.id == thisinstantie.id;
+        },
+        setInstantie: function setInstantie(thisinstantie) {
+            this.instantie = thisinstantie;
+        },
+        saveGroup: function saveGroup() {
+            this.clickedOnce = true;
+            var home = this;
+            axios.post('/api/group', {
+                title: this.title,
+                instantie_id: this.instantie.id,
+                districts: this.selecteddistricts,
+                scanmodel_id: 1
+            }).then(function (response) {
+                // window.location.href = '/group/' + response.data.id + '/created'; 
+                // window.location.href = '/home'; 
+                home.clickedOnce = false;
+            }).catch(function (error) {
+                home.clickedOnce = false;
+                home.errors = error.response.data.errors;
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "group--create" }, [
+    _vm.errors.length
+      ? _c("div", { staticClass: "alert alert-danger" }, [
+          _c("strong", [_vm._v("Belangrijk!")]),
+          _vm._v(" " + _vm._s(_vm.errors) + ".\n\t    ")
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "form-group" },
+      [
+        _c("label", { attrs: { for: "" } }, [
+          _vm._v("Hoe wil je je groep noemen?")
+        ]),
+        _vm._v(" "),
+        _vm._l(_vm.errors.title, function(error) {
+          return _vm.errors.title
+            ? _c("div", { staticClass: "alert alert-danger" }, [
+                _c("strong", [_vm._v("Incompleet")]),
+                _vm._v(" " + _vm._s(error) + "\n            ")
+              ])
+            : _vm._e()
+        }),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.title,
+              expression: "title"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "text",
+            placeholder:
+              "Geef jouw groep een naam die herkenbaar is voor mensen uit jouw regio"
+          },
+          domProps: { value: _vm.title },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.title = $event.target.value
+            }
+          }
+        })
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "form-group" },
+      [
+        _c("label", { attrs: { for: "" } }, [
+          _vm._v(
+            "Wat voor soort organisatie vertegenwoordig jij tijdens deze scan?"
+          )
+        ]),
+        _vm._v(" "),
+        _vm._l(_vm.errors.instantie_id, function(error) {
+          return _vm.errors.instantie_id
+            ? _c("div", { staticClass: "alert alert-danger" }, [
+                _c("strong", [_vm._v("Incompleet")]),
+                _vm._v(" " + _vm._s(error) + "\n            ")
+              ])
+            : _vm._e()
+        }),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "row" },
+          _vm._l(_vm.instantietypes, function(instantietype) {
+            return _c(
+              "div",
+              { staticClass: "col-sm-6" },
+              [
+                _c("strong", [_vm._v(_vm._s(instantietype.name))]),
+                _vm._v(" "),
+                _vm._l(instantietype.instanties, function(instantie) {
+                  return _c("div", [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn btn-light btn-block",
+                        class: { active: _vm.isActiveInstantie(instantie) },
+                        attrs: { href: "#" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.setInstantie(instantie)
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          " \n            \t\t\t\t" +
+                            _vm._s(instantie.name) +
+                            " \n            \t\t\t"
+                        )
+                      ]
+                    )
+                  ])
+                })
+              ],
+              2
+            )
+          })
+        )
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "form-group" },
+      [
+        _c("label", { attrs: { for: "" } }, [
+          _vm._v("Voor welke gemeente(n) maak je deze groep?")
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _vm._l(_vm.errors.districts, function(error) {
+          return _vm.errors.districts
+            ? _c("div", { staticClass: "alert alert-danger" }, [
+                _c("strong", [_vm._v("Incompleet")]),
+                _vm._v(" " + _vm._s(error) + "\n            ")
+              ])
+            : _vm._e()
+        }),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.districtsearch,
+              expression: "districtsearch"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: { type: "text", placeholder: "Zoek je gemeente" },
+          domProps: { value: _vm.districtsearch },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.districtsearch = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "row resultstable--row" }, [
+          _c("div", { staticClass: "col-sm-12" }, [
+            _vm.selecteddistricts.length || _vm.districtsearch != ""
+              ? _c(
+                  "div",
+                  { staticClass: "infoblock" },
+                  [
+                    !_vm.selecteddistricts.length
+                      ? _c("span", [
+                          _vm._v(
+                            "Klik op een gemeente om het aan je lijst toe te voegen"
+                          )
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.selecteddistricts.length
+                      ? _c("span", [
+                          _vm._v("Je kan meer dan meer dan 1 gemeente kiezen")
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("br"),
+                    _vm._v(" "),
+                    _vm._l(_vm.selecteddistricts, function(district) {
+                      return _c(
+                        "span",
+                        {
+                          staticClass:
+                            "clickable selectable selectable--active",
+                          on: {
+                            click: function($event) {
+                              _vm.removeDistrictFromSelection(district)
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(district.title) +
+                              "\n                        "
+                          )
+                        ]
+                      )
+                    })
+                  ],
+                  2
+                )
+              : _vm._e()
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row resultstable--row" }, [
+          _c(
+            "div",
+            { staticClass: "col-sm-12" },
+            _vm._l(_vm.filteredAndSortedDistricts, function(district) {
+              return _c(
+                "span",
+                {
+                  staticClass: "clickable selectable selectable--passive",
+                  on: {
+                    click: function($event) {
+                      _vm.addDistrictToSelection(district)
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    " \n                        " +
+                      _vm._s(district.title) +
+                      " \n                    "
+                  )
+                ]
+              )
+            })
+          )
+        ])
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "row resultstable--row" }, [
+      _c("div", { staticClass: "col-sm-12" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary btn-block",
+            attrs: { disabled: _vm.clickedOnce },
+            on: {
+              click: function($event) {
+                _vm.saveGroup()
+              }
+            }
+          },
+          [_vm._v("Maak de groep aan")]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-298937bc", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

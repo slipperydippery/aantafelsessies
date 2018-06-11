@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Scan;
+use App\Partner;
 use Illuminate\Database\Eloquent\Model;
 
 class Instantie extends Model
@@ -12,11 +14,16 @@ class Instantie extends Model
 
     public function scans()
     {
-        return $this->hasMany(\App\Scan::class);
+        return $this->hasMany(Scan::class);
     }
 
     public function scanmodel()
     {
-        return $this->belongsTo(\App\Scan::class);
+        return $this->belongsTo(Scan::class);
+    }
+
+    public function partners()
+    {
+        return $this->hasMany(Partner::class);
     }
 }

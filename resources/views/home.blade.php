@@ -67,7 +67,7 @@
     </div>
     <div class="row row__cards">
         <div class="col-md-4">
-            <a href=" # " title="">
+            <a href=" {{ route('group.create') }} " title="">
                 <div class="card card__dashboard">
                     <div class="card-body">
                         <h5 class="card-title">Nieuwe groep</h5>
@@ -80,7 +80,9 @@
             <div class="card card__dashboard">
                 <div class="card-body">
                     <h5 class="card-title">Mijn groepen</h5>
-                    <p class="card-text"><a href="#">Region Amsterdam</a></p>
+                    @foreach ($user->groups as $group)
+                        <a href="#"> {{ $group->title }} </a>
+                    @endforeach
                 </div>
             </div>
         </div>

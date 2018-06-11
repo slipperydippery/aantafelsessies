@@ -20,7 +20,7 @@
     
     @include('partials.nav')
 
-    <main class="flex-grow">
+    <main class="flex-grow" id="app">
         @yield('content')
     </main>
 

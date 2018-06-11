@@ -16,7 +16,14 @@ Route::view('/', 'welcome');
 
 Auth::routes();
 
+Route::get('/gesprekspartners/resultaten/', 'GesprekspartnersController@results')->name('gesprekspartners.results');
+Route::get('/groep/{scan}/gesprekspartners/{instantietype}', 'GesprekspartnersController@show')->name('gesprekspartners.show');
+
+Route::resource('instantietype', 'InstantietypeController');
+Route::resource('group', 'GroupController');
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/partners', 'PagesController@partners')->name('partners');
-Route::get('/partnersresultaten', 'PagesController@partnersresultaten')->name('partnersresultaten');
 Route::get('/vraag', 'PagesController@vraag')->name('vraag');
+
+Route::post('/api/group', 'ApiGroupController@store');

@@ -13,11 +13,6 @@ class PagesController extends Controller
     	return view('pages.partners', compact('instantietypes'));
     }
 
-    public function partnersresultaten(	)
-    {
-    	return view('pages.partnersresultaten');
-    }
-
     public function vraag()
     {
     	return view('pages.vraag');

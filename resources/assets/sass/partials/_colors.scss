@@ -1,16 +1,18 @@
 // Colors adjusted in: node_modules/bootstrap/scss/_variables.scss
 
 // Base colors
-$brand-primary:       	#ED655F;
-$brand-secondary:     	#DF2715;
-$brand-success:       	#3EB57A;
-$brand-info:          	#74C9E5;
-$brand-warning:       	#EFBB3A;
-$brand-danger:      	#DF2715;
+$theme-colors: (
+	"primary": 			#ED655F,
+	"secondary": 	 	#DF2715,
+	"success": 		 	#5CDA36,
+	"info": 		 	#74C9E5,
+	"warning": 		 	#EFBB3A,
+	"danger": 		 	#DF2715
+);
 
 $primary:           	#ED655F;
 $secondary:         	#DF2715;
-$success:       		#3EB57A;
+$success:       		#5CDA36;
 $info:          		#74C9E5;
 $warning:       		#EFBB3A;
 $danger:      		  	#DF2715;
@@ -21,3 +23,4 @@ $primary-muted:			#FDF4F3;
 
 $themecolor:           	$gray-400;
 $themecolor-2:          #ED655F;
+

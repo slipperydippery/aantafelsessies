@@ -6,10 +6,6 @@
 		padding-top: 1rem;
 	}
 
-	.row:nth-child(odd){
-		background: $gray-100;
-	}
-
 	.section__panel--title {
 		box-sizing: content-box;
 		padding: 1rem;
@@ -20,4 +16,12 @@
 		width: 100%;
 		background: $primary-muted;
 	}
+}
+
+.section__panel__table {
+
+	.row:nth-child(odd){
+		background: $gray-100;
+	}
+	
 }

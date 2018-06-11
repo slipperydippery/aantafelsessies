@@ -2,27 +2,28 @@
 
 namespace App;
 
+use App\Instantie;
 use Illuminate\Database\Eloquent\Model;
 
 class Scanmodel extends Model
 {
     public function scans()
     {
-        return $this->hasMany(\App\Scan::class);
+        return $this->hasMany(Scan::class);
     }
 
     public function themes()
     {
-        return $this->hasMany(\App\Theme::class);
+        return $this->hasMany(Theme::class);
     }
 
     public function instanties()
     {
-        return $this->hasMany(\App\Instantie::class);
+        return $this->hasMany(Instantie::class);
     }
 
     public function districts()
     {
-        return $this->hasMany(\App\District::class);
+        return $this->hasMany(District::class);
     }
 }

@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Scan;
+use App\Group;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -26,4 +28,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function groups()
+    {
+        return $this->hasMany(Group::class);
+    }
+
+    public function scans()
+    {
+        return $this->hasMany(Scan::class);
+    }
 }

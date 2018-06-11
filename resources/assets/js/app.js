@@ -16,6 +16,8 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('set-partner', require('./components/SetPartner.vue'));
+Vue.component('create-group', require('./components/CreateGroup.vue'));
 
 const app = new Vue({
     el: '#app'

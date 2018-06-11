@@ -65,5 +65,101 @@ class InstantieTableSeeder extends Seeder
         $instantie_incassobureau->scanmodel_id = 1;
         $instantie_incassobureau->save();
         $instantie_type_vastelasten->instanties()->save($instantie_incassobureau);
+
+        $instantie_next = new Instantie();
+        $instantie_next->name = 'Optie';
+        $instantie_next->description = 'Optie.';
+        $instantie_next->contactpersoon = '';
+        $instantie_next->scanmodel_id = 1;
+        $instantie_next->save();
+        $instantie_type_beginnendeschulden->instanties()->save($instantie_next);
+
+        $instantie_next = new Instantie();
+        $instantie_next->name = 'Optie';
+        $instantie_next->description = 'Optie.';
+        $instantie_next->contactpersoon = '';
+        $instantie_next->scanmodel_id = 1;
+        $instantie_next->save();
+        $instantie_type_beginnendeschulden->instanties()->save($instantie_next);
+
+        $instantie_next = new Instantie();
+        $instantie_next->name = 'Optie';
+        $instantie_next->description = 'Optie.';
+        $instantie_next->contactpersoon = '';
+        $instantie_next->scanmodel_id = 1;
+        $instantie_next->save();
+        $instantie_type_beginnendeschulden->instanties()->save($instantie_next);
+
+        $instantie_next = new Instantie();
+        $instantie_next->name = 'Optie';
+        $instantie_next->description = 'Optie.';
+        $instantie_next->contactpersoon = '';
+        $instantie_next->scanmodel_id = 1;
+        $instantie_next->save();
+        $instantie_type_beginnendeschulden->instanties()->save($instantie_next);
+
+        $instantie_next = new Instantie();
+        $instantie_next->name = 'Optie';
+        $instantie_next->description = 'Optie.';
+        $instantie_next->contactpersoon = '';
+        $instantie_next->scanmodel_id = 1;
+        $instantie_next->save();
+        $instantie_type_beginnendeschulden_gemeente->instanties()->save($instantie_next);
+
+        $instantie_next = new Instantie();
+        $instantie_next->name = 'Optie';
+        $instantie_next->description = 'Optie.';
+        $instantie_next->contactpersoon = '';
+        $instantie_next->scanmodel_id = 1;
+        $instantie_next->save();
+        $instantie_type_beginnendeschulden_gemeente->instanties()->save($instantie_next);
+
+        $instantie_next = new Instantie();
+        $instantie_next->name = 'Optie';
+        $instantie_next->description = 'Optie.';
+        $instantie_next->contactpersoon = '';
+        $instantie_next->scanmodel_id = 1;
+        $instantie_next->save();
+        $instantie_type_beginnendeschulden_gemeente->instanties()->save($instantie_next);
+
+        $instantie_next = new Instantie();
+        $instantie_next->name = 'Optie';
+        $instantie_next->description = 'Optie.';
+        $instantie_next->contactpersoon = '';
+        $instantie_next->scanmodel_id = 1;
+        $instantie_next->save();
+        $instantie_type_beginnendeschulden_gemeente->instanties()->save($instantie_next);
+
+        $instantie_next = new Instantie();
+        $instantie_next->name = 'Optie';
+        $instantie_next->description = 'Optie.';
+        $instantie_next->contactpersoon = '';
+        $instantie_next->scanmodel_id = 1;
+        $instantie_next->save();
+        $instantie_type_scholen_werkgevers->instanties()->save($instantie_next);
+
+        $instantie_next = new Instantie();
+        $instantie_next->name = 'Optie';
+        $instantie_next->description = 'Optie.';
+        $instantie_next->contactpersoon = '';
+        $instantie_next->scanmodel_id = 1;
+        $instantie_next->save();
+        $instantie_type_scholen_werkgevers->instanties()->save($instantie_next);
+
+        $instantie_next = new Instantie();
+        $instantie_next->name = 'Optie';
+        $instantie_next->description = 'Optie.';
+        $instantie_next->contactpersoon = '';
+        $instantie_next->scanmodel_id = 1;
+        $instantie_next->save();
+        $instantie_type_scholen_werkgevers->instanties()->save($instantie_next);
+
+        $instantie_next = new Instantie();
+        $instantie_next->name = 'Optie';
+        $instantie_next->description = 'Optie.';
+        $instantie_next->contactpersoon = '';
+        $instantie_next->scanmodel_id = 1;
+        $instantie_next->save();
+        $instantie_type_scholen_werkgevers->instanties()->save($instantie_next);
     }
 }

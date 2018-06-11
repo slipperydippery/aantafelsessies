@@ -46,7 +46,10 @@ class InstantietypeController extends Controller
      */
     public function show(Instantietype $instantietype)
     {
-        //
+        // $previous = Instantietype::where('id', '<', $instantietype->id)->orderBy('id', 'desc')->first();
+        // $next = Instantietype::where('id', '>', $instantietype->id)->first();
+
+        // return view('instantietype.show', compact('instantietype', 'previous', 'next'));
     }
 
     /**

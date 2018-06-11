@@ -1,0 +1,17 @@
+.row__choice {
+	padding: 0 1rem;
+	svg {
+		width: 100%;
+		height: auto;
+		cursor: pointer;
+	}
+	svg.yes:hover path {
+		fill: $success !important;
+	}
+	svg.maeby:hover path {
+		fill: $warning !important;
+	}
+	svg.no:hover path {
+		fill: $danger !important;
+	}
+}
