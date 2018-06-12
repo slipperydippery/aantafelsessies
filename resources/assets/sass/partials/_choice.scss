@@ -4,14 +4,55 @@
 		width: 100%;
 		height: auto;
 		cursor: pointer;
+		transition: all .5s
 	}
-	svg.yes:hover path {
+	svg.yes:hover path.dominant, svg.yes.active path.dominant {
 		fill: $success !important;
 	}
-	svg.maeby:hover path {
-		fill: $warning !important;
+	svg.yes:hover path.clear, svg.yes.active path.clear {
+		fill: white !important;
 	}
-	svg.no:hover path {
-		fill: $danger !important;
+	// svg.maeby:hover path.dominant, svg.maeby.active path.dominant {
+	// 	fill: $themecolor-2-muted !important;
+	// }
+	// svg.maeby:hover path.clear, svg.maeby.active path.clear {
+	// 	fill: white !important;
+	// }
+	svg.no:hover path.dominant, svg.no.active path.dominant {
+		fill: $primary !important;
 	}
+	svg.no:hover path.clear, svg.no.active path.clear {
+		fill: white !important;
+	}
+
+
+	// svg.yes:hover path.simple, svg.yes.active path.simple {
+	// 	fill: $success !important;
+	// }
+	// svg.maeby:hover path.simple, svg.maeby.active path.simple {
+	// 	fill: $themecolor-2-muted !important;
+	// }
+	// svg.no:hover path.simple, svg.no.active path.simple {
+	// 	fill: $primary !important;
+	// }
+
+
+	// svg.yes:hover path.dominant, svg.yes.active path.dominant {
+	// 	fill: #959595 !important;
+	// }
+	// svg.yes:hover path.clear, svg.yes.active path.clear {
+	// 	fill: white !important;
+	// }
+	svg.maeby:hover path.dominant, svg.maeby.active path.dominant {
+		fill: #959595 !important;
+	}
+	svg.maeby:hover path.clear, svg.maeby.active path.clear {
+		fill: white !important;
+	}
+	// svg.no:hover path.dominant, svg.no.active path.dominant {
+	// 	fill: #959595 !important;
+	// }
+	// svg.no:hover path.clear, svg.no.active path.clear {
+	// 	fill: white !important;
+	// }
 }

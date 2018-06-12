@@ -16,8 +16,11 @@ Route::view('/', 'welcome');
 
 Auth::routes();
 
+Route::get('/gesprekspartners/start', 'InventarisatieController@store')->name('inventarisatie.store');
 Route::get('/gesprekspartners/resultaten/', 'GesprekspartnersController@results')->name('gesprekspartners.results');
-Route::get('/groep/{scan}/gesprekspartners/{instantietype}', 'GesprekspartnersController@show')->name('gesprekspartners.show');
+Route::get('/gesprekspartners/{instantietype}', 'GesprekspartnersController@show')->name('gesprekspartners.show');
+Route::post('/api/partner/{partner}', 'ApiPartnerController@update');
+Route::get('/api/inventarisatie/{inventarisatie}/instantietype/{instantietype}/instantie', 'ApiInventarisatieInstantietypeInstantieController@index');
 
 Route::resource('instantietype', 'InstantietypeController');
 Route::resource('group', 'GroupController');

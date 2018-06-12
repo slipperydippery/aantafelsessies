@@ -18,21 +18,13 @@
 						<h4> {{ $instantietype->description }} </h4>
 		                <p><em>Geef per partij aan of er op dit moment al een samenwerking bestaat.</em></p>
 					</div>
-					<div class="row row__cards">
-						@foreach($instantietype->instanties as $instantie)
-						    <div class="col-md-4">
-					            <div class="card ">
-					                <div class="card-body">
-					                    <h5 class="card-title"> {{ $instantie->name }} </h5>
-					                    <set-partner
-							            	:instantieid = {{ $instantie->id }}
-							            >
-							            </set-partner>
-					                </div>
-					            </div>
-						    </div>
-						@endforeach
-					</div>
+
+					<partner-cluster
+		            	:instantietype_id = {{ $instantietype->id }}
+		            	:inventarisatie_id = {{ $inventarisatie->id }}
+					>
+					</partner-cluster>
+
 					<div class="row row__prevnext justify-content-between">
 						<div class="col-md-4">
 							@if ($previous)

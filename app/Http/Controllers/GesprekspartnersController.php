@@ -3,28 +3,34 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use Session;
 use App\Partner;
 use App\Instantietype;
+use App\Inventarisatie;
 use Illuminate\Http\Request;
 
 class GesprekspartnersController extends Controller
 {
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Instantietype  $instantietype
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Group $group, Instantietype $instantietype)
+ 	public function store()
+ 	{
+ 		
+ 	}
+
+    public function show(Instantietype $instantietype)
     {
-    	$user = Auth::user();
+    	if ( ! Session::has('inventarisatie')){
+    		return redirect()->route('welcome');
+    	}
+
+    	$inventarisatie = Inventarisatie::find(session('inventarisatie'));
+
+		Partner::guaranteeRelationship($inventarisatie, $instantietype);
+
+
         $previous = Instantietype::where('id', '<', $instantietype->id)->orderBy('id', 'desc')->first();
         $next = Instantietype::where('id', '>', $instantietype->id)->first();
 
-        Partner::guaranteeRelationship($group, $instantietype);
-        $instanties = $user->partners
-
-        return view('gesprekspartners.show', compact('user', 'instantietype', 'previous', 'next'));
+        return view('gesprekspartners.show', compact('instantietype', 'previous', 'next', 'inventarisatie'));
     }
 
     public function results()

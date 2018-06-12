@@ -4,6 +4,7 @@ namespace App;
 
 use App\Scan;
 use App\Partner;
+use App\Instantietype;
 use Illuminate\Database\Eloquent\Model;
 
 class Instantie extends Model
@@ -11,6 +12,11 @@ class Instantie extends Model
     protected $fillable = [
         'scanmodel_id', 'title', 'description'
     ];
+
+    public function instantietype()
+    {
+        return $this->belongsTo(Instantietype::class);
+    }
 
     public function scans()
     {

@@ -15,7 +15,7 @@
             <div class="col-12">
                 <h2 class="subtitle">Samen aan tafel voor vroegsignalering van schulden.</h2>
                 <div class="mainbutton--container">
-                    <a href=" # " class="btn btn-primary btn-lg">Start de Sessie</a> <br>
+                    <a href=" {{ route('inventarisatie.store') }} " class="btn btn-primary btn-lg">Start de Sessie</a> <br>
                     <a href="/pdf/handleiding_participatiescan.pdf"><span class="fineprint fineprint--welcome">hoe werkt een sessie?</span></a>
                 </div>
             </div>

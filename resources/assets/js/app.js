@@ -9,6 +9,12 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+export let store = {
+	partners: {
+	},
+    activetheme: 1,
+};
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -16,6 +22,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('partner-cluster', require('./components/PartnerCluster.vue'));
 Vue.component('set-partner', require('./components/SetPartner.vue'));
 Vue.component('create-group', require('./components/CreateGroup.vue'));
 

@@ -17,8 +17,8 @@ class CreatePartnersTable extends Migration
             $table->increments('id');
             $table->integer('instantie_id')->unsigned();
             $table->foreign('instantie_id')->references('id')->on('instanties')->onDelete('cascade');
-            $table->integer('group_id')->unsigned()->nullable();
-            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
+            $table->integer('inventarisatie_id')->unsigned();
+            $table->foreign('inventarisatie_id')->references('id')->on('inventarisaties')->onDelete('cascade');
             $table->string('collaboration')->nullable();
             $table->timestamps();
         });

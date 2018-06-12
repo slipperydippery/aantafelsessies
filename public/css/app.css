@@ -10747,7 +10747,7 @@ input[type=range]::-webkit-slider-thumb {
   height: 23px;
   width: 23px;
   border-radius: 50px;
-  background: #ED655F;
+  background: #841951;
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -9.05px;
@@ -10773,7 +10773,7 @@ input[type=range]::-moz-range-thumb {
   height: 23px;
   width: 23px;
   border-radius: 50px;
-  background: #ED655F;
+  background: #841951;
   cursor: pointer;
 }
 
@@ -10806,7 +10806,7 @@ input[type=range]::-ms-thumb {
   height: 23px;
   width: 23px;
   border-radius: 50px;
-  background: #ED655F;
+  background: #841951;
   cursor: pointer;
   height: 7.3px;
 }
@@ -10850,18 +10850,38 @@ input[type=range]:focus::-ms-fill-upper {
   width: 100%;
   height: auto;
   cursor: pointer;
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
 
-.row__choice svg.yes:hover path {
-  fill: #5CDA36 !important;
+.row__choice svg.yes:hover path.dominant,
+.row__choice svg.yes.active path.dominant {
+  fill: #7bd360 !important;
 }
 
-.row__choice svg.maeby:hover path {
-  fill: #EFBB3A !important;
+.row__choice svg.yes:hover path.clear,
+.row__choice svg.yes.active path.clear {
+  fill: white !important;
 }
 
-.row__choice svg.no:hover path {
-  fill: #DF2715 !important;
+.row__choice svg.no:hover path.dominant,
+.row__choice svg.no.active path.dominant {
+  fill: #ED655F !important;
+}
+
+.row__choice svg.no:hover path.clear,
+.row__choice svg.no.active path.clear {
+  fill: white !important;
+}
+
+.row__choice svg.maeby:hover path.dominant,
+.row__choice svg.maeby.active path.dominant {
+  fill: #959595 !important;
+}
+
+.row__choice svg.maeby:hover path.clear,
+.row__choice svg.maeby.active path.clear {
+  fill: white !important;
 }
 
 .mainbutton--container {

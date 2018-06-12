@@ -13872,8 +13872,11 @@ module.exports = __webpack_require__(43);
 
 /***/ }),
 /* 12 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "store", function() { return store; });
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -13885,6 +13888,11 @@ __webpack_require__(13);
 
 window.Vue = __webpack_require__(36);
 
+var store = {
+  partners: {},
+  activetheme: 1
+};
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -13892,6 +13900,7 @@ window.Vue = __webpack_require__(36);
  */
 
 Vue.component('example-component', __webpack_require__(39));
+Vue.component('partner-cluster', __webpack_require__(54));
 Vue.component('set-partner', __webpack_require__(48));
 Vue.component('create-group', __webpack_require__(51));
 
@@ -47442,8 +47451,24 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__app_js__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -47484,20 +47509,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-
+// import {store} from '../app.js';
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['instantieid'],
+    props: ['initPartner'],
 
     data: function data() {
-        return {};
+        return {
+            'partner': {}
+        };
     },
-    mounted: function mounted() {},
+    mounted: function mounted() {
+
+        this.partner = Object.assign({}, this.initPartner);
+    },
 
 
     computed: {},
 
-    methods: {}
+    methods: {
+        setPartner: function setPartner(value) {
+            this.partner.collaboration = value;
+            var home = this;
+            axios.post('/api/partner/' + this.partner.id, {
+                collaboration: value
+            }).then(function (response) {
+                home.partner = response.data;
+            });
+        }
+    }
 });
 
 /***/ }),
@@ -47514,6 +47554,7 @@ var render = function() {
         "svg",
         {
           staticClass: "yes",
+          class: { active: _vm.partner.collaboration == "yes" },
           staticStyle: { "enable-background": "new 0 0 241.096 241.096" },
           attrs: {
             version: "1.1",
@@ -47525,10 +47566,25 @@ var render = function() {
             height: "241.096px",
             viewBox: "0 0 241.096 241.096",
             "xml:space": "preserve"
+          },
+          on: {
+            click: function($event) {
+              _vm.setPartner("yes")
+            }
           }
         },
         [
           _c("path", {
+            staticClass: "dominant",
+            staticStyle: { fill: "#FFFFFF" },
+            attrs: {
+              d:
+                "M120.548,8C58.489,8,8,58.489,8,120.548c0,62.058,50.488,112.548,112.548,112.548\n\t\t\t\tc62.059,0,112.548-50.49,112.548-112.548C233.096,58.489,182.607,8,120.548,8z"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            staticClass: "dominant simple",
             staticStyle: { fill: "#959595" },
             attrs: {
               d:
@@ -47537,6 +47593,7 @@ var render = function() {
           }),
           _vm._v(" "),
           _c("path", {
+            staticClass: "clear simple",
             staticStyle: { fill: "#959595" },
             attrs: {
               d:
@@ -47545,6 +47602,7 @@ var render = function() {
           }),
           _vm._v(" "),
           _c("path", {
+            staticClass: "clear simple",
             staticStyle: { fill: "#959595" },
             attrs: {
               d:
@@ -47560,9 +47618,11 @@ var render = function() {
         "svg",
         {
           staticClass: "maeby",
+          class: { active: _vm.partner.collaboration == "maeby" },
           staticStyle: { "enable-background": "new 0 0 241.096 241.096" },
           attrs: {
             version: "1.1",
+            id: "Layer_1",
             xmlns: "http://www.w3.org/2000/svg",
             "xmlns:xlink": "http://www.w3.org/1999/xlink",
             x: "0px",
@@ -47571,10 +47631,25 @@ var render = function() {
             height: "241.096px",
             viewBox: "0 0 241.096 241.096",
             "xml:space": "preserve"
+          },
+          on: {
+            click: function($event) {
+              _vm.setPartner("maeby")
+            }
           }
         },
         [
           _c("path", {
+            staticClass: "dominant",
+            staticStyle: { fill: "#FFFFFF" },
+            attrs: {
+              d:
+                "M120.548,8C58.489,8,8,58.489,8,120.548c0,62.058,50.488,112.548,112.548,112.548\n\t\t\t\tc62.059,0,112.548-50.49,112.548-112.548C233.096,58.489,182.607,8,120.548,8z"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            staticClass: "clear simple",
             staticStyle: { fill: "#959595" },
             attrs: {
               d:
@@ -47583,6 +47658,7 @@ var render = function() {
           }),
           _vm._v(" "),
           _c("path", {
+            staticClass: "dominant simple",
             staticStyle: { fill: "#959595" },
             attrs: {
               d:
@@ -47598,9 +47674,11 @@ var render = function() {
         "svg",
         {
           staticClass: "no",
+          class: { active: _vm.partner.collaboration == "no" },
           staticStyle: { "enable-background": "new 0 0 241.096 241.096" },
           attrs: {
             version: "1.1",
+            id: "no",
             xmlns: "http://www.w3.org/2000/svg",
             "xmlns:xlink": "http://www.w3.org/1999/xlink",
             x: "0px",
@@ -47609,10 +47687,25 @@ var render = function() {
             height: "241.096px",
             viewBox: "0 0 241.096 241.096",
             "xml:space": "preserve"
+          },
+          on: {
+            click: function($event) {
+              _vm.setPartner("no")
+            }
           }
         },
         [
           _c("path", {
+            staticClass: "dominant",
+            staticStyle: { fill: "#FFFFFF" },
+            attrs: {
+              d:
+                "M120.548,8C58.488,8,8,58.488,8,120.548c0,62.058,50.488,112.548,112.548,112.548\n\t\t\t\tc62.059,0,112.548-50.49,112.548-112.548C233.096,58.488,182.606,8,120.548,8z"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            staticClass: "dominant simple",
             staticStyle: { fill: "#959595" },
             attrs: {
               d:
@@ -47621,6 +47714,7 @@ var render = function() {
           }),
           _vm._v(" "),
           _c("path", {
+            staticClass: "clear simple",
             staticStyle: { fill: "#959595" },
             attrs: {
               d:
@@ -47629,6 +47723,7 @@ var render = function() {
           }),
           _vm._v(" "),
           _c("path", {
+            staticClass: "clear simple",
             staticStyle: { fill: "#959595" },
             attrs: {
               d:
@@ -47704,7 +47799,6 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__app_js__);
 //
 //
 //
@@ -48158,6 +48252,149 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-298937bc", module.exports)
+  }
+}
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = __webpack_require__(55)
+/* template */
+var __vue_template__ = __webpack_require__(56)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\PartnerCluster.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-95c4f36e", Component.options)
+  } else {
+    hotAPI.reload("data-v-95c4f36e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 55 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js__ = __webpack_require__(12);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['instantietype_id', 'inventarisatie_id'],
+
+    data: function data() {
+        return {
+            partners: [],
+            store: __WEBPACK_IMPORTED_MODULE_0__app_js__["store"]
+        };
+    },
+    mounted: function mounted() {
+        this.getInstanties();
+    },
+
+
+    computed: {},
+
+    methods: {
+        getInstanties: function getInstanties() {
+            var home = this;
+            axios.get('/api/inventarisatie/' + this.inventarisatie_id + '/instantietype/' + this.instantietype_id + '/instantie').then(function (response) {
+                console.log(response.data);
+                response.data.forEach(function (instantie) {
+                    home.partners.push(instantie);
+                });
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "row row__cards" },
+    _vm._l(_vm.partners, function(partner) {
+      return _c("div", { staticClass: "col-md-4" }, [
+        _c("div", { staticClass: "card " }, [
+          _c(
+            "div",
+            { staticClass: "card-body" },
+            [
+              _c("h5", { staticClass: "card-title" }, [
+                _vm._v(" " + _vm._s(partner.instantie.name) + " ")
+              ]),
+              _vm._v(" "),
+              _c("set-partner", { attrs: { initPartner: partner } })
+            ],
+            1
+          )
+        ])
+      ])
+    })
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-95c4f36e", module.exports)
   }
 }
 
