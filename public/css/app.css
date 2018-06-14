@@ -10675,6 +10675,11 @@ label {
   text-align: right;
 }
 
+.card img {
+  margin: 0 auto;
+  display: block;
+}
+
 .card__dashboard {
   text-align: right;
   min-height: 11rem;
@@ -10843,7 +10848,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .row__choice {
-  padding: 0 1rem;
+  padding: 0 1rem 2rem;
 }
 
 .row__choice svg {
@@ -10864,6 +10869,16 @@ input[type=range]:focus::-ms-fill-upper {
   fill: white !important;
 }
 
+.row__choice svg.maeby:hover path.dominant,
+.row__choice svg.maeby.active path.dominant {
+  fill: #959595 !important;
+}
+
+.row__choice svg.maeby:hover path.clear,
+.row__choice svg.maeby.active path.clear {
+  fill: white !important;
+}
+
 .row__choice svg.no:hover path.dominant,
 .row__choice svg.no.active path.dominant {
   fill: #ED655F !important;
@@ -10874,14 +10889,16 @@ input[type=range]:focus::-ms-fill-upper {
   fill: white !important;
 }
 
-.row__choice svg.maeby:hover path.dominant,
-.row__choice svg.maeby.active path.dominant {
-  fill: #959595 !important;
-}
-
-.row__choice svg.maeby:hover path.clear,
-.row__choice svg.maeby.active path.clear {
-  fill: white !important;
+.row__choice .row__choice--textresult {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5rem;
+  padding: .5rem 0;
+  margin-top: .5rem;
+  text-align: center;
+  background: #fef4f4;
 }
 
 .mainbutton--container {

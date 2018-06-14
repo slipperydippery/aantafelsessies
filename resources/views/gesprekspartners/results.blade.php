@@ -10,6 +10,13 @@
 	            </div>
 	        </div>
 		</div>
+		@guest
+			<div class="alert alert-info container-fluid" role="alert">
+				<div class="container">
+					U bent niet ingelogd, <a href=" {{ route('login') }} ">log in</a> of <a href=" {{ route('register') }} ">maak een account</a> aan om deze resultaten meteen op te slaan.
+				 </div>
+			</div>
+		@endguest
 		<div class="row">	
 			<div class="col-md-12">	
 				<div class="section__panel">
@@ -18,9 +25,9 @@
 					</div>
 					<div class="row ">
 					    <div class="col-md-4">
-					    	<p><strong>Zorgverzekeraar</strong></p>
-					    	<p><strong>Waterbedrijf</strong></p>
-					    	<p><strong>Incassobureau</strong></p>
+					    	@foreach($partners->where('collaboration', 'yes') as $partner)
+						    	<p><strong> {{ $partner->instantie->name }} </strong></p>
+					    	@endforeach
 					    </div>
 					</div>
 				</div>
@@ -32,56 +39,39 @@
 					<div class="section__panel--title">
 						<h5>U zou de volgende instanties ook aan tafel kunnen uitnodigen:</h5> 
 					</div>
-					<div class="row ">
-					    <div class="col-md-4">
-					    	<p><strong>Woningcorporatie</strong></p>
-					    </div>
-					    <div class="col-md-4">
-					    	<p>Het is verstandig om in contact te komen met deze partij omdat Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Praesent egestas tristique nibh. In ut quam vitae odio lacinia tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-					    </div>
-					    <div class="col-md-4">
-					    	<p>De beste manier om met deze partij in contact te komen is door Suspendisse eu ligula. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Nullam tincidunt adipiscing enim.</p>
-					    	<p><a href="#">Contactpersoon</a></p>
-					    	<p><a href="#">Contactpersoon</a></p>
-					    </div>
-					</div>
-					<div class="row ">
-					    <div class="col-md-4">
-					    	<p><strong>Energieleveranciers</strong></p>
-					    </div>
-					    <div class="col-md-4">
-					    	<p>Het is verstandig om in contact te komen met deze partij omdat Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Praesent egestas tristique nibh. In ut quam vitae odio lacinia tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-					    </div>
-					    <div class="col-md-4">
-					    	<p>De beste manier om met deze partij in contact te komen is door Suspendisse eu ligula. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Nullam tincidunt adipiscing enim.</p>
-					    	<p><a href="#">Contactpersoon</a></p>
-					    </div>
-					</div>
-					<div class="row ">
-					    <div class="col-md-4">
-					    	<p><strong>Bank (hypotheekverstrekker)</strong></p>
-					    </div>
-					    <div class="col-md-4">
-					    	<p>Het is verstandig om in contact te komen met deze partij omdat Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Praesent egestas tristique nibh. In ut quam vitae odio lacinia tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-					    </div>
-					    <div class="col-md-4">
-					    	<p>De beste manier om met deze partij in contact te komen is door Suspendisse eu ligula. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Nullam tincidunt adipiscing enim.</p>
-					    	<p><a href="#">Contactpersoon</a></p>
-					    	<p><a href="#">Contactpersoon</a></p>
-					    </div>
-					</div>
+			    	@foreach($partners->where('collaboration', 'no') as $partner)
+						<div class="row">
+						    <div class="col-md-4">
+						    	<p><strong> {{ $partner->instantie->name }} </strong></p>
+						    </div>
+						    <div class="col-md-4">
+						    	<p> {{ $partner->instantie->description }} </p>
+						    </div>
+						    <div class="col-md-4">
+						    	<p> {{ $partner->instantie->contactpersoon }} </p>
+						    </div>
+						</div>
+					@endforeach
 				</div>
 			</div>
 		</div>
 		<div class="row row__prevnext justify-content-between">
 			<div class="col-md-4">
-				<a href="#" class="btn btn-primary btn-block btn__prevnext"><i class="material-icons"> navigate_before </i> vorige</a>
-			</div>
-			<div class="col-md-4">
-				<a href=" # " class="btn btn-primary btn-block btn__prevnext">volgende <i class="material-icons"> navigate_next </i></a>
+				<a href=" {{ route('gesprekspartners.show', 4) }} " class="btn btn-primary btn-block btn__prevnext"><i class="material-icons"> navigate_before </i> vorige</a>
 			</div>
 		</div>
+
 	
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="section__panel">
+					<form action="{{ route('inventarisatie.update', session('inventarisatie')) }}" method="post" accept-charset="utf-8">
+					    {{ csrf_field() }}
+						@include('inventarisatie.partials.form', ['submittext' => 'sla gesprekspartners op'])
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
 @stop
 

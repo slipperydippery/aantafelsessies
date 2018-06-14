@@ -54,7 +54,8 @@ class InventarisatieController extends Controller
      */
     public function show(Inventarisatie $inventarisatie)
     {
-        //
+        session(['inventarisatie' => $inventarisatie->id]);
+        return redirect()->route('gesprekspartners.show', 1);
     }
 
     /**
@@ -77,7 +78,22 @@ class InventarisatieController extends Controller
      */
     public function update(Request $request, Inventarisatie $inventarisatie)
     {
-        //
+        request()->validate([
+            'title' => 'required|min:3|max:255',
+        ]);
+
+        $inventarisatie->title = $request->title;
+        $inventarisatie->save();
+        Auth::user()->inventarisaties()->save($inventarisatie);
+
+        return redirect()->route('home');
+    }
+
+    public function updateuser(Inventarisatie $inventarisatie)
+    {
+        Auth::user()->inventarisaties()->save($inventarisatie);
+
+        return redirect()->back();
     }
 
     /**
@@ -88,6 +104,9 @@ class InventarisatieController extends Controller
      */
     public function destroy(Inventarisatie $inventarisatie)
     {
-        //
+        $inventarisatie->delete();
+        session()->forget('inventarisatie');
+
+        return redirect()->back();
     }
 }

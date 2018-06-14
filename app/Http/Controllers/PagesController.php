@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
+	public function start()
+	{
+		return view('pages.start');
+	}
+
     public function partners()
     {
     	$instantietypes = Instantietype::with('instanties')->get();

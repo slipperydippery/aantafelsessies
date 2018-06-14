@@ -23,6 +23,9 @@
 @endsection
 
 @section('content')
+
+@include('partials.partnercheck')
+
 <div class="container container--page">
     <div class="row">
         <div class="col-md-12">
@@ -34,14 +37,17 @@
         <dashmessages :user="user"></dashmessages>
     <div class="row row__cards">
         <div class="col-md-4">
-            <a href=" # " title="">
-                <div class="card card__dashboard">
-                    <div class="card-body">
-                        <h5 class="card-title">Nieuwe sessie</h5>
-                        <img src="/img/feather.jpg" alt="">
-                    </div>
+            <div class="card card__dashboard">
+                <div class="card-body">
+                    <h5 class="card-title">Inventarisaties</h5>
+                    @foreach ($user->inventarisaties as $inventarisatie)
+                        @if ($inventarisatie->title == '' )
+                            yellow
+                        @endif
+                        <a href=" {{ route('inventarisatie.show', $inventarisatie) }} "> {{ $inventarisatie->title }} </a>
+                    @endforeach
                 </div>
-            </a>
+            </div>
         </div>
         <div class="col-md-4">
             <div class="card card__dashboard">

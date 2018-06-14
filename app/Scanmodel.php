@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Scan;
 use App\Instantie;
 use Illuminate\Database\Eloquent\Model;
 

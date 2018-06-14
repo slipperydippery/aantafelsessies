@@ -11,8 +11,13 @@ use Illuminate\Http\Request;
 
 class GesprekspartnersController extends Controller
 {
- 	public function store()
+ 	public function start()
  	{
+        if ( ! Session::has('inventarisatie')){
+            return redirect()->route('inventarisatie.store');
+        }
+
+        return redirect()->route('gesprekspartners.show', 1);
  		
  	}
 
@@ -35,6 +40,14 @@ class GesprekspartnersController extends Controller
 
     public function results()
     {
-    	return view('gesprekspartners.results');
+        if ( ! Session::has('inventarisatie')){
+            return redirect()->route('welcome');
+        }
+
+        $inventarisatie = Inventarisatie::find(session('inventarisatie'));
+
+        $partners = $inventarisatie->partners;
+
+    	return view('gesprekspartners.results', compact('partners'));
     }    
 }

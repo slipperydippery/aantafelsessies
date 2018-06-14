@@ -174,9 +174,8 @@
                         scanmodel_id: 1,
                     })
                     .then(function(response){
-                        // window.location.href = '/group/' + response.data.id + '/created'; 
+                        window.location.href = '/group/' + response.data.id + '/created'; 
                         // window.location.href = '/home'; 
-                        home.clickedOnce = false;
                     })
                     .catch(function(error){
                         home.clickedOnce = false;

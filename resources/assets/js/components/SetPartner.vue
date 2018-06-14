@@ -51,6 +51,9 @@
 					C181.178,182.275,180.154,182.666,179.131,182.666z"/>
 			</svg>
 		</div>
+		<div class="col-sm-12 row__choice--textresult">
+			<span><strong v-html="selecttext"></strong></span>
+		</div>
 	</div>
 
 </template>
@@ -65,16 +68,30 @@
 
         data() {
             return {
-            	'partner': {}
+            	'partner': {},
             }
         },
 
         mounted() {
-
             this.partner = Object.assign({}, this.initPartner);
         },
 
         computed: {
+        	selecttext() {
+        		switch(this.partner.collaboration) {
+        		    case 'yes':
+        		        return 'een samenwerking bestaat'
+        		        break;
+        		    case 'maeby':
+        		        return 'niet van toepassing'
+        		        break;
+        		    case 'no':
+        		        return 'wij werken niet samen'
+        		        break;
+        		    default:
+        		        return ''
+        		}
+        	}
         },
 
         methods: {

@@ -21,7 +21,7 @@
                                 min="0" max="10"
                                 step="0.1"
                             >
-                            <span class="question--answer question--answer__preanswer" v-else>5</span>
+                            <span class="question--answer question--answer__preanswer">5</span>
 
                         </div>
                     </div>
@@ -33,7 +33,7 @@
 				<a href="#" class="btn btn-primary btn-block btn__prevnext"><i class="material-icons"> navigate_before </i> vorige</a>
 			</div>
 			<div class="col-md-4">
-				<a href=" {{ route('partnersresultaten') }} " class="btn btn-primary btn-block btn__prevnext">volgende <i class="material-icons"> navigate_next </i></a>
+				<a href=" {{ route('home') }} " class="btn btn-primary btn-block btn__prevnext">volgende <i class="material-icons"> navigate_next </i></a>
 			</div>
 		</div>
 	
