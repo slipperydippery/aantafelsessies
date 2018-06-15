@@ -12,7 +12,7 @@
 */
 
 
-Route::view('/', 'welcome');
+Route::view('/', 'welcome')->name('welcome');
 
 Auth::routes();
 
@@ -21,6 +21,7 @@ Route::get('/inventarisatie/{inventarisatie}', 'InventarisatieController@show')-
 Route::get('/inventarisatie/{inventarisatie}/updateuser/', 'InventarisatieController@updateuser')->name('inventarisatie.updateuser');
 Route::get('/inventarisatie/{inventarisatie}/destroy', 'InventarisatieController@destroy')->name('inventarisatie.destroy');
 Route::post('/inventarisatie/{inventarisatie}/update', 'InventarisatieController@update')->name('inventarisatie.update');
+Route::get('/api/inventarisatie/{inventarisatie}', 'ApiInventarisatieController@show');
 
 Route::get('/gesprekspartners/start', 'GesprekspartnersController@start')->name('gesprekspartners.start');
 Route::get('/gesprekspartners/resultaten/', 'GesprekspartnersController@results')->name('gesprekspartners.results');

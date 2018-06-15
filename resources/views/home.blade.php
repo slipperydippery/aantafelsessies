@@ -40,12 +40,16 @@
             <div class="card card__dashboard">
                 <div class="card-body">
                     <h5 class="card-title">Inventarisaties</h5>
-                    @foreach ($user->inventarisaties as $inventarisatie)
-                        @if ($inventarisatie->title == '' )
-                            yellow
-                        @endif
-                        <a href=" {{ route('inventarisatie.show', $inventarisatie) }} "> {{ $inventarisatie->title }} </a>
-                    @endforeach
+                    <ul>
+                        @foreach ($user->inventarisaties as $inventarisatie)
+                            <li>
+                                <a href=" {{ route('inventarisatie.show', $inventarisatie) }} "> {{ $inventarisatie->title }} </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <a href=" {{ route('inventarisatie.store') }} "><i class="material-icons"> add </i> nieuwe inventarisatie</a>
                 </div>
             </div>
         </div>
@@ -89,6 +93,9 @@
                     @foreach ($user->groups as $group)
                         <a href="#"> {{ $group->title }} </a>
                     @endforeach
+                </div>
+                <div class="card-footer">
+                    <a href="#"><i class="material-icons"> add </i> nieuwe group</a>
                 </div>
             </div>
         </div>

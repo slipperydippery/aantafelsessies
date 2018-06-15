@@ -12,11 +12,15 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
+				<set-inventarisatie-title
+					:inventarisatie_id = {{ $inventarisatie->id }}
+				>
+				</set-inventarisatie-title>
 				<div class="section__panel">
 					<div class="section__panel--title">
 						<h5>Partijen: {{ $instantietype->name }} </h5> 
-						<h4> {{ $instantietype->description }} </h4>
-		                <p><em>Geef per partij aan of er op dit moment al een samenwerking bestaat.</em></p>
+						<span><em> {{ $instantietype->description }} </em></span>
+		                <h4>Geef per partij aan of er op dit moment al een samenwerking bestaat.</h4>
 					</div>
 
 					<partner-cluster

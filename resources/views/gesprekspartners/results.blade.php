@@ -45,7 +45,7 @@
 						    	<p><strong> {{ $partner->instantie->name }} </strong></p>
 						    </div>
 						    <div class="col-md-4">
-						    	<p> {{ $partner->instantie->description }} </p>
+						    	<p> {{ $partner->instantie->reason }} </p>
 						    </div>
 						    <div class="col-md-4">
 						    	<p> {{ $partner->instantie->contactpersoon }} </p>

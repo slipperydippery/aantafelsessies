@@ -26,6 +26,8 @@ Vue.component('partner-cluster', require('./components/PartnerCluster.vue'));
 Vue.component('set-partner', require('./components/SetPartner.vue'));
 Vue.component('create-group', require('./components/CreateGroup.vue'));
 
+Vue.component('set-inventarisatie-title', require('./components/SetInventarisatieTitle.vue'));
+
 const app = new Vue({
     el: '#app'
 });

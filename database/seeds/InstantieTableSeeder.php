@@ -15,12 +15,13 @@ class InstantieTableSeeder extends Seeder
     {
         $instantie_type_vastelasten = Instantietype::where('name', 'Vaste lasten')->first();
         $instantie_type_beginnendeschulden = Instantietype::where('name', 'Beginnende schulden')->first();
-        $instantie_type_beginnendeschulden_gemeente =   Instantietype::where('name', 'Beginnende schulden - gemeente')->first();
         $instantie_type_scholen_werkgevers = Instantietype::where('name', 'Scholen en werkgevers')->first();
+        $instantie_type_beginnendeschulden_gemeente =   Instantietype::where('name', 'Beginnende schulden - gemeente')->first();
 
         $instantie_zorgverzekeraar = new Instantie();
         $instantie_zorgverzekeraar->name = 'Zorgverzekeraar';
         $instantie_zorgverzekeraar->description = 'Zorgverzekeraar die de collectieve zorgverzekering voor minima in de gemeente aanbiedt.';
+        $instantie_zorgverzekeraar->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_zorgverzekeraar->contactpersoon = 'Bestaande contactpersoon voor de collectieve zorgverzekering voor minima.';
         $instantie_zorgverzekeraar->scanmodel_id = 1;
         $instantie_zorgverzekeraar->save();
@@ -29,6 +30,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_woningcorporatie = new Instantie();
         $instantie_woningcorporatie->name = 'Woningcorporatie';
         $instantie_woningcorporatie->description = 'Woningcorporatie.';
+        $instantie_woningcorporatie->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_woningcorporatie->contactpersoon = 'Beleidsmedewerker';
         $instantie_woningcorporatie->scanmodel_id = 1;
         $instantie_woningcorporatie->save();
@@ -37,6 +39,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_energieleveranciers = new Instantie();
         $instantie_energieleveranciers->name = 'Energieleveranciers';
         $instantie_energieleveranciers->description = 'Energieleveranciers.';
+        $instantie_energieleveranciers->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_energieleveranciers->contactpersoon = 'Directeur Customer Care.';
         $instantie_energieleveranciers->scanmodel_id = 1;
         $instantie_energieleveranciers->save();
@@ -45,6 +48,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_bank = new Instantie();
         $instantie_bank->name = 'Bank';
         $instantie_bank->description = 'Bank (hypotheekverstrekker)';
+        $instantie_bank->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_bank->contactpersoon = 'Beleidsmedewerker bijzonder beheer.';
         $instantie_bank->scanmodel_id = 1;
         $instantie_bank->save();
@@ -52,7 +56,8 @@ class InstantieTableSeeder extends Seeder
 
         $instantie_waterbedrijf = new Instantie();
         $instantie_waterbedrijf->name = 'Waterbedrijf';
-        $instantie_waterbedrijf->description = 'Waterbedrijf.';
+        $instantie_waterbedrijf->description = 'Het is verstandige om met deze partij samen te werken want...';
+        $instantie_waterbedrijf->reason = 'Waterbedrijf.';
         $instantie_waterbedrijf->contactpersoon = '';
         $instantie_waterbedrijf->scanmodel_id = 1;
         $instantie_waterbedrijf->save();
@@ -61,6 +66,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_incassobureau = new Instantie();
         $instantie_incassobureau->name = 'Incassobureau';
         $instantie_incassobureau->description = 'Incassobureau.';
+        $instantie_incassobureau->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_incassobureau->contactpersoon = '';
         $instantie_incassobureau->scanmodel_id = 1;
         $instantie_incassobureau->save();
@@ -69,6 +75,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next = new Instantie();
         $instantie_next->name = 'Optie';
         $instantie_next->description = 'Optie.';
+        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
@@ -77,6 +84,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next = new Instantie();
         $instantie_next->name = 'Optie';
         $instantie_next->description = 'Optie.';
+        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
@@ -85,6 +93,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next = new Instantie();
         $instantie_next->name = 'Optie';
         $instantie_next->description = 'Optie.';
+        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
@@ -93,6 +102,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next = new Instantie();
         $instantie_next->name = 'Optie';
         $instantie_next->description = 'Optie.';
+        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
@@ -101,6 +111,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next = new Instantie();
         $instantie_next->name = 'Optie';
         $instantie_next->description = 'Optie.';
+        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
@@ -109,6 +120,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next = new Instantie();
         $instantie_next->name = 'Optie';
         $instantie_next->description = 'Optie.';
+        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
@@ -117,6 +129,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next = new Instantie();
         $instantie_next->name = 'Optie';
         $instantie_next->description = 'Optie.';
+        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
@@ -125,6 +138,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next = new Instantie();
         $instantie_next->name = 'Optie';
         $instantie_next->description = 'Optie.';
+        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
@@ -133,6 +147,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next = new Instantie();
         $instantie_next->name = 'Optie';
         $instantie_next->description = 'Optie.';
+        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
@@ -141,6 +156,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next = new Instantie();
         $instantie_next->name = 'Optie';
         $instantie_next->description = 'Optie.';
+        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
@@ -149,6 +165,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next = new Instantie();
         $instantie_next->name = 'Optie';
         $instantie_next->description = 'Optie.';
+        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
@@ -157,6 +174,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next = new Instantie();
         $instantie_next->name = 'Optie';
         $instantie_next->description = 'Optie.';
+        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();

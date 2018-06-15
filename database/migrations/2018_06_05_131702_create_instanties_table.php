@@ -17,6 +17,7 @@ class CreateInstantiesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('description');
+            $table->text('reason');
             $table->string('contactpersoon');
             $table->integer('scanmodel_id')->unsigned();
             $table->foreign('scanmodel_id')->references('id')->on('scanmodels')->onDelete('cascade');
