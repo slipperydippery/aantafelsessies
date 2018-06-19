@@ -377,33 +377,6 @@ module.exports = {
 /* 1 */
 /***/ (function(module, exports) {
 
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
 /* globals __VUE_SSR_CONTEXT__ */
 
 // IMPORTANT: Do NOT use ES2015 features in this file.
@@ -510,6 +483,33 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
 /* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -542,8 +542,9 @@ Vue.component('example-component', __webpack_require__(40));
 Vue.component('partner-cluster', __webpack_require__(43));
 Vue.component('set-partner', __webpack_require__(46));
 Vue.component('create-group', __webpack_require__(49));
+Vue.component('set-invitations', __webpack_require__(52));
 
-Vue.component('set-inventarisatie-title', __webpack_require__(57));
+Vue.component('set-inventarisatie-title', __webpack_require__(55));
 
 var app = new Vue({
   el: '#app'
@@ -3180,7 +3181,7 @@ Popper.Defaults = Defaults;
 /* harmony default export */ __webpack_exports__["default"] = (Popper);
 //# sourceMappingURL=popper.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
 
 /***/ }),
 /* 6 */
@@ -14016,7 +14017,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(3);
-module.exports = __webpack_require__(52);
+module.exports = __webpack_require__(58);
 
 
 /***/ }),
@@ -31191,7 +31192,7 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(16)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(16)(module)))
 
 /***/ }),
 /* 16 */
@@ -47006,7 +47007,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(38).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(38).setImmediate))
 
 /***/ }),
 /* 38 */
@@ -47076,7 +47077,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 39 */
@@ -47269,14 +47270,14 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(8)))
 
 /***/ }),
 /* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(41)
 /* template */
@@ -47297,7 +47298,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/ExampleComponent.vue"
+Component.options.__file = "resources\\assets\\js\\components\\ExampleComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -47306,9 +47307,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7168fb6a", Component.options)
+    hotAPI.createRecord("data-v-0ca92eac", Component.options)
   } else {
-    hotAPI.reload("data-v-7168fb6a", Component.options)
+    hotAPI.reload("data-v-0ca92eac", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -47386,7 +47387,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7168fb6a", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-0ca92eac", module.exports)
   }
 }
 
@@ -47395,7 +47396,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(44)
 /* template */
@@ -47416,7 +47417,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/PartnerCluster.vue"
+Component.options.__file = "resources\\assets\\js\\components\\PartnerCluster.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -47425,9 +47426,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-00a0c909", Component.options)
+    hotAPI.createRecord("data-v-95c4f36e", Component.options)
   } else {
-    hotAPI.reload("data-v-00a0c909", Component.options)
+    hotAPI.reload("data-v-95c4f36e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -47444,6 +47445,9 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js__ = __webpack_require__(3);
+//
+//
+//
 //
 //
 //
@@ -47483,7 +47487,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getInstanties: function getInstanties() {
             var home = this;
             axios.get('/api/inventarisatie/' + this.inventarisatie_id + '/instantietype/' + this.instantietype_id + '/instantie').then(function (response) {
-                console.log(response.data);
                 response.data.forEach(function (instantie) {
                     home.partners.push(instantie);
                 });
@@ -47514,6 +47517,12 @@ var render = function() {
                 _vm._v(" " + _vm._s(partner.instantie.name) + " ")
               ]),
               _vm._v(" "),
+              _c("div", { staticClass: "card-description" }, [
+                _c("em", [
+                  _vm._v(" " + _vm._s(partner.instantie.description) + " ")
+                ])
+              ]),
+              _vm._v(" "),
               _c("set-partner", { attrs: { initPartner: partner } })
             ],
             1
@@ -47529,7 +47538,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-00a0c909", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-95c4f36e", module.exports)
   }
 }
 
@@ -47538,7 +47547,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(47)
 /* template */
@@ -47559,7 +47568,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/SetPartner.vue"
+Component.options.__file = "resources\\assets\\js\\components\\SetPartner.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -47568,9 +47577,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-f4fb7f06", Component.options)
+    hotAPI.createRecord("data-v-566f9dbd", Component.options)
   } else {
-    hotAPI.reload("data-v-f4fb7f06", Component.options)
+    hotAPI.reload("data-v-566f9dbd", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -47685,7 +47694,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.partner.collaboration = value;
             var home = this;
             axios.post('/api/partner/' + this.partner.id, {
-                collaboration: value
+                partner: this.partner
             }).then(function (response) {
                 home.partner = response.data;
             });
@@ -47900,7 +47909,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-f4fb7f06", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-566f9dbd", module.exports)
   }
 }
 
@@ -47909,7 +47918,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(50)
 /* template */
@@ -47930,7 +47939,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/CreateGroup.vue"
+Component.options.__file = "resources\\assets\\js\\components\\CreateGroup.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -47939,9 +47948,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-466a2608", Component.options)
+    hotAPI.createRecord("data-v-298937bc", Component.options)
   } else {
-    hotAPI.reload("data-v-466a2608", Component.options)
+    hotAPI.reload("data-v-298937bc", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48409,30 +48418,20 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-466a2608", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-298937bc", module.exports)
   }
 }
 
 /***/ }),
 /* 52 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(58)
+var __vue_script__ = __webpack_require__(53)
 /* template */
-var __vue_template__ = __webpack_require__(59)
+var __vue_template__ = __webpack_require__(54)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -48449,7 +48448,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/SetInventarisatieTitle.vue"
+Component.options.__file = "resources\\assets\\js\\components\\SetInvitations.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -48458,9 +48457,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3635752e", Component.options)
+    hotAPI.createRecord("data-v-329e4522", Component.options)
   } else {
-    hotAPI.reload("data-v-3635752e", Component.options)
+    hotAPI.reload("data-v-329e4522", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48471,7 +48470,354 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 58 */
+/* 53 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js__ = __webpack_require__(3);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+       props: ['inventarisatie_id'],
+
+       data: function data() {
+              return {
+                     'instantietypes': []
+              };
+       },
+       mounted: function mounted() {
+              this.getInstantietypes();
+       },
+
+
+       computed: {
+              noneSelected: function noneSelected() {
+                     var noneselected = true;
+                     this.instantietypes.forEach(function (instantietype) {
+                            instantietype.partners.forEach(function (partner) {
+                                   if (partner.invitable) {
+                                          noneselected = false;
+                                   }
+                            });
+                     });
+                     return noneselected;
+              }
+       },
+
+       methods: {
+              thisClass: function thisClass(instantietype) {
+                     return 'instantietype-' + instantietype.id;
+              },
+              getInstantietypes: function getInstantietypes() {
+                     var home = this;
+                     axios.get('/api/instantietype').then(function (response) {
+                            var temp = response.data;
+                            temp.forEach(function (instantietype) {
+                                   instantietype.partners = [];
+                            });
+                            home.instantietypes = temp;
+                            home.instantietypes.forEach(function (instantietype) {
+                                   home.getInstanties(instantietype);
+                            });
+                     });
+              },
+              getInstanties: function getInstanties(thisinstantietype) {
+                     var home = this;
+                     axios.get('/api/inventarisatie/' + this.inventarisatie_id + '/instantietype/' + thisinstantietype.id + '/instantie').then(function (response) {
+                            thisinstantietype.partners = [];
+                            response.data.forEach(function (instantie) {
+                                   thisinstantietype.partners.push(instantie);
+                            });
+                     });
+              },
+              toggleInvitable: function toggleInvitable(thispartner) {
+                     thispartner.invitable = !thispartner.invitable;
+                     axios.post('/api/partner/' + thispartner.id, {
+                            partner: thispartner
+                     });
+              }
+       }
+});
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", {}, [
+    _c(
+      "div",
+      { staticClass: "row row__titlerow d-flex flex-row align-items-stretch" },
+      _vm._l(_vm.instantietypes, function(instantietype) {
+        return _c(
+          "div",
+          {
+            staticClass: "col-md-3 title borderless ",
+            class: _vm.thisClass(instantietype)
+          },
+          [_vm._v("\n\t\t\t" + _vm._s(instantietype.name) + "\n\t\t")]
+        )
+      })
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row row__tablerow" },
+      _vm._l(_vm.instantietypes, function(instantietype) {
+        return _c(
+          "div",
+          {
+            staticClass: "col-md-3 row__tablerow--tablecolumn",
+            class: _vm.thisClass(instantietype)
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "row " },
+              _vm._l(instantietype.partners, function(partner) {
+                return partner.collaboration != "maeby"
+                  ? _c("div", { staticClass: "col-sm-12" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "card--partner card--partner__small clickable",
+                          class: [
+                            { active: partner.collaboration == "no" },
+                            _vm.thisClass(instantietype),
+                            { selected: partner.invitable }
+                          ],
+                          on: {
+                            click: function($event) {
+                              _vm.toggleInvitable(partner)
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t" +
+                              _vm._s(partner.instantie.name) +
+                              " \n\t\t\t\t\t\t\t"
+                          ),
+                          partner.collaboration == "yes"
+                            ? _c("span", { staticClass: "collaboratechek" }, [
+                                _c("i", { staticClass: "material-icons" }, [
+                                  _vm._v(" check ")
+                                ])
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          partner.collaboration == "no"
+                            ? _c("span", { staticClass: "collaboratechek" }, [
+                                _c("i", { staticClass: "material-icons" }, [
+                                  _vm._v(" close ")
+                                ])
+                              ])
+                            : _vm._e()
+                        ]
+                      )
+                    ])
+                  : _vm._e()
+              })
+            )
+          ]
+        )
+      })
+    ),
+    _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _vm.noneSelected
+          ? _c("div", { staticClass: "col-sm-12" }, [
+              _vm._v(
+                "U kunt nu een selectie maken van de partijen met wie u een gesprekssessie wilt houden. Doe dit door hier boven meerdere partijen aan te klikken."
+              )
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm._l(_vm.instantietypes, function(instantietype) {
+          return _vm._l(instantietype.partners, function(partner) {
+            return partner.invitable == true
+              ? _c("div", { staticClass: "col-sm-2" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "card card--partner clickable",
+                      class: [_vm.thisClass(instantietype)],
+                      on: {
+                        click: function($event) {
+                          _vm.toggleInvitable(partner)
+                        }
+                      }
+                    },
+                    [
+                      _vm._m(1, true),
+                      _vm._v(" "),
+                      _c("img", { attrs: { src: "/img/user.svg", alt: "" } }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "card-footer" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(partner.instantie.name) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ])
+                    ]
+                  )
+                ])
+              : _vm._e()
+          })
+        })
+      ],
+      2
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row section__panel--devision" }, [
+      _c("div", { staticClass: "col-sm-12" }, [
+        _c("h5", [_vm._v("Mijn samenstelling")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "card-closeicon" }, [
+      _c("i", { staticClass: "material-icons" }, [_vm._v(" close ")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-329e4522", module.exports)
+  }
+}
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(56)
+/* template */
+var __vue_template__ = __webpack_require__(57)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\SetInventarisatieTitle.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-171e7aae", Component.options)
+  } else {
+    hotAPI.reload("data-v-171e7aae", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 56 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48512,17 +48858,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 59 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "section__prepanel" }, [
-    _vm._v("\n\tInventarisatie: " + _vm._s(_vm.inventarisatie.title) + " "),
-    _c("i", { staticClass: "material-icons" }, [_vm._v(" edit ")])
-  ])
+  return false
+    ? _c("div", { staticClass: "section__prepanel" }, [
+        _vm._v("\n\tInventarisatie: " + _vm._s(_vm.inventarisatie.title) + " "),
+        _c("i", { staticClass: "material-icons" }, [_vm._v(" edit ")])
+      ])
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -48530,9 +48878,15 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-3635752e", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-171e7aae", module.exports)
   }
 }
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

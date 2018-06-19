@@ -3,10 +3,10 @@
         <a class="navbar-brand mr-4" href="{{ url('/') }}">
             @if(Request::is('/'))
                     <img src="/img/logo.svg" width="30" height="30" class="d-inline-block align-top mr-1" alt="Logo">
-                    Aantafelsessies
+                    Voorkom schulden samen
             @else
                     <img src="/img/logo.svg" width="30" height="30" class="d-inline-block align-top mr-1" alt="Logo">
-                    Aantafelsessies
+                    Voorkom schulden samen
             @endif
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

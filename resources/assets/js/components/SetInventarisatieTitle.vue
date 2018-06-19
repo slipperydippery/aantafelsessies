@@ -1,5 +1,5 @@
 <template>
-	<div class="section__prepanel">
+	<div class="section__prepanel" v-if="false">
 		Inventarisatie: {{ inventarisatie.title }} <i class="material-icons"> edit </i>
 	</div>
 </template>

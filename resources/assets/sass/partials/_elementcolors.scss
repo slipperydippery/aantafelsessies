@@ -1,0 +1,66 @@
+.instantietype-1.active, .instantietype-1 .card-footer {
+	background: $instantietype-1;
+	-widthbo2px: none 0;
+	color: white;
+}
+.instantietype-1 {
+	background: none;
+	border: 2px solid $instantietype-1;
+	color: $instantietype-1;
+}
+.instantietype-1.title {
+	background: rgba($instantietype-1, 0.08);
+}
+
+.instantietype-2.active, .instantietype-2 .card-footer {
+	background: $instantietype-2;
+	border-width: 2px 0;
+	color: white;
+}
+.instantietype-2 {
+	background: none;
+	border: 2px solid $instantietype-2;
+	color: $instantietype-2;
+}
+.instantietype-2.title {
+	background: rgba($instantietype-2, 0.08);
+}
+
+.instantietype-3.active, .instantietype-3 .card-footer {
+	background: $instantietype-3;
+	border-width: 2px 0;
+	color: white;
+}
+.instantietype-3 {
+	background: none;
+	border: 2px solid $instantietype-3;
+	color: $instantietype-3;
+}
+.instantietype-3.title {
+	background: rgba($instantietype-3, 0.08);
+}
+
+.instantietype-4.active, .instantietype-4 .card-footer {
+	background: $instantietype-4;
+	border-width: 2px 0;
+	color: white;
+}
+.instantietype-4 {
+	background: none;
+	border: 2px solid $instantietype-4;
+	color: $instantietype-4;
+}
+.instantietype-4.title {
+	background: rgba($instantietype-4, 0.08);
+}
+
+.selected.active, .selected .card-footer {
+	background: $gray-300;
+	border-width: 2px 0;
+	color: white;
+}
+.selected {
+	background: none;
+	border: 2px solid $gray-300;
+	color: $gray-300;
+}

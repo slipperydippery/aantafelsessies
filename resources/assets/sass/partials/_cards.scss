@@ -1,5 +1,5 @@
 .row__cards {
-	margin-bottom: 2rem;
+	// margin-bottom: 2rem;
 	.card {
 		margin-top: 1rem;
 	}
@@ -15,13 +15,30 @@
     img {
     	margin: 0 auto;
     	display: block;
+    	max-width: 100%;
+    	height: auto;
+    }
+    .card-description {
+    	text-align: right;
+    	height: 4rem;
+    	font-size: .9rem;
     }
     .card-footer {
+		font-weight: 800;
     	a {
     		color: $primary;
-    		font-weight: 800;
     	}
     }
+    .card-closeicon {
+    	position: absolute;
+    	top: 0;
+    	right: 0;
+    	display: none;
+    	transform: all .5s;
+    }
+}
+.card:hover .card-closeicon {
+	display: inline-block;
 }
 
 .card__dashboard {
@@ -39,5 +56,33 @@
 		text-align: center;
 		background: $primary-muted;
 		color: $primary;
+	}
+}
+
+.card--partner {
+	display: block;
+	border-top-left-radius: 3rem;
+	margin-bottom: 1rem;
+	img {
+		padding: 1rem 0;
+	}
+	.card-footer {
+		text-align: center;
+		padding: .4rem .2rem;
+		font-size: .8rem;
+	}
+}
+
+.card--partner__small {
+	border-top-left-radius: 0rem;
+	padding: .2rem .4rem;
+	margin: .2rem 0;
+	font-weight: 800;
+	border: none !important;
+	.collaboratechek {
+		float: right;
+		material-icons {
+			
+		}
 	}
 }

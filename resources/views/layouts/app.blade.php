@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Aan Tafel Sessies</title>
+    <title>Voorkom schulden samen</title>
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
 
     <!-- Styles -->

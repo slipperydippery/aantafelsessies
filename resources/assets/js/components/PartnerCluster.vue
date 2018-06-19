@@ -4,6 +4,9 @@
             <div class="card ">
                 <div class="card-body">
                     <h5 class="card-title"> {{ partner.instantie.name }} </h5>
+                    <div class="card-description">
+                        <em> {{ partner.instantie.description }} </em>
+                    </div>
                     <set-partner
 		            	:initPartner = partner
 		            >
@@ -42,7 +45,6 @@
         		var home = this;
         		axios.get('/api/inventarisatie/' + this.inventarisatie_id + '/instantietype/' + this.instantietype_id + '/instantie')
 	        		.then(function(response){
-	        			console.log(response.data);
 	        			response.data.forEach(function(instantie){
 	        				home.partners.push(instantie);
 	        			})

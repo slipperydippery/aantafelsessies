@@ -20,6 +20,7 @@ class CreatePartnersTable extends Migration
             $table->integer('inventarisatie_id')->unsigned();
             $table->foreign('inventarisatie_id')->references('id')->on('inventarisaties')->onDelete('cascade');
             $table->string('collaboration')->nullable();
+            $table->boolean('invitable')->default(false);
             $table->timestamps();
         });
     }

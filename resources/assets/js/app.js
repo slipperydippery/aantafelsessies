@@ -25,6 +25,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 Vue.component('partner-cluster', require('./components/PartnerCluster.vue'));
 Vue.component('set-partner', require('./components/SetPartner.vue'));
 Vue.component('create-group', require('./components/CreateGroup.vue'));
+Vue.component('set-invitations', require('./components/SetInvitations.vue'));
 
 Vue.component('set-inventarisatie-title', require('./components/SetInventarisatieTitle.vue'));
 

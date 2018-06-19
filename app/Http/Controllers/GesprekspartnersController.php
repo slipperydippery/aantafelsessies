@@ -27,6 +27,7 @@ class GesprekspartnersController extends Controller
     		return redirect()->route('welcome');
     	}
 
+        $instantietypes = Instantietype::get();
     	$inventarisatie = Inventarisatie::find(session('inventarisatie'));
 
 		Partner::guaranteeRelationship($inventarisatie, $instantietype);
@@ -35,7 +36,7 @@ class GesprekspartnersController extends Controller
         $previous = Instantietype::where('id', '<', $instantietype->id)->orderBy('id', 'desc')->first();
         $next = Instantietype::where('id', '>', $instantietype->id)->first();
 
-        return view('gesprekspartners.show', compact('instantietype', 'previous', 'next', 'inventarisatie'));
+        return view('gesprekspartners.show', compact('instantietype', 'previous', 'next', 'inventarisatie', 'instantietypes'));
     }
 
     public function results()
@@ -44,10 +45,11 @@ class GesprekspartnersController extends Controller
             return redirect()->route('welcome');
         }
 
-        $inventarisatie = Inventarisatie::find(session('inventarisatie'));
-
+	    $inventarisatie = Inventarisatie::find(session('inventarisatie'));
         $partners = $inventarisatie->partners;
+        
+        $instantietypes = Instantietype::get();
 
-    	return view('gesprekspartners.results', compact('partners'));
+    	return view('gesprekspartners.results', compact('inventarisatie', 'partners', 'instantietypes'));
     }    
 }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Partner;
+use App\Instantietype;
 use Illuminate\Http\Request;
 
-class ApiPartnerController extends Controller
+class ApiInstantietypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class ApiPartnerController extends Controller
      */
     public function index()
     {
-        //
+        return Instantietype::get();
+
     }
 
     /**
@@ -35,6 +36,7 @@ class ApiPartnerController extends Controller
      */
     public function store(Request $request)
     {
+        //
     }
 
     /**
@@ -66,12 +68,9 @@ class ApiPartnerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Partner $partner)
+    public function update(Request $request, $id)
     {
-        $partner->collaboration = $request['partner']['collaboration'];
-        $partner->invitable = $request['partner']['invitable'];
-        $partner->save();
-        return $partner;
+        //
     }
 
     /**

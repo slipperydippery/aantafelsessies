@@ -1,11 +1,24 @@
+.nav-tabs__prepanel .nav-link {
+    border: 1px solid #00000015 !important;
+    background: #00000002;
+}
+
 .section__prepanel {
 	// background: $themecolor-2-muted;
 	// color: white;
 	display: inline-block;
-	background: rgba(203, 83, 147, 0.09019607843137255);
+	background: rgba(203, 83, 147, 0.09);
 	color: $themecolor-2-muted;
 	border: 1px solid rgba(132, 25, 81, 0.17);
 	padding: .5rem;
+}
+
+.nav-tabs__prepanel {
+	.nav-link.active {
+		background: $primary-muted;
+		border-bottom: 1px solid $primary-muted !important;
+		font-weight: 800;
+	}
 }
 
 .section__panel {
@@ -13,7 +26,11 @@
 	padding: 1rem;	
 
 	.row {
-		padding-top: 1rem;
+		padding-top: .6rem;
+	}
+	.row.section__panel--devision {
+	    border-top: 1px solid $primary;
+	    margin-top: 2rem;
 	}
 
 	.section__panel--title {
@@ -26,6 +43,10 @@
 		width: 100%;
 		background: $primary-muted;
 	}
+}
+
+.section__panel__toptabs {
+	border-top: 0;
 }
 
 .section__panel__table {

@@ -29,6 +29,8 @@ Route::get('/gesprekspartners/{instantietype}', 'GesprekspartnersController@show
 Route::post('/api/partner/{partner}', 'ApiPartnerController@update');
 Route::get('/api/inventarisatie/{inventarisatie}/instantietype/{instantietype}/instantie', 'ApiInventarisatieInstantietypeInstantieController@index');
 
+Route::get('/api/instantietype', 'ApiInstantietypeController@index');
+
 Route::resource('instantietype', 'InstantietypeController');
 Route::resource('group', 'GroupController');
 

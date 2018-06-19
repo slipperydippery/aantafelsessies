@@ -99,7 +99,7 @@
         		this.partner.collaboration = value;
         		var home = this;
         		axios.post('/api/partner/' + this.partner.id, {
-        			collaboration: value
+        			partner: this.partner
         		})
         		.then(function(response){
         			home.partner = response.data;

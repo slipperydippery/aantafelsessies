@@ -24,3 +24,22 @@ span.selectable--passive:hover {
 .clickable {
 	cursor: pointer;
 }
+
+.invisible-text {
+	opacity: 0;
+}
+
+.row.row__prevnext {
+	margin-top: 2rem;
+}
+
+.borderless {
+	border-width: 2px 0 2px 0 !important;
+}
+
+.title {
+	font-weight: 800;
+	border-width: 0 0 0 3px !important;
+	text-align: left;
+	padding: 0.5rem 0 .5rem 1rem;
+}

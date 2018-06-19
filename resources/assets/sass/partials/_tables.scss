@@ -1,0 +1,11 @@
+.row__titlerow {
+	// background: blue;
+}
+
+.row__tablerow {
+	margin-top: 0;
+	padding-top: 0 !important;
+	.row__tablerow--tablecolumn {
+		border-width: 0 0 0 3px;
+	}
+}
