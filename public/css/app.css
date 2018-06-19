@@ -11016,19 +11016,19 @@ input[type=range]:focus::-ms-fill-upper {
 
 .instantietype-1.active,
 .instantietype-1 .card-footer {
-  background: #7bd360;
+  background: #3ab5dd;
   -widthbo2px: none 0;
   color: white;
 }
 
 .instantietype-1 {
   background: none;
-  border: 2px solid #7bd360;
-  color: #7bd360;
+  border: 2px solid #3ab5dd;
+  color: #3ab5dd;
 }
 
 .instantietype-1.title {
-  background: rgba(123, 211, 96, 0.08);
+  background: rgba(58, 181, 221, 0.08);
 }
 
 .instantietype-2.active,
