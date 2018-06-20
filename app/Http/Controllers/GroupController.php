@@ -51,7 +51,7 @@ class GroupController extends Controller
      */
     public function show(Group $group)
     {
-        //
+        return view('group.show', compact('group'));
     }
 
     /**
@@ -86,5 +86,19 @@ class GroupController extends Controller
     public function destroy(Group $group)
     {
         //
+    }
+
+    public function created(Group $group)
+    {
+        return view('group.created', compact('group'));
+    }
+
+    public function createscan(Group $group, $code)
+    {
+        if ($code == $group->code) {
+            $instanties = Instantie::get();
+            return view('group.createscan', compact('group', 'instanties'));
+        }
+        return view('welcome');
     }
 }

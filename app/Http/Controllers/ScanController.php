@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 class ScanController extends Controller
 {
     /**
+     * Enforce middleware.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+        $this->middleware('owner', ['except' => ['index', 'create', 'store']]);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -46,7 +55,7 @@ class ScanController extends Controller
      */
     public function show(Scan $scan)
     {
-        //
+        return view('scan.show', compact('scan'));
     }
 
     /**

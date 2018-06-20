@@ -543,6 +543,7 @@ Vue.component('partner-cluster', __webpack_require__(43));
 Vue.component('set-partner', __webpack_require__(46));
 Vue.component('create-group', __webpack_require__(49));
 Vue.component('set-invitations', __webpack_require__(52));
+Vue.component('create-groupscan', __webpack_require__(63));
 
 Vue.component('set-inventarisatie-title', __webpack_require__(55));
 
@@ -48697,13 +48698,7 @@ var render = function() {
       "div",
       { staticClass: "row" },
       [
-        _vm.noneSelected
-          ? _c("div", { staticClass: "col-sm-12" }, [
-              _vm._v(
-                "U kunt nu een selectie maken van de partijen met wie u een gesprekssessie wilt houden. Doe dit door hier boven meerdere partijen aan te klikken."
-              )
-            ])
-          : _vm._e(),
+        _vm.noneSelected ? _c("div", { staticClass: "col-sm-12" }) : _vm._e(),
         _vm._v(" "),
         _vm._l(_vm.instantietypes, function(instantietype) {
           return _vm._l(instantietype.partners, function(partner) {
@@ -48902,6 +48897,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "section__prepanel" }, [
+    _c("span", [_vm._v("Selectiehulp:")]),
+    _vm._v(" "),
     !_vm.editable
       ? _c(
           "span",
@@ -48913,7 +48910,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v(_vm._s(_vm.inventarisatie.title) + " ")]
+          [_c("strong", [_vm._v(_vm._s(_vm.inventarisatie.title))])]
         )
       : _c("input", {
           directives: [
@@ -49090,6 +49087,222 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(64)
+/* template */
+var __vue_template__ = __webpack_require__(65)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\CreateGroupscan.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3f7e45b9", Component.options)
+  } else {
+    hotAPI.reload("data-v-3f7e45b9", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 64 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['instanties', 'group'],
+
+    data: function data() {
+        return {
+            instantie: {},
+            errors: []
+        };
+    },
+    mounted: function mounted() {},
+    ready: function ready() {},
+
+
+    computed: {},
+
+    methods: {
+        saveScan: function saveScan() {
+            var home = this;
+            axios.post('/api/group/' + this.group.id + '/storescan', {
+                title: this.group.title,
+                instantie_id: this.instantie.id,
+                scanmodel_id: 1
+            }).then(function (response) {
+                window.location.href = '/home';
+            }).catch(function (error) {
+                home.errors = error.response.data.errors;
+            });
+        }
+
+    }
+});
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "scan--create" }, [
+    _c(
+      "div",
+      { staticClass: "form-group" },
+      [
+        _c("label", { attrs: { for: "" } }, [
+          _vm._v(
+            "Wat voor soort organisatie vertegenwoordig jij tijdens deze scan?"
+          )
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _vm._l(_vm.errors.instantie_id, function(error) {
+          return _vm.errors.instantie_id
+            ? _c("div", { staticClass: "alert alert-danger" }, [
+                _c("strong", [_vm._v("Incompleet")]),
+                _vm._v(" " + _vm._s(error) + "\n        ")
+              ])
+            : _vm._e()
+        }),
+        _vm._v(" "),
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.instantie,
+                expression: "instantie"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { placeholder: "kies een instantie" },
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.instantie = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              }
+            }
+          },
+          _vm._l(_vm.instanties, function(instantie) {
+            return _c("option", { domProps: { value: instantie } }, [
+              _vm._v(
+                " " +
+                  _vm._s(instantie.title) +
+                  " --- " +
+                  _vm._s(instantie.description) +
+                  " "
+              )
+            ])
+          })
+        )
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "row resultstable--row" }, [
+      _c("div", { staticClass: "col-sm-12" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary btn--fullwidth",
+            on: {
+              click: function($event) {
+                _vm.saveScan()
+              }
+            }
+          },
+          [_vm._v("Sla scan op")]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-3f7e45b9", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

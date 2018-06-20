@@ -36,7 +36,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-12" v-if="noneSelected">U kunt nu een selectie maken van de partijen met wie u een gesprekssessie wilt houden. Doe dit door hier boven meerdere partijen aan te klikken.</div>
+			<div class="col-sm-12" v-if="noneSelected"></div>
 			<template v-for="instantietype in instantietypes">
 				<div class="col-sm-2" v-for="partner in instantietype.partners" v-if="partner.invitable == true">
 					<div class="card card--partner clickable" @click="toggleInvitable(partner)"

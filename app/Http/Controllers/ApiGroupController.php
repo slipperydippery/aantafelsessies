@@ -59,6 +59,19 @@ class ApiGroupController extends Controller
         return $group;
     }
 
+    public function storescan(Group $group, Request $request)
+    {
+        request()->validate([
+            'instantie_id' => 'required|integer',
+        ]);
+
+        $user = Auth::user();
+        $scan = Scan::registerWithGroup($user, $group, $request->all());
+        $group->scans()->save($scan);
+        
+        return $scan;
+    }
+
     /**
      * Display the specified resource.
      *

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => 'Dashboard'])
 
 @section('hintsmodal')
     <?php 
@@ -59,7 +59,9 @@
                     <h5 class="card-title">Mijn gesprekssessies</h5>
                     <p class="card-text">
                         <a href=" {{ route('vraag') }} ">Sessie 1</a><br>
-                        <a href="#">Sessie 2</a>
+                        @foreach ($user->scans as $scan)
+                            <a href=" {{ route('scan.show', $scan) }} ">{{ $scan->title }}</a><br>
+                        @endforeach
                     </p>
                 </div>
             </div>
@@ -91,7 +93,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Mijn groepen</h5>
                     @foreach ($user->groups as $group)
-                        <a href="#"> {{ $group->title }} </a>
+                        <a href=" {{ route('group.show', $group) }} "> {{ $group->title }} </a><br>
                     @endforeach
                 </div>
             </div>

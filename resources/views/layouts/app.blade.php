@@ -8,8 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Voorkom schulden samen</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
+    <title>Voorkom schulden samen @if (isset($title))
+        - {{ $title }}
+    @endif</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">

@@ -10518,7 +10518,7 @@ main {
 
 .page--title {
   margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 nav.navbar {
@@ -10814,12 +10814,27 @@ label {
   display: inline-block;
   background: rgba(203, 83, 147, 0.09);
   border: 1px solid rgba(132, 25, 81, 0.17);
-  padding: .5rem;
+  padding: .5rem .5rem .5rem 1rem;
 }
 
 .section__prepanel span,
 .section__prepanel i {
   color: #CB5393;
+}
+
+.section__prepanel i {
+  width: 0;
+  overflow: hidden;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.section__prepanel:hover i {
+  width: 1.5rem;
+}
+
+.section__prepanel + div {
+  margin-top: -2.6rem;
 }
 
 .nav-tabs__prepanel .nav-link.active {

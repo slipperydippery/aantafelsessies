@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => 'Bepaal je gesprekspartners: ' . $instantietype->name])
 
 @section('content')
 	@guest

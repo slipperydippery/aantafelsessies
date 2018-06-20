@@ -16,6 +16,21 @@ Route::view('/', 'welcome')->name('welcome');
 
 Auth::routes();
 
+// Create group
+Route::resource('group', 'GroupController');
+Route::post('/api/group', 'ApiGroupController@store');
+Route::post('/api/group/{group}/storescan', 'ApiGroupController@storescan');
+Route::get('/group/{group}/created', 'GroupController@created')->name('group.created');
+Route::get('/group/{group}/createscan/{code}', 'GroupController@createscan')->name('group.createscan')->middleware('auth');
+
+// Scan stuff
+Route::resource('scan', 'ScanController');
+Route::get('/scan/{scan}/kennismaken', 'ScanPagesController@kennismaken')->name('scan.kennismaken');
+Route::get('/scan/{scan}/regioincijfers', 'ScanPagesController@regioincijfers')->name('scan.regioincijfers');
+Route::get('/scan/{scan}/algemeenbeeld', 'ScanPagesController@algemeenbeeld')->name('scan.algemeenbeeld');
+Route::get('/scan/{scan}/algemeenbeeldresultaten', 'ScanPagesController@algemeenbeeldresultaten')->name('scan.algemeenbeeldresultaten');
+
+// Gesprekshulp Inventarisaties
 Route::get('/inventarisatie/', 'InventarisatieController@store')->name('inventarisatie.store');
 Route::get('/inventarisatie/{inventarisatie}', 'InventarisatieController@show')->name('inventarisatie.show');
 Route::get('/inventarisatie/{inventarisatie}/updateuser/', 'InventarisatieController@updateuser')->name('inventarisatie.updateuser');
@@ -33,12 +48,10 @@ Route::get('/api/inventarisatie/{inventarisatie}/instantietype/{instantietype}/i
 Route::get('/api/instantietype', 'ApiInstantietypeController@index');
 
 Route::resource('instantietype', 'InstantietypeController');
-Route::resource('group', 'GroupController');
 
-
+// Single Pages
 Route::get('/start', 'PagesController@start')->name('loggless.start');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/partners', 'PagesController@partners')->name('partners');
 Route::get('/vraag', 'PagesController@vraag')->name('vraag');
 
-Route::post('/api/group', 'ApiGroupController@store');

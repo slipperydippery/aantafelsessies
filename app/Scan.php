@@ -57,6 +57,19 @@ class Scan extends Model
     	return $this->hasMany(Measure::class);
     }
 
+    public static function registerWithGroup(User $user, Group $group, $attributes)
+    {
+        $scan = new Scan($attributes);
+        $scan->title = $group->title;
+        $user->scans()->save($scan);
+
+        $scan->save();
+
+        $scan->generateQuestions($scan);
+
+        return $scan;
+    }
+
     public static function register(User $user, $attributes)
     {
     	$scan = new Scan($attributes);
