@@ -30,7 +30,7 @@
 		        </a>
 		    </div>
 		    <div class="col-md-6">
-		        <a href=" {{ route('gesprekspartners.start') }} " title="">
+		        <a href=" # " title="">
 			        <div class="card card__dashboard">
 			            <div class="card-body">
 			                @guest
