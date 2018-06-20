@@ -4,11 +4,17 @@
 	@guest
 		<div class="alert alert-info container-fluid" role="alert">
 			<div class="container">
-				U bent niet ingelogd, <a href=" {{ route('login') }} ">log in</a> of <a href=" {{ route('register') }} ">maak een account</a> aan om deze resultaten meteen op te slaan.
+				Je bent niet ingelogd, <a href=" {{ route('login') }} ">log in</a> of <a href=" {{ route('register') }} ">maak een account</a> aan om deze resultaten meteen op te slaan.
 			 </div>
 		</div>
 	@endguest
 	<div class="container container--page">
+		@auth
+			<set-inventarisatie-title
+				:inventarisatie_id = {{ $inventarisatie->id }}
+			>
+			</set-inventarisatie-title>
+		@endauth
 		<div class="row">
 	        <div class="col-md-12">
 	            <div class="page--title">
@@ -21,10 +27,6 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<set-inventarisatie-title
-					:inventarisatie_id = {{ $inventarisatie->id }}
-				>
-				</set-inventarisatie-title>
 				<ul class="nav nav-tabs nav-tabs__prepanel">
 					@foreach ($instantietypes as $thisinstantietype)
 						<li class="nav-item">
@@ -38,7 +40,7 @@
 				<div class="section__panel section__panel__toptabs">
 					<div class="section__panel--title">
 						<h5>{{ $instantietype->description }} </h5>
-		                <span><em> Geef per partij aan of er op dit moment al een samenwerking bestaat.</span></em>
+		                <span><em> Geef per partij aan of er op dit moment al een samenwerking bestaat, een samenwerking niet van toepassing is, of dat er geen samenwerking.</span></em>
 					</div>
 
 					<partner-cluster

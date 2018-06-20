@@ -8,9 +8,11 @@
 	// color: white;
 	display: inline-block;
 	background: rgba(203, 83, 147, 0.09);
-	color: $themecolor-2-muted;
 	border: 1px solid rgba(132, 25, 81, 0.17);
 	padding: .5rem;
+	span, i  {
+		color: $themecolor-2-muted;
+	}
 }
 
 .nav-tabs__prepanel {

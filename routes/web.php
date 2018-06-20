@@ -22,6 +22,7 @@ Route::get('/inventarisatie/{inventarisatie}/updateuser/', 'InventarisatieContro
 Route::get('/inventarisatie/{inventarisatie}/destroy', 'InventarisatieController@destroy')->name('inventarisatie.destroy');
 Route::post('/inventarisatie/{inventarisatie}/update', 'InventarisatieController@update')->name('inventarisatie.update');
 Route::get('/api/inventarisatie/{inventarisatie}', 'ApiInventarisatieController@show');
+Route::post('/api/inventarisatie/{inventarisatie}', 'ApiInventarisatieController@update');
 
 Route::get('/gesprekspartners/start', 'GesprekspartnersController@start')->name('gesprekspartners.start');
 Route::get('/gesprekspartners/resultaten/', 'GesprekspartnersController@results')->name('gesprekspartners.results');

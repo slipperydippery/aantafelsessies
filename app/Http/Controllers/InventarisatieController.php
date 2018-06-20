@@ -108,6 +108,6 @@ class InventarisatieController extends Controller
         $inventarisatie->delete();
         session()->forget('inventarisatie');
 
-        return redirect()->back();
+        return redirect()->route('home');
     }
 }

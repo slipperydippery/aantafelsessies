@@ -47514,7 +47514,10 @@ var render = function() {
             { staticClass: "card-body" },
             [
               _c("h5", { staticClass: "card-title" }, [
-                _vm._v(" " + _vm._s(partner.instantie.name) + " ")
+                _vm._v(" " + _vm._s(partner.instantie.name) + " "),
+                _c("i", { staticClass: "material-icons clickable muted" }, [
+                  _vm._v(" info ")
+                ])
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "card-description" }, [
@@ -47675,13 +47678,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         selecttext: function selecttext() {
             switch (this.partner.collaboration) {
                 case 'yes':
-                    return 'een samenwerking bestaat';
+                    return 'er is een samenwerking';
                     break;
                 case 'maeby':
-                    return 'niet van toepassing';
+                    return 'samenwerking niet van toepassing';
                     break;
                 case 'no':
-                    return 'wij werken niet samen';
+                    return 'er is nog geen samenwerking';
                     break;
                 default:
                     return '';
@@ -48829,6 +48832,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -48837,7 +48865,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     data: function data() {
         return {
-            'inventarisatie': {}
+            'inventarisatie': {},
+            'editable': false
         };
     },
     mounted: function mounted() {
@@ -48853,6 +48882,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.get('/api/inventarisatie/' + this.inventarisatie_id).then(function (response) {
                 home.inventarisatie = response.data;
             });
+        },
+        saveTitle: function saveTitle() {
+            var home = this;
+            axios.post('/api/inventarisatie/' + home.inventarisatie.id, {
+                'inventarisatie': home.inventarisatie
+            });
+            this.editable = false;
         }
     }
 });
@@ -48865,14 +48901,181 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return false
-    ? _c("div", { staticClass: "section__prepanel" }, [
-        _vm._v("\n\tInventarisatie: " + _vm._s(_vm.inventarisatie.title) + " "),
-        _c("i", { staticClass: "material-icons" }, [_vm._v(" edit ")])
-      ])
-    : _vm._e()
+  return _c("div", { staticClass: "section__prepanel" }, [
+    !_vm.editable
+      ? _c(
+          "span",
+          {
+            staticClass: "clickable",
+            on: {
+              click: function($event) {
+                _vm.editable = true
+              }
+            }
+          },
+          [_vm._v(_vm._s(_vm.inventarisatie.title) + " ")]
+        )
+      : _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.inventarisatie.title,
+              expression: "inventarisatie.title"
+            }
+          ],
+          attrs: { type: "text" },
+          domProps: { value: _vm.inventarisatie.title },
+          on: {
+            keyup: function($event) {
+              if (
+                !("button" in $event) &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              _vm.saveTitle()
+            },
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.inventarisatie, "title", $event.target.value)
+            }
+          }
+        }),
+    _vm._v(" "),
+    !_vm.editable
+      ? _c(
+          "i",
+          {
+            staticClass: "material-icons clickable",
+            on: {
+              click: function($event) {
+                _vm.editable = true
+              }
+            }
+          },
+          [_vm._v(" edit ")]
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.editable
+      ? _c(
+          "i",
+          {
+            staticClass: "material-icons clickable",
+            on: {
+              click: function($event) {
+                _vm.saveTitle()
+              }
+            }
+          },
+          [_vm._v(" save ")]
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    !_vm.editable
+      ? _c(
+          "i",
+          {
+            staticClass: "material-icons clickable",
+            attrs: { "data-toggle": "modal", "data-target": "#exampleModal" }
+          },
+          [_vm._v(" close ")]
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "exampleModal",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "exampleModalLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "modal-dialog", attrs: { role: "document" } },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _vm._m(1),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-footer" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-secondary",
+                    attrs: { type: "button", "data-dismiss": "modal" }
+                  },
+                  [_vm._v("Annuleer")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-danger",
+                    attrs: {
+                      href:
+                        "/inventarisatie/" + _vm.inventarisatie_id + "/destroy"
+                    }
+                  },
+                  [_vm._v("Verwijder")]
+                )
+              ])
+            ])
+          ]
+        )
+      ]
+    )
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "h5",
+        { staticClass: "modal-title", attrs: { id: "exampleModalLabel" } },
+        [_vm._v("Weet je het zeker?")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-body" }, [
+      _c("p", [
+        _vm._v(
+          "Weet je zeker dat je deze selectie gesprekspartners wilt verwijderen?"
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

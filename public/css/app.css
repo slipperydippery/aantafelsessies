@@ -10448,6 +10448,10 @@ h5 {
   font-weight: 800;
 }
 
+.muted {
+  color: rgba(237, 101, 95, 0.5);
+}
+
 /* Rules for sizing the icon. */
 
 .material-icons.md-18 {
@@ -10558,6 +10562,23 @@ nav.navbar ul.navbar-nav {
   position: absolute;
   top: 20px;
   width: 200px;
+}
+
+.nav-tabs__login {
+  margin-top: 4rem;
+  border-bottom: none;
+}
+
+.nav-tabs__login .nav-item {
+  z-index: 10;
+  margin-left: -1px;
+}
+
+.nav-tabs__login .nav-link.active,
+.nav-tabs__login .nav-link:hover {
+  background: #FDF4F3;
+  border: 1px solid #ED655F;
+  border-bottom: 1px solid #FDF4F3;
 }
 
 span.selectable {
@@ -10695,6 +10716,10 @@ label {
   overflow: hidden;
 }
 
+.card .card-header {
+  background: #FDF4F3;
+}
+
 .card .card-title {
   text-align: right;
 }
@@ -10743,7 +10768,7 @@ label {
 }
 
 .card__login {
-  margin-top: 4rem;
+  border-top-right-radius: 0;
 }
 
 .card__login .card-header {
@@ -10788,9 +10813,13 @@ label {
 .section__prepanel {
   display: inline-block;
   background: rgba(203, 83, 147, 0.09);
-  color: #CB5393;
   border: 1px solid rgba(132, 25, 81, 0.17);
   padding: .5rem;
+}
+
+.section__prepanel span,
+.section__prepanel i {
+  color: #CB5393;
 }
 
 .nav-tabs__prepanel .nav-link.active {

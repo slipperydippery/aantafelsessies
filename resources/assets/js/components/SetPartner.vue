@@ -80,13 +80,13 @@
         	selecttext() {
         		switch(this.partner.collaboration) {
         		    case 'yes':
-        		        return 'een samenwerking bestaat'
+        		        return 'er is een samenwerking'
         		        break;
         		    case 'maeby':
-        		        return 'niet van toepassing'
+        		        return 'samenwerking niet van toepassing'
         		        break;
         		    case 'no':
-        		        return 'wij werken niet samen'
+        		        return 'er is nog geen samenwerking'
         		        break;
         		    default:
         		        return ''

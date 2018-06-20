@@ -39,7 +39,7 @@
         <div class="col-md-4">
             <div class="card card__dashboard">
                 <div class="card-body">
-                    <h5 class="card-title">Inventarisaties</h5>
+                    <h5 class="card-title">Selectiehulp gesprekspartners</h5>
                     <ul>
                         @foreach ($user->inventarisaties as $inventarisatie)
                             <li>
@@ -49,14 +49,14 @@
                     </ul>
                 </div>
                 <div class="card-footer">
-                    <a href=" {{ route('inventarisatie.store') }} "><i class="material-icons"> add </i> nieuwe inventarisatie</a>
+                    <a href=" {{ route('inventarisatie.store') }} "><i class="material-icons"> add </i> nieuwe selectie gesprekspartners</a>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card card__dashboard">
                 <div class="card-body">
-                    <h5 class="card-title">Mijn sessies</h5>
+                    <h5 class="card-title">Mijn gesprekssessies</h5>
                     <p class="card-text">
                         <a href=" {{ route('vraag') }} ">Sessie 1</a><br>
                         <a href="#">Sessie 2</a>
@@ -93,9 +93,6 @@
                     @foreach ($user->groups as $group)
                         <a href="#"> {{ $group->title }} </a>
                     @endforeach
-                </div>
-                <div class="card-footer">
-                    <a href="#"><i class="material-icons"> add </i> nieuwe group</a>
                 </div>
             </div>
         </div>

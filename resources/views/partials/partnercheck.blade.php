@@ -9,7 +9,7 @@
 
 		<div class="alert alert-info container-fluid" role="alert">
 			<div class="container">
-				U heeft een inventarisatie die nog niet is opgeslagen. U kunt deze nu <a href=" {{ route('inventarisatie.updateuser', session('inventarisatie')) }} ">opslaan</a> of <a href=" {{ route('inventarisatie.destroy', session('inventarisatie')) }} ">verwijderen</a>
+				U heeft de resultaten van de selectiehulp gesprekspartners nog niet opgeslagen. U kunt deze nu <a href=" {{ route('inventarisatie.updateuser', session('inventarisatie')) }} ">opslaan</a> of <a href=" {{ route('inventarisatie.destroy', session('inventarisatie')) }} ">verwijderen</a>
 			 </div>
 		</div>
 
