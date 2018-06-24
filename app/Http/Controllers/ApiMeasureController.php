@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use App\Scan;
-use App\Group;
+use App\Measure;
 use Illuminate\Http\Request;
 
-class ApiGroupController extends Controller
+class ApiMeasureController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,39 +35,7 @@ class ApiGroupController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate([
-            'title' => 'required|min:3|max:255',
-            'instantie_id' => 'required|integer',
-        ]);
-
-        $user = Auth::user();
-        $scan = Scan::register($user, $request->all());
-
-        $code = str_random(10);
-        $group = new Group([
-            'title' => $request->title,
-            'code' => $code,
-            'user_id' => $user->id,
-            'scan_id' => $scan->id,
-            'scanmodel_id' => $scan->scanmodel->id,
-        ]);
-        $group->save();
-        $group->scans()->save($scan);
-
-        return $group;
-    }
-
-    public function storescan(Group $group, Request $request)
-    {
-        request()->validate([
-            'instantie_id' => 'required|integer',
-        ]);
-
-        $user = Auth::user();
-        $scan = Scan::registerWithGroup($user, $group, $request->all());
-        $group->scans()->save($scan);
-        
-        return $scan;
+        //
     }
 
     /**
@@ -78,10 +44,9 @@ class ApiGroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Group $group)
+    public function show(Measure $measure)
     {
-        return Group::with('scans.user', 'scans.answers', 'scans.instantie')->where('id', $group->id)->get()->first();
-        // return Group::with('scans.user', 'scans.answers', 'scans.instantie', 'owner.measures.users')->where('id', $group->id)->get()->first();
+        return $measure;
     }
 
     /**

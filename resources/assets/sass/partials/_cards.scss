@@ -27,21 +27,24 @@
     	font-size: .9rem;
     }
     .card-footer {
-		font-weight: 800;
     	a {
     		color: $primary;
     	}
     }
+    .card-icons{
+    	float: right;
+    	height: 25px;
+    	min-width: 2px;
+    	overflow: hidden;
+    }
     .card-closeicon {
-    	position: absolute;
-    	top: 0;
-    	right: 0;
-    	display: none;
-    	transform: all .5s;
+    	float: right;
+    	width: 0;
+    	transition: all .5s;
     }
 }
 .card:hover .card-closeicon {
-	display: inline-block;
+	width: 1.5rem;
 }
 
 .card__dashboard {
@@ -63,13 +66,22 @@
 	}
 }
 
+.card__3 {
+	border-top-left-radius: 3rem;
+	img {
+		padding: 1rem 4rem;
+	}
+}
+.card__2 {
+	border-top-left-radius: 3rem;
+	img {
+		padding: 1rem;
+	}
+}
+
 .card--partner {
 	display: block;
-	border-top-left-radius: 3rem;
 	margin-bottom: 1rem;
-	img {
-		padding: 1rem 0;
-	}
 	.card-footer {
 		text-align: center;
 		padding: .4rem .2rem;

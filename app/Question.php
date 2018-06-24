@@ -23,6 +23,6 @@ class Question extends Model
     
     public function measures()
     {
-    	return $this->masMany(Measure::class);
+    	return $this->hasMany(Measure::class);
     }
 }

@@ -15,7 +15,7 @@ class CreateThemesTable extends Migration
     {
         Schema::create('themes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
+            $table->string('name');
             $table->text('short');
             $table->text('body');
             $table->integer('scanmodel_id')->unsigned();

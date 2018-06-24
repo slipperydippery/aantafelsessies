@@ -39,12 +39,14 @@
 			<div class="col-sm-12" v-if="noneSelected"></div>
 			<template v-for="instantietype in instantietypes">
 				<div class="col-sm-2" v-for="partner in instantietype.partners" v-if="partner.invitable == true">
-					<div class="card card--partner clickable" @click="toggleInvitable(partner)"
+					<div class="card card__2 card--partner clickable" @click="toggleInvitable(partner)"
 						:class="[thisClass(instantietype)]"
 					>
-					<span class="card-closeicon">
-						<i class="material-icons"> close </i>
-					</span>
+                        <div class="card-icons">
+							<span class="card-closeicon">
+								<i class="material-icons"> close </i>
+							</span>
+						</div>
 						<img src="/img/user.svg" alt="">
 						<div class="card-footer">
 							{{ partner.instantie.name }}

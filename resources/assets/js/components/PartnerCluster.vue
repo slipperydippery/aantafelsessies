@@ -3,7 +3,10 @@
 	    <div class="col-md-4" v-for="partner in partners">
             <div class="card ">
                 <div class="card-body">
-                    <h5 class="card-title"> {{ partner.instantie.name }} <i class="material-icons clickable muted"> info </i></h5>
+                    <h5 class="card-title"> {{ partner.instantie.name }} 
+                        <i class="material-icons clickable muted"> info </i>
+                    </h5>
+                
                     <div class="card-description">
                         <em> {{ partner.instantie.description }} </em>
                     </div>
@@ -29,7 +32,8 @@
         data() {
             return {
         		partners: [],
-            	store
+            	store,
+                show: false,
             }
         },
 

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Cache;
 use App\Scan;
 use App\Group;
 use App\Inventarisatie;
@@ -44,7 +45,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Inventarisatie::class);
     }
-    
+
     public function isOnline()
     {
         return Cache::has('user-is-online-' . $this->id);

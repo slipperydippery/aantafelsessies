@@ -20,15 +20,31 @@ Auth::routes();
 Route::resource('group', 'GroupController');
 Route::post('/api/group', 'ApiGroupController@store');
 Route::post('/api/group/{group}/storescan', 'ApiGroupController@storescan');
+Route::get('/api/group/{group}', 'ApiGroupController@show');
 Route::get('/group/{group}/created', 'GroupController@created')->name('group.created');
 Route::get('/group/{group}/createscan/{code}', 'GroupController@createscan')->name('group.createscan')->middleware('auth');
 
 // Scan stuff
 Route::resource('scan', 'ScanController');
-Route::get('/scan/{scan}/kennismaken', 'ScanPagesController@kennismaken')->name('scan.kennismaken');
-Route::get('/scan/{scan}/regioincijfers', 'ScanPagesController@regioincijfers')->name('scan.regioincijfers');
-Route::get('/scan/{scan}/algemeenbeeld', 'ScanPagesController@algemeenbeeld')->name('scan.algemeenbeeld');
-Route::get('/scan/{scan}/algemeenbeeldresultaten', 'ScanPagesController@algemeenbeeldresultaten')->name('scan.algemeenbeeldresultaten');
+Route::get('/sessie/{scan}/introductie', 'ScanPagesController@introductie')->name('scan.introductie');
+Route::get('/sessie/{scan}/kennismaken', 'ScanPagesController@kennismaken')->name('scan.kennismaken');
+Route::get('/sessie/{scan}/regioincijfers', 'ScanPagesController@regioincijfers')->name('scan.regioincijfers');
+Route::get('/sessie/{scan}/algemeenbeeld', 'ScanPagesController@algemeenbeeld')->name('scan.algemeenbeeld');
+Route::get('/sessie/{scan}/algemeenbeeldresultaten', 'ScanPagesController@algemeenbeeldresultaten')->name('scan.algemeenbeeldresultaten');
+Route::post('/api/scan/{scan}', 'ApiScanController@update');
+Route::get('/sessie/{scan}/thema/{theme}/introductie', 'ScanQuestionController@intro')->name('scanquestions.intro');
+Route::get('/sessie/{scan}/thema/{theme}/vraag/{question}', 'ScanQuestionController@show')->name('scanquestions.show');
+Route::get('/sessie/{scan}/thema/{theme}/resultaten', 'ScanQuestionController@results')->name('scanquestions.results');
+Route::get('/sessie/{scan}/thema/{theme}/acties', 'ScanQuestionController@measures')->name('scanquestions.measures');
+
+// Answers stuff
+Route::get('/api/answer/{answer}', 'ApiAnswerController@show');
+Route::post('/api/answer/{answer}/update', 'ApiAnswerController@update');
+Route::get('/api/scan/{scan}/question/{question}/getaverageanswers', 'ApiScanQuestionController@getaverageanswers');
+Route::get('/api/scan/{scan}/question/{question}/getanswers', 'ApiScanQuestionController@getanswers');
+
+// Measures
+Route::get('/api/measure/{measure}', 'ApiMeasureController@show');
 
 // Gesprekshulp Inventarisaties
 Route::get('/inventarisatie/', 'InventarisatieController@store')->name('inventarisatie.store');

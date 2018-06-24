@@ -67,8 +67,18 @@
 				</div>
 			</div>
 		</div>
+		<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+		<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+		  Tooltip on top
+		</button>
 	</div>
 @stop
 
 @section('additional-scripts')
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+	  $('[data-toggle="tooltip"]').tooltip()
+});
+</script>
 @endsection
