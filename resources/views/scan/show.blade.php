@@ -25,7 +25,7 @@
 		        <a href=" {{ route('scan.show', $scan) }} " title="">
 		            <div class="card card__dashboard">
 		                <div class="card-body">
-		                    <h5 class="card-title">Bewerk deze groep</h5>
+		                    <h5 class="card-title">Bewerk deze sessie</h5>
 		                    <img src="/img/feather.jpg" alt="">
 		                </div>
 		            </div>
@@ -52,7 +52,24 @@
 		        </a>
 		    </div>
 		    <div class="col-md-6">
-
+		        <a href=" # " title="" data-toggle="modal" data-target="#deleteModal">
+		            <div class="card card__dashboard">
+		                <div class="card-body">
+		                    <h5 class="card-title">Bekijk de email</h5>
+		                    <img src="/img/scan.jpg" alt="">
+		                </div>
+		            </div>
+		        </a>
+		    </div>
+		    <div class="col-md-6">
+		        <a href=" # " title="" data-toggle="modal" data-target="#deleteModal">
+		            <div class="card card__dashboard">
+		                <div class="card-body">
+		                    <h5 class="card-title">Selectie Gesprekspartners</h5>
+		                    <img src="/img/scan.jpg" alt="">
+		                </div>
+		            </div>
+		        </a>
 		    </div>
 	</div>
 

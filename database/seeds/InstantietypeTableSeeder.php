@@ -19,13 +19,13 @@ class InstantietypeTableSeeder extends Seeder
         $instantie_type_vastelasten->save();
 
         $instantie_type_beginnendeschulden = new Instantietype();
-        $instantie_type_beginnendeschulden->name = 'Beginnende schulden';
+        $instantie_type_beginnendeschulden->name = 'Maatschappelijke organisaties';
         $instantie_type_beginnendeschulden->description = 'Andere partijen die beginnende schulden kunnen signaleren.';
         $instantie_type_beginnendeschulden->reason = 'We kiezen partijen die in contact staan met kwetsbare inwoners (zoals huisarts, voedselbank, zorgaanbieders en vrijwilligersorganisaties). ';
         $instantie_type_beginnendeschulden->save();
 
         $instantie_type_beginnendeschulden_gemeente = new Instantietype();
-        $instantie_type_beginnendeschulden_gemeente->name = 'Beginnende schulden - gemeente';
+        $instantie_type_beginnendeschulden_gemeente->name = 'Afdelingen gemeente';
         $instantie_type_beginnendeschulden_gemeente->description = 'Afdelingen binnen de gemeente die beginnende schulden kunnen signaleren.';
         $instantie_type_beginnendeschulden_gemeente->reason = '';
         $instantie_type_beginnendeschulden_gemeente->save();

@@ -39,28 +39,12 @@
         <div class="col-md-4">
             <div class="card card__dashboard">
                 <div class="card-body">
-                    <h5 class="card-title">Selectiehulp gesprekspartners</h5>
-                    <ul>
-                        @foreach ($user->inventarisaties as $inventarisatie)
-                            <li>
-                                <a href=" {{ route('inventarisatie.show', $inventarisatie) }} "> {{ $inventarisatie->title }} </a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <a href=" {{ route('inventarisatie.store') }} "><i class="material-icons"> add </i> nieuwe selectie gesprekspartners</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card card__dashboard">
-                <div class="card-body">
                     <h5 class="card-title">Mijn gesprekssessies</h5>
                     <p class="card-text">
-                        <a href=" {{ route('vraag') }} ">Sessie 1</a><br>
+                        <a href=" {{ route('vraag') }} ">  Sessie 1</a><br>
+                        <a href=" {{ route('vraag') }} "> <i class="material-icons"> star_rate </i> Sessie 1</a><br>
                         @foreach ($user->scans as $scan)
-                            <a href=" {{ route('scan.show', $scan) }} ">{{ $scan->title }}</a><br>
+                            <a href=" {{ route('scan.show', $scan) }} "> <i class="material-icons"> star_rate </i>{{ $scan->title }}</a><br>
                         @endforeach
                     </p>
                 </div>
@@ -76,28 +60,6 @@
                 </div>
             </a>
         </div>
-    </div>
-    <div class="row row__cards">
-        <div class="col-md-4">
-            <a href=" {{ route('group.create') }} " title="">
-                <div class="card card__dashboard">
-                    <div class="card-body">
-                        <h5 class="card-title">Nieuwe groep</h5>
-                        <img src="/img/group.jpg" alt="">
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4">
-            <div class="card card__dashboard">
-                <div class="card-body">
-                    <h5 class="card-title">Mijn groepen</h5>
-                    @foreach ($user->groups as $group)
-                        <a href=" {{ route('group.show', $group) }} "> {{ $group->title }} </a><br>
-                    @endforeach
-                </div>
-            </div>
-        </div>
         <div class="col-md-4">
             <a href=" # " title="">
                 <div class="card card__dashboard">
@@ -109,5 +71,18 @@
             </a>
         </div>
     </div>
+    <div class="row row__cards">
+        <div class="col-md-4">
+            <a href=" {{ route('inventarisatie.store') }} " title="">
+                <div class="card card__dashboard">
+                    <div class="card-body">
+                        <h5 class="card-title"> <i class="material-icons"> star_rate </i> Start je eigen sessie  </h5>
+                        <img src="/img/group.jpg" alt="">
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+        
 </div>
 @endsection

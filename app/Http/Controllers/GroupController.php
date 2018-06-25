@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Group;
 use App\District;
 use App\Instantie;
@@ -27,9 +28,10 @@ class GroupController extends Controller
      */
     public function create()
     {
+    	$inventarisatie = Auth::user()->inventarisaties->where('group_id', null)->first();
         $instantietypes = Instantietype::with('instanties')->get();
         $districts = District::get();
-        return view('group.create', compact('instantietypes', 'districts'));
+        return view('group.create', compact('instantietypes', 'districts', 'inventarisatie'));
     }
 
     /**

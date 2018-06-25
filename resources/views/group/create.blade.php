@@ -5,11 +5,22 @@
 		<div class="row">
 	        <div class="col-md-12">
 	            <div class="page--title">
-	                <h1 class="pagetitle">Maak een groep aan</h1>
-	                <p>We weten uit de literatuur dat er een aantal belangrijke partijen zijn bij het oplossen van schuldenproblematiek. De eerste stap van een geslaagde sessie is daarom ook om te onderzoeken wie de geschikte gesprekspartners zijn om uit te nodigen voor een sessie. Hier volgen 4 categoriën met partijen. Geef per partij aan of er al een samenwerking bestaat, nog niet bestaat, of dat deze partij niet van toepassing is.</p>
+	                <h1 class="pagetitle">Start je eigen gesprekssessie</h1>
 	            </div>
 	        </div>
 		</div>
+		@if(! $inventarisatie)
+            <p>Wil je bepalen met wie je de sessie het beste kunt uitvoeren? <a href="#">Doe de selectiehulp</a> </p>
+		@else
+			<div class="row">
+				<div class="col-md-12">
+					<p>Dit is de samenstelling van gesprekspartners die je eerder hebt gemaakt</p>
+					{{ $inventarisatie->title }} <br/>
+					<a href="#" class="btn btn-primary">Selectie behouden</a> 
+					<a href="#" class="btn btn-primary">Nieuwe selectie maken</a>
+				</div>
+			</div>
+		@endif
 		<div class="row">
 			<div class="col-md-12">
 				<create-group

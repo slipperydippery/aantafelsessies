@@ -6,10 +6,6 @@
                     <h5 class="card-title"> {{ partner.instantie.name }} 
                         <i class="material-icons clickable muted"> info </i>
                     </h5>
-                
-                    <div class="card-description">
-                        <em> {{ partner.instantie.description }} </em>
-                    </div>
                     <set-partner
 		            	:initPartner = partner
 		            >

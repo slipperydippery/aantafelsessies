@@ -18,6 +18,8 @@ class CreateInventarisatiesTable extends Migration
             $table->string('title')->nullable();
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('group_id')->unsigned()->nullable();
+            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
 
             $table->timestamps();
         });

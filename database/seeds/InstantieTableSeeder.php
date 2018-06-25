@@ -14,9 +14,9 @@ class InstantieTableSeeder extends Seeder
     public function run()
     {
         $instantie_type_vastelasten = Instantietype::where('name', 'Vaste lasten')->first();
-        $instantie_type_beginnendeschulden = Instantietype::where('name', 'Beginnende schulden')->first();
+        $instantie_type_beginnendeschulden = Instantietype::where('name', 'Maatschappelijke organisaties')->first();
+        $instantie_type_beginnendeschulden_gemeente = Instantietype::where('name', 'Afdelingen gemeente')->first();
         $instantie_type_scholen_werkgevers = Instantietype::where('name', 'Scholen en werkgevers')->first();
-        $instantie_type_beginnendeschulden_gemeente =   Instantietype::where('name', 'Beginnende schulden - gemeente')->first();
 
         $instantie_zorgverzekeraar = new Instantie();
         $instantie_zorgverzekeraar->name = 'Zorgverzekeraar';
@@ -91,15 +91,6 @@ class InstantieTableSeeder extends Seeder
         $instantie_type_beginnendeschulden->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
-        $instantie_next->name = 'Huisarts';
-        $instantie_next->description = 'Huisarts.';
-        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
-        $instantie_next->contactpersoon = '';
-        $instantie_next->scanmodel_id = 1;
-        $instantie_next->save();
-        $instantie_type_beginnendeschulden->instanties()->save($instantie_next);
-
-        $instantie_next = new Instantie();
         $instantie_next->name = 'Voedselbank';
         $instantie_next->description = 'Voedselbank.';
         $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
@@ -118,7 +109,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_type_beginnendeschulden->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
-        $instantie_next->name = 'Beleidsmedewerker';
+        $instantie_next->name = 'Belastingzaken';
         $instantie_next->description = 'Beleidsmedewerker dienst belastingen gemeente.';
         $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
@@ -136,8 +127,8 @@ class InstantieTableSeeder extends Seeder
         $instantie_type_beginnendeschulden_gemeente->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
-        $instantie_next->name = 'Wijkteam medewerker';
-        $instantie_next->description = 'Wijkteam medewerker.';
+        $instantie_next->name = 'Sociaal Wijkteam';
+        $instantie_next->description = 'Sociaal Wijkteam.';
         $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
@@ -147,6 +138,15 @@ class InstantieTableSeeder extends Seeder
         $instantie_next = new Instantie();
         $instantie_next->name = 'Sociale dienst';
         $instantie_next->description = 'Sociale dienst.';
+        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
+        $instantie_next->contactpersoon = '';
+        $instantie_next->scanmodel_id = 1;
+        $instantie_next->save();
+        $instantie_type_beginnendeschulden_gemeente->instanties()->save($instantie_next);
+
+        $instantie_next = new Instantie();
+        $instantie_next->name = 'Welzijn / Wmo';
+        $instantie_next->description = 'Welzijn / Wmo.';
         $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;

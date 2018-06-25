@@ -5,7 +5,7 @@
 		<div class="row">
 	        <div class="col-md-12">
 	            <div class="page--title">
-	                <h1 class="pagetitle">Thema introductie: {{ $theme->name }} </h1>
+	                <h1 class="pagetitle">Thema {{ $theme->id }}: {{ $theme->name }} </h1>
 	                <p></p>
 	            </div>
 	        </div>
@@ -14,7 +14,7 @@
 			<div class="col-md-12">
 
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/oOSoBnCPHlk" allowfullscreen></iframe>
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=0nEFHtUxbuc" allowfullscreen></iframe>
                 </div>
 
                 <div class="row row__prevnext justify-content-between">

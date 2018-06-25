@@ -17,12 +17,10 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav col">
                 @guest
-                    <li><a class="nav-link nav-link--main mr-5 align-top" href=" # ">Link 3</a></li>
                 @else
                 	<li><a class="nav-link nav-link--main mr-5 align-top" href=" {{ route('home') }} ">Dashboard</a></li>
                 @endguest
-            	<li><a class="nav-link nav-link--main mr-5 align-bottom" href="#">Link 2</a></li>
-            	<li><a class="nav-link nav-link--main mr-5" href="/page">Link 1</a></li>
+            	<li><a class="nav-link nav-link--main mr-5" href="/page">Instructie</a></li>
 
             </ul>
 

@@ -42,8 +42,8 @@
 				<div class="section__panel section__panel__toptabs">
 					<div class="section__panel--title">
 						<h5>Resultaat:</h5>
-		                <p><em>Hieronder zie je een overzicht van partijen waarmee je wel- (<i class="material-icons"> check </i>)  of niet (<i class="material-icons"> close </i>) samenwerkt en of je er al mee in contact bent.  </p></em>
-		                <p><em>U kunt nu een selectie maken van de partijen met wie u een gesprekssessie wilt houden. Doe dit door hieronder meerdere partijen aan te klikken. Wij adviseren om ten minste 1 partij van elke categorie uit te nodigen.</em></p>
+		                <p><em>Hieronder zie je een overzicht van partijen waarmee je wel- (<i class="material-icons"> check </i>)  of niet (<i class="material-icons"> close </i>) samenwerkt. </p></em>
+		                <p><em>Je kunt nu een selectie maken van de partijen met wie je een gesprekssessie wilt houden. Doe dit door hieronder meerdere partijen aan te klikken. Wij adviseren om ten minste 1 partij van elke categorie uit te nodigen.</em></p>
 					</div>
 
 					<set-invitations
@@ -62,8 +62,7 @@
 							</div>
 						@else
 							<div class="col-md-4">
-								<a href=" {{ route('home') }} " class="btn btn-primary btn-block btn__prevnext"> naar dashboard</a>
-								<p class="text-center"><em>De resultaten worden automatisch opgeslagen.</em></p>
+								<a href=" {{ route('group.create') }} " class="btn btn-primary btn-block btn__prevnext"> Maak een groep aan <i class="material-icons"> navigate_next </i> </a>
 							</div>
 						@endguest
 					</div>

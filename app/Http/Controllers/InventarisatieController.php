@@ -37,7 +37,8 @@ class InventarisatieController extends Controller
     public function store(Request $request)
     {
         $inventarisatie = new Inventarisatie;
-        $inventarisatie->title = 'Nieuwe Inventarisatie';
+        $count = Auth::user()->inventarisaties->count();
+        $inventarisatie->title = 'Selectie gesprekspartners - ' . ($count + 1);
         if($user = Auth::user()) {
             $user->inventarisaties()->save($inventarisatie);    
         }

@@ -4,7 +4,7 @@
 	        <strong>Belangrijk!</strong> {{ errors }}.
 	    </div>
 	    <div class="form-group">
-            <label for="">Hoe wil je je groep noemen?</label>
+            <label for="">Geef je gesprekssessie een naam:</label>
             <div class="alert alert-danger" v-if="errors.title" v-for="error in errors.title">
                 <strong>Incompleet</strong> {{ error }}
             </div>
@@ -33,7 +33,7 @@
         </div>
 
         <div class="form-group">
-            <label for="">Voor welke gemeente(n) maak je deze groep?</label> <br>
+            <label for="">Voor welke gemeente(n) maak je deze gesprekssessie?</label> <br>
             <div class="alert alert-danger" v-if="errors.districts" v-for="error in errors.districts">
                 <strong>Incompleet</strong> {{ error }}
             </div>
@@ -68,7 +68,7 @@
 
         <div class="row resultstable--row">
             <div class="col-sm-12">
-                <button @click="saveGroup()" class="btn btn-primary btn-block" :disabled="clickedOnce">Maak de groep aan</button>
+                <button @click="saveGroup()" class="btn btn-primary btn-block" :disabled="clickedOnce">Maak de sessie aan</button>
             </div>
         </div>
 	</div>

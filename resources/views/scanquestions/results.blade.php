@@ -5,7 +5,7 @@
 		<div class="row">
 	        <div class="col-md-12">
 	            <div class="page--title">
-	                <h1 class="pagetitle">Resultaten thema {{ $theme->name }} </h1>
+	                <h1 class="pagetitle">Resultaten thema {{ $theme->id }}: {{ $theme->name }} </h1>
 	                <p></p>
 	            </div>
 	        </div>
@@ -21,7 +21,8 @@
 						<div class="col-sm-2"></div>
 						@foreach ($theme->questions as $question)
 							<div class="col-sm-2">
-								{{ $question->id }}
+								<strong>Vraag {{ $question->id }} <br></strong>
+								{{ $question->title }}
 							</div>
 						@endforeach
 					</div>

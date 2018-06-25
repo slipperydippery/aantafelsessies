@@ -5,7 +5,9 @@
 		<div class="row">
 	        <div class="col-md-12">
 	            <div class="page--title">
-	                <h1 class="pagetitle">Groepssessie: {{ $scan->group->title }} </h1>
+	                <h1 class="pagetitle">Thema {{ $theme->id }}: {{ $theme->name }} </h1>
+	                {!! $theme->body !!}
+	                <p>Geef met een cijfer aan in hoeverre de hierna volgende stellingen voor u van toepassing zijn.</p>
 	            </div>
 	        </div>
 		</div>
@@ -13,8 +15,9 @@
 			<div class="col-md-12">	
 				<div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Vraag {{ $question->id }} </h5>
-                        <h6 class="card-title">THEMA: {{ $theme->name }} </h6>
+                        <h5 class="card-title">Vraag {{ $question->id }}/17 </h5>
+
+
                         <p class="card-text"> {{ $question->body }} </p>
 
                         <scan-slider
