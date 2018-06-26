@@ -7,7 +7,8 @@
                 <div class="page--title">
                     <h1 class="pagetitle">Je hebt succesvol een sessie aangemaakt</h1>
                     <p>Nodig nu jouw gesprekspartners uit per mail en voeg deze link toe: </p>
-                    <p><strong>http://aantafelsessies.test/group/{{ $group->id }}/createscan/{{ $group->code }}</strong> <i class="material-icons"> file_copy </i> </p>
+                    
+                    <p><strong>{{ Request::root() }}/group/{{ $group->id }}/createscan/{{ $group->code }}</strong> <i class="material-icons"> file_copy </i> </p>
                     <p>Deze link geeft de deelnemers direct toegang tot de sessie die je zojuist hebt aangemaakt</p>
                 </div>
             </div>
@@ -25,7 +26,7 @@
                             </div>
                         </a>
                     </div>
-                    @if ($group->inventarisatie)
+                    @if ($group->owner->inventarisatie)
                         <div class="col-md-4">
                             <a href="#" data-toggle="modal" data-target="#gesprekspartners">
                                 <div class="card card__dashboard">
@@ -53,7 +54,7 @@
         </div>  
         <div class="row row__prevnext justify-content-end">
             <div class="col-md-4">
-                <a href=" {{ route('home') }} " class="btn btn-primary btn-block btn__prevnext">Naar de dashboard </a>
+                <a href=" {{ route('home') }} " class="btn btn-primary btn-block btn__prevnext">Naar het dashboard </a>
             </div>
         </div>      
     </div>
@@ -136,7 +137,7 @@
 
                     <p>Samen bereiken we meer dan alleen, dus ik hoop op jouw deelname aan deze sessie. De sessie duurt ongeveer 2 uur.</p>
 
-                    <p>Klik op deze link om aan deze scan mee te doen. http://aantafelsessies.test/group/{{ $group->id }}/createscan/{{ $group->code }}</p>
+                    <p>Klik op deze link om aan deze scan mee te doen. {{ Request::root() }}/group/{{ $group->id }}/createscan/{{ $group->code }}</p>
 
                     <p>Ik neem binnenkort contact op voor een afspraak zodat we de scan gezamenlijk kunnen uitvoeren.</p>
 

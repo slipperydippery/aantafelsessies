@@ -48103,7 +48103,7 @@ var render = function() {
           attrs: {
             type: "text",
             placeholder:
-              "Geef jouw groep een naam die herkenbaar is voor mensen uit jouw regio"
+              "Geef jouw sessie een naam die herkenbaar is voor mensen uit jouw regio"
           },
           domProps: { value: _vm.title },
           on: {

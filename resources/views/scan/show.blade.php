@@ -196,7 +196,7 @@
 
                     <p>Samen bereiken we meer dan alleen, dus ik hoop op jouw deelname aan deze sessie. De sessie duurt ongeveer 2 uur.</p>
 
-                    <p>Klik op deze link om aan deze scan mee te doen. http://aantafelsessies.test/group/{{ $scan->group->id }}/createscan/{{ $scan->group->code }}</p>
+                    <p>Klik op deze link om aan deze scan mee te doen. {{ Request::root() }}/group/{{ $scan->group->id }}/createscan/{{ $scan->group->code }}</p>
 
                     <p>Ik neem binnenkort contact op voor een afspraak zodat we de scan gezamenlijk kunnen uitvoeren.</p>
 

@@ -8,7 +8,7 @@
             <div class="alert alert-danger" v-if="errors.title" v-for="error in errors.title">
                 <strong>Incompleet</strong> {{ error }}
             </div>
-            <input type="text" v-model="title" placeholder="Geef jouw groep een naam die herkenbaar is voor mensen uit jouw regio" class="form-control">
+            <input type="text" v-model="title" placeholder="Geef jouw sessie een naam die herkenbaar is voor mensen uit jouw regio" class="form-control">
 	    	
 	    </div>
         <div class="form-group">
