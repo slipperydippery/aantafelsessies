@@ -42,9 +42,11 @@
                                          @else
                                              <i class="material-icons"> wifi_off </i>
                                          @endif
-                                         <span class="card-closeicon">
-                                             <i class="material-icons clickable" data-toggle="modal" data-target="#deleteUserModal-{{ $thisscan->id }}"> close </i>
-                                         </span>
+                                         @if ($scan->group->owner->id == $scan->id)
+                                             <span class="card-closeicon">
+                                                 <i class="material-icons clickable" data-toggle="modal" data-target="#deleteUserModal-{{ $thisscan->id }}"> close </i>
+                                             </span>
+                                         @endif
                                      </div>
                                      <img src="/img/user.svg" alt="">
                                      <div class="card-footer">
@@ -53,26 +55,34 @@
                                      </div>
                                  </div>
                              </div>
-                             <!-- Modal -->
-                             <div class="modal fade" id="deleteUserModal-{{ $thisscan->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true">
-                                 <div class="modal-dialog" role="document">
-                                     <div class="modal-content">
-                                         <div class="modal-header">
-                                             <h5 class="modal-title" id="deleteUserModalLabel">Verwijder {{ $thisscan->user->name }}</h5>
-                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                             <span aria-hidden="true">&times;</span>
-                                             </button>
-                                         </div>
-                                         <div class="modal-body">
-                                             <p>Weet je zeker dat je <strong>{{ $thisscan->user->name }}</strong> van <strong>{{ $thisscan->instantie->name }}</strong> uit de sessie wilt verwijderen?</p>
-                                         </div>
-                                         <div class="modal-footer">
-                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluit</button>
-                                             <button type="button" class="btn btn-secondary">Verwijder  </button>
+
+                             @if ($scan->group->owner->id == $scan->id)
+                                 <!-- Modal -->
+                                 <div class="modal fade" id="deleteUserModal-{{ $thisscan->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true">
+                                     <div class="modal-dialog" role="document">
+                                         <div class="modal-content">
+                                             <div class="modal-header">
+                                                 <h5 class="modal-title" id="deleteUserModalLabel">Verwijder {{ $thisscan->user->name }}</h5>
+                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                 <span aria-hidden="true">&times;</span>
+                                                 </button>
+                                             </div>
+                                             <div class="modal-body">
+                                                 <p>Weet je zeker dat je <strong>{{ $thisscan->user->name }}</strong> van <strong>{{ $thisscan->instantie->name }}</strong> uit de sessie wilt verwijderen?</p>
+                                             </div>
+                                             <div class="modal-footer">
+                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluit</button>
+                                                     <form action="{{ route('scan.destroy', $thisscan) }}" method="post" accept-charset="utf-8">
+                                                         <input type="hidden" name="_method" value="DELETE">
+                                                         {{ csrf_field() }}
+                                                        <!-- Add Submit Field -->
+                                                        <input type="submit" value="Verwijder sessie" class="btn btn-primary" />
+                                                     </form>
+                                             </div>
                                          </div>
                                      </div>
                                  </div>
-                             </div>
+                             @endif
                         @endif
                     @endforeach
                     

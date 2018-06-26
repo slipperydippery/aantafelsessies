@@ -31,9 +31,11 @@
         		var answertotal = 0;
         		var answercount = 0;
         		this.answers.forEach(function(answer){
-        			answertotal += answer.answer;
-        			answercount++
-        		})
+                    if(answer.answer) {
+                        answertotal += parseFloat(answer.answer);
+                        answercount++
+                    }
+                })
         		return (answertotal / answercount);
         	}
         },

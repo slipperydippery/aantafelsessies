@@ -40,20 +40,34 @@ export let store = {
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+// Gesprekspartners
 Vue.component('partner-cluster', require('./components/PartnerCluster.vue'));
 Vue.component('set-partner', require('./components/SetPartner.vue'));
+
+// Create Scan or group
 Vue.component('create-group', require('./components/CreateGroup.vue'));
 Vue.component('set-invitations', require('./components/SetInvitations.vue'));
 Vue.component('create-groupscan', require('./components/CreateGroupscan.vue'));
+
+// Scan itself
 Vue.component('algemeenbeeld', require('./components/Algemeenbeeld.vue'));
 Vue.component('algemeenbeeldresultaten', require('./components/Algemeenbeeldresultaten.vue'));
+
 Vue.component('scan-slider', require('./components/ScanSlider.vue'));
 Vue.component('result-slider', require('./components/ResultSlider.vue'));
 Vue.component('average-slider', require('./components/AverageSlider.vue'));
-Vue.component('mini-measure', require('./components/MiniMeasure.vue'));
 
+Vue.component('mini-measure', require('./components/MiniMeasure.vue'));
+Vue.component('big-measure', require('./components/BigMeasure.vue'));
+Vue.component('frontrunner', require('./components/Frontrunner.vue'));
+
+// Utility
+Vue.component('countdown', require('./components/Countdown.vue'));
+
+//old 
 Vue.component('set-inventarisatie-title', require('./components/SetInventarisatieTitle.vue'));
+
+
 
 const app = new Vue({
     el: '#app'

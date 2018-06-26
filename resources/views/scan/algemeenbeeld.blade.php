@@ -10,7 +10,9 @@
 	            </div>
 	        </div>
 		</div>
+		
 		<div class="row">
+			<countdown date="60"></countdown>
 			<div class="col-md-12">
 				@php
 					$loggedin = Auth::guest() ? 0 : 1;

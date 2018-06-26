@@ -21,6 +21,12 @@ class ApiScanQuestionController extends Controller
 
     public function getanswers(Scan $scan, Question $question)
     {
-    	return $question->answers->where('scan_id', $scan->id);
+        $answers = [];
+        foreach($question->answers as $answer){
+            if($answer->scan->group->id == $scan->group->id){
+                $answers[] = $answer;
+            }
+        }
+    	return $answers;
     }
 }

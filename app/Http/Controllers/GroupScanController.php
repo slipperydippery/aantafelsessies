@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Measure;
+use App\Scan;
+use App\Group;
 use Illuminate\Http\Request;
 
-class ApiMeasureController extends Controller
+class GroupScanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -44,9 +45,9 @@ class ApiMeasureController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Measure $measure)
+    public function show($id)
     {
-        return $measure;
+        //
     }
 
     /**
@@ -67,13 +68,9 @@ class ApiMeasureController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Measure $measure)
+    public function update(Request $request, $id)
     {
-        $measure->active = $request['measure']['active'];
-        $measure->measure = $request['measure']['measure'];
-        $measure->save();
-
-        return $measure;
+        //
     }
 
     /**
@@ -82,8 +79,8 @@ class ApiMeasureController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Group $group, Scan $scan)
     {
-        //
+        
     }
 }

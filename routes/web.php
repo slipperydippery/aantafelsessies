@@ -24,6 +24,8 @@ Route::get('/api/group/{group}', 'ApiGroupController@show');
 Route::get('/group/{group}/created', 'GroupController@created')->name('group.created');
 Route::get('/group/{group}/createscan/{code}', 'GroupController@createscan')->name('group.createscan')->middleware('auth');
 
+// Manage group
+
 // Scan stuff
 Route::resource('scan', 'ScanController');
 Route::get('/sessie/{scan}/introductie', 'ScanPagesController@introductie')->name('scan.introductie');
@@ -36,6 +38,8 @@ Route::get('/sessie/{scan}/thema/{theme}/introductie', 'ScanQuestionController@i
 Route::get('/sessie/{scan}/thema/{theme}/vraag/{question}', 'ScanQuestionController@show')->name('scanquestions.show');
 Route::get('/sessie/{scan}/thema/{theme}/resultaten', 'ScanQuestionController@results')->name('scanquestions.results');
 Route::get('/sessie/{scan}/thema/{theme}/acties', 'ScanQuestionController@measures')->name('scanquestions.measures');
+Route::get('/sessie/{scan}/thema/{theme}/actiesuitwerken', 'ScanQuestionController@bigmeasures')->name('scanquestions.bigmeasures');
+Route::get('/sessie/{scan}/vervolgafspraak', 'ScanQuestionController@dateplanner')->name('scanquestions.dateplanner');
 
 // Answers stuff
 Route::get('/api/answer/{answer}', 'ApiAnswerController@show');
@@ -45,6 +49,7 @@ Route::get('/api/scan/{scan}/question/{question}/getanswers', 'ApiScanQuestionCo
 
 // Measures
 Route::get('/api/measure/{measure}', 'ApiMeasureController@show');
+Route::post('/api/measure/{measure}/update', 'ApiMeasureController@update');
 
 // Gesprekshulp Inventarisaties
 Route::get('/inventarisatie/', 'InventarisatieController@store')->name('inventarisatie.store');

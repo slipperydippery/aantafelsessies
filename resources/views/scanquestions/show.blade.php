@@ -17,9 +17,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Vraag {{ $question->id }}/17 </h5>
 
-
-                        <p class="card-text"> {{ $question->body }} </p>
-
+                        <p class="card-text card-text__question"> {{ $question->body }} </p>
+						<countdown date="60"></countdown>
                         <scan-slider
                         	:answer_id=" {{ $answer->id }} "
                         >

@@ -53,17 +53,8 @@
 							@endforeach
 						</div>
 					@endforeach
-					<div class="row">
-						<div class="col-sm-2"> Actiepunten </div>
-						@foreach ($theme->questions as $question)
-							<div class="col-sm-2">
-								<mini-measure
-									:measure_id=" {{ $question->measures->where('scan_id', $scan->group->owner->id)->first()->id }} "
-								>
-								</mini-measure>
-							</div>	
-						@endforeach
-					</div>
+					<countdown date="600"></countdown>
+					
 				</div>
 				<div class="row row__prevnext justify-content-between">
 					<div class="col-md-4">

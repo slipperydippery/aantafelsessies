@@ -54,9 +54,26 @@ class ScanQuestionController extends Controller
     	$previous = '/sessie/' . $scan->id . '/thema/' . $theme->id . '/resultaten';
     	$next = '/sessie/' . $scan->id . '/thema/' . ($theme->id + 1) . '/introductie';
     	if($theme->id == Theme::get()->last()->id) {
-    		$next = '/home';
+    		$next = '/sessie/' . $scan->id . '/thema/' . Theme::get()->first()->id . '/actiesuitwerken';
     	}
     	return view('scanquestions.measures', compact('scan', 'theme', 'previous', 'next'));
     }
 
+    public function bigmeasures(Scan $scan, Theme $theme)
+    {
+        $previous = '/sessie/' . $scan->id . '/thema/' . ($theme->id - 1) . '/actiesuitwerken';
+        if($theme->id == Theme::get()->first()->id){
+            $previous = '/sessie/' . $scan->id . '/thema/' . Theme::get()->last()->id . '/acties';
+        }        
+        $next = '/sessie/' . $scan->id . '/thema/' . ($theme->id + 1) . '/actiesuitwerken';
+        if($theme->id == Theme::get()->last()->id) {
+            $next = '/sessie/' . $scan->id . '/vervolgafspraak';
+        }
+        return view('scanquestions.bigmeasures', compact('scan', 'theme', 'previous', 'next'));
+    }
+
+    public function dateplanner(Scan $scan)
+    {
+        
+    }
 }

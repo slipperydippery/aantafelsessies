@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 // Variables
+@import "partials/themecolors";
 @import "variables";
 
 // Bootstrap
@@ -31,7 +32,9 @@
 @import "partials/sections";
 @import "partials/slider";
 @import "partials/choice";
+@import "partials/question";
 @import "partials/elementcolors";
+@import "partials/countdown";
 
 // Page specific layout
 @import "partials/welcome";

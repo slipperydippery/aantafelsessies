@@ -1,13 +1,10 @@
 <template>
-	<div class="form-group">
-		<i class="material-icons clickable" @click="toggleMeasure()" v-if="measure.active"> check_box </i>
-		<i class="material-icons clickable" @click="toggleMeasure()" v-if="! measure.active"> check_box_outline_blank </i>
+	<div class="">
 		<textarea 
             class="form-control" 
             placeholder="Actie Omschrijving"
             rows="6"
             v-model="measure.measure" 
-            :disabled="! measure.active"
             @blur="updateMeasure()"
         ></textarea>
 	</div>

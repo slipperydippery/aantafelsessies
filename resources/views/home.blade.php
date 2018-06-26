@@ -1,27 +1,5 @@
 @extends('layouts.app', ['title' => 'Dashboard'])
 
-@section('hintsmodal')
-    <?php 
-        $loggedin = Auth::guest() ? 0 : Auth::user();
-    ?>
-
-    <hintsmodal
-        :active=" {{ $loggedin ? $loggedin->hints : false }} "
-        :messages=" [
-            'Dit is jouw persoonlijke dashboard. Als je een nieuwe scan aanmaakt, kun je deze meteen of later uitvoeren. Heb je de scan gemaakt? Dan kun je jouw resultaten altijd via het dashboard bekijken of vergelijken met anderen die de scan hebben gemaakt.',
-
-            'Wil je de scan gezamenlijk met netwerkpartners doen? Maak dan een groepsscan aan. Als je de groepsscan hebt aangemaakt, kunnen andere deelnemers hun eigen scan aan jouw groepsscan koppelen. Je krijgt daarvan bericht op het dashboard. Je kunt deelnemers accepteren of verwijderen. Alleen de deelnemers die je accepteert, kunnen meedoen aan jouw groepsscan.',
-
-            'Via dit dashboard heb je altijd toegang tot de kennisbank; een bibliotheek vol links en praktijkvoorbeelden.', 
-
-            'Via dit dashboard heb je altijd actuele cijfers uit jouw regio over jongeren in een kwetsbare positie. Deze cijfers zijn handig bij het ontwikkelen van beleid of voor het direct ontwikkelen van acties voor een bepaalde doelgroep.'
-
-        ] "
-        :loggedin=" {{ $loggedin }} "
-    >
-    </hintsmodal>
-@endsection
-
 @section('content')
 
 @include('partials.partnercheck')
@@ -41,10 +19,14 @@
                 <div class="card-body">
                     <h5 class="card-title">Mijn gesprekssessies</h5>
                     <p class="card-text">
-                        <a href=" {{ route('vraag') }} ">  Sessie 1</a><br>
-                        <a href=" {{ route('vraag') }} "> <i class="material-icons"> star_rate </i> Sessie 1</a><br>
                         @foreach ($user->scans as $scan)
-                            <a href=" {{ route('scan.show', $scan) }} "> <i class="material-icons"> star_rate </i>{{ $scan->title }}</a><br>
+                                <a href=" {{ route('scan.show', $scan) }} "> 
+                                    @if($scan->group->owner->id == $scan->id)
+                                        <i class="material-icons" data-toggle="tooltip" data-placement="top" title="Je beheert deze sessie"> star </i> 
+                                    @endif
+                                    {{ $scan->title }}
+                                </a>
+                            <br>
                         @endforeach
                     </p>
                 </div>
@@ -73,10 +55,10 @@
     </div>
     <div class="row row__cards">
         <div class="col-md-4">
-            <a href=" {{ route('inventarisatie.store') }} " title="">
+            <a href=" {{ route('group.create') }} " title="">
                 <div class="card card__dashboard">
                     <div class="card-body">
-                        <h5 class="card-title"> <i class="material-icons"> star_rate </i> Start je eigen sessie  </h5>
+                        <h5 class="card-title"> <i class="material-icons"> star </i> Start je eigen sessie  </h5>
                         <img src="/img/group.jpg" alt="">
                     </div>
                 </div>
@@ -85,4 +67,13 @@
     </div>
         
 </div>
+@endsection
+
+@section('additional-scripts')
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover();   
+              $('[data-toggle="tooltip"]').tooltip()
+        });
+    </script>
 @endsection

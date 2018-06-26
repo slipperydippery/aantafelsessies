@@ -92,7 +92,9 @@ class GroupController extends Controller
 
     public function created(Group $group)
     {
-        return view('group.created', compact('group'));
+        $inventarisatie = Auth::user()->inventarisaties->where('group_id', null)->first();
+        $instantietypes = Instantietype::with('instanties')->get();
+        return view('group.created', compact('group', 'inventarisatie', 'instantietypes'));
     }
 
     public function createscan(Group $group, $code)

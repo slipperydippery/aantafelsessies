@@ -14,9 +14,33 @@
 		@else
 			<div class="row">
 				<div class="col-md-12">
-					<p>Dit is de samenstelling van gesprekspartners die je eerder hebt gemaakt</p>
-					{{ $inventarisatie->title }} <br/>
-					<a href="#" class="btn btn-primary">Selectie behouden</a> 
+					<div class="section__panel">
+						<div class="section__panel--title">
+							<p>Dit is de samenstelling van gesprekspartners die je eerder hebt gemaakt</p>
+						</div>
+						<div class="row">
+							@foreach ($instantietypes as $instantietype)
+								@foreach ($inventarisatie->partners->where('invitable', true) as $partner)
+									@if ($partner->instantie->instantietype->id == $instantietype->id)
+										<div class="col-sm-2">
+											<div class="card card__2 card--partner clickable instantietype-{{ $instantietype->id }}">
+						                        <div class="card-icons">
+													<span class="card-closeicon">
+														<i class="material-icons"> close </i>
+													</span>
+												</div>
+												<img src="/img/user.svg" alt="">
+												<div class="card-footer">
+													{{ $partner->instantie->name }}
+												</div>
+											</div>
+										</div>
+									@endif
+								@endforeach
+							@endforeach
+						</div>
+					</div>
+					<a href=" {{ route('inventarisatie.show', $inventarisatie) }} " class="btn btn-primary">Selectie bewerken</a> 
 					<a href="#" class="btn btn-primary">Nieuwe selectie maken</a>
 				</div>
 			</div>

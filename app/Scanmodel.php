@@ -4,6 +4,7 @@ namespace App;
 
 use App\Scan;
 use App\Instantie;
+use App\Instantietype;
 use Illuminate\Database\Eloquent\Model;
 
 class Scanmodel extends Model
@@ -26,5 +27,10 @@ class Scanmodel extends Model
     public function districts()
     {
         return $this->hasMany(District::class);
+    }
+
+    public function instantietypes()
+    {
+        return $this->hasMany(Instantietype::class);
     }
 }

@@ -14,7 +14,7 @@
             <div class="col-md-12">
 
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/oOSoBnCPHlk" allowfullscreen></iframe>
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/0nEFHtUxbuc" allowfullscreen></iframe>
                 </div>
 
                 <div class="row row__prevnext justify-content-between">
