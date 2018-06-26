@@ -35,7 +35,11 @@
 								Trekker:
 							</div>
 							<div class="col-sm-9">
-								<frontrunner></frontrunner>
+								<frontrunner
+									:measure_id = {{ $measure->id }}
+									:group_id = {{ $measure->scan->group->id }}
+								>
+								</frontrunner>
 							</div>
 						</div>
 					@endif

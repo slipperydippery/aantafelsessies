@@ -10,7 +10,7 @@
 	        </div>
 		</div>
 		@if(! $inventarisatie)
-            <p>Wil je bepalen met wie je de sessie het beste kunt uitvoeren? <a href="#">Doe de selectiehulp</a> </p>
+            <p>Wil je bepalen met wie je de sessie het beste kunt uitvoeren? <a href=" {{ route('inventarisatie.store')}} ">Doe de selectiehulp</a> </p>
 		@else
 			<div class="row">
 				<div class="col-md-12">

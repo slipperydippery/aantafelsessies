@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Measure;
+use App\Followup;
 use Illuminate\Http\Request;
 
-class ApiMeasureController extends Controller
+class FollowupController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,21 +41,21 @@ class ApiMeasureController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Followup  $followup
      * @return \Illuminate\Http\Response
      */
-    public function show(Measure $measure)
+    public function show(Followup $followup)
     {
-        return Measure::with('user.user')->find($measure->id);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Followup  $followup
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Followup $followup)
     {
         //
     }
@@ -64,26 +64,21 @@ class ApiMeasureController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Followup  $followup
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Measure $measure)
+    public function update(Request $request, Followup $followup)
     {
-        $measure->active = $request['measure']['active'];
-        $measure->measure = $request['measure']['measure'];
-        $measure->user_id = $request['measure']['user']['id'];
-        $measure->save();
-
-        return $measure;
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Followup  $followup
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Followup $followup)
     {
         //
     }

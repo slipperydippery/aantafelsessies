@@ -49,7 +49,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<br><br>
-					<a href=" route('register') " class="btn btn-primary btn-block">Maak een account aan</a>
+					<a href=" {{ route('register') }} " class="btn btn-primary btn-block">Maak een account aan</a>
 					<p class="text-center"><em>Of maak een account aan om de resultaten op te slaan.</em></p>
 				</div>
 			</div>

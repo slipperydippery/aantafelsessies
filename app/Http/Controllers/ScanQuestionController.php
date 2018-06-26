@@ -72,8 +72,10 @@ class ScanQuestionController extends Controller
         return view('scanquestions.bigmeasures', compact('scan', 'theme', 'previous', 'next'));
     }
 
-    public function dateplanner(Scan $scan)
+    public function followup(Scan $scan)
     {
-        
+        $previous = '/sessie/' . $scan->id . '/thema/' . Theme::get()->last()->id . '/actiesuitwerken';
+        $next = '/home';
+        return view('scanquestions.followup', compact('scan', 'previous', 'next'));
     }
 }

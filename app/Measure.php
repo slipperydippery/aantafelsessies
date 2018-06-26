@@ -27,4 +27,9 @@ class Measure extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(Scan::class, 'user_id');
+    }
 }

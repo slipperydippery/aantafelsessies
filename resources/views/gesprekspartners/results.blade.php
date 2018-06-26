@@ -62,7 +62,7 @@
 							</div>
 						@else
 							<div class="col-md-4">
-								<a href=" {{ route('group.create') }} " class="btn btn-primary btn-block btn__prevnext"> Maak een groep aan <i class="material-icons"> navigate_next </i> </a>
+								<a href=" {{ route('group.create') }} " class="btn btn-primary btn-block btn__prevnext"> Maak een gesprekssessie aan <i class="material-icons"> navigate_next </i> </a>
 							</div>
 						@endguest
 					</div>

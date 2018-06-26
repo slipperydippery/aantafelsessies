@@ -25,6 +25,7 @@ Route::get('/group/{group}/created', 'GroupController@created')->name('group.cre
 Route::get('/group/{group}/createscan/{code}', 'GroupController@createscan')->name('group.createscan')->middleware('auth');
 
 // Manage group
+Route::get('/api/group/{group}/scan', 'ApiGroupScanController@index');
 
 // Scan stuff
 Route::resource('scan', 'ScanController');
@@ -39,7 +40,7 @@ Route::get('/sessie/{scan}/thema/{theme}/vraag/{question}', 'ScanQuestionControl
 Route::get('/sessie/{scan}/thema/{theme}/resultaten', 'ScanQuestionController@results')->name('scanquestions.results');
 Route::get('/sessie/{scan}/thema/{theme}/acties', 'ScanQuestionController@measures')->name('scanquestions.measures');
 Route::get('/sessie/{scan}/thema/{theme}/actiesuitwerken', 'ScanQuestionController@bigmeasures')->name('scanquestions.bigmeasures');
-Route::get('/sessie/{scan}/vervolgafspraak', 'ScanQuestionController@dateplanner')->name('scanquestions.dateplanner');
+Route::get('/sessie/{scan}/vervolgafspraak', 'ScanQuestionController@followup')->name('scanquestions.followup');
 
 // Answers stuff
 Route::get('/api/answer/{answer}', 'ApiAnswerController@show');
