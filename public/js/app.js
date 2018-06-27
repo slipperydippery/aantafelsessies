@@ -49507,6 +49507,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 thiscolor = 'white';
             }
             return thiscolor;
+        },
+
+        isGroupOwner: function isGroupOwner(scan) {
+            if (scan.id == this.store.group.owner.id) {
+                return true;
+                console.log('true');
+            }
+            return false;
         }
     }
 });
@@ -49522,7 +49530,7 @@ var render = function() {
   return _c("div", { staticClass: "row" }, [
     _c(
       "div",
-      { staticClass: "col-sm-12" },
+      { staticClass: "col-sm-12 table table__results" },
       [
         _vm._m(0),
         _vm._v(" "),
@@ -49532,7 +49540,12 @@ var render = function() {
               "div",
               {
                 staticClass: "col-sm-2 nowrap",
-                class: "instantietype-" + scan.instantie.id + "-leftborder"
+                class: [
+                  "instantietype-" +
+                    scan.instantie.instantietype.id +
+                    "-leftborder",
+                  { "owner-leftborder": _vm.isGroupOwner(scan) }
+                ]
               },
               [_vm._v(" " + _vm._s(scan.user.name) + " ")]
             ),

@@ -1,6 +1,6 @@
 <template>
 	<div class="row">
-		<div class="col-sm-12">
+		<div class="col-sm-12 table table__results">
 	        <div class="row">
 	            <div class="col-sm-2">  </div>
 	            <div class="col-sm-2 table--instantie">  </div>
@@ -9,7 +9,7 @@
 	            </div>
 	        </div>
             <div class="row" v-for="scan in store.group.scans">
-                <div class="col-sm-2 nowrap" :class="'instantietype-' + scan.instantie.id + '-leftborder'"> {{ scan.user.name }} </div>
+                <div class="col-sm-2 nowrap" :class="['instantietype-' + scan.instantie.instantietype.id + '-leftborder', {'owner-leftborder': isGroupOwner(scan)}]"> {{ scan.user.name }} </div>
                 <div class="col-sm-2 table--instantie"> {{ scan.instantie.name }} </div>
                 <div class="col-sm-1 table--score"> {{ scan.algemeenbeeld }} </div>
                 <div class="col-sm-7">
@@ -121,6 +121,14 @@
                 }
                 return thiscolor;
             },
+
+            isGroupOwner(scan) {
+                if(scan.id == this.store.group.owner.id) {
+                    return true;
+                    console.log('true');
+                }
+                return false;
+            }
         }
     }
 </script>

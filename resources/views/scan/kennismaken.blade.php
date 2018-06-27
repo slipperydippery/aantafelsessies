@@ -15,7 +15,7 @@
                 
                 <div class="row">
                     <div class="col-sm-2">
-                        <div class="card card__2 card--partner <?= 'instantietype-' . $group->owner->instantie->instantietype->id ?>">
+                        <div class="card card__2 card--partner owner">
                             <div class="card-icons">
                                 <i class="material-icons"> star </i>
                                 @if($group->owner->user->isOnline())
@@ -35,7 +35,7 @@
             		@foreach($scan->group->scans as $thisscan)
                          @if($thisscan->id != $group->owner->id)
                              <div class="col-sm-2">
-                                 <div class="card card__2 card--partner <?= 'instantietype-' . $thisscan->instantie->instantietype->id ?>">
+                                 <div class="card card__2 card--partner instantietype-{{ $thisscan->instantie->instantietype->id }}">
                                      <div class="card-icons">
                                          @if($thisscan->user->isOnline())
                                              <i class="material-icons"> wifi </i>

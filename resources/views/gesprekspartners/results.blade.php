@@ -9,12 +9,6 @@
 		</div>
 	@endguest
 	<div class="container container--page">
-		@auth
-			<set-inventarisatie-title
-				:inventarisatie_id = {{ $inventarisatie->id }}
-			>
-			</set-inventarisatie-title>
-		@endauth
 		<div class="row">
 	        <div class="col-md-12">
 	            <div class="page--title">

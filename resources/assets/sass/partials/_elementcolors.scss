@@ -1,3 +1,17 @@
+.owner.active, .owner .card-footer {
+	background: $gray-900;
+	-widthbo2px: none 0;
+	color: white;
+}
+.owner {
+	background: none;
+	border: 2px solid $gray-900;
+	color: $gray-900;
+}
+.owner.title {
+	background: rgba($gray-900, 0.08);
+}
+
 .instantietype-1.active, .instantietype-1 .card-footer {
 	background: $instantietype-1;
 	-widthbo2px: none 0;
@@ -66,17 +80,21 @@
 }
 
 .instantietype-1-leftborder {
-	border-left: 3px solid $instantietype-1;
+	border-left: 5px solid rgba($instantietype-1, 0.4);
 }
 
 .instantietype-2-leftborder {
-	border-left: 3px solid $instantietype-2;
+	border-left: 5px solid rgba($instantietype-2, 0.4);
 }
 
 .instantietype-3-leftborder {
-	border-left: 3px solid $instantietype-3;
+	border-left: 5px solid rgba($instantietype-3, 0.4);
 }
 
 .instantietype-4-leftborder {
-	border-left: 3px solid $instantietype-4;
+	border-left: 5px solid rgba($instantietype-4, 0.4);
+}
+
+.owner-leftborder {
+	border-left: 5px solid rgba($gray-900, 0.4) !important;
 }

@@ -18,41 +18,47 @@
 		                <span><em></em></span>
 					</div>
 					<div class="row">
-						<div class="col-sm-2"></div>
-						@foreach ($theme->questions as $question)
-							<div class="col-sm-2">
-								<strong>Vraag {{ $question->id }} <br></strong>
-								{{ $question->title }}
+						<div class="col-sm-12 table table__results">
+							<div class="row">
+								<div class="col-sm-2"></div>
+								@foreach ($theme->questions as $question)
+									<div class="col-sm-2">
+										<strong>Vraag {{ $question->id }} <br></strong>
+										<span data-toggle="tooltip" data-placement="top" title=" {{ $question->body }} ">{{ $question->title }}</span>
+									</div>
+								@endforeach
 							</div>
-						@endforeach
-					</div>
-					<div class="row">
-							<div class="col-sm-2">Gemiddeld</div>
-						@foreach ($theme->questions as $question)
-							<div class="col-sm-2">
+							<div class="row">
+									<div class="col-sm-2">Gemiddeld</div>
+								@foreach ($theme->questions as $question)
+									<div class="col-sm-2">
 
-								<average-slider
-									:scan_id=" {{ $scan->id }} "
-									:question_id=" {{ $question->id }} "
-								>
-								</average-slider>
+										<average-slider
+											:scan_id=" {{ $scan->id }} "
+											:question_id=" {{ $question->id }} "
+										>
+										</average-slider>
 
+									</div>
+								@endforeach
 							</div>
-						@endforeach
-					</div>
-					@foreach ($scan->group->scans as $thisscan)
-						<div class="row">
-							<div class="col-sm-2 nowrap instantietype-{{ $thisscan->instantie->instantietype->id }}-leftborder "> {{ $thisscan->user->name }} </div>
-							@foreach ($theme->questions as $question)
-								<div class="col-sm-2">
-									<result-slider
-										:answer_id=" {{ $thisscan->answers->where('question_id', $question->id)->first()->id }} "
-									>
-									</result-slider>
+							@foreach ($scan->group->scans as $thisscan)
+								<div class="row">
+									<div class="col-sm-2 nowrap instantietype-{{ $thisscan->instantie->instantietype->id }}-leftborder {{ ($thisscan->id == $scan->group->owner->id) ? 'owner-leftborder' : ''}} "> 
+										{{ $thisscan->user->name }} 
+									</div>
+									@foreach ($theme->questions as $question)
+										<div class="col-sm-2">
+											<result-slider
+												:answer_id=" {{ $thisscan->answers->where('question_id', $question->id)->first()->id }} "
+											>
+											</result-slider>
+										</div>
+									@endforeach
 								</div>
 							@endforeach
 						</div>
-					@endforeach
+					</div>
 					<countdown date="600"></countdown>
 					
 				</div>
@@ -70,4 +76,10 @@
 @stop
 
 @section('additional-scripts')
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover();   
+              $('[data-toggle="tooltip"]').tooltip()
+        });
+    </script>
 @endsection
