@@ -25,6 +25,7 @@
 							<div class="col-sm-9 form-group">
 								<big-measure
 									:measure_id = {{ $measure->id }}
+									:is_manager=" {{ $is_manager = $scan->group->owner->id == $scan->id ? 1 : 0 }} "
 								>
 								</big-measure>
 								
@@ -38,6 +39,7 @@
 								<frontrunner
 									:measure_id = {{ $measure->id }}
 									:group_id = {{ $measure->scan->group->id }}
+									:is_manager=" {{ $is_manager = $scan->group->owner->id == $scan->id ? 1 : 0 }} "
 								>
 								</frontrunner>
 							</div>

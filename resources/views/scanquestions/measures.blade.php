@@ -47,6 +47,7 @@
 							<div class="col-sm-2">
 								<mini-measure
 									:measure_id=" {{ $question->measures->where('scan_id', $scan->group->owner->id)->first()->id }} "
+									:is_manager=" {{ $is_manager = $scan->group->owner->id == $scan->id ? 1 : 0 }} "
 								>
 								</mini-measure>
 							</div>	

@@ -55680,7 +55680,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['measure_id'],
+    props: ['measure_id', 'is_manager'],
 
     data: function data() {
         return {
@@ -55722,7 +55722,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "form-group" }, [
-    _vm.measure.active
+    _vm.is_manager && _vm.measure.active
       ? _c(
           "i",
           {
@@ -55737,7 +55737,7 @@ var render = function() {
         )
       : _vm._e(),
     _vm._v(" "),
-    !_vm.measure.active
+    _vm.is_manager && !_vm.measure.active
       ? _c(
           "i",
           {
@@ -55765,7 +55765,7 @@ var render = function() {
       attrs: {
         placeholder: "Actie Omschrijving",
         rows: "6",
-        disabled: !_vm.measure.active
+        disabled: !_vm.is_manager || !_vm.measure.active
       },
       domProps: { value: _vm.measure.measure },
       on: {
@@ -55858,11 +55858,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['measure_id'],
+    props: ['measure_id', 'is_manager'],
 
     data: function data() {
         return {
@@ -55914,7 +55915,11 @@ var render = function() {
         }
       ],
       staticClass: "form-control",
-      attrs: { placeholder: "Actie Omschrijving", rows: "6" },
+      attrs: {
+        placeholder: "Actie Omschrijving",
+        rows: "6",
+        disabled: !_vm.is_manager
+      },
       domProps: { value: _vm.measure.measure },
       on: {
         blur: function($event) {
@@ -56167,11 +56172,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['measure_id', 'group_id'],
+    props: ['measure_id', 'group_id', 'is_manager'],
 
     data: function data() {
         return {
@@ -56233,55 +56255,91 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row" }, [
-    _c("div", { staticClass: "col-sm-4" }, [
-      _vm.measure.user
-        ? _c(
-            "span",
-            {
-              staticClass: "clickable selectable selectable--active",
-              on: {
-                click: function($event) {
-                  _vm.removeFrontrunner()
-                }
-              }
-            },
-            [
-              _vm._v(
-                " \n\t\t\t\t" +
-                  _vm._s(_vm.measure.user.user.name) +
-                  "\n            "
-              )
-            ]
-          )
-        : _vm._e()
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "col-sm-8" },
-      _vm._l(_vm.group.scans, function(scan) {
-        return _vm.isntActiveScan(scan)
-          ? _c(
-              "span",
-              {
-                staticClass: "clickable selectable selectable--passive",
-                on: {
-                  click: function($event) {
-                    _vm.setFrontrunner(scan)
+    _vm.is_manager
+      ? _c("div", { staticClass: "col-sm-4" }, [
+          _vm.measure.user
+            ? _c(
+                "span",
+                {
+                  staticClass: "clickable selectable selectable--active",
+                  on: {
+                    click: function($event) {
+                      _vm.removeFrontrunner()
+                    }
                   }
-                }
-              },
-              [
+                },
+                [
+                  _vm._v(
+                    " \n\t\t\t\t" +
+                      _vm._s(_vm.measure.user.user.name) +
+                      "\n            "
+                  )
+                ]
+              )
+            : _vm._e()
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.is_manager
+      ? _c(
+          "div",
+          { staticClass: "col-sm-8" },
+          _vm._l(_vm.group.scans, function(scan) {
+            return _vm.isntActiveScan(scan)
+              ? _c(
+                  "span",
+                  {
+                    staticClass: "clickable selectable selectable--passive",
+                    on: {
+                      click: function($event) {
+                        _vm.setFrontrunner(scan)
+                      }
+                    }
+                  },
+                  [
+                    _vm._v(
+                      " \n                " +
+                        _vm._s(scan.user.name) +
+                        "\n            "
+                    )
+                  ]
+                )
+              : _vm._e()
+          })
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    !_vm.is_manager
+      ? _c("div", { staticClass: "col-sm-4" }, [
+          _vm.measure.user
+            ? _c("span", { staticClass: " selectable selectable--active" }, [
                 _vm._v(
-                  " \n                " +
-                    _vm._s(scan.user.name) +
+                  " \n\t\t\t\t" +
+                    _vm._s(_vm.measure.user.user.name) +
                     "\n            "
                 )
-              ]
-            )
-          : _vm._e()
-      })
-    )
+              ])
+            : _vm._e()
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    !_vm.is_manager
+      ? _c(
+          "div",
+          { staticClass: "col-sm-8" },
+          _vm._l(_vm.group.scans, function(scan) {
+            return _vm.isntActiveScan(scan)
+              ? _c("span", { staticClass: " selectable selectable--passive" }, [
+                  _vm._v(
+                    " \n                " +
+                      _vm._s(scan.user.name) +
+                      "\n            "
+                  )
+                ])
+              : _vm._e()
+          })
+        )
+      : _vm._e()
   ])
 }
 var staticRenderFns = []

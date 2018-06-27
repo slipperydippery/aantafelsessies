@@ -1,13 +1,13 @@
 <template>
 	<div class="form-group">
-		<i class="material-icons clickable" @click="toggleMeasure()" v-if="measure.active"> check_box </i>
-		<i class="material-icons clickable" @click="toggleMeasure()" v-if="! measure.active"> check_box_outline_blank </i>
+		<i class="material-icons clickable" @click="toggleMeasure()" v-if="is_manager && measure.active"> check_box </i>
+		<i class="material-icons clickable" @click="toggleMeasure()" v-if="is_manager &&! measure.active"> check_box_outline_blank </i>
 		<textarea 
             class="form-control" 
             placeholder="Actie Omschrijving"
             rows="6"
             v-model="measure.measure" 
-            :disabled="! measure.active"
+            :disabled="! is_manager || ! measure.active"
             @blur="updateMeasure()"
         ></textarea>
 	</div>
@@ -18,7 +18,8 @@
 
     export default {
         props: [
-	        'measure_id'
+	        'measure_id',
+            'is_manager'
         ],
 
         data() {

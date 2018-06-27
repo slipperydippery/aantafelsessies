@@ -5,6 +5,7 @@
             placeholder="Actie Omschrijving"
             rows="6"
             v-model="measure.measure" 
+            :disabled="! is_manager"
             @blur="updateMeasure()"
         ></textarea>
 	</div>
@@ -15,7 +16,8 @@
 
     export default {
         props: [
-	        'measure_id'
+	        'measure_id',
+            'is_manager'
         ],
 
         data() {

@@ -1,6 +1,6 @@
 <template>
 	<div class="row">
-		<div class="col-sm-4">
+		<div class="col-sm-4" v-if="is_manager">
 			<span 
 				class="clickable selectable selectable--active"
 				v-if="measure.user"
@@ -9,11 +9,28 @@
 				{{ measure.user.user.name }}
             </span>
 		</div>
-		<div class="col-sm-8">
+		<div class="col-sm-8" v-if="is_manager">
 			<span 
 				class="clickable selectable selectable--passive"
 				v-for="scan in group.scans"
 				@click="setFrontrunner(scan)"
+				v-if="isntActiveScan(scan)"
+			> 
+                {{ scan.user.name }}
+            </span>
+		</div>
+		<div class="col-sm-4" v-if="! is_manager">
+			<span 
+				class=" selectable selectable--active"
+				v-if="measure.user"
+			> 
+				{{ measure.user.user.name }}
+            </span>
+		</div>
+		<div class="col-sm-8" v-if="! is_manager">
+			<span 
+				class=" selectable selectable--passive"
+				v-for="scan in group.scans"
 				v-if="isntActiveScan(scan)"
 			> 
                 {{ scan.user.name }}
@@ -28,7 +45,8 @@
     export default {
         props: [
         	'measure_id',
-        	'group_id'
+        	'group_id',
+        	'is_manager'
         ],
 
         data() {
@@ -81,7 +99,7 @@
 
                     })
             },
-            
+
         	isntActiveScan(scan){
         		if(this.measure.user){
         			if(scan.id == this.measure.user.id){
