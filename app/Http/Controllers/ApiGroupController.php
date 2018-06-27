@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Scan;
 use App\Group;
+use App\Inventarisatie;
 use Illuminate\Http\Request;
 
 class ApiGroupController extends Controller
@@ -42,6 +43,7 @@ class ApiGroupController extends Controller
             'instantie_id' => 'required|integer',
         ]);
 
+
         $user = Auth::user();
         $scan = Scan::register($user, $request->all());
 
@@ -54,6 +56,12 @@ class ApiGroupController extends Controller
             'scanmodel_id' => $scan->scanmodel->id,
         ]);
         $group->save();
+
+        if($request->inventarisatie_id){
+            $inventarisatie = Inventarisatie::find($request->inventarisatie_id);
+            $inventarisatie->group()->associate($group);
+            $inventarisatie->save();
+        }
         $group->scans()->save($scan);
 
         return $group;

@@ -44,4 +44,9 @@ class ScanPagesController extends Controller
         }
         return view('scan.algemeenbeeldresultaten', compact('scan', 'scanmodel'));
     }
+
+    public function sessieintro(Scan $scan)
+    {
+        return view('scan.sessieintro', compact('scan'));
+    }
 }

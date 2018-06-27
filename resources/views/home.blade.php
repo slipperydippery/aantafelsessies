@@ -2,7 +2,7 @@
 
 @section('content')
 
-@include('partials.partnercheck')
+
 
 <div class="container container--page">
     <div class="row">
@@ -20,12 +20,12 @@
                     <h5 class="card-title">Mijn gesprekssessies</h5>
                     <p class="card-text">
                         @foreach ($user->scans as $scan)
-                                <a href=" {{ route('scan.show', $scan) }} "> 
-                                    @if($scan->group->owner->id == $scan->id)
-                                        <i class="material-icons" data-toggle="tooltip" data-placement="top" title="Je beheert deze sessie"> star </i> 
-                                    @endif
-                                    {{ $scan->title }}
-                                </a>
+                            <a href=" {{ route('scan.show', $scan) }} "> 
+                                @if($scan->group->owner->id == $scan->id)
+                                    <i class="material-icons" data-toggle="tooltip" data-placement="top" title="Je beheert deze sessie"> star </i> 
+                                @endif
+                                {{ $scan->title }}
+                            </a>
                             <br>
                         @endforeach
                     </p>

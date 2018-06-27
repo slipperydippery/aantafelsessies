@@ -11,26 +11,6 @@
             <input type="text" v-model="title" placeholder="Geef jouw sessie een naam die herkenbaar is voor mensen uit jouw regio" class="form-control">
 	    	
 	    </div>
-        <div class="form-group">
-            <label for="">Wat voor soort organisatie vertegenwoordig jij tijdens deze scan?</label>
-            <div class="alert alert-danger" v-if="errors.instantie_id" v-for="error in errors.instantie_id">
-              <strong>Incompleet</strong> {{ error }}
-            </div>
-            <div class="row">
-	            <div class="col-sm-6" v-for="instantietype in instantietypes">
-	            	<strong>{{ instantietype.name }}</strong>
-            		<div v-for="instantie in instantietype.instanties">
-            			<a href="#" 
-            				class="btn btn-light btn-block" 
-            				:class="{ 'active' : isActiveInstantie(instantie) }"
-            				@click.prevent="setInstantie(instantie)"
-            			> 
-            				{{ instantie.name }} 
-            			</a>
-            		</div>
-	            </div>
-            </div>
-        </div>
 
         <div class="form-group">
             <label for="">Voor welke gemeente(n) maak je deze gesprekssessie?</label> <br>
@@ -80,7 +60,8 @@
     export default {
         props: [
         	'instantietypes',
-        	'alldistricts'
+        	'alldistricts',
+            'inventarisatie_id'
         ],
 
         data() {
@@ -169,11 +150,13 @@
                 var home = this;
                 axios.post('/api/group', {
                         title: this.title,
-                        instantie_id: this.instantie.id,
+                        instantie_id: 1,
                         districts: this.selecteddistricts,
                         scanmodel_id: 1,
+                        inventarisatie_id: this.inventarisatie_id,
                     })
                     .then(function(response){
+                        // home.clickedOnce = false;
                         window.location.href = '/group/' + response.data.id + '/created'; 
                         // window.location.href = '/home'; 
                     })

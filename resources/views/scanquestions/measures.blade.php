@@ -42,7 +42,7 @@
 					</div>
 					
 					<div class="row">
-						<div class="col-sm-2"> Actiepunten </div>
+						<div class="col-sm-2"> Actiepunten - <em>steekwoorden</em></div>
 						@foreach ($theme->questions as $question)
 							<div class="col-sm-2">
 								<mini-measure

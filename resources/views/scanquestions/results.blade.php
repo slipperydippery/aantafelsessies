@@ -42,7 +42,7 @@
 					</div>
 					@foreach ($scan->group->scans as $thisscan)
 						<div class="row">
-							<div class="col-sm-2"> {{ $thisscan->user->name }} </div>
+							<div class="col-sm-2 nowrap instantietype-{{ $thisscan->instantie->instantietype->id }}-leftborder "> {{ $thisscan->user->name }} </div>
 							@foreach ($theme->questions as $question)
 								<div class="col-sm-2">
 									<result-slider

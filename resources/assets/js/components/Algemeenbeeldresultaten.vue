@@ -8,8 +8,8 @@
 	            <div class="col-sm-7">
 	            </div>
 	        </div>
-            <div class="row" v-if="store.isgroup" v-for="scan in store.group.scans">
-                <div class="col-sm-2"> {{ scan.user.name }} </div>
+            <div class="row" v-for="scan in store.group.scans">
+                <div class="col-sm-2 nowrap" :class="'instantietype-' + scan.instantie.id + '-leftborder'"> {{ scan.user.name }} </div>
                 <div class="col-sm-2 table--instantie"> {{ scan.instantie.name }} </div>
                 <div class="col-sm-1 table--score"> {{ scan.algemeenbeeld }} </div>
                 <div class="col-sm-7">
@@ -21,19 +21,6 @@
                 	</div>
                 </div>
             </div>
-            <div class="row" v-if=" ! store.isgroup">
-                <div class="col-sm-2"> {{ store.scan.user.name }} </div>
-                <div class="col-sm-2 table--instantie"> {{ store.scan.instantie.name }} </div>
-                <div class="col-sm-1 table--score"> {{ store.scan.algemeenbeeld }} </div>
-                <div class="col-sm-7">
-                	<div class="resultslider">
-                	    <div class="resultslider--result"
-                            :style="{ width: cssPercent(scan.algemeenbeeld), background: nullColor(scan.algemeenbeeld) }"
-                	    >
-                	    </div>
-                	</div>
-                </div>
-            </div>            
 	    </div>
 	</div>
 </template>

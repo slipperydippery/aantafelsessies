@@ -47934,31 +47934,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['instantietypes', 'alldistricts'],
+    props: ['instantietypes', 'alldistricts', 'inventarisatie_id'],
 
     data: function data() {
         return {
@@ -48043,10 +48023,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var home = this;
             axios.post('/api/group', {
                 title: this.title,
-                instantie_id: this.instantie.id,
+                instantie_id: 1,
                 districts: this.selecteddistricts,
-                scanmodel_id: 1
+                scanmodel_id: 1,
+                inventarisatie_id: this.inventarisatie_id
             }).then(function (response) {
+                // home.clickedOnce = false;
                 window.location.href = '/group/' + response.data.id + '/created';
                 // window.location.href = '/home'; 
             }).catch(function (error) {
@@ -48115,69 +48097,6 @@ var render = function() {
             }
           }
         })
-      ],
-      2
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "form-group" },
-      [
-        _c("label", { attrs: { for: "" } }, [
-          _vm._v(
-            "Wat voor soort organisatie vertegenwoordig jij tijdens deze scan?"
-          )
-        ]),
-        _vm._v(" "),
-        _vm._l(_vm.errors.instantie_id, function(error) {
-          return _vm.errors.instantie_id
-            ? _c("div", { staticClass: "alert alert-danger" }, [
-                _c("strong", [_vm._v("Incompleet")]),
-                _vm._v(" " + _vm._s(error) + "\n            ")
-              ])
-            : _vm._e()
-        }),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "row" },
-          _vm._l(_vm.instantietypes, function(instantietype) {
-            return _c(
-              "div",
-              { staticClass: "col-sm-6" },
-              [
-                _c("strong", [_vm._v(_vm._s(instantietype.name))]),
-                _vm._v(" "),
-                _vm._l(instantietype.instanties, function(instantie) {
-                  return _c("div", [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-light btn-block",
-                        class: { active: _vm.isActiveInstantie(instantie) },
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            _vm.setInstantie(instantie)
-                          }
-                        }
-                      },
-                      [
-                        _vm._v(
-                          " \n            \t\t\t\t" +
-                            _vm._s(instantie.name) +
-                            " \n            \t\t\t"
-                        )
-                      ]
-                    )
-                  ])
-                })
-              ],
-              2
-            )
-          })
-        )
       ],
       2
     ),
@@ -49504,19 +49423,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -49621,62 +49527,37 @@ var render = function() {
         _vm._m(0),
         _vm._v(" "),
         _vm._l(_vm.store.group.scans, function(scan) {
-          return _vm.store.isgroup
-            ? _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-sm-2" }, [
-                  _vm._v(" " + _vm._s(scan.user.name) + " ")
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-sm-2 table--instantie" }, [
-                  _vm._v(" " + _vm._s(scan.instantie.name) + " ")
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-sm-1 table--score" }, [
-                  _vm._v(" " + _vm._s(scan.algemeenbeeld) + " ")
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-sm-7" }, [
-                  _c("div", { staticClass: "resultslider" }, [
-                    _c("div", {
-                      staticClass: "resultslider--result",
-                      style: {
-                        width: _vm.cssPercent(scan.algemeenbeeld),
-                        background: _vm.nullColor(scan.algemeenbeeld)
-                      }
-                    })
-                  ])
-                ])
-              ])
-            : _vm._e()
-        }),
-        _vm._v(" "),
-        !_vm.store.isgroup
-          ? _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-sm-2" }, [
-                _vm._v(" " + _vm._s(_vm.store.scan.user.name) + " ")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-2 table--instantie" }, [
-                _vm._v(" " + _vm._s(_vm.store.scan.instantie.name) + " ")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-1 table--score" }, [
-                _vm._v(" " + _vm._s(_vm.store.scan.algemeenbeeld) + " ")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-7" }, [
-                _c("div", { staticClass: "resultslider" }, [
-                  _c("div", {
-                    staticClass: "resultslider--result",
-                    style: {
-                      width: _vm.cssPercent(_vm.scan.algemeenbeeld),
-                      background: _vm.nullColor(_vm.scan.algemeenbeeld)
-                    }
-                  })
-                ])
+          return _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              {
+                staticClass: "col-sm-2 nowrap",
+                class: "instantietype-" + scan.instantie.id + "-leftborder"
+              },
+              [_vm._v(" " + _vm._s(scan.user.name) + " ")]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-2 table--instantie" }, [
+              _vm._v(" " + _vm._s(scan.instantie.name) + " ")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-1 table--score" }, [
+              _vm._v(" " + _vm._s(scan.algemeenbeeld) + " ")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-7" }, [
+              _c("div", { staticClass: "resultslider" }, [
+                _c("div", {
+                  staticClass: "resultslider--result",
+                  style: {
+                    width: _vm.cssPercent(scan.algemeenbeeld),
+                    background: _vm.nullColor(scan.algemeenbeeld)
+                  }
+                })
               ])
             ])
-          : _vm._e()
+          ])
+        })
       ],
       2
     )
@@ -55225,6 +55106,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -55233,7 +55117,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     data: function data() {
         return {
-            'answer': {}
+            'answer': {},
+            'nvt': false
         };
     },
     mounted: function mounted() {
@@ -55254,6 +55139,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.post('/api/answer/' + this.answer_id + '/update', {
                 'answer': this.answer
             });
+        },
+        deactivate: function deactivate() {
+            this.nvt = true;
+            this.answer.answer = null;
+            this.saveAnswer();
+        },
+        activate: function activate() {
+            this.nvt = false;
         }
     }
 });
@@ -55277,7 +55170,13 @@ var render = function() {
               expression: "answer.answer"
             }
           ],
-          attrs: { type: "range", min: "0", max: "10", step: "1" },
+          attrs: {
+            type: "range",
+            min: "0",
+            max: "10",
+            step: "1",
+            disabled: _vm.nvt
+          },
           domProps: { value: _vm.answer.answer },
           on: {
             change: function($event) {
@@ -55298,7 +55197,37 @@ var render = function() {
           "span",
           { staticClass: "question--answer question--answer__preanswer" },
           [_vm._v("-")]
+        ),
+    _vm._v(" "),
+    !_vm.nvt
+      ? _c(
+          "button",
+          {
+            staticClass: "btn btn-outline-primary btn__nvt",
+            on: {
+              click: function($event) {
+                _vm.deactivate()
+              }
+            }
+          },
+          [_vm._v("niet van toepassing")]
         )
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.nvt
+      ? _c(
+          "button",
+          {
+            staticClass: "btn btn-primary btn__nvt",
+            on: {
+              click: function($event) {
+                _vm.activate()
+              }
+            }
+          },
+          [_vm._v("niet van toepassing")]
+        )
+      : _vm._e()
   ])
 }
 var staticRenderFns = []

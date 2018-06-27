@@ -6,9 +6,12 @@
 	        v-if="answer.id"
 	        v-model="answer.answer" 
 	        v-on:change="saveAnswer()"
+            :disabled = "nvt"
 	    >
 	    <span class="question--answer" v-if="answer.answer " >{{ answer.answer }}</span>
 	    <span class="question--answer question--answer__preanswer" v-else >-</span>
+        <button class="btn btn-outline-primary btn__nvt" @click="deactivate()" v-if="!nvt">niet van toepassing</button>
+        <button class="btn btn-primary btn__nvt" @click="activate()" v-if="nvt">niet van toepassing</button>
 	</div>
 </template>
 
@@ -22,7 +25,8 @@
 
         data() {
             return {
-            	'answer': {}
+            	'answer': {},
+                'nvt': false,
             }
         },
 
@@ -45,7 +49,17 @@
         		axios.post('/api/answer/' + this.answer_id + '/update', {
         			'answer': this.answer,
         		})
-        	}
+        	},
+
+            deactivate() {
+                this.nvt = true;
+                this.answer.answer = null;
+                this.saveAnswer();
+            },
+
+            activate() {
+                this.nvt = false;
+            }
         }
     }
 </script>

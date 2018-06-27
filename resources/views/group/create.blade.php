@@ -50,6 +50,7 @@
 				<create-group
 					:instantietypes=" {{ $instantietypes }} "
 					:alldistricts=" {{ $districts }} "
+					:inventarisatie_id=" {{ $inventarisatie ? $inventarisatie->id : 0 }} "
 				>
 				</create-group>
 			</div>

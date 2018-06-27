@@ -7,7 +7,7 @@
                 <div class="page--title">
                     <h1 class="pagetitle">Je hebt succesvol een sessie aangemaakt</h1>
                     <p>Nodig nu jouw gesprekspartners uit per mail en voeg deze link toe: </p>
-                    
+
                     <p><strong>{{ Request::root() }}/group/{{ $group->id }}/createscan/{{ $group->code }}</strong> <i class="material-icons"> file_copy </i> </p>
                     <p>Deze link geeft de deelnemers direct toegang tot de sessie die je zojuist hebt aangemaakt</p>
                 </div>
@@ -26,7 +26,7 @@
                             </div>
                         </a>
                     </div>
-                    @if ($group->owner->inventarisatie)
+                    @if ($group->inventarisatie)
                         <div class="col-md-4">
                             <a href="#" data-toggle="modal" data-target="#gesprekspartners">
                                 <div class="card card__dashboard">
@@ -167,7 +167,7 @@
                         <div class="modal-body">
                             <div class="row">
                                 @foreach ($instantietypes as $instantietype)
-                                    @foreach ($inventarisatie->partners->where('invitable', true) as $partner)
+                                    @foreach ($group->inventarisatie->partners->where('invitable', true) as $partner)
                                         @if ($partner->instantie->instantietype->id == $instantietype->id)
                                             <div class="col-sm-3">
                                                 <div class="card card__2 card--partner clickable instantietype-{{ $instantietype->id }}">
