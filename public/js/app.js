@@ -55277,7 +55277,7 @@ var render = function() {
               expression: "answer.answer"
             }
           ],
-          attrs: { type: "range", min: "0", max: "10", step: "0.1" },
+          attrs: { type: "range", min: "0", max: "10", step: "1" },
           domProps: { value: _vm.answer.answer },
           on: {
             change: function($event) {
