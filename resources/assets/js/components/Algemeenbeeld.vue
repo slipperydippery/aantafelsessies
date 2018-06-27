@@ -2,7 +2,7 @@
     <div class="rangeslider--container" >
         <input type="range" 
             min="0" max="10"
-            step="0.1"
+            step="1"
             v-model="scan.algemeenbeeld" 
             v-on:change="onChange"
         >

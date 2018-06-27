@@ -49392,7 +49392,7 @@ var render = function() {
           expression: "scan.algemeenbeeld"
         }
       ],
-      attrs: { type: "range", min: "0", max: "10", step: "0.1" },
+      attrs: { type: "range", min: "0", max: "10", step: "1" },
       domProps: { value: _vm.scan.algemeenbeeld },
       on: {
         change: _vm.onChange,
@@ -55297,7 +55297,7 @@ var render = function() {
       : _c(
           "span",
           { staticClass: "question--answer question--answer__preanswer" },
-          [_vm._v("5")]
+          [_vm._v("-")]
         )
   ])
 }

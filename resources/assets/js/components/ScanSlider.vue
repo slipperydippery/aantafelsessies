@@ -8,7 +8,7 @@
 	        v-on:change="saveAnswer()"
 	    >
 	    <span class="question--answer" v-if="answer.answer " >{{ answer.answer }}</span>
-	    <span class="question--answer question--answer__preanswer" v-else >5</span>
+	    <span class="question--answer question--answer__preanswer" v-else >-</span>
 	</div>
 </template>
 
