@@ -64,7 +64,7 @@ class QuestionTableSeeder extends Seeder
                 'theme_id' => 2,
             ],
             [
-                'title'                     => 'Reking houden met life-events',
+                'title'                     => 'Rekening houden met life-events',
                 'body'              		=> 'Mijn organisatie houdt rekening met life-events in de timing van de communicatie. Inwoners lopen risico op het ontwikkelen van een schuldsituatie na een life-event (zoals echtscheiding, ontslag, kinderen krijgen, ziekte) als zij niet tijdig uitgaven aanpassen aan nieuw inkomen.',
                 'weergave_succesfactor'     => '',
                 'norm'                      => 'Mijn organisatie houdt rekening met life-events in de timing van de communicatie. Inwoners lopen risico op het ontwikkelen van een schuldsituatie na een life-event (zoals echtscheiding, ontslag, kinderen krijgen, ziekte) als zij niet tijdig uitgaven aanpassen aan nieuw inkomen.',
