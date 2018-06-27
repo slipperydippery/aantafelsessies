@@ -15,7 +15,7 @@
                 <div class="col-sm-7">
                 	<div class="resultslider">
                 	    <div class="resultslider--result"
-                	        :style="{ width: cssPercent(scan.algemeenbeeld), background: scan.algemeenbeeld ? '' : 'white' }"
+                	        :style="{ width: cssPercent(scan.algemeenbeeld), background: nullColor(scan.algemeenbeeld) }"
                 	    >
                 	    </div>
                 	</div>
@@ -28,7 +28,7 @@
                 <div class="col-sm-7">
                 	<div class="resultslider">
                 	    <div class="resultslider--result"
-                	        :style="{ width: cssPercent(store.scan.algemeenbeeld), background: store.scan.algemeenbeeld ? '' : 'white' }"
+                            :style="{ width: cssPercent(scan.algemeenbeeld), background: nullColor(scan.algemeenbeeld) }"
                 	    >
                 	    </div>
                 	</div>
@@ -120,7 +120,19 @@
             }, 
 
             cssPercent: function (value) {
-                return (value * 10) + '%';
+                if(value == null) {
+                    return 100;
+                } else {
+                    return (value * 10) + '%';
+                }
+            },
+
+            nullColor: function (answer) {
+                var thiscolor = '';
+                if(answer == null) {
+                    thiscolor = 'white';
+                }
+                return thiscolor;
             },
         }
     }

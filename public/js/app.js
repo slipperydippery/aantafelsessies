@@ -49588,7 +49588,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
 
         cssPercent: function cssPercent(value) {
-            return value * 10 + '%';
+            if (value == null) {
+                return 100;
+            } else {
+                return value * 10 + '%';
+            }
+        },
+
+        nullColor: function nullColor(answer) {
+            var thiscolor = '';
+            if (answer == null) {
+                thiscolor = 'white';
+            }
+            return thiscolor;
         }
     }
 });
@@ -49629,7 +49641,7 @@ var render = function() {
                       staticClass: "resultslider--result",
                       style: {
                         width: _vm.cssPercent(scan.algemeenbeeld),
-                        background: scan.algemeenbeeld ? "" : "white"
+                        background: _vm.nullColor(scan.algemeenbeeld)
                       }
                     })
                   ])
@@ -49657,8 +49669,8 @@ var render = function() {
                   _c("div", {
                     staticClass: "resultslider--result",
                     style: {
-                      width: _vm.cssPercent(_vm.store.scan.algemeenbeeld),
-                      background: _vm.store.scan.algemeenbeeld ? "" : "white"
+                      width: _vm.cssPercent(_vm.scan.algemeenbeeld),
+                      background: _vm.nullColor(_vm.scan.algemeenbeeld)
                     }
                   })
                 ])

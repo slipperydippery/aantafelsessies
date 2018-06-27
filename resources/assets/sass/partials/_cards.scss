@@ -66,6 +66,27 @@
 	}
 }
 
+.card__question {
+	.card-title {
+		text-align: right;
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    background: $primary;
+	    color: white;
+	    padding: 0.7rem 2rem;
+	}
+	.card-text {
+		margin-top: 1rem;
+	}
+	.card-footer {
+		text-align: center;
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+
 .card__3 {
 	border-top-left-radius: 3rem;
 	img {

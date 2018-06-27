@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(DistrictTableSeeder::class);
         $this->call(ThemeTableSeeder::class);
         $this->call(QuestionTableSeeder::class);
+        $this->call(PopupsTableSeeder::class);
     }
 }

@@ -6,24 +6,28 @@
 	        <div class="col-md-12">
 	            <div class="page--title">
 	                <h1 class="pagetitle">Thema {{ $theme->id }}: {{ $theme->name }} </h1>
-	                {!! $theme->body !!}
-	                <p>Geef met een cijfer aan in hoeverre de hierna volgende stellingen voor u van toepassing zijn.</p>
 	            </div>
 	        </div>
 		</div>
 		<div class="row">	
 			<div class="col-md-12">	
-				<div class="card">
+				<div class="card card__question">
                     <div class="card-body">
                         <h5 class="card-title">Vraag {{ $question->id }}/17 </h5>
 
-                        <p class="card-text card-text__question"> {{ $question->body }} </p>
+                        <span class="card-text card-text__question"> 
+			                <h5> {{ $question->title }} </h5>
+			                {{ $question->body }} 
+		            	</span>
 						<countdown date="60"></countdown>
                         <scan-slider
                         	:answer_id=" {{ $answer->id }} "
                         >
                         </scan-slider>
                         
+                    </div>
+                    <div class="card-footer">
+	                    <p>Geef met een cijfer aan in hoeverre de stelling van toepassing is.</p>
                     </div>
 				</div>
 			</div>
@@ -36,9 +40,35 @@
 				<a href=" {{ url($next) }} " class="btn btn-primary btn-block btn__prevnext">volgende <i class="material-icons"> navigate_next </i></a>
 			</div>
 		</div>
-	
 	</div>
+
+	@if ($question->popup)
+		<div class="modal fade" id="questionpopup" tabindex="-1" role="dialog" aria-labelledby="questionpopupLabel" aria-hidden="true">
+		    <div class="modal-dialog" role="document">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <h5 class="modal-title" id="questionpopupLabel"> {{ $question->popup->title }} </h5>
+		                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			                <span aria-hidden="true">&times;</span>
+		                </button>
+		            </div>
+		            <div class="modal-body">
+		                {{ $question->popup->body }}
+		            </div>
+		            <div class="modal-footer">
+		                <button type="button" class="btn btn-primary" data-dismiss="modal">sluit</button>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
+	@endif
 @stop
 
 @section('additional-scripts')
+<script>
+	$('document').ready(function(){
+		$('#questionpopup').modal('show')
+	});
+</script>
 @endsection

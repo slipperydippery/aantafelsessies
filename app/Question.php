@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Popup;
 use App\Measure;
 use Illuminate\Database\Eloquent\Model;
 
@@ -24,5 +25,10 @@ class Question extends Model
     public function measures()
     {
     	return $this->hasMany(Measure::class);
+    }
+
+    public function popup()
+    {
+        return $this->hasOne(Popup::class);
     }
 }

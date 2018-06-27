@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Scan;
 use App\Theme;
+use App\Followup;
 use App\Question;
 use Illuminate\Http\Request;
 
@@ -75,7 +76,33 @@ class ScanQuestionController extends Controller
     public function followup(Scan $scan)
     {
         $previous = '/sessie/' . $scan->id . '/thema/' . Theme::get()->last()->id . '/actiesuitwerken';
-        $next = '/home';
+        $next = '/sessie/' . $scan->id . '/afgerond';
         return view('scanquestions.followup', compact('scan', 'previous', 'next'));
+    }
+
+    public function commitdatetime(Request $request, Scan $scan)
+    {
+        request()->validate([
+            'date' => 'required|date',
+            'time' => 'required',
+        ]);
+        if($scan->followup){
+            $scan->followup->date = $request->date;
+            $scan->followup->time = $request->time;
+            $scan->followup->save();
+            return redirect()->route('scanquestions.complete', $scan);
+        }
+        $followup = new Followup([
+            'date' => $request->date,
+            'time' => $request->time,
+            'scan_id' => $scan->id
+        ]);
+        $followup->save();
+        return redirect()->route('scanquestions.complete', $scan);
+    }
+
+    public function complete(Scan $scan)
+    {
+        return view('scanquestions.complete', compact('scan'));
     }
 }
