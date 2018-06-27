@@ -24,7 +24,7 @@
 								@foreach ($theme->questions as $question)
 									<div class="col-sm-2">
 										<strong>Vraag {{ $question->id }} <br></strong>
-										{{ $question->title }}
+										<span data-toggle="tooltip" data-placement="top" title=" {{ $question->body }} ">{{ $question->title }}</span>
 									</div>
 								@endforeach
 							</div>
@@ -74,4 +74,10 @@
 @stop
 
 @section('additional-scripts')
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover();   
+              $('[data-toggle="tooltip"]').tooltip()
+        });
+    </script>
 @endsection
