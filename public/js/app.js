@@ -49423,6 +49423,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -49455,6 +49456,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     computed: {},
 
     methods: {
+        isBeheerder: function isBeheerder(scan) {
+            if (scan.id == __WEBPACK_IMPORTED_MODULE_0__app_js__["store"].group.owner.id) {
+                return true;
+            }
+            return false;
+        },
+
+
         getScan: function getScan() {
             if (__WEBPACK_IMPORTED_MODULE_0__app_js__["store"].loggedin) {
                 var home = this;
@@ -49550,9 +49559,13 @@ var render = function() {
               [_vm._v(" " + _vm._s(scan.user.name) + " ")]
             ),
             _vm._v(" "),
-            _c("div", { staticClass: "col-sm-2 table--instantie" }, [
-              _vm._v(" " + _vm._s(scan.instantie.name) + " ")
-            ]),
+            _vm.isBeheerder(scan)
+              ? _c("div", { staticClass: "col-sm-2 table--instantie" }, [
+                  _vm._v(" Beheerder ")
+                ])
+              : _c("div", { staticClass: "col-sm-2 table--instantie" }, [
+                  _vm._v(" " + _vm._s(scan.instantie.name) + " ")
+                ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-sm-1 table--score" }, [
               _vm._v(" " + _vm._s(scan.algemeenbeeld) + " ")

@@ -27,7 +27,7 @@
                             <img src="/img/user.svg" alt="">
                             <div class="card-footer">
                                 {{ $group->owner->user->name }} <br>
-                                {{ $group->owner->instantie->name }}
+                                Beheerder
                             </div>
                         </div>
                     </div>

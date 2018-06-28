@@ -10,7 +10,8 @@
 	        </div>
             <div class="row" v-for="scan in store.group.scans">
                 <div class="col-sm-2 nowrap" :class="['instantietype-' + scan.instantie.instantietype.id + '-leftborder', {'owner-leftborder': isGroupOwner(scan)}]"> {{ scan.user.name }} </div>
-                <div class="col-sm-2 table--instantie"> {{ scan.instantie.name }} </div>
+                <div class="col-sm-2 table--instantie" v-if="isBeheerder(scan)"> Beheerder </div>
+                <div class="col-sm-2 table--instantie" v-else> {{ scan.instantie.name }} </div>
                 <div class="col-sm-1 table--score"> {{ scan.algemeenbeeld }} </div>
                 <div class="col-sm-7">
                 	<div class="resultslider">
@@ -62,6 +63,13 @@
         },
 
         methods: {
+            isBeheerder(scan) {
+                if(scan.id == store.group.owner.id) {
+                    return true;
+                }
+                return false;
+            },
+
             getScan: function() {
                 if(store.loggedin) {
                     var home = this;
