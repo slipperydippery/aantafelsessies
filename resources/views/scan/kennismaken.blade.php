@@ -32,8 +32,10 @@
                         </div>
                     </div>
 
-            		@foreach($scan->group->scans as $thisscan)
-                         @if($thisscan->id != $group->owner->id)
+                    @foreach ($scan->scanmodel->instantietypes as $instantietype)
+                    @foreach($scan->group->scans as $thisscan)
+                        @if($thisscan->instantie->instantietypes->id == $instantietype->id)
+                        @if($thisscan->id != $group->owner->id)
                              <div class="col-sm-2">
                                  <div class="card card__2 card--partner instantietype-{{ $thisscan->instantie->instantietype->id }}">
                                      <div class="card-icons">
@@ -84,6 +86,8 @@
                                  </div>
                              @endif
                         @endif
+                        @endif
+                    @endforeach
                     @endforeach
                     
                 </div>
