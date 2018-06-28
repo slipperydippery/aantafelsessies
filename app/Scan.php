@@ -62,6 +62,23 @@ class Scan extends Model
         return $this->hasOne('App\Followup');
     }
 
+    public function isComplete()
+    {
+        if(! $this->algemeenbeeld) {
+            return false;
+        }
+        $answerCount = 0;
+        forEach($this->answers as $answer) {
+            if ($answer->updated_at != $answer->created_at){
+                $answerCount++;
+            }
+        }
+        if($answerCount != $this->answers->count()){
+            return false;
+        }
+        return true;
+    }
+
     public static function registerWithGroup(User $user, Group $group, $attributes)
     {
         $scan = new Scan($attributes);

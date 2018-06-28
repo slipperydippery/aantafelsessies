@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Answer;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Events\GroupscoresUpdated;
 
@@ -71,6 +72,7 @@ class ApiAnswerController extends Controller
     public function update(Request $request, Answer $answer)
     {
         $answer->answer = $request['answer']['answer'];
+        $answer->updated_at = Carbon::now();
         $answer->save();
         GroupscoresUpdated::dispatch($answer->id);
         

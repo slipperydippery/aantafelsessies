@@ -20,7 +20,7 @@
                 @else
                 	<li><a class="nav-link nav-link--main mr-5 align-top" href=" {{ route('home') }} ">Dashboard</a></li>
                 @endguest
-            	<li><a class="nav-link nav-link--main mr-5" href="/page">Instructie</a></li>
+            	<li><a class="nav-link nav-link--main mr-5" href="#" data-toggle="modal" data-target="#instructieModal">Instructie</a></li>
 
             </ul>
 

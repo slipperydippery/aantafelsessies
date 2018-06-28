@@ -33,7 +33,19 @@
 		            </div>
 		        </a>
 		    </div>
-		    
+		    @if ($scan->isComplete())
+			    <div class="col-md-6">
+			        <a href=" {{ route('scanquestions.complete', $scan) }} ">
+			            <div class="card card__dashboard">
+			                <div class="card-body">
+			                    <h5 class="card-title">Bekijk de resultaten</h5>
+			                    <img src="/img/resultaten.jpg" alt="">
+			                </div>
+			            </div>
+			        </a>
+			    </div>
+		    @endif
+
 		    @if ($scan->group->owner->id == $scan->id)
 		    	
                     <div class="col-md-6">
