@@ -34,7 +34,7 @@
 
                     @foreach ($scan->scanmodel->instantietypes as $instantietype)
                     @foreach($scan->group->scans as $thisscan)
-                        @if($thisscan->instantie->instantietypes->id == $instantietype->id)
+                        @if($thisscan->instantie->instantietype->id == $instantietype->id)
                         @if($thisscan->id != $group->owner->id)
                              <div class="col-sm-2">
                                  <div class="card card__2 card--partner instantietype-{{ $thisscan->instantie->instantietype->id }}">
