@@ -9,6 +9,8 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@import 'node_modules/flatpickr/dist/flatpickr.min';
+
 /**
  * Site style
  */
@@ -37,12 +39,11 @@
 @import "partials/elementcolors";
 @import "partials/countdown";
 
+
 // Page specific layout
 @import "partials/welcome";
 @import "partials/dashboard";
 
 
 // Picker
-@import 'pickerpartials/classic';
-@import 'pickerpartials/classic.date';
-@import 'pickerpartials/classic.time';
+@import "partials/flatpickr";

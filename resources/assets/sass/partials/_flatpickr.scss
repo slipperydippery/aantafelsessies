@@ -1,0 +1,15 @@
+.flatpickr-calendar.inline {
+	margin: 0 auto;
+}
+
+.flatpickr--input {
+	display: none;
+}
+.flatpickr-time {
+	background: $primary-muted;
+}
+
+.flatpickr-day.selected, .flatpickr-day.selected:hover, .flatpickr-day.selected:focus {
+	background: $themecolor-2;
+	border-color: $themecolor-2;
+}

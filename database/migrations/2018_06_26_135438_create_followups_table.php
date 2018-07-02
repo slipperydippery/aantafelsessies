@@ -15,9 +15,8 @@ class CreateFollowupsTable extends Migration
     {
         Schema::create('followups', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('date');
-            $table->time('time');
-            $table->integer('scan_id')->unsigned()->nullable();
+            $table->datetime('datetime')->nullable();
+            $table->integer('scan_id')->unsigned();
             $table->foreign('scan_id')->references('id')->on('scans')->onDelete('cascade');
             $table->timestamps();
         });

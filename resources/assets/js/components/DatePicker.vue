@@ -1,0 +1,35 @@
+<template>
+	<input 
+		:value = "value"
+		type="text"
+		class="flatpickr--input"
+		ref="input"
+	>
+</template>
+
+<script>
+	import flatpickr from "flatpickr";
+	import { Dutch } from "flatpickr/dist/l10n/nl.js"
+	var moment = require('moment');
+
+    export default {
+        props: {
+        	value: {}
+        },
+
+        mounted() {
+        	flatpickr( this.$refs.input, {
+        		"locale": Dutch,
+        		enableTime: true,
+        		inline: true,
+        		weekNumbers: true,
+        		minDate: "today",
+	    		time_24hr: true,
+	    		onChange: (dateObject, dateString) => {
+	    			this.$emit("input", dateString)
+	    		},
+	    		defaultDate: this.value
+        	});
+        },
+    }
+</script>

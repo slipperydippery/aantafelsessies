@@ -53,3 +53,13 @@ span.selectable--passive:hover {
 	white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+.page-highlight {
+	border: 1px solid $themecolor-2;
+	background: rgba($themecolor-2, .07);
+	padding: .7rem;
+	text-align: center;
+	font-weight: 800;
+	color: $themecolor-2;
+	border-radius: 5rem;
+}

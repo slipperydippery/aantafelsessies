@@ -55,6 +55,10 @@ Route::get('/api/scan/{scan}/question/{question}/getanswers', 'ApiScanQuestionCo
 Route::get('/api/measure/{measure}', 'ApiMeasureController@show');
 Route::post('/api/measure/{measure}/update', 'ApiMeasureController@update');
 
+// Followup
+Route::get('/api/group/{group}/followup', 'ApiGroupFollowupController@show');
+Route::post('/api/followup/{followup}/update', 'ApiFollowupController@update');
+
 // Gesprekshulp Inventarisaties
 Route::get('/inventarisatie/', 'InventarisatieController@store')->name('inventarisatie.store');
 Route::get('/inventarisatie/{inventarisatie}', 'InventarisatieController@show')->name('inventarisatie.show');

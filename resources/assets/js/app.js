@@ -7,6 +7,8 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+require('pikaday');
+import "pikaday/css/pikaday.css";
 
 export let store = {
 	scan: {
@@ -61,8 +63,14 @@ Vue.component('mini-measure', require('./components/MiniMeasure.vue'));
 Vue.component('big-measure', require('./components/BigMeasure.vue'));
 Vue.component('frontrunner', require('./components/Frontrunner.vue'));
 
+Vue.component('set-followup', require('./components/SetFollowup.vue'));
+
 // Utility
 Vue.component('countdown', require('./components/Countdown.vue'));
+
+// Controlled Components
+Vue.component('slider-input', require('./components/SliderInput.vue'));
+Vue.component('date-picker', require('./components/DatePicker.vue'));
 
 //old 
 Vue.component('set-inventarisatie-title', require('./components/SetInventarisatieTitle.vue'));
