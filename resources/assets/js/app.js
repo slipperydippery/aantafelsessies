@@ -6,9 +6,11 @@
 
 require('./bootstrap');
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 window.Vue = require('vue');
-require('pikaday');
-import "pikaday/css/pikaday.css";
 
 export let store = {
 	scan: {
@@ -65,12 +67,19 @@ Vue.component('frontrunner', require('./components/Frontrunner.vue'));
 
 Vue.component('set-followup', require('./components/SetFollowup.vue'));
 
+Vue.component('dateplanner', require('./components/Dateplanner.vue'));
+Vue.component('dateoption', require('./components/Dateoption.vue'));
+Vue.component('add-dateoption', require('./components/AddDateoption.vue'));
+Vue.component('set-availability', require('./components/SetAvailability.vue'));
+
 // Utility
 Vue.component('countdown', require('./components/Countdown.vue'));
 
 // Controlled Components
 Vue.component('slider-input', require('./components/SliderInput.vue'));
 Vue.component('date-picker', require('./components/DatePicker.vue'));
+Vue.component('remove-modal', require('./components/RemoveModal.vue'));
+Vue.component('copy-icon', require('./components/CopyIcon.vue'));
 
 //old 
 Vue.component('set-inventarisatie-title', require('./components/SetInventarisatieTitle.vue'));

@@ -7,8 +7,10 @@ use App\Group;
 use App\Answer;
 use App\Measure;
 use App\District;
+use App\Followup;
 use App\Instantie;
 use App\Scanmodel;
+use App\Availability;
 use Illuminate\Database\Eloquent\Model;
 
 class Scan extends Model
@@ -59,7 +61,20 @@ class Scan extends Model
 
     public function followup()
     {
-        return $this->hasOne('App\Followup');
+        return $this->hasOne(Followup::class);
+    }
+
+    public function availabilities()
+    {
+        return $this->hasMany(Availability::class);
+    }
+
+    public function isOwner()
+    {
+        if( $this->group->id == $this->id ){
+            return true;
+        }
+        return false;
     }
 
     public function isComplete()

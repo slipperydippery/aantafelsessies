@@ -1,5 +1,5 @@
 .flatpickr-calendar.inline {
-	margin: 0 auto;
+	margin: 1rem 0;
 }
 
 .flatpickr--input {
@@ -7,6 +7,9 @@
 }
 .flatpickr-time {
 	background: $primary-muted;
+	input {
+		font-size: 2rem;
+	}
 }
 
 .flatpickr-day.selected, .flatpickr-day.selected:hover, .flatpickr-day.selected:focus {

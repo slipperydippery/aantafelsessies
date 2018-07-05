@@ -65,5 +65,22 @@
 	.row:nth-child(odd){
 		background: $gray-100;
 	}
-	
+}
+
+.dateoption {
+	margin-bottom: 1rem;
+	.dateoption--set {
+		svg {
+			height: 1.6rem;
+			width: 1.6rem;
+		}
+	}
+	.dateoption--availability {
+		img {
+			height: 1.6rem;
+			margin: 0 1rem;
+		}
+		span {
+		}
+	}
 }

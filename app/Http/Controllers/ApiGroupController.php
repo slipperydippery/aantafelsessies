@@ -69,6 +69,11 @@ class ApiGroupController extends Controller
 
     public function storescan(Group $group, Request $request)
     {
+        foreach($group->scans as $scan){
+            if($scan->user->id == Auth::user()->id){
+                return redirect()->route('home');
+            }
+        }
         request()->validate([
             'instantie_id' => 'required|integer',
         ]);

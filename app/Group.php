@@ -4,6 +4,7 @@ namespace App;
 
 use App\Scan;
 use App\User;
+use App\Dateplanner;
 use App\Inventarisatie;
 use Illuminate\Database\Eloquent\Model;
 
@@ -31,5 +32,10 @@ class Group extends Model
     public function inventarisatie()
     {
         return $this->hasOne(Inventarisatie::class);
+    }
+
+    public function dateplanner()
+    {
+        return $this->hasOne(Dateplanner::class);
     }
 }

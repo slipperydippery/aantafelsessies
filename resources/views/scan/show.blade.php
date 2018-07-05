@@ -8,6 +8,15 @@
                     <h1 class="pagetitle">
                     	Sessie {{ $scan->title }} 
                     </h1>
+                    @if ($scan->isOwner())
+                        <p class="page-highlight">
+                            <span id="groupcode">{{ Request::root() }}/group/{{ $scan->group->id }}/createscan/{{ $scan->group->code }}</span> 
+                            <copy-icon
+                                copy_content=" {{ Request::root() }}/group/{{ $scan->group->id }}/createscan/{{ $scan->group->code }} "
+                            >
+                            </copy-icon>
+                        </p>
+                    @endif
                 </div>
             </div>
 			
@@ -23,16 +32,39 @@
 		            </div>
 		        </a>
 		    </div>
-		    <div class="col-md-6">
-		        <a href=" # " title="" data-toggle="modal" data-target="#deleteModal">
-		            <div class="card card__dashboard">
-		                <div class="card-body">
-		                    <h5 class="card-title">Verwijder deze sessie</h5>
-		                    <img src="/img/delete3.jpg" alt="">
-		                </div>
-		            </div>
-		        </a>
-		    </div>
+            <div class="col-md-6">
+                <a href=" # " title="" data-toggle="modal" data-target="#deleteModal">
+                    <div class="card card__dashboard">
+                        <div class="card-body">
+                            <h5 class="card-title">Verwijder deze sessie</h5>
+                            <img src="/img/delete3.jpg" alt="">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                @if ($scan->group->dateplanner)
+                    <a href=" {{ route('dateplanner.show', $scan->group->dateplanner) }} " title="">
+                        <div class="card card__dashboard">
+                            <div class="card-body">
+                                <h5 class="card-title">Datumprikker</h5>
+                                <img src="/img/dateplanner.jpg" alt="">
+                            </div>
+                        </div>
+                    </a>
+                @elseif($scan->isOwner())
+                    <div class="card card__dashboard">
+                        <div class="card-body">
+                            <h5 class="card-title">Datumprikker</h5>
+                            <form action="{{ route('dateplanner.store') }}" method="post" accept-charset="utf-8">
+                                {{ csrf_field() }}
+                                <input type="hidden" id="group_id" name="group_id" value="{{ $scan->group->id }}">
+                                <input type="submit" value=" Maak een Datumprikker aan " class="btn btn-primary " />
+                            </form>
+                        </div>
+                    </div>
+                @endif
+            </div>
 		    @if ($scan->isComplete())
 			    <div class="col-md-6">
 			        <a href=" {{ route('scanquestions.complete', $scan) }} ">
@@ -46,7 +78,7 @@
 			    </div>
 		    @endif
 
-		    @if ($scan->group->owner->id == $scan->id)
+		    @if ($scan->isOwner())
 		    	
                     <div class="col-md-6">
                         <a href="#" data-toggle="modal" data-target="#voorbeeldmail">

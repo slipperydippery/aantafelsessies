@@ -55,6 +55,16 @@ Route::get('/api/scan/{scan}/question/{question}/getanswers', 'ApiScanQuestionCo
 Route::get('/api/measure/{measure}', 'ApiMeasureController@show');
 Route::post('/api/measure/{measure}/update', 'ApiMeasureController@update');
 
+// Dateplanner
+Route::resource('dateplanner', 'DateplannerController');
+Route::post('/api/dateoption', 'ApiDateoptionController@store');
+Route::get('/api/availability/{availability}', 'ApiAvailabilityController@show');
+Route::post('/api/availability/{availability}/update', 'ApiAvailabilityController@update');
+Route::get('/api/dateplanner/{dateplanner}/dateoption', 'ApiDateplannerDateoptionController@index');
+Route::get('/api/dateoption/{dateoption}/authavailability', 'ApiDateoptionController@authavailability');
+Route::get('/api/dateoption/{dateoption}/destroy', 'ApiDateoptionController@destroy');
+
+
 // Followup
 Route::get('/api/group/{group}/followup', 'ApiGroupFollowupController@show');
 Route::post('/api/followup/{followup}/update', 'ApiFollowupController@update');

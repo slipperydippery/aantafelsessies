@@ -11513,6 +11513,10 @@ span.selectable--passive:hover {
   text-transform: uppercase;
 }
 
+.removemodal {
+  float: right;
+}
+
 label {
   color: #DF2715;
   font-size: 1.5rem;
@@ -11770,6 +11774,20 @@ label {
 
 .section__panel__table .row:nth-child(odd) {
   background: #f8f9fa;
+}
+
+.dateoption {
+  margin-bottom: 1rem;
+}
+
+.dateoption .dateoption--set svg {
+  height: 1.6rem;
+  width: 1.6rem;
+}
+
+.dateoption .dateoption--availability img {
+  height: 1.6rem;
+  margin: 0 1rem;
 }
 
 .rangeslider--container {
@@ -12145,7 +12163,7 @@ input[type=range]:disabled::-moz-range-thumb {
 }
 
 .flatpickr-calendar.inline {
-  margin: 0 auto;
+  margin: 1rem 0;
 }
 
 .flatpickr--input {
@@ -12154,6 +12172,10 @@ input[type=range]:disabled::-moz-range-thumb {
 
 .flatpickr-time {
   background: #FDF4F3;
+}
+
+.flatpickr-time input {
+  font-size: 2rem;
 }
 
 .flatpickr-day.selected,

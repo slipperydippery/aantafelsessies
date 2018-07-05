@@ -6,10 +6,15 @@
             <div class="col-md-12">
                 <div class="page--title">
                     <h1 class="pagetitle">Je hebt succesvol een sessie aangemaakt</h1>
-                    <p>Nodig nu jouw gesprekspartners uit per mail en voeg deze link toe: </p>
+                    <p>Nodig nu jouw gesprekspartners uit per mail. Deze link geeft de deelnemers direct toegang tot de sessie die je zojuist hebt aangemaakt:</p>
+                    <p class="page-highlight">
+                        <span id="groupcode">{{ Request::root() }}/group/{{ $group->id }}/createscan/{{ $group->code }} </span>
+                        <copy-icon
+                            copy_content=" {{ Request::root() }}/group/{{ $group->id }}/createscan/{{ $group->code }} "
+                        >
+                        </copy-icon>
+                    </p>
 
-                    <p><strong>{{ Request::root() }}/group/{{ $group->id }}/createscan/{{ $group->code }}</strong> <i class="material-icons"> file_copy </i> </p>
-                    <p>Deze link geeft de deelnemers direct toegang tot de sessie die je zojuist hebt aangemaakt</p>
                 </div>
             </div>
         </div>
@@ -55,6 +60,7 @@
         <div class="row row__prevnext justify-content-end">
             <div class="col-md-4">
                 <a href=" {{ route('home') }} " class="btn btn-primary btn-block btn__prevnext">Naar het dashboard </a>
+
             </div>
         </div>      
     </div>
