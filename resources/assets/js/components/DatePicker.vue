@@ -10,7 +10,6 @@
 <script>
 	import flatpickr from "flatpickr";
 	import { Dutch } from "flatpickr/dist/l10n/nl.js"
-	// var moment = require('moment');
 
     export default {
         props: {

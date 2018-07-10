@@ -11768,6 +11768,10 @@ label {
   background: #FDF4F3;
 }
 
+.section__panel .card-closeicon {
+  float: right;
+}
+
 .section__panel__toptabs {
   border-top: 0;
 }
@@ -12015,7 +12019,13 @@ input[type=range]:disabled::-moz-range-thumb {
 .instantietype-1.active,
 .instantietype-1 .card-footer {
   background: #3ab5dd;
-  -widthbo2px: none 0;
+  border-width: 2px 0;
+  color: white;
+}
+
+.instantietype-1.inactive .card-footer {
+  background: #abc9d2;
+  border-width: 2px 0;
   color: white;
 }
 
@@ -12023,6 +12033,12 @@ input[type=range]:disabled::-moz-range-thumb {
   background: none;
   border: 2px solid #3ab5dd;
   color: #3ab5dd;
+}
+
+.instantietype-1.inactive {
+  background: none;
+  border: 2px solid #abc9d2;
+  color: #abc9d2;
 }
 
 .instantietype-1.title {
@@ -12036,10 +12052,22 @@ input[type=range]:disabled::-moz-range-thumb {
   color: white;
 }
 
+.instantietype-2.inactive .card-footer {
+  background: #d0908a;
+  border-width: 2px 0;
+  color: white;
+}
+
 .instantietype-2 {
   background: none;
   border: 2px solid #DF2715;
   color: #DF2715;
+}
+
+.instantietype-2.inactive {
+  background: none;
+  border: 2px solid #d0908a;
+  color: #d0908a;
 }
 
 .instantietype-2.title {
@@ -12053,10 +12081,22 @@ input[type=range]:disabled::-moz-range-thumb {
   color: white;
 }
 
+.instantietype-3.inactive .card-footer {
+  background: #a55e83;
+  border-width: 2px 0;
+  color: white;
+}
+
 .instantietype-3 {
   background: none;
   border: 2px solid #841951;
   color: #841951;
+}
+
+.instantietype-3.inactive {
+  background: none;
+  border: 2px solid #a55e83;
+  color: #a55e83;
 }
 
 .instantietype-3.title {
@@ -12070,10 +12110,22 @@ input[type=range]:disabled::-moz-range-thumb {
   color: white;
 }
 
+.instantietype-4.inactive .card-footer {
+  background: #cabac3;
+  border-width: 2px 0;
+  color: white;
+}
+
 .instantietype-4 {
   background: none;
   border: 2px solid #CB5393;
   color: #CB5393;
+}
+
+.instantietype-4.inactive {
+  background: none;
+  border: 2px solid #cabac3;
+  color: #cabac3;
 }
 
 .instantietype-4.title {

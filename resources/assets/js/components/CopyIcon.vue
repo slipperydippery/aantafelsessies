@@ -1,11 +1,15 @@
 <template>
-	<i class="material-icons clickable"
-		v-clipboard:copy="copy_content"
-    	v-clipboard:success="onCopy"
-    	data-toggle="tooltip" 
-    	data-placement="top" 
-    	:title="status"
-	> file_copy </i> 
+	<span>
+		<i class="material-icons clickable"
+			id="copy-icon"
+			v-clipboard:copy="copy_content"
+	    	v-clipboard:success="onCopy"
+		> file_copy </i> 
+
+		<b-tooltip :disabled.sync="disabled" ref="tooltip" target="copy-icon">
+	        {{ status }}
+		</b-tooltip>
+	</span>
 </template>
 
 <script>
@@ -19,7 +23,8 @@
 
         data() {
             return {
-            	status: ''
+            	status: 'Gekopieerd naar het klembord!',
+            	disabled: true
             }
         },
 
@@ -31,7 +36,12 @@
 
         methods: {
         	onCopy() {
-        		this.status='Gekopieerd naar het klembord!'
+        		this.status='Gekopieerd naar het klembord!';
+        		this.$refs.tooltip.$emit('open');
+        		setTimeout( () => { 
+	        		this.$refs.tooltip.$emit('close');
+        			this.disabled=true;
+        		 }, 2000);
         	}
         }
     }

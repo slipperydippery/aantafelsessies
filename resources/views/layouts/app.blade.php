@@ -24,6 +24,9 @@
 
     <main class="flex-grow" id="app">
         @yield('content')
+
+        <portal-target name="modals"></portal-target>
+
     </main>
 
     @include('partials.instructie')
