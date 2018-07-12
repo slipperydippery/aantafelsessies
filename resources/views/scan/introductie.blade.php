@@ -17,18 +17,20 @@
                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/0nEFHtUxbuc" allowfullscreen></iframe>
                 </div>
 
-                <div class="row row__prevnext justify-content-between">
-                    <div class="col-md-4">
-                        <a href=" {{ route('scan.show', $scan) }} " class="btn btn-primary btn-block btn__prevnext"><i class="material-icons"> navigate_before </i> vorige</a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href=" {{ route('scan.kennismaken', $scan) }} " class="btn btn-primary btn-block btn__prevnext">volgende <i class="material-icons"> navigate_next </i></a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 @stop
 
+@section('prevnext')
+    <div class="row row__prevnext justify-content-between">
+        <div class="col-md-4">
+            <a href=" {{ route('scan.show', $scan) }} " class="btn btn-primary btn-block btn__prevnext"><i class="material-icons"> navigate_before </i> vorige</a>
+        </div>
+        <div class="col-md-4">
+            <a href=" {{ route('scan.kennismaken', $scan) }} " class="btn btn-primary btn-block btn__prevnext">volgende <i class="material-icons"> navigate_next </i></a>
+        </div>
+    </div>
+@stop
 @section('additional-scripts')
 @endsection

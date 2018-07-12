@@ -29,6 +29,13 @@
 
     </main>
 
+    @hasSection('prevnext')
+        <div class="container">
+            @yield('prevnext')
+            @include('partials.progressbar')
+        </div>
+    @endif
+
     @include('partials.instructie')
 
     <footer class="footer">
@@ -40,6 +47,11 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     @yield('additional-scripts')
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+    </script>
 
 </body>
 </html>
