@@ -22,22 +22,22 @@ Broadcast::channel('dashmessages.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
 
-Broadcast::channel('algemeenbeeld.{group}', function($user, Group $group) {
-	$canAccess = false;
-	foreach($group->scans as $thisscan) {
-	    if( (int) $thisscan->user->id === (int) $user->id) {
-	        $canAccess = true;
-	    }
-	}
-	return $canAccess;
+Broadcast::channel('algemeenbeeld.{group}', function ($user, Group $group) {
+    $canAccess = false;
+    foreach ($group->scans as $thisscan) {
+        if ((int) $thisscan->user->id === (int) $user->id) {
+            $canAccess = true;
+        }
+    }
+    return $canAccess;
 });
 
-Broadcast::channel('groupscores.{answer}', function($user, Answer $answer) {
-	$canAccess = false;
-	foreach($answer->scan->group->scans as $thisscan) {
-	    if( (int) $thisscan->user->id === (int) $user->id) {
-	        $canAccess = true;
-	    }
-	}
-	return $canAccess;
+Broadcast::channel('groupscores.{answer}', function ($user, Answer $answer) {
+    $canAccess = false;
+    foreach ($answer->scan->group->scans as $thisscan) {
+        if ((int) $thisscan->user->id === (int) $user->id) {
+            $canAccess = true;
+        }
+    }
+    return $canAccess;
 });

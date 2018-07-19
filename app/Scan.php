@@ -21,42 +21,42 @@ class Scan extends Model
 
     public function user()
     {
-    	return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function scanmodel()
     {
-    	return $this->belongsTo(Scanmodel::class);
+        return $this->belongsTo(Scanmodel::class);
     }
 
     public function owns()
     {
-    	return $this->hasOne(Group::class);
+        return $this->hasOne(Group::class);
     }
 
     public function answers()
     {
-    	return $this->hasMany(Answer::class);
+        return $this->hasMany(Answer::class);
     }
 
     public function group()
     {
-    	return $this->belongsTo(Group::class);
+        return $this->belongsTo(Group::class);
     }
 
     public function instantie()
     {
-    	return $this->belongsTo(Instantie::class);
+        return $this->belongsTo(Instantie::class);
     }
 
     public function districts()
     {
-    	return $this->belongsToMany(District::class);
+        return $this->belongsToMany(District::class);
     }
 
     public function measures()
     {
-    	return $this->hasMany(Measure::class);
+        return $this->hasMany(Measure::class);
     }
 
     public function followup()
@@ -71,7 +71,7 @@ class Scan extends Model
 
     public function isOwner()
     {
-        if( $this->group->id == $this->id ){
+        if ($this->group->id == $this->id) {
             return true;
         }
         return false;
@@ -79,16 +79,16 @@ class Scan extends Model
 
     public function isComplete()
     {
-        if(! $this->algemeenbeeld) {
+        if (! $this->algemeenbeeld) {
             return false;
         }
         $answerCount = 0;
-        forEach($this->answers as $answer) {
-            if ($answer->updated_at != $answer->created_at){
+        foreach ($this->answers as $answer) {
+            if ($answer->updated_at != $answer->created_at) {
                 $answerCount++;
             }
         }
-        if($answerCount != $this->answers->count()){
+        if ($answerCount != $this->answers->count()) {
             return false;
         }
         return true;
@@ -109,35 +109,34 @@ class Scan extends Model
 
     public static function register(User $user, $attributes)
     {
-    	$scan = new Scan($attributes);
-    	$user->scans()->save($scan);
+        $scan = new Scan($attributes);
+        $user->scans()->save($scan);
 
-    	foreach ($attributes['districts'] as $district) {
-    	    $district = District::find($district['id']);
-    	    $scan->districts()->attach($district);
-    	}
-    	$scan->save();
+        foreach ($attributes['districts'] as $district) {
+            $district = District::find($district['id']);
+            $scan->districts()->attach($district);
+        }
+        $scan->save();
 
-    	$scan->generateQuestions($scan);
+        $scan->generateQuestions($scan);
 
-    	return $scan;
+        return $scan;
     }
 
     public function generateQuestions(Scan $scan)
     {
-    	foreach($scan->scanmodel->themes as $theme) {
-    		foreach ($theme->questions as $question) {
-    			Answer::create([
-    				'scan_id' => $scan->id,
-    				'question_id' => $question->id
-    			]);
+        foreach ($scan->scanmodel->themes as $theme) {
+            foreach ($theme->questions as $question) {
+                Answer::create([
+                    'scan_id' => $scan->id,
+                    'question_id' => $question->id
+                ]);
 
-    			Measure::create([
-    			    'scan_id' => $scan->id,
-    			    'question_id' => $question->id
-    			]);
-    		}
-    	}
+                Measure::create([
+                    'scan_id' => $scan->id,
+                    'question_id' => $question->id
+                ]);
+            }
+        }
     }
-
 }

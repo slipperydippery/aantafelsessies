@@ -14,7 +14,7 @@ class ApiDateplannerDateoptionController extends Controller
      */
     public function index(Dateplanner $dateplanner)
     {
-        foreach($dateplanner->dateoptions as $dateoption) {
+        foreach ($dateplanner->dateoptions as $dateoption) {
             $dateoption->guaranteeAvailabilities();
         }
         return Dateplanner::with('dateoptions.availabilities.scan.user')->find($dateplanner->id);

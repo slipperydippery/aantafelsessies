@@ -39,8 +39,8 @@ class InventarisatieController extends Controller
         $inventarisatie = new Inventarisatie;
         $count = Auth::user()->inventarisaties->count();
         $inventarisatie->title = 'Selectie gesprekspartners - ' . ($count + 1);
-        if($user = Auth::user()) {
-            $user->inventarisaties()->save($inventarisatie);    
+        if ($user = Auth::user()) {
+            $user->inventarisaties()->save($inventarisatie);
         }
         $inventarisatie->save();
         session(['inventarisatie' => $inventarisatie->id]);

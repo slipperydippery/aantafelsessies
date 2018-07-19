@@ -11,26 +11,25 @@ use Illuminate\Http\Request;
 
 class GesprekspartnersController extends Controller
 {
- 	public function start()
- 	{
-        if ( ! Session::has('inventarisatie')){
+    public function start()
+    {
+        if (! Session::has('inventarisatie')) {
             return redirect()->route('inventarisatie.store');
         }
 
         return redirect()->route('gesprekspartners.show', 1);
- 		
- 	}
+    }
 
     public function show(Instantietype $instantietype)
     {
-    	if ( ! Session::has('inventarisatie')){
-    		return redirect()->route('welcome');
-    	}
+        if (! Session::has('inventarisatie')) {
+            return redirect()->route('welcome');
+        }
 
         $instantietypes = Instantietype::get();
-    	$inventarisatie = Inventarisatie::find(session('inventarisatie'));
+        $inventarisatie = Inventarisatie::find(session('inventarisatie'));
 
-		Partner::guaranteeRelationship($inventarisatie, $instantietype);
+        Partner::guaranteeRelationship($inventarisatie, $instantietype);
 
 
         $previous = Instantietype::where('id', '<', $instantietype->id)->orderBy('id', 'desc')->first();
@@ -41,15 +40,15 @@ class GesprekspartnersController extends Controller
 
     public function results()
     {
-        if ( ! Session::has('inventarisatie')){
+        if (! Session::has('inventarisatie')) {
             return redirect()->route('welcome');
         }
 
-	    $inventarisatie = Inventarisatie::find(session('inventarisatie'));
+        $inventarisatie = Inventarisatie::find(session('inventarisatie'));
         $partners = $inventarisatie->partners;
         
         $instantietypes = Instantietype::get();
 
-    	return view('gesprekspartners.results', compact('inventarisatie', 'partners', 'instantietypes'));
-    }    
+        return view('gesprekspartners.results', compact('inventarisatie', 'partners', 'instantietypes'));
+    }
 }

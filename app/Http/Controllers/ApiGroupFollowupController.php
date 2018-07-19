@@ -47,7 +47,7 @@ class ApiGroupFollowupController extends Controller
      */
     public function show(Group $group)
     {
-        if(! $group->owner->followup){
+        if (! $group->owner->followup) {
             $followup = new Followup([
                 'scan_id' => $group->owner->id
             ]);

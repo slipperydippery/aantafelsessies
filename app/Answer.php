@@ -13,6 +13,6 @@ class Answer extends Model
 
     public function scan()
     {
-    	return $this->belongsTo(Scan::class);
+        return $this->belongsTo(Scan::class);
     }
 }

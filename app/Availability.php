@@ -12,11 +12,11 @@ class Availability extends Model
 
     public function dateoption()
     {
-    	return $this->belongsTo(Dateoption::class);
+        return $this->belongsTo(Dateoption::class);
     }
 
     public function scan()
     {
-    	return $this->belongsTo(Scan::class);
+        return $this->belongsTo(Scan::class);
     }
 }

@@ -93,4 +93,3 @@ Route::get('/start', 'PagesController@start')->name('loggless.start');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/partners', 'PagesController@partners')->name('partners');
 Route::get('/vraag', 'PagesController@vraag')->name('vraag');
-

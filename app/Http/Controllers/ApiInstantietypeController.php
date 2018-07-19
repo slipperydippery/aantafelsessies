@@ -15,7 +15,6 @@ class ApiInstantietypeController extends Controller
     public function index()
     {
         return Instantietype::get();
-
     }
 
     /**

@@ -21,7 +21,7 @@ class VerifyGroupOwner
         $group = Group::findOrFail($groupid);
         if (Auth::guest()) {
             return redirect()->guest('login');
-        } 
+        }
         if (Auth::user()->id != $group->user->id) {
             return response('Je hebt geen toegang tot deze groep', 401);
         }

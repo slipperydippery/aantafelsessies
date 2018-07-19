@@ -11,16 +11,16 @@ class Inventarisatie extends Model
 {
     public function user()
     {
-    	return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function partners()
     {
-    	return $this->hasMany(Partner::class);
+        return $this->hasMany(Partner::class);
     }
 
     public function group()
     {
-    	return $this->belongsTo(Group::class);
+        return $this->belongsTo(Group::class);
     }
 }

@@ -58,8 +58,8 @@ class DateplannerController extends Controller
      */
     public function show(Dateplanner $dateplanner)
     {
-        foreach($dateplanner->dateoptions as $dateoption){
-            if( ! $dateoption->availabilities->where('scan_id', $dateplanner->authscan()->id)->count() ) {
+        foreach ($dateplanner->dateoptions as $dateoption) {
+            if (! $dateoption->availabilities->where('scan_id', $dateplanner->authscan()->id)->count()) {
                 $availability = new Availability([
                     'scan_id' => $dateplanner->authscan()->id,
                     'dateoption_id' => $dateoption->id

@@ -81,6 +81,5 @@ class GroupScanController extends Controller
      */
     public function destroy(Group $group, Scan $scan)
     {
-        
     }
 }

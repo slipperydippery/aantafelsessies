@@ -9,6 +9,6 @@ class Instantietype extends Model
 {
     public function instanties()
     {
-    	return $this->hasMany(Instantie::class);
+        return $this->hasMany(Instantie::class);
     }
 }

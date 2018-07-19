@@ -85,7 +85,7 @@ class ApiDateoptionController extends Controller
      */
     public function destroy(Dateoption $dateoption)
     {
-        foreach($dateoption->availabilities as $availability) {
+        foreach ($dateoption->availabilities as $availability) {
             $availability->delete();
         }
         $dateoption->delete();

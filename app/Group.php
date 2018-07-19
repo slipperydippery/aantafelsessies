@@ -16,7 +16,7 @@ class Group extends Model
 
     public function scans()
     {
-    	return $this->hasMany(Scan::class);
+        return $this->hasMany(Scan::class);
     }
 
     public function owner()
