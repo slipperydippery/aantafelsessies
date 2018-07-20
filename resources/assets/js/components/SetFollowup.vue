@@ -1,12 +1,11 @@
 <template>
 	<date-picker
-		v-if="followup.datetime"
+		v-if="followup.created_at"
 		v-model="followup.datetime"
 		@input="updateFollowup"
 		:disabled="beheerder"
 	>
 	</date-picker>
-
 </template>
 
 <script>
