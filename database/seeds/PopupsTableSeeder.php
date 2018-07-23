@@ -47,6 +47,5 @@ class PopupsTableSeeder extends Seeder
         $popup_six->body = 'Het belangrijk ook belangrijk om ook te spreken over professionaliteit van de uitvoering. Naar aanleiding hiervan zijn de volgende stellingen ter discussie opgenomen:';
         $popup_six->question_id = 13;
         $popup_six->save();
-
     }
 }

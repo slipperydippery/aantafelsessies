@@ -57,7 +57,7 @@ class ApiGroupController extends Controller
         ]);
         $group->save();
 
-        if($request->inventarisatie_id){
+        if ($request->inventarisatie_id) {
             $inventarisatie = Inventarisatie::find($request->inventarisatie_id);
             $inventarisatie->group()->associate($group);
             $inventarisatie->save();
@@ -69,8 +69,8 @@ class ApiGroupController extends Controller
 
     public function storescan(Group $group, Request $request)
     {
-        foreach($group->scans as $scan){
-            if($scan->user->id == Auth::user()->id){
+        foreach ($group->scans as $scan) {
+            if ($scan->user->id == Auth::user()->id) {
                 return redirect()->route('home');
             }
         }

@@ -10,12 +10,12 @@ class ApiInventarisatieInstantietypeInstantieController extends Controller
 {
     public function index(Inventarisatie $inventarisatie, Instantietype $instantietype)
     {
-    	$partners = [];
-    	foreach($inventarisatie->partners as $partner) {
-    		if($partner->instantie->instantietype->id == $instantietype->id){
-    			$partners[] = $partner;
-    		}
-    	}
-    	return $partners;
+        $partners = [];
+        foreach ($inventarisatie->partners as $partner) {
+            if ($partner->instantie->instantietype->id == $instantietype->id) {
+                $partners[] = $partner;
+            }
+        }
+        return $partners;
     }
 }

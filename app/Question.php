@@ -24,7 +24,7 @@ class Question extends Model
     
     public function measures()
     {
-    	return $this->hasMany(Measure::class);
+        return $this->hasMany(Measure::class);
     }
 
     public function popup()
