@@ -104,7 +104,7 @@
                                 <a href=" {{ route('scanquestions.measures', [$scan, $theme]) }} " data-toggle="tooltip" data-placement="top" title="Thema {{ $theme->id }} acties">
                                     <img src="/img/simplecircle.svg" alt="">
                                 </a>
-                                @endif
+                            @endif
                         </div>
                     @endforeach
                     @foreach ($scan->scanmodel->themes as $theme)
@@ -121,9 +121,15 @@
                         </div>
                     @endforeach
                     <div class="progress-element">
-                        <a href=" {{ route('scanquestions.followup', $scan) }} " data-toggle="tooltip" data-placement="top" title="Vervolgafspraak plannen">
-                            <img src="/img/simplecircle.svg" alt="">
-                        </a>
+                        @if ( url()->current() == route('scanquestions.followup', $scan) )
+                            <span class="imgcontainer" data-toggle="tooltip" data-placement="top" title="Vervolgafspraak plannen">
+                                <img src="/img/simplecircle_full.svg" alt="">
+                            </span>
+                        @else
+                            <a href=" {{ route('scanquestions.followup', $scan) }} " data-toggle="tooltip" data-placement="top" title="Vervolgafspraak plannen">
+                                <img src="/img/simplecircle.svg" alt="">
+                            </a>
+                        @endif
                     </div>
                     <div class="progress-element">
                         <a href=" {{ route('scanquestions.complete', $scan) }} " data-toggle="tooltip" data-placement="top" title="Afgerond">
