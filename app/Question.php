@@ -4,6 +4,7 @@ namespace App;
 
 use App\Popup;
 use App\Measure;
+use App\Definition;
 use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
@@ -30,5 +31,10 @@ class Question extends Model
     public function popup()
     {
         return $this->hasOne(Popup::class);
+    }
+
+    public function definitions()
+    {
+        return $this->morphMany(Definition::class, 'definable');
     }
 }

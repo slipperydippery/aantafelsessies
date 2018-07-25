@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ThemeTableSeeder::class);
         $this->call(QuestionTableSeeder::class);
         $this->call(PopupsTableSeeder::class);
+        $this->call(DefinitionsTableSeeder::class);
     }
 }

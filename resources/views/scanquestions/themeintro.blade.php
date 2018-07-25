@@ -14,7 +14,12 @@
 			<div class="col-md-12">
 
                 <div class="themeintro">
-                	<h1 class="display-1">{{ $theme->name }}</h1>
+                	<h1 class="display-1">
+                		{{ $theme->name }}
+                		@if ($theme->info)
+                			<i class="material-icons clickable muted display-1" data-toggle="tooltip" data-placement="top" title=" {{ $theme->info }} "> info </i>
+                		@endif
+                	</h1>
                 </div>
 
 			</div>

@@ -5,7 +5,12 @@
 		<div class="row">
 	        <div class="col-md-12">
 	            <div class="page--title">
-	                <h1 class="pagetitle">Thema {{ $theme->id }}: {{ $theme->name }} </h1>
+	                <h1 class="pagetitle">
+	                	Thema {{ $theme->id }}: {{ $theme->name }} 
+	                	@if ($theme->info)
+	                		<i class="material-icons clickable muted h1" data-toggle="tooltip" data-placement="top" title=" {{ $theme->info }} "> info </i>
+	                	@endif
+	                </h1>
 	            </div>
 	        </div>
 		</div>
@@ -17,7 +22,7 @@
 
                         <span class="card-text card-text__question"> 
 			                <h5> {{ $question->title }} </h5>
-			                {{ $question->body }} 
+			                {!! $question->body !!} 
 		            	</span>
 						<countdown date="60"></countdown>
                         <scan-slider

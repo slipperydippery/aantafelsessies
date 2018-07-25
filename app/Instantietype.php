@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Instantie;
+use App\Definition;
 use Illuminate\Database\Eloquent\Model;
 
 class Instantietype extends Model

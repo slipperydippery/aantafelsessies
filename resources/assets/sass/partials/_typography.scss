@@ -30,3 +30,8 @@ h5 {
 .muted {
 	color: rgba($primary, 0.5);
 }
+
+span.definition {
+	color: $primary;
+	text-decoration: underline;
+}

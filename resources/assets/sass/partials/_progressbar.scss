@@ -1,6 +1,8 @@
 .progressbar--container {
 	padding-top: 1rem;
 	padding-bottom: 2.5rem;
+	width: 100%;
+	border: 1px solid $primary;
 	.progressbar {
 		width: 100%;
 		height: .2rem;
@@ -12,7 +14,7 @@
 			height: .2rem;
 			flex-grow: 1;
 			background: $primary;
-			a {
+			a, .imgcontainer {
 				position: absolute;
 				top: -0.45rem;
 				img {

@@ -7,7 +7,7 @@
 	            <div class="page--title">
 	                <h1 class="pagetitle">Plan een Vervolgafspraak</h1>
 	                <p>Je hebt alle vragen al beantwoord. We adviseren om nu alvast een vervolgafspraak te maken om de uitgevoerde actiepunten om te zetten naar een werkagenda. De beheerder kan op de kalender een datum prikken zodat deze afspraak naar alle deelnemers van de groep kan worden gemaild.</p>
-					@if($scan->followup->datetime)
+					@if($scan->followup)
 					    <p  class="scandate page-highlight">Er is een vervolgafspraak gepland op: {{ $scan->followup->datetime }}.</p>
 					@else
 					    <p  class="scandate page-highlight">Er is nog geen vervolgafspraak gepland</p>
@@ -20,7 +20,7 @@
 				<div class="col-md-12">
 					<div class="section__panel">
 						<div class="section__panel--title">
-							@if($scan->followup->datetime)
+							@if($scan->followup)
 								<h5>Wijzig vervolgaspraak</h5>
 							@else
 								<h5>Plan een vervolgaspraak</h5>

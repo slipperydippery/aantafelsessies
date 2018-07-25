@@ -18,6 +18,7 @@ class ThemeTableSeeder extends Seeder
                 'id' => '1',
                 'name' => 'Drempels voor het vragen van hulp',
                 'short' => '',
+                'info' => 'Uit onderzoek blijkt dat mensen met beginnende schulden drempels ervaren tot het zoeken van contact. Hierdoor ontwikkelen beginnende schulden zich tot problematische schulden. Daarom is het noodzakelijk om deze drempels te verlagen/weg te nemen.',
                 'body' => '<p>Uit het onderzoeksrapport afgelost=opgelost blijkt dat inwoners met beginnende schulden drempels ervaren tot het zoeken van contact1. Hierdoor ontwikkelen beginnende schulden zich tot problematische schulden. Daarom is het noodzakelijk om deze drempels te verlagen/weg te nemen. Naar aanleiding hiervan zijn de volgende stellingen ter discussie opgenomen.</p>',
                 'scanmodel_id' => '1'
             ],
@@ -25,6 +26,7 @@ class ThemeTableSeeder extends Seeder
                 'id' => '2',
                 'name' => 'Communicatiestrategieën',
                 'short' => '',
+                'info' => '',
                 'body' => '<p>Om bovenstaande drempels tot het zoeken van hulp te overkomen, zijn er een aantal randvoorwaarden voor communicatie die kunnen worden toegepast, zoals het bespreekbaar maken van financiële problematiek. </p>
                     <p>Daarnaast is het ook belangrijk om dienstverlening rond het krijgen van overzicht van financiën actief aan te bieden en de toon van de communicatie aan te passen op verschillende doelgroepen met beginnende schulden. </p>
                     <p>Verder is het belangrijk om de informatievoorziening over eventuele betalingsregelingen, financiële hulp etc. duidelijk en eenvoudig te communiceren naar inwoners met beginnende schulden op papier, telefonisch en in persoon (afhankelijk van de doelgroep). Hierbij is het belangrijk om rekening te houden met wanneer, welke informatie aan wie moet worden gecommuniceerd . </p>',
@@ -34,6 +36,7 @@ class ThemeTableSeeder extends Seeder
                 'id' => '3',
                 'name' => 'Effectieve samenwerking',
                 'short' => '',
+                'info' => 'Het is belangrijk om met de partijen aan tafel tot een eenduidig en gedragen beeld van de doelgroep te komen en te inventariseren welke specifieke kennis of methodiek nodig is om deze groep goed te kunnen helpen. Ook is het belangrijk om te bepalen wie daarin welke rol vervult.',
                 'body' => '<p>Het is belangrijk om met de partijen aan tafel tot een eenduidig en gedragen beeld van de doelgroep te komen en te inventariseren welke specifieke kennis of methodiek nodig is om deze groep goed te kunnen helpen. Ook is het belangrijk om te bepalen wie daarin welke rol vervult .</p>',
                 'scanmodel_id' => '1'
             ],
@@ -41,6 +44,7 @@ class ThemeTableSeeder extends Seeder
                 'id' => '4',
                 'name' => 'Professionaliteit van de uitvoering',
                 'short' => '',
+                'info' => 'Het bezitten van specifieke competenties en vaardigheden zoals helder en open communiceren, goed kunnen luisteren en voor de professional die de regie heeft op de klant, ook initiatief nemen, afspraken maken en het bewaken van de naleving van deze afspraken. Bron: Schuldhulpverlening in de keten.',
                 'body' => '<p>Tot slot is het belangrijk om ook te spreken over professionaliteit van de uitvoering:</p>',
                 'scanmodel_id' => '1'
             ],
