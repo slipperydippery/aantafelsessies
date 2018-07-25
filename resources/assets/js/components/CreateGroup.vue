@@ -4,7 +4,7 @@
 	        <strong>Belangrijk!</strong> {{ errors }}.
 	    </div>
 	    <div class="form-group">
-            <label for="">Geef je gesprekssessie een naam:</label>
+            <label class="input">Geef je gesprekssessie een naam:</label>
             <div class="alert alert-danger" v-if="errors.title" v-for="error in errors.title">
                 <strong>Incompleet</strong> {{ error }}
             </div>
@@ -13,7 +13,7 @@
 	    </div>
 
         <div class="form-group">
-            <label for="">Voor welke gemeente(n) maak je deze gesprekssessie?</label> <br>
+            <label class="input">Voor welke gemeente(n) maak je deze gesprekssessie?</label>
             <div class="alert alert-danger" v-if="errors.districts" v-for="error in errors.districts">
                 <strong>Incompleet</strong> {{ error }}
             </div>

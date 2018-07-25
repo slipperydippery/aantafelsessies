@@ -11530,12 +11530,22 @@ span.selectable--passive:hover {
   float: right;
 }
 
+.group--create {
+  font-size: 1rem;
+  font-weight: 800;
+  padding: .5rem;
+}
+
 label {
   color: #DF2715;
   font-size: 1.5rem;
   background: rgba(248, 248, 248, 0.45);
   display: block;
   padding: 1rem;
+}
+
+label.input {
+  font-size: 1rem;
 }
 
 .form-group {

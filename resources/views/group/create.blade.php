@@ -9,6 +9,16 @@
 	            </div>
 	        </div>
 		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<create-group
+					:instantietypes=" {{ $instantietypes }} "
+					:alldistricts=" {{ $districts }} "
+					:inventarisatie_id=" {{ $inventarisatie ? $inventarisatie->id : 0 }} "
+				>
+				</create-group>
+			</div>
+		</div>
 		@if(! $inventarisatie)
             <p class="page-highlight">Wil je bepalen met wie je de sessie het beste kunt uitvoeren? <a href=" {{ route('inventarisatie.store') }} ">Doe de selectiehulp</a> </p>
 		@else
@@ -16,7 +26,7 @@
 				<div class="col-md-12">
 					<div class="section__panel">
 						<div class="section__panel--title">
-							<p>Dit is de samenstelling van gesprekspartners die je eerder hebt gemaakt</p>
+							<p>Dit is de samenstelling van jouw gesprekspartners:</p>
 						</div>
 						<div class="row">
 							@foreach ($instantietypes as $instantietype)
@@ -45,16 +55,6 @@
 				</div>
 			</div>
 		@endif
-		<div class="row">
-			<div class="col-md-12">
-				<create-group
-					:instantietypes=" {{ $instantietypes }} "
-					:alldistricts=" {{ $districts }} "
-					:inventarisatie_id=" {{ $inventarisatie ? $inventarisatie->id : 0 }} "
-				>
-				</create-group>
-			</div>
-		</div>
 	</div>
 @stop
 

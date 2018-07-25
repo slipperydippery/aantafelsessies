@@ -87247,7 +87247,7 @@ var render = function() {
       "div",
       { staticClass: "form-group" },
       [
-        _c("label", { attrs: { for: "" } }, [
+        _c("label", { staticClass: "input" }, [
           _vm._v("Geef je gesprekssessie een naam:")
         ]),
         _vm._v(" "),
@@ -87293,11 +87293,9 @@ var render = function() {
       "div",
       { staticClass: "form-group" },
       [
-        _c("label", { attrs: { for: "" } }, [
+        _c("label", { staticClass: "input" }, [
           _vm._v("Voor welke gemeente(n) maak je deze gesprekssessie?")
         ]),
-        _vm._v(" "),
-        _c("br"),
         _vm._v(" "),
         _vm._l(_vm.errors.districts, function(error) {
           return _vm.errors.districts
