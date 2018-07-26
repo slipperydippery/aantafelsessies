@@ -11383,33 +11383,6 @@ nav.navbar ul.navbar-nav {
   font-weight: 800;
 }
 
-.banner {
-  background: white url("/img/banner-welcome.jpg") center;
-}
-
-.banner .container--banner {
-  position: relative;
-  height: 480px;
-}
-
-.banner .container--banner .curve {
-  position: absolute;
-  top: 0;
-  left: -45%;
-  background-image: url(/img/curve.png);
-  background-position: top right;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 480px;
-  width: 870px;
-}
-
-.banner .container--banner .siteinfo img {
-  position: absolute;
-  top: 20px;
-  width: 200px;
-}
-
 .nav-tabs__login {
   margin-top: 4rem;
   border-bottom: none;
@@ -12274,6 +12247,15 @@ input[type=range]:disabled::-moz-range-thumb {
 
 .progressbar--container .progressbar .progress-element__layer2 {
   margin-top: 1rem;
+}
+
+.banner {
+  background: white url("/img/banner-welcome.jpg") center;
+}
+
+.banner .container--banner {
+  position: relative;
+  height: 350px;
 }
 
 .mainbutton--container {

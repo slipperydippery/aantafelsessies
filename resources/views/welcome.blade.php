@@ -3,10 +3,7 @@
 @section('content')
     <div class="banner">
         <div class="container container--banner">
-            <div class="curve"></div>
-            <div class="siteinfo">
-                <img class="printlogo" src="/img/logo.svg">
-            </div>
+                <h1 class="display-1">Voorkom schulden samen </h1>
         </div>
     </div>
 
