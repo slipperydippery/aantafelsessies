@@ -3,7 +3,6 @@
 @section('content')
     <div class="banner">
         <div class="container container--banner">
-                <h1 class="display-1">Voorkom schulden samen </h1>
         </div>
     </div>
 
