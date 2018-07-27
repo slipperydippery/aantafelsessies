@@ -258,7 +258,7 @@
                      
                     <p>Klik hier om een indruk te krijgen van de sessie: (filmpje)</p>
                      
-                    <p>Klik op de volgende link om je aan te melden voor de sessie: {{ Request::root() }}/group/{{ $group->id }}/createscan/{{ $group->code }}</p>
+                    <p>Klik op de volgende link om je aan te melden voor de sessie: {{ Request::root() }}/group/{{ $scan->group->id }}/createscan/{{ $scan->group->code }}</p>
                      </strong>
                     <p>Met vriendelijke groeten,</p>
                     <p>(Afzender)</p>
