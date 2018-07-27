@@ -21,9 +21,9 @@
 					<div class="section__panel">
 						<div class="section__panel--title">
 							@if($scan->followup)
-								<h5>Wijzig vervolgaspraak</h5>
+								<h5>Wijzig vervolgafspraak</h5>
 							@else
-								<h5>Plan een vervolgaspraak</h5>
+								<h5>Plan een vervolgafspraak</h5>
 							@endif
 			                <span><em></em></span>
 						</div>

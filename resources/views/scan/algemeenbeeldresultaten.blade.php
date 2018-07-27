@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="page--title">
                     <h1 class="pagetitle">Resultaten beoordeling huidige aanpak</h1>
-                    <p>Dit is het antwoord dat je gegeven hebt. Via het dashboard kun je jouw antwoorden vergelijken met andere deelnemers.</p>
+                    <p>Dit zijn de antwoorden van de deelnemers die aan deze sessie meedoen. </p>
                 </div>
             </div>
         </div>

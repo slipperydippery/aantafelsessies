@@ -6,7 +6,7 @@
 	        <div class="col-md-12">
 	            <div class="page--title">
 	                <h1 class="pagetitle">Beoordeel de huidige gezamenlijke aanpak</h1>
-	                <p>Kunt je een algemene indruk geven van hoe goed jouw gemeente het volgens jou doet als het gaat om het gezamenlijk voorkomen van schulden.</p>
+	                <p>Kun je een algemene indruk geven van hoe goed jouw gemeente het volgens jou doet als het gaat om het gezamenlijk voorkomen van schulden.</p>
 	            </div>
 	        </div>
 		</div>

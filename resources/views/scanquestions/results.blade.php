@@ -11,6 +11,7 @@
 	                		<i class="material-icons clickable muted h1" data-toggle="tooltip" data-placement="top" title=" {{ $theme->info }} "> info </i>
 	                	@endif
 	                </h1>
+                    <p>Dit zijn de scores van de deelnemers. Bespreek met elkaar wat er uit springt en/of over welke onderwerpen sterk van mening wordt verschilt. In het volgende scherm kunnen de belangrijkste twee of drie verbeterpunten worden benoemd.</p>
 	            </div>
 	        </div>
 		</div>

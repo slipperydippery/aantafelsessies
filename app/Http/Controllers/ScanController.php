@@ -91,6 +91,6 @@ class ScanController extends Controller
     {
         $scan->districts()->detach();
         $scan->delete();
-        return redirect()->back();
+        return redirect()->route('home');
     }
 }

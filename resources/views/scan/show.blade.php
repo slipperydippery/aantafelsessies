@@ -86,7 +86,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">
                                     	<i class="material-icons" data-toggle="tooltip" data-placement="top" title="Je beheert deze sessie"> star </i>
-                                    	Bekijk een voorbeeld email
+                                    	Email om deelnemers uit te nodigen
                                     </h5>
                                     <img src="/img/letter.jpg" alt="">
                                 </div>
@@ -233,19 +233,34 @@
                 </div>
                 <div class="modal-body">
                     <p><span><em>Hieronder zie je een voorbeeld van een e-mail die je kunt kopiëren en plakken. Als je de link ook meestuurt, kunnen jouw netwerkpartners zich direct aanmelden bij jouw sessie.</em></span></p>
-                    
+
                     <p>Beste netwerkpartner,</p>
 
-                    <p>Graag wil ik u uitnodigen om mee te doen aan een gesprekssessie om samen schulden te voorkomen. Voorkom schulden samen is een digtale gesprekshulp ontwikkeld om samen schulden te signaleren en te informeren en actie te ondernemen. De digitale gesprekshulp helpt ons om aan tafel samen inzicht te krijgen in noodzakelijke verbeteracties om schulden van inwoners in de gemeente te voorkomen.</p>
+                    <p>Graag wil ik u uitnodigen om mee te doen aan een gesprekssessie om samen schulden te voorkomen. </p>
 
-                    <p>Samen bereiken we meer dan alleen, dus ik hoop op jouw deelname aan deze sessie. De sessie duurt ongeveer 2 uur.</p>
+                    <p><strong>De sessie vindt plaats op: (zelf invullen) locatie (zelf invullen)</strong></p>
 
-                    <p>Klik op deze link om aan deze scan mee te doen. {{ Request::root() }}/group/{{ $scan->group->id }}/createscan/{{ $scan->group->code }}</p>
+                    <p>Voorkom schulden samen is een digitale gesprekshulp ontwikkeld om samen schulden te signaleren en te informeren en actie te ondernemen. De digitale gesprekshulp helpt ons om aan tafel samen inzicht te krijgen in noodzakelijke verbeteracties om schulden van inwoners in de gemeente te voorkomen.</p>
 
-                    <p>Ik neem binnenkort contact op voor een afspraak zodat we de scan gezamenlijk kunnen uitvoeren.</p>
+                    <p>Samen bereiken we meer dan alleen, dus ik hoop op jouw deelname aan deze sessie. De sessie duurt 2 uur.</p>
+<strong>
+                    <p>We gaan in gesprek over de volgende thema’s:</p>
 
+                    <ol>
+                         <li>Drempels voor het vragen van hulp </li>
+                         <li>Communicatiestrategieën</li>
+                         <li>Effectieve samenwerking</li>
+                         <li>Professionaliteit van de uitvoering</li>
+                     </ol>
+
+                    <p>We nodigen de volgende organisaties uit:</p>
+                    (zelf invullen)
+                     
+                    <p>Klik hier om een indruk te krijgen van de sessie: (filmpje)</p>
+                     
+                    <p>Klik op de volgende link om je aan te melden voor de sessie: {{ Request::root() }}/group/{{ $group->id }}/createscan/{{ $group->code }}</p>
+                     </strong>
                     <p>Met vriendelijke groeten,</p>
-
                     <p>(Afzender)</p>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-dismiss="modal">Sluit</button>

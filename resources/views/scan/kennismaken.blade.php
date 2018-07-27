@@ -73,12 +73,12 @@
                                                  <p>Weet je zeker dat je <strong>{{ $thisscan->user->name }}</strong> van <strong>{{ $thisscan->instantie->name }}</strong> uit de sessie wilt verwijderen?</p>
                                              </div>
                                              <div class="modal-footer">
-                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluit</button>
+                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuleer</button>
                                                      <form action="{{ route('scan.destroy', $thisscan) }}" method="post" accept-charset="utf-8">
                                                          <input type="hidden" name="_method" value="DELETE">
                                                          {{ csrf_field() }}
                                                         <!-- Add Submit Field -->
-                                                        <input type="submit" value="Verwijder sessie" class="btn btn-primary" />
+                                                        <input type="submit" value="Verwijder deelnemer" class="btn btn-primary" />
                                                      </form>
                                              </div>
                                          </div>
