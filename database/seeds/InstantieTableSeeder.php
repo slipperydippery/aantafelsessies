@@ -14,8 +14,8 @@ class InstantieTableSeeder extends Seeder
     public function run()
     {
         $instantie_type_vastelasten = Instantietype::where('name', 'Vaste lasten')->first();
-        $instantie_type_beginnendeschulden = Instantietype::where('name', 'Maatschappelijke organisaties')->first();
-        $instantie_type_beginnendeschulden_gemeente = Instantietype::where('name', 'Afdelingen gemeente')->first();
+        $instantie_type_maatschappelijkeorganisaties = Instantietype::where('name', 'Maatschappelijke organisaties')->first();
+        $instantie_type_werkinkomen = Instantietype::where('name', 'Werk / Inkomen')->first();
         $instantie_type_scholen_werkgevers = Instantietype::where('name', 'Scholen en werkgevers')->first();
 
         $instantie_zorgverzekeraar = new Instantie();
@@ -63,32 +63,41 @@ class InstantieTableSeeder extends Seeder
         $instantie_waterbedrijf->save();
         $instantie_type_vastelasten->instanties()->save($instantie_waterbedrijf);
 
+        $instantie_waterbedrijf = new Instantie();
+        $instantie_waterbedrijf->name = 'Telecomaanbieder';
+        $instantie_waterbedrijf->description = 'Telecomaanbieder.';
+        $instantie_waterbedrijf->reason = 'Het is verstandige om met deze partij samen te werken want...';
+        $instantie_waterbedrijf->contactpersoon = '';
+        $instantie_waterbedrijf->scanmodel_id = 1;
+        $instantie_waterbedrijf->save();
+        $instantie_type_vastelasten->instanties()->save($instantie_waterbedrijf);
+
         $instantie_next = new Instantie();
         $instantie_next->name = 'Zorg';
-        $instantie_next->description = 'Zorg en/of welzijnsinstellingen.';
+        $instantie_next->description = 'Zoals vrijwilligers thuisadministratie en maatjesprojecten. ';
         $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
-        $instantie_type_beginnendeschulden->instanties()->save($instantie_next);
+        $instantie_type_maatschappelijkeorganisaties->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
         $instantie_next->name = 'Vrijwilligersorganisatie';
-        $instantie_next->description = 'Vrijwilligersorganisatie thuisadministratie/maatjes project.';
+        $instantie_next->description = 'Zoals vrijwilligers thuisadministratie en maatjesprojecten.';
         $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
-        $instantie_type_beginnendeschulden->instanties()->save($instantie_next);
+        $instantie_type_maatschappelijkeorganisaties->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
         $instantie_next->name = 'Sociale initiatieven';
-        $instantie_next->description = 'Sociale initiatieven/burgerinitiatieven gericht op verbeteren positie van kwetsbare mensen..';
+        $instantie_next->description = 'Zoals wijkinitiatieven gericht op versterken eigen kracht inwoners.';
         $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
-        $instantie_type_beginnendeschulden->instanties()->save($instantie_next);
+        $instantie_type_maatschappelijkeorganisaties->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
         $instantie_next->name = 'Voedselbank';
@@ -97,7 +106,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
-        $instantie_type_beginnendeschulden->instanties()->save($instantie_next);
+        $instantie_type_maatschappelijkeorganisaties->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
         $instantie_next->name = 'Sportverenigingen';
@@ -106,7 +115,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
-        $instantie_type_beginnendeschulden->instanties()->save($instantie_next);
+        $instantie_type_maatschappelijkeorganisaties->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
         $instantie_next->name = 'Belastingzaken';
@@ -115,7 +124,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
-        $instantie_type_beginnendeschulden_gemeente->instanties()->save($instantie_next);
+        $instantie_type_werkinkomen->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
         $instantie_next->name = 'Cliëntenraad';
@@ -124,7 +133,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
-        $instantie_type_beginnendeschulden_gemeente->instanties()->save($instantie_next);
+        $instantie_type_werkinkomen->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
         $instantie_next->name = 'Sociaal Wijkteam';
@@ -133,7 +142,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
-        $instantie_type_beginnendeschulden_gemeente->instanties()->save($instantie_next);
+        $instantie_type_werkinkomen->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
         $instantie_next->name = 'Sociale dienst';
@@ -142,7 +151,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
-        $instantie_type_beginnendeschulden_gemeente->instanties()->save($instantie_next);
+        $instantie_type_werkinkomen->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
         $instantie_next->name = 'Welzijn / Wmo';
@@ -151,7 +160,25 @@ class InstantieTableSeeder extends Seeder
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
-        $instantie_type_beginnendeschulden_gemeente->instanties()->save($instantie_next);
+        $instantie_type_werkinkomen->instanties()->save($instantie_next);
+
+        $instantie_next = new Instantie();
+        $instantie_next->name = 'Onderwijs / Leerplicht';
+        $instantie_next->description = 'Onderwijs / Leerplicht.';
+        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
+        $instantie_next->contactpersoon = '';
+        $instantie_next->scanmodel_id = 1;
+        $instantie_next->save();
+        $instantie_type_werkinkomen->instanties()->save($instantie_next);
+
+        $instantie_next = new Instantie();
+        $instantie_next->name = 'Economie / Ondernemerschap';
+        $instantie_next->description = 'Economie / Ondernemerscha.p';
+        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
+        $instantie_next->contactpersoon = '';
+        $instantie_next->scanmodel_id = 1;
+        $instantie_next->save();
+        $instantie_type_werkinkomen->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
         $instantie_next->name = 'Werkgevers';
@@ -183,6 +210,15 @@ class InstantieTableSeeder extends Seeder
         $instantie_next = new Instantie();
         $instantie_next->name = 'MBO-instelling';
         $instantie_next->description = 'MBO-instelling.';
+        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
+        $instantie_next->contactpersoon = '';
+        $instantie_next->scanmodel_id = 1;
+        $instantie_next->save();
+        $instantie_type_scholen_werkgevers->instanties()->save($instantie_next);
+
+        $instantie_next = new Instantie();
+        $instantie_next->name = 'Voorschoolse opvang';
+        $instantie_next->description = 'Zoals kinderopvang en peuterspeelzaal.';
         $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;

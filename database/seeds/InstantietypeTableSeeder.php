@@ -25,7 +25,7 @@ class InstantietypeTableSeeder extends Seeder
         $instantie_type_beginnendeschulden->save();
 
         $instantie_type_beginnendeschulden_gemeente = new Instantietype();
-        $instantie_type_beginnendeschulden_gemeente->name = 'Afdelingen gemeente';
+        $instantie_type_beginnendeschulden_gemeente->name = 'Werk / Inkomen';
         $instantie_type_beginnendeschulden_gemeente->description = 'Afdelingen binnen de gemeente die beginnende schulden kunnen signaleren.';
         $instantie_type_beginnendeschulden_gemeente->reason = '';
         $instantie_type_beginnendeschulden_gemeente->save();
