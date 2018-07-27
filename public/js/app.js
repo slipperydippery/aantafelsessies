@@ -87984,7 +87984,7 @@ var render = function() {
             return _c("option", { domProps: { value: instantie } }, [
               _vm._v(
                 " " +
-                  _vm._s(instantie.title) +
+                  _vm._s(instantie.name) +
                   " --- " +
                   _vm._s(instantie.description) +
                   " "
@@ -88476,12 +88476,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['answer_id'],
+    props: ['answer_id', 'nvt'],
 
     data: function data() {
         return {
             'answer': {},
-            'nvt': false
+            'nvttrue': false
         };
     },
     mounted: function mounted() {
@@ -88504,12 +88504,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         deactivate: function deactivate() {
-            this.nvt = true;
+            this.nvttrue = true;
             this.answer.answer = null;
             this.saveAnswer();
         },
         activate: function activate() {
-            this.nvt = false;
+            this.nvttrue = false;
         }
     }
 });
@@ -88527,7 +88527,7 @@ var render = function() {
     {},
     [
       _c("slider-input", {
-        attrs: { disabled: _vm.nvt },
+        attrs: { disabled: _vm.nvttrue },
         on: {
           input: function($event) {
             _vm.saveAnswer()
@@ -88542,7 +88542,7 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      !_vm.nvt
+      _vm.nvt && !_vm.nvttrue
         ? _c(
             "button",
             {
@@ -88557,7 +88557,7 @@ var render = function() {
           )
         : _vm._e(),
       _vm._v(" "),
-      _vm.nvt
+      _vm.nvt && _vm.nvttrue
         ? _c(
             "button",
             {
@@ -88950,6 +88950,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -88966,7 +88968,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
 
-    computed: {},
+    computed: {
+        title: function title() {
+            if (this.is_manager) {
+                return '';
+            }
+            return 'Alleen de beheerder kan dit wijzigen.';
+        }
+    },
 
     methods: {
         getMeasure: function getMeasure() {
@@ -89000,7 +89009,15 @@ var render = function() {
       ? _c(
           "i",
           {
+            directives: [
+              {
+                name: "b-tooltip",
+                rawName: "v-b-tooltip.hover",
+                modifiers: { hover: true }
+              }
+            ],
             staticClass: "material-icons clickable",
+            attrs: { title: _vm.title },
             on: {
               click: function($event) {
                 _vm.toggleMeasure()
@@ -89015,7 +89032,15 @@ var render = function() {
       ? _c(
           "i",
           {
+            directives: [
+              {
+                name: "b-tooltip",
+                rawName: "v-b-tooltip.hover",
+                modifiers: { hover: true }
+              }
+            ],
             staticClass: "material-icons clickable",
+            attrs: { title: _vm.title },
             on: {
               click: function($event) {
                 _vm.toggleMeasure()
@@ -89033,13 +89058,19 @@ var render = function() {
           rawName: "v-model",
           value: _vm.measure.measure,
           expression: "measure.measure"
+        },
+        {
+          name: "b-tooltip",
+          rawName: "v-b-tooltip.hover",
+          modifiers: { hover: true }
         }
       ],
       staticClass: "form-control",
       attrs: {
         placeholder: "Actie Omschrijving",
         rows: "6",
-        disabled: !_vm.is_manager || !_vm.measure.active
+        disabled: !_vm.is_manager || !_vm.measure.active,
+        title: _vm.title
       },
       domProps: { value: _vm.measure.measure },
       on: {
@@ -89133,6 +89164,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -89149,7 +89182,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
 
-    computed: {},
+    computed: {
+        title: function title() {
+            if (this.is_manager) {
+                return '';
+            }
+            return 'Alleen de beheerder kan dit wijzigen.';
+        }
+    },
 
     methods: {
         getMeasure: function getMeasure() {
@@ -89186,13 +89226,19 @@ var render = function() {
           rawName: "v-model",
           value: _vm.measure.measure,
           expression: "measure.measure"
+        },
+        {
+          name: "b-tooltip",
+          rawName: "v-b-tooltip.hover",
+          modifiers: { hover: true }
         }
       ],
       staticClass: "form-control",
       attrs: {
         placeholder: "Actie Omschrijving",
         rows: "6",
-        disabled: !_vm.is_manager
+        disabled: !_vm.is_manager,
+        title: _vm.title
       },
       domProps: { value: _vm.measure.measure },
       on: {

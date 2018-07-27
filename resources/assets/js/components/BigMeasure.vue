@@ -6,6 +6,8 @@
             rows="6"
             v-model="measure.measure" 
             :disabled="! is_manager"
+            v-b-tooltip.hover
+            :title="title"
             @blur="updateMeasure()"
         ></textarea>
 	</div>
@@ -22,15 +24,22 @@
 
         data() {
             return {
-            	'measure': {}
+            	'measure': {},
             }
         },
 
         mounted() {
-        	this.getMeasure();
+            this.getMeasure();
         },
 
         computed: {
+            title() {
+                if(this.is_manager) {
+                    return ''
+                }
+                return 'Alleen de beheerder kan dit wijzigen.'
+            }
+            
         },
 
         methods: {

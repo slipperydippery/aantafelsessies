@@ -1,8 +1,8 @@
 <template>
     <div class="">
-        <slider-input v-model="answer.answer" @input="saveAnswer()" :disabled="nvt"></slider-input>
-        <button class="btn btn-outline-primary btn__nvt" @click="deactivate()" v-if="!nvt">niet van toepassing</button>
-        <button class="btn btn-primary btn__nvt" @click="activate()" v-if="nvt">niet van toepassing</button>
+        <slider-input v-model="answer.answer" @input="saveAnswer()" :disabled="nvttrue"></slider-input>
+        <button class="btn btn-outline-primary btn__nvt" @click="deactivate()" v-if="nvt && !nvttrue">niet van toepassing</button>
+        <button class="btn btn-primary btn__nvt" @click="activate()" v-if="nvt && nvttrue">niet van toepassing</button>
     </div>
 </template>
 
@@ -12,12 +12,13 @@
     export default {
         props: [
 	        'answer_id',
+            'nvt'
         ],
 
         data() {
             return {
             	'answer': {},
-                'nvt': false,
+                'nvttrue': false
             }
         },
 
@@ -43,13 +44,13 @@
         	},
 
             deactivate() {
-                this.nvt = true;
+                this.nvttrue = true;
                 this.answer.answer = null;
                 this.saveAnswer();
             },
 
             activate() {
-                this.nvt = false;
+                this.nvttrue = false;
             }
         }
     }

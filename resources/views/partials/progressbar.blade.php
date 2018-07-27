@@ -4,17 +4,6 @@
             <div class="col-sm-12">
                 <div class="progressbar d-flex justify-content-between">
                     <div class="progress-element">
-                        @if ( url()->current() == route('scan.introductie', $scan) )
-                            <span class="imgcontainer" data-toggle="tooltip" data-placement="top" title="Introductie">
-                                <img src="/img/simplecircle_full.svg" alt="">
-                            </span>
-                        @else
-                            <a href=" {{ route('scan.introductie', $scan) }} " class="imgcontainer" data-toggle="tooltip" data-placement="top" title="Introductie">
-                                <img src="/img/simplecircle.svg" alt="">
-                            </a>
-                        @endif
-                    </div>
-                    <div class="progress-element">
                         @if ( url()->current() == route('scan.kennismaken', $scan) )
                             <span class="imgcontainer" data-toggle="tooltip" data-placement="top" title="Kennismaken">
                                 <img src="/img/simplecircle_full.svg" alt="">
@@ -43,17 +32,6 @@
                             </span>
                         @else
                             <a href=" {{ route('scan.algemeenbeeldresultaten', $scan) }} " class="" data-toggle="tooltip" data-placement="top" title="Resultaten beoordeling huidige aanpak">
-                                <img src="/img/simplecircle.svg" alt="">
-                            </a>
-                        @endif
-                    </div>
-                    <div class="progress-element">
-                        @if ( url()->current() == route('scan.sessieintro', $scan) )
-                            <span class="imgcontainer" data-toggle="tooltip" data-placement="top" title="Introductie van de sessie">
-                                <img src="/img/simplecircle_full.svg" alt="">
-                            </span>
-                        @else
-                            <a href=" {{ route('scan.sessieintro', $scan) }} " class="" data-toggle="tooltip" data-placement="top" title="Introductie van de sessie">
                                 <img src="/img/simplecircle.svg" alt="">
                             </a>
                         @endif

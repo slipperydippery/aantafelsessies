@@ -57,6 +57,40 @@
                 
             </div>
         </div>  
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section__panel">
+                    <div class="section__panel--title">
+                        <p>Dit is de samenstelling van jouw gesprekspartners:</p>
+                    </div>
+                    <div class="row">
+                        @foreach ($instantietypes as $instantietype)
+                            @foreach ($inventarisatie->partners->where('invitable', true) as $partner)
+                                @if ($partner->instantie->instantietype->id == $instantietype->id)
+                                    <div class="col-sm-2">
+                                        <div class="card card__2 card--partner clickable instantietype-{{ $instantietype->id }}">
+                                            <div class="card-icons">
+                                                <span class="card-closeicon">
+                                                    <i class="material-icons"> close </i>
+                                                </span>
+                                            </div>
+                                            <img src="/img/user.svg" alt="">
+                                            <div class="card-footer">
+                                                {{ $partner->instantie->name }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                        @endforeach
+                    </div>
+                </div>
+                <a href=" {{ route('inventarisatie.show', $inventarisatie) }} " class="btn btn-primary">Selectie bewerken</a> 
+                <a href="#" class="btn btn-primary">Nieuwe selectie maken</a>
+            </div>
+        </div>
+
         <div class="row row__prevnext justify-content-end">
             <div class="col-md-4">
                 <a href=" {{ route('home') }} " class="btn btn-primary btn-block btn__prevnext">Naar het dashboard </a>
@@ -127,49 +161,7 @@
     <!-- Modal -->
     <div class="modal fade" id="voorbeeldmail" tabindex="-1" role="dialog" aria-labelledby="voorbeeldmailLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="voorbeeldmailLabel">Voorbeeld Email</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p><span><em>Hieronder zie je een voorbeeld van een e-mail die je kunt kopiëren en plakken. Als je de link ook meestuurt, kunnen jouw netwerkpartners zich direct aanmelden bij jouw sessie.</em></span></p>
-
-                    <p>Beste netwerkpartner,</p>
-
-                    <p>Graag wil ik u uitnodigen om mee te doen aan een gesprekssessie om samen schulden te voorkomen. </p>
-
-                    <p><strong>De sessie vindt plaats op: (zelf invullen) locatie (zelf invullen)</strong></p>
-
-                    <p>Voorkom schulden samen is een digitale gesprekshulp ontwikkeld om samen schulden te signaleren en te informeren en actie te ondernemen. De digitale gesprekshulp helpt ons om aan tafel samen inzicht te krijgen in noodzakelijke verbeteracties om schulden van inwoners in de gemeente te voorkomen.</p>
-
-                    <p>Samen bereiken we meer dan alleen, dus ik hoop op jouw deelname aan deze sessie. De sessie duurt 2 uur.</p>
-<strong>
-                    <p>We gaan in gesprek over de volgende thema’s:</p>
-
-                    <ol>
-                         <li>Drempels voor het vragen van hulp </li>
-                         <li>Communicatiestrategieën</li>
-                         <li>Effectieve samenwerking</li>
-                         <li>Professionaliteit van de uitvoering</li>
-                     </ol>
-
-                    <p>We nodigen de volgende organisaties uit:</p>
-                    (zelf invullen)
-                     
-                    <p>Klik hier om een indruk te krijgen van de sessie: (filmpje)</p>
-                     
-                    <p>Klik op de volgende link om je aan te melden voor de sessie: {{ Request::root() }}/group/{{ $group->id }}/createscan/{{ $group->code }}</p>
-                     </strong>
-                    <p>Met vriendelijke groeten,</p>
-                    <p>(Afzender)</p>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Sluit</button>
-                    </div>
-                </div>
-            </div>
+            @include('partials.emailmodal')
         </div>
     </div>
 

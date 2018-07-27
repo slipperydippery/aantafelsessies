@@ -17,6 +17,8 @@ class CreateQuestionsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('body');
+            $table->text('bodytooltip');
+            $table->boolean('nvt')->default(false);
             $table->text('weergave_succesfactor');
             $table->integer('theme_id')->unsigned();
             $table->foreign('theme_id')->references('id')->on('themes')->onDelete('cascade');

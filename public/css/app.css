@@ -12307,8 +12307,13 @@ input[type=range]:disabled::-moz-range-thumb {
   margin-top: 1rem;
 }
 
+.tooltip .tooltip-inner {
+  text-align: left !important;
+}
+
 .banner {
   background: white url("/img/banner-welcome2.jpg") center;
+  display: none;
 }
 
 .banner .container--banner {

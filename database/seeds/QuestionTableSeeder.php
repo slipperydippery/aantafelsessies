@@ -16,8 +16,7 @@ class QuestionTableSeeder extends Seeder
         $questions = [
             [
                 'title'						=> 'Wegnemen gevoelens van schaamte',
-                'body'                      => 'Mijn organisatie biedt oplossingen voor het wegnemen van gevoelens van 
-
+                'bodytooltip'                      => 'Mijn organisatie biedt oplossingen voor het wegnemen van gevoelens van 
                     <span class="definition" 
                         data-toggle="tooltip" 
                         data-placement="top" 
@@ -26,12 +25,14 @@ class QuestionTableSeeder extends Seeder
                         schaamte
                     </span>
                     bij inwoners/werknemers/klanten met beginnende schulden.',
+                'body'                      => 'Mijn organisatie biedt oplossingen voor het wegnemen van gevoelens van schaamte bij inwoners/werknemers/klanten met beginnende schulden.',
+                'nvt'                       => false,
                 'weergave_succesfactor'     => '',
                 'theme_id' => 1,
             ],
             [
                 'title'                     => 'Wegnemen gevoelens van schaarste',
-                'body'                      => 'Mijn organisatie biedt oplossingen voor het wegnemen van gevoelens van
+                'bodytooltip'                      => 'Mijn organisatie biedt oplossingen voor het wegnemen van gevoelens van
                     <span class="definition" 
                         data-toggle="tooltip" 
                         data-placement="top" 
@@ -40,18 +41,22 @@ class QuestionTableSeeder extends Seeder
                         schaarste
                     </span>
                       bij inwoners/werknemers/klanten met beginnende schulden. ',
+                'body'                      => 'Mijn organisatie biedt oplossingen voor het wegnemen van gevoelens van schaarste bij inwoners/werknemers/klanten met beginnende schulden. ',
+                'nvt'                       => false,
                 'weergave_succesfactor'     => '',
                 'theme_id' => 1,
             ],
             [
                 'title'                     => 'Vinden van juiste hulp',
-                'body'              		=> 'Mijn organisatie biedt handvatten aan inwoners/werknemers/klanten met beginnende schulden bij het vinden van de juiste hulp en het krijgen van overzicht over de eigen financiële situatie.',
+                'bodytooltip'                      => 'Mijn organisatie biedt handvatten aan inwoners/werknemers/klanten met beginnende schulden bij het vinden van de juiste hulp en het krijgen van overzicht over de eigen financiële situatie.',
+                'body'                      => 'Mijn organisatie biedt handvatten aan inwoners/werknemers/klanten met beginnende schulden bij het vinden van de juiste hulp en het krijgen van overzicht over de eigen financiële situatie.',
                 'weergave_succesfactor'     => '',
+                'nvt'                       => false,
                 'theme_id' => 1,
             ],
             [
                 'title'                     => 'Bespreekbaar maken financiële problemen',
-                'body'              		=> 'Mijn organisatie is 
+                'bodytooltip'                      => 'Mijn organisatie is 
                     <span class="definition" 
                         data-toggle="tooltip" 
                         data-placement="top" 
@@ -60,12 +65,14 @@ class QuestionTableSeeder extends Seeder
                         actief
                     </span>
                      in het bespreekbaar maken van financiële problemen.',
+                'body'                      => 'Mijn organisatie is actief in het bespreekbaar maken van financiële problemen.',
+                'nvt'                       => false,
                 'weergave_succesfactor'     => '',
                 'theme_id' => 2,
             ],
             [
                 'title'                     => 'Hulp is makkelijk vindbaar',
-                'body'              		=> 'Mijn organisatie biedt hulp bij het op orde krijgen van de financiële situatie en deze hulp is
+                'bodytooltip'                      => 'Mijn organisatie biedt hulp bij het op orde krijgen van de financiële situatie en deze hulp is
                     <span class="definition" 
                         data-toggle="tooltip" 
                         data-placement="top" 
@@ -74,24 +81,30 @@ class QuestionTableSeeder extends Seeder
                          toegankelijk en makkelijk vindbaar
                     </span>
                     voor alle inwoners. <i>Als jouw organisatie zelf geen dienstverlening aanbiedt, vink dan ‘niet van toepassing’ aan.</i>',
+                'body'                      => 'Mijn organisatie biedt hulp bij het op orde krijgen van de financiële situatie en deze hulp is toegankelijk en makkelijk vindbaar voor alle inwoners. <i>Als jouw organisatie zelf geen dienstverlening aanbiedt, vink dan ‘niet van toepassing’ aan.</i>',
+                'nvt'                       => true,
                 'weergave_succesfactor'     => '',
                 'theme_id' => 2,
             ],
             [
                 'title'                     => 'Communicatie aangepast op doelgroepen',
+                'bodytooltip'                      => 'Mijn organisatie past haar communicatie aan op verschillende doelgroepen inwoners/medewerkers/klanten met beginnende schulden. Hierbij denkend aan jongeren, mensen met een uitkering, oudere mensen, alleenstaande ouders, werkenden, ZZP’ers, laaggeletterden etc.',
                 'body'              		=> 'Mijn organisatie past haar communicatie aan op verschillende doelgroepen inwoners/medewerkers/klanten met beginnende schulden. Hierbij denkend aan jongeren, mensen met een uitkering, oudere mensen, alleenstaande ouders, werkenden, ZZP’ers, laaggeletterden etc.',
+                'nvt'                       => false,
                 'weergave_succesfactor'     => '',
                 'theme_id' => 2,
             ],
             [
                 'title'                     => 'Communiceert op eenvoudige wijze',
+                'bodytooltip'                      => 'Inwoners/medewerkers/klanten lopen risico op het ontwikkelen van een schuldsituatie na een life-event (zoals echtscheiding, ontslag en ziekte) als zij niet tijdig uitgaven aanpassen aan het nieuwe inkomen. Mijn organisatie houdt rekening met life-events in de timing van de communicatie. ',
                 'body'              		=> 'Inwoners/medewerkers/klanten lopen risico op het ontwikkelen van een schuldsituatie na een life-event (zoals echtscheiding, ontslag en ziekte) als zij niet tijdig uitgaven aanpassen aan het nieuwe inkomen. Mijn organisatie houdt rekening met life-events in de timing van de communicatie. ',
+                'nvt'                       => false,
                 'weergave_succesfactor'     => '',
                 'theme_id' => 2,
             ],
             [
                 'title'                     => 'Signalen in beleid vastgelegd',
-                'body'              		=> 'Mijn organisatie heeft in beleid vastgelegd wat 
+                'bodytooltip'                      => 'Mijn organisatie heeft in beleid vastgelegd wat 
                     <span class="definition" 
                         data-toggle="tooltip" 
                         data-placement="top" 
@@ -100,18 +113,22 @@ class QuestionTableSeeder extends Seeder
                          signalen
                     </span>
                     zijn van beginnende schulden bij inwoners/medewerkers/klanten en hoe hiermee wordt omgegaan. ',
+                'body'                      => 'Mijn organisatie heeft in beleid vastgelegd wat signalen zijn van beginnende schulden bij inwoners/medewerkers/klanten en hoe hiermee wordt omgegaan. ',
+                'nvt'                       => false,
                 'weergave_succesfactor'     => '',
                 'theme_id' => 3,
             ],
             [
                 'title'                     => 'Beleid over wijze informeren',
+                'bodytooltip'                      => 'Mijn organisatie heeft in beleid vastgelegd hoe inwoners/medewerkers/klanten met beginnende schulden worden geïnformeerd over de hulp die er is om financiën op orde te krijgen.',
                 'body'              		=> 'Mijn organisatie heeft in beleid vastgelegd hoe inwoners/medewerkers/klanten met beginnende schulden worden geïnformeerd over de hulp die er is om financiën op orde te krijgen.',
+                'nvt'                       => false,
                 'weergave_succesfactor'     => '',
                 'theme_id' => 3,
             ],
             [
                 'title'                     => 'Beleid aanmelden',
-                'body'              		=> 'Mijn organisatie heeft in beleid vastgelegd in welke gevallen een inwoner/medewerker/klant met beginnende schulden wordt 
+                'bodytooltip'                      => 'Mijn organisatie heeft in beleid vastgelegd in welke gevallen een inwoner/medewerker/klant met beginnende schulden wordt 
                     <span class="definition" 
                         data-toggle="tooltip" 
                         data-placement="top" 
@@ -120,54 +137,66 @@ class QuestionTableSeeder extends Seeder
                          aangemeld
                     </span>
                      bij een hulpverlenende partij.',
+                'body'                      => 'Mijn organisatie heeft in beleid vastgelegd in welke gevallen een inwoner/medewerker/klant met beginnende schulden wordt aangemeld bij een hulpverlenende partij.',
+                'nvt'                       => false,
                 'weergave_succesfactor'     => '',
                 'theme_id' => 3,
             ],
             [
                 'title'                     => 'Effectieve samenwerking alle partijen',
+                'bodytooltip'                      => 'Alle partijen aan tafel staan open om te komen tot een effectieve samenwerking om inwoners/medewerkers/klanten met beginnende schulden te signaleren, te informeren en door te verwijzen naar passende ondersteuning. ',
                 'body'              		=> 'Alle partijen aan tafel staan open om te komen tot een effectieve samenwerking om inwoners/medewerkers/klanten met beginnende schulden te signaleren, te informeren en door te verwijzen naar passende ondersteuning. ',
+                'nvt'                       => false,
                 'weergave_succesfactor'     => '',
                 'theme_id' => 3,
             ],
             [
                 'title'                     => 'Professionaliteit om te signaleren',
-                'body'              		=> 'In mijn organisatie is de professionaliteit (<span class="definition"
+                'bodytooltip'                      => 'In mijn organisatie is de professionaliteit (<span class="definition"
                         data-toggle="tooltip" 
                         data-placement="top" 
                         title="o.a. gespreksvaardigheden om signalen te herkennen en bespreekbaar te maken. "
                     >
                          noodzakelijke competenties en vaardigheden
                     </span>) van de medewerkers voldoende geborgd om inwoners/medewerkers/klanten met beginnende schulden te signaleren. ',
+                'body'                      => 'In mijn organisatie is de professionaliteit (noodzakelijke competenties en vaardigheden) van de medewerkers voldoende geborgd om inwoners/medewerkers/klanten met beginnende schulden te signaleren. ',
+                'nvt'                       => false,
                 'weergave_succesfactor'     => '',
                 'theme_id' => 4,
             ],
             [
                 'title'                     => 'Professionaliteit om te informeren',
-                'body'              		=> 'In mijn organisatie is de professionaliteit (<span class="definition"
+                'bodytooltip'                      => 'In mijn organisatie is de professionaliteit (<span class="definition"
                         data-toggle="tooltip" 
                         data-placement="top" 
                         title="o.a. kennis over welke hulpkanalen er zijn en hoe daarmee in contact te komen. "
                     >
                          noodzakelijke competenties en vaardigheden
                     </span>) van de medewerkers voldoende geborgd om inwoners/medewerkers/klanten met beginnende schulden te informeren over het hulpaanbod.',
+                'body'                      => 'In mijn organisatie is de professionaliteit (noodzakelijke competenties en vaardigheden) van de medewerkers voldoende geborgd om inwoners/medewerkers/klanten met beginnende schulden te informeren over het hulpaanbod.',
+                'nvt'                       => false,
                 'weergave_succesfactor'     => '',
                 'theme_id' => 4,
             ],
             [
                 'title'                     => 'Professionaliteit om aan te melden',
-                'body'              		=> 'In mijn organisatie hebben medewerkers voldoende professionaliteit (<span class="definition"
+                'bodytooltip'                      => 'In mijn organisatie hebben medewerkers voldoende professionaliteit (<span class="definition"
                         data-toggle="tooltip" 
                         data-placement="top" 
                         title="kennis over uitwisselen van persoonsgegevens en wat hierin wel/niet is toegestaan."
                     >
                          noodzakelijke competenties en vaardigheden
                     </span>) om inwoners/medewerkers/klanten met beginnende schulden aan te melden bij een hulpverlenende partij.  ',
+                'body'                      => 'In mijn organisatie hebben medewerkers voldoende professionaliteit (noodzakelijke competenties en vaardigheden) om inwoners/medewerkers/klanten met beginnende schulden aan te melden bij een hulpverlenende partij.  ',
+                'nvt'                       => false,
                 'weergave_succesfactor'     => '',
                 'theme_id' => 4,
             ],
             [
                 'title'                     => 'Kennis over signaleren, informeren en doorverwijzen',
+                'bodytooltip'                      => 'De medewerkers van alle partijen aan tafel hebben samen voldoende professionaliteit om inwoners/medewerkers/klanten met beginnende schulden te signaleren, informeren en door te verwijzen naar de juiste ondersteuning.',
                 'body'              		=> 'De medewerkers van alle partijen aan tafel hebben samen voldoende professionaliteit om inwoners/medewerkers/klanten met beginnende schulden te signaleren, informeren en door te verwijzen naar de juiste ondersteuning.',
+                'nvt'                       => false,
                 'weergave_succesfactor'     => '',
                 'theme_id' => 4,
             ],

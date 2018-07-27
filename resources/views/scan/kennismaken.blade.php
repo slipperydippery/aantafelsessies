@@ -17,11 +17,11 @@
                     <div class="col-sm-2">
                         <div class="card card__2 card--partner owner {{ $group->owner->user->isOnline() ? '' : 'inactive' }} ">
                             <div class="card-icons">
-                                <i class="material-icons"> star </i>
+                                <i class="material-icons clickable"  data-toggle="tooltip" data-placement="top" title="Beheerder"> star </i>
                                 @if($group->owner->user->isOnline())
-                                    <i class="material-icons"> wifi </i>
+                                    <i class="material-icons clickable" data-toggle="tooltip" data-placement="top" title="online"> wifi </i>
                                 @else
-                                    <i class="material-icons"> wifi_off </i>
+                                    <i class="material-icons clickable" data-toggle="tooltip" data-placement="top" title="offline"> wifi_off </i>
                                 @endif
                             </div>
                             <img src="/img/user.svg" alt="">
@@ -40,7 +40,7 @@
                                  <div class="card card__2 card--partner instantietype-{{ $thisscan->instantie->instantietype->id }} {{ $thisscan->user->isOnline() ? '' : 'inactive' }} ">
                                      <div class="card-icons">
                                          @if($thisscan->user->isOnline())
-                                             <i class="material-icons"> wifi </i>
+                                             <i class="material-icons" data-toggle="tooltip" data-placement="top" title="online"> wifi </i>
                                          @else
                                              <i class="material-icons"> wifi_off </i>
                                          @endif

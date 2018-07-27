@@ -1,13 +1,15 @@
 <template>
 	<div class="form-group">
-		<i class="material-icons clickable" @click="toggleMeasure()" v-if="is_manager && measure.active"> check_box </i>
-		<i class="material-icons clickable" @click="toggleMeasure()" v-if="is_manager &&! measure.active"> check_box_outline_blank </i>
+		<i class="material-icons clickable" @click="toggleMeasure()" v-if="is_manager && measure.active" v-b-tooltip.hover :title="title"> check_box </i>
+		<i class="material-icons clickable" @click="toggleMeasure()" v-if="is_manager &&! measure.active" v-b-tooltip.hover :title="title"> check_box_outline_blank </i>
 		<textarea 
             class="form-control" 
             placeholder="Actie Omschrijving"
             rows="6"
             v-model="measure.measure" 
             :disabled="! is_manager || ! measure.active"
+            v-b-tooltip.hover
+            :title="title"
             @blur="updateMeasure()"
         ></textarea>
 	</div>
@@ -33,6 +35,12 @@
         },
 
         computed: {
+            title() {
+                if(this.is_manager) {
+                    return ''
+                }
+                return 'Alleen de beheerder kan dit wijzigen.'
+            }
         },
 
         methods: {

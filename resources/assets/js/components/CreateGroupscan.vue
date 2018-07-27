@@ -7,7 +7,7 @@
                 <strong>Incompleet</strong> {{ error }}
             </div>
             <select v-model="instantie" class="form-control" placeholder="kies een instantie">
-              <option v-for="instantie in instanties" :value="instantie"> {{ instantie.title }} --- {{ instantie.description }} </option>
+              <option v-for="instantie in instanties" :value="instantie"> {{ instantie.name }} --- {{ instantie.description }} </option>
             </select>
         </div>
         

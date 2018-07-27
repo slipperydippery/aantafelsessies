@@ -22,10 +22,11 @@
 
                         <span class="card-text card-text__question"> 
 			                <h5> {{ $question->title }} </h5>
-			                {!! $question->body !!} 
+			                {!! $question->bodytooltip !!} 
 		            	</span>
 						<countdown date="60"></countdown>
                         <scan-slider
+	                        :nvt=" {{ $question->nvt }} "
                         	:answer_id=" {{ $answer->id }} "
                         >
                         </scan-slider>
