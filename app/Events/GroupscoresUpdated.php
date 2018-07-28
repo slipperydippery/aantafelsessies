@@ -33,6 +33,7 @@ class GroupscoresUpdated implements ShouldBroadcast
      */
     public function broadcastOn()
     {
+        return 'here';
         return new PrivateChannel('groupscores.' . $this->answer_id);
     }
 }

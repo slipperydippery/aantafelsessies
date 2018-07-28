@@ -10,6 +10,14 @@ use Illuminate\Http\Request;
 
 class ScanQuestionController extends Controller
 {
+    /**
+     * Enforce middleware.
+     */
+    public function __construct()
+    {
+        $this->middleware('owner');
+    }
+
     public function intro(Scan $scan, Theme $theme)
     {
     	$previous = '/sessie/' . $scan->id . '/theme/' . ($theme->id - 1) . '/measures';
@@ -103,6 +111,19 @@ class ScanQuestionController extends Controller
 
     public function complete(Scan $scan)
     {
+        if( ! $scan->isComplete() ) {
+            $previous = '/sessie/' . $scan->id . '/vervolgafspraak';
+            return view('scanquestions.incomplete', compact('scan', 'previous'));
+        }
+        return redirect()->route('scan.show', $scan);
         return view('scanquestions.complete', compact('scan'));
+    }
+
+    public function markcomplete(Scan $scan)
+    {
+        $scan->complete = true;
+        $scan->save();
+
+        return redirect()->route('scan.show', $scan);
     }
 }

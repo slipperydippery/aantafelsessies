@@ -44,6 +44,7 @@ Route::get('/sessie/{scan}/thema/{theme}/actiesuitwerken', 'ScanQuestionControll
 Route::get('/sessie/{scan}/vervolgafspraak', 'ScanQuestionController@followup')->name('scanquestions.followup');
 Route::post('/scan/{scan}/commitdatetime', 'ScanQuestionController@commitdatetime')->name('scanquestions.commitdatetime');
 Route::get('/sessie/{scan}/afgerond', 'ScanQuestionController@complete')->name('scanquestions.complete');
+Route::get('/sessie/{scan}/markcomplete', 'ScanQuestionController@markcomplete')->name('scanquestions.markcomplete');
 
 // Answers stuff
 Route::get('/api/answer/{answer}', 'ApiAnswerController@show');

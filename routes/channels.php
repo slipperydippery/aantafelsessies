@@ -39,5 +39,6 @@ Broadcast::channel('groupscores.{answer}', function($user, Answer $answer) {
 	        $canAccess = true;
 	    }
 	}
+	return true;
 	return $canAccess;
 });

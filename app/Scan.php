@@ -79,6 +79,9 @@ class Scan extends Model
 
     public function isComplete()
     {
+        if($this->complete) {
+            return true;
+        }
         if(! $this->algemeenbeeld) {
             return false;
         }

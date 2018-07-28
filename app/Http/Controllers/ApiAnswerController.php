@@ -74,7 +74,7 @@ class ApiAnswerController extends Controller
         $answer->answer = $request['answer']['answer'];
         $answer->updated_at = Carbon::now();
         $answer->save();
-        GroupscoresUpdated::dispatch($answer->id);
+        return GroupscoresUpdated::dispatch($answer->id);
         
         return $answer;
     }

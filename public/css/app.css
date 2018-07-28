@@ -11547,10 +11547,14 @@ span.selectable--passive:hover {
 
 .fineprint {
   clear: both;
-  color: #BD6498;
+  color: #6c757d;
   margin-top: 1rem;
   text-style: italic;
   font-size: 1rem;
+}
+
+a .fineprint {
+  color: #BD6498;
 }
 
 .btn__prevnext {
@@ -11798,7 +11802,7 @@ label.input {
 
 .section__panel {
   border: 1px solid rgba(229, 35, 27, 0.1);
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
 }
 
 .section__panel > .row {
@@ -11814,7 +11818,7 @@ label.input {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   padding: 1rem;
-  margin-top: -1rem;
+  margin-top: 0rem;
   margin-left: -1rem;
   margin-right: -1rem;
   margin-bottom: 1rem;

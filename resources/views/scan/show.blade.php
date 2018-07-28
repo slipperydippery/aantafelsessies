@@ -6,7 +6,11 @@
             <div class="col-md-12">
                 <div class="page--title">
                     <h1 class="pagetitle">
-                    	Sessie {{ $scan->title }} 
+                        @if ($scan->isComplete())
+                        	De sessie is afgerond! - {{ $scan->title }} 
+                        @else
+                            Sessie overzicht - {{ $scan->title }} 
+                        @endif
                     </h1>
                     @if ($scan->isOwner())
                         <p class="page-highlight">
@@ -19,19 +23,32 @@
                     @endif
                 </div>
             </div>
-			
 		</div>
+
 		<div class="row row__cards">
-		    <div class="col-md-6">
-		        <a href=" {{ route('scan.kennismaken', $scan) }} " title="">
-		            <div class="card card__dashboard">
-		                <div class="card-body">
-		                    <h5 class="card-title">Start de sessie</h5>
-		                    <img src="/img/feather.jpg" alt="">
-		                </div>
-		            </div>
-		        </a>
-		    </div>
+            @if($scan->isComplete())
+                <div class="col-md-6">
+                    <a href=" {{ route('scan.kennismaken', $scan) }} " title="">
+                        <div class="card card__dashboard">
+                            <div class="card-body">
+                                <h5 class="card-title">Doe de sessie opnieuw</h5>
+                                <img src="/img/refresh.jpg" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @else
+                <div class="col-md-6">
+                    <a href=" {{ route('scan.kennismaken', $scan) }} " title="">
+                        <div class="card card__dashboard">
+                            <div class="card-body">
+                                <h5 class="card-title">Start de sessie</h5>
+                                <img src="/img/feather.jpg" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @endif
             <div class="col-md-6">
                 <a href=" # " title="" data-toggle="modal" data-target="#deleteModal">
                     <div class="card card__dashboard">
@@ -42,6 +59,40 @@
                     </div>
                 </a>
             </div>
+
+            @if ($scan->isComplete())
+                <div class="col-md-6">
+                    <a href=" {{ route('scan.introductie', $scan) }} " title="">
+                        <div class="card card__dashboard">
+                            <div class="card-body">
+                                <h5 class="card-title">Bekijk de actiepunten</h5>
+                                <img src="/img/running.jpg" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href=" {{ route('scan.introductie', $scan) }} " title="">
+                        <div class="card card__dashboard">
+                            <div class="card-body">
+                                <h5 class="card-title">Bekijk de resultaten</h5>
+                                <img src="/img/resultaten.jpg" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href=" {{ route('scan.introductie', $scan) }} " title="">
+                        <div class="card card__dashboard">
+                            <div class="card-body">
+                                <h5 class="card-title">Email mij de actiepunten</h5>
+                                <img src="/img/letter.jpg" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @endif
+
             <div class="col-md-6">
                 @if ($scan->group->dateplanner)
                     <a href=" {{ route('dateplanner.show', $scan->group->dateplanner) }} " title="">
