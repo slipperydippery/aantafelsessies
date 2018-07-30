@@ -13,7 +13,7 @@
         
         <div class="row resultstable--row">
             <div class="col-sm-12">
-                <button @click="saveScan()" class="btn btn-primary btn--fullwidth">Sla scan op</button>
+                <button @click="saveScan()" class="btn btn-primary btn--fullwidth">Bevestig</button>
             </div>
         </div>    
     </div>

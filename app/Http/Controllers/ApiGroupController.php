@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Scan;
 use App\Group;
+use App\Dashmessage;
 use App\Inventarisatie;
 use Illuminate\Http\Request;
 
@@ -43,7 +44,6 @@ class ApiGroupController extends Controller
             'instantie_id' => 'required|integer',
         ]);
 
-
         $user = Auth::user();
         $scan = Scan::register($user, $request->all());
 
@@ -69,18 +69,34 @@ class ApiGroupController extends Controller
 
     public function storescan(Group $group, Request $request)
     {
+        $user = Auth::user();
         foreach($group->scans as $scan){
             if($scan->user->id == Auth::user()->id){
-                return redirect()->route('home');
+                $dashmessage = new Dashmessage(['message' => 'U neemt al deel aan de sessie ' . $group->title]);
+                $user->dashmessages()->save($dashmessage);
+                // Dashmessage::create([
+                //     'message' => 'U neemt al deel aan de sessie ' . $group->title,
+                //     'user_id' => Auth::user()->id
+                // ]);
+                return ;
             }
         }
         request()->validate([
             'instantie_id' => 'required|integer',
         ]);
 
-        $user = Auth::user();
         $scan = Scan::registerWithGroup($user, $group, $request->all());
         $group->scans()->save($scan);
+
+        $dashmessage = new Dashmessage(['message' => $user->name . ' heeft zich aangemeld voor de groepssessie ' . $group->title]);
+        $group->dashmessages()->save($dashmessage);
+
+        // $dashmessage = Dashmessage::create([
+        //     'message' => $user->name . ' heeft zich aangemeld voor de groepssessie ' . $group->title,
+        //     'user_id' => $group->owner->user->id,
+        // ]);
+
+        return $dashmessage;
         
         return $scan;
     }

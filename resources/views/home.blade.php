@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+@include('partials.dashmessages')
 
 <div class="container container--page">
     <div class="row">

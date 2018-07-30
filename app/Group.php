@@ -38,4 +38,9 @@ class Group extends Model
     {
         return $this->hasOne(Dateplanner::class);
     }
+
+    public function dashmessages()
+    {
+        return $this->morphMany(Dashmessage::class, 'dashmessageable');
+    }
 }

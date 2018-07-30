@@ -5,6 +5,7 @@ namespace App;
 use Cache;
 use App\Scan;
 use App\Group;
+use App\Dashmessage;
 use App\Inventarisatie;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -44,6 +45,11 @@ class User extends Authenticatable
     public function inventarisaties()
     {
         return $this->hasMany(Inventarisatie::class);
+    }
+
+    public function dashmessages()
+    {
+        return $this->morphMany(Dashmessage::class, 'dashmessageable');
     }
 
     public function isOnline()

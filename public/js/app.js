@@ -88008,7 +88008,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("Sla scan op")]
+          [_vm._v("Bevestig")]
         )
       ])
     ])
