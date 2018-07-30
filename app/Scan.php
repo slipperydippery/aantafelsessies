@@ -71,7 +71,7 @@ class Scan extends Model
 
     public function isOwner()
     {
-        return $this->group->id;
+        return $this->group->id . ' - ' . $this->id;
         if( $this->group->id == $this->id ){
             return true;
         }
