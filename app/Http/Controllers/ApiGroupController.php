@@ -72,7 +72,10 @@ class ApiGroupController extends Controller
         $user = Auth::user();
         foreach($group->scans as $scan){
             if($scan->user->id == Auth::user()->id){
-                $dashmessage = new Dashmessage(['message' => 'U neemt al deel aan de sessie ' . $group->title]);
+                $dashmessage = new Dashmessage([
+                    'type' => 'danger',
+                    'message' => 'U neemt al deel aan de sessie ' . $group->title
+                ]);
                 $user->dashmessages()->save($dashmessage);
                 // Dashmessage::create([
                 //     'message' => 'U neemt al deel aan de sessie ' . $group->title,
@@ -88,7 +91,10 @@ class ApiGroupController extends Controller
         $scan = Scan::registerWithGroup($user, $group, $request->all());
         $group->scans()->save($scan);
 
-        $dashmessage = new Dashmessage(['message' => $user->name . ' heeft zich aangemeld voor de groepssessie ' . $group->title]);
+        $dashmessage = new Dashmessage([
+            'type' => 'success',
+            'message' => $user->name . ' heeft zich aangemeld voor de groepssessie ' . $group->title
+        ]);
         $group->dashmessages()->save($dashmessage);
 
         // $dashmessage = Dashmessage::create([

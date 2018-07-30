@@ -1,10 +1,12 @@
 @foreach ($user->dashmessages as $dashmessage)
-	<div class="alert alert-info" role="alert">
+	<div class="alert alert-{{ $dashmessage->type }}" role="alert">
 		<div class="container">
 			{{ $dashmessage->message }}
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
+			<closebutton-input
+				model="dashmessage"
+				:model_id=" {{ $dashmessage->id }} "
+			>
+			</closebutton-input>
 		</div>
 	</div>
 @endforeach

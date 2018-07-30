@@ -12,7 +12,6 @@
             </div>
         </div>
     </div>
-        <dashmessages :user="user"></dashmessages>
     <div class="row row__cards">
         <div class="col-md-4">
             <div class="card card__dashboard">

@@ -16,6 +16,7 @@ class CreateDashmessagesTable extends Migration
         Schema::create('dashmessages', function (Blueprint $table) {
             $table->increments('id');
             $table->text('message');
+            $table->string('type')->nullable();
             $table->integer('dashmessageable_id')->unsigned();
             $table->string('dashmessageable_type');
             $table->timestamps();

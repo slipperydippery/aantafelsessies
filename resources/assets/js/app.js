@@ -85,6 +85,7 @@ Vue.component('slider-input', require('./components/SliderInput.vue'));
 Vue.component('date-picker', require('./components/DatePicker.vue'));
 Vue.component('remove-modal', require('./components/RemoveModal.vue'));
 Vue.component('copy-icon', require('./components/CopyIcon.vue'));
+Vue.component('closebutton-input', require('./components/ClosebuttonInput.vue'));
 
 //old 
 Vue.component('set-inventarisatie-title', require('./components/SetInventarisatieTitle.vue'));
