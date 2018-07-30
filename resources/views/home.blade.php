@@ -2,7 +2,9 @@
 
 @section('content')
 
-@include('partials.dashmessages')
+@foreach ($user->dashmessages as $dashmessage)
+    @include('partials.dashmessage')
+@endforeach
 
 <div class="container container--page">
     <div class="row">

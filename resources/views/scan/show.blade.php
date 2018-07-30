@@ -1,6 +1,13 @@
 @extends('layouts.app', ['title' => 'Beheer de sessie'])
 
 @section('content')
+
+    @if ($scan->isOwner())
+        @foreach ($scan->group->dashmessages as $dashmessage)
+            @include('partials.dashmessage')
+        @endforeach
+    @endif
+
 	<div class="container">
 		<div class="row">
             <div class="col-md-12">
@@ -12,7 +19,6 @@
                             Sessie overzicht - {{ $scan->title }} 
                         @endif
                     </h1>
-                    isowner: {{ $scan->isOwner() }}
                     @if ($scan->isOwner())
                         <p class="page-highlight">
                             <span id="groupcode">{{ Request::root() }}/group/{{ $scan->group->id }}/createscan/{{ $scan->group->code }}</span> 

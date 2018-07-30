@@ -77,10 +77,6 @@ class ApiGroupController extends Controller
                     'message' => 'U neemt al deel aan de sessie ' . $group->title
                 ]);
                 $user->dashmessages()->save($dashmessage);
-                // Dashmessage::create([
-                //     'message' => 'U neemt al deel aan de sessie ' . $group->title,
-                //     'user_id' => Auth::user()->id
-                // ]);
                 return ;
             }
         }

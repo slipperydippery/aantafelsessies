@@ -95,3 +95,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/partners', 'PagesController@partners')->name('partners');
 Route::get('/vraag', 'PagesController@vraag')->name('vraag');
 
+
+
+// Dashmessages
+Route::delete('/api/dashmessage/{dashmessage}', 'ApiDashmessageController@destroy');
