@@ -12,6 +12,7 @@
                             Sessie overzicht - {{ $scan->title }} 
                         @endif
                     </h1>
+                    isowner: {{ $scan->isOwner() }}
                     @if ($scan->isOwner())
                         <p class="page-highlight">
                             <span id="groupcode">{{ Request::root() }}/group/{{ $scan->group->id }}/createscan/{{ $scan->group->code }}</span> 
@@ -115,6 +116,7 @@
                         </div>
                     </div>
                 @endif
+            </div>
 
 		    @if ($scan->isOwner())
 		    	
@@ -173,7 +175,6 @@
                         </a>
                     </div>
 		    @endif
-        </div>
 	</div>
 
 	<!-- Modal -->
