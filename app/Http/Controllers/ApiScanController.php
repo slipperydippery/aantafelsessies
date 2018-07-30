@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Scan;
 use Illuminate\Http\Request;
+use App\Events\AlgemeenbeeldUpdated;
 
 class ApiScanController extends Controller
 {
@@ -74,6 +75,7 @@ class ApiScanController extends Controller
         $scan->algemeenbeeld = $request->scan['algemeenbeeld'];
         $scan->group_id = $request->scan['group_id'];
         $scan->save();
+        AlgemeenbeeldUpdated::dispatch($scan->group->id);
         return $request;
     }
 
