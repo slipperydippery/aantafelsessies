@@ -49,16 +49,17 @@
 						<div class="col-md-4">
 							<a href=" {{ route('gesprekspartners.show', 4) }} " class="btn btn-primary btn-block btn__prevnext"><i class="material-icons"> navigate_before </i> vorige</a>
 						</div>
-						@guest
+						@if ($inventarisatie->group)
 							<div class="col-md-4">
-								<a href=" {{ route('register') }} " class="btn btn-primary btn-block btn__prevnext"> Maak een account aan</a>
-								<p class="text-center"><em>Om de resultaten op te slaan.</em></p>
+								<a href=" {{ route('home') }} " class="btn btn-primary btn-block btn__prevnext"> Sla wijzigingen op <i class="material-icons"> navigate_next </i> </a>
 							</div>
 						@else
 							<div class="col-md-4">
 								<a href=" {{ route('group.create') }} " class="btn btn-primary btn-block btn__prevnext"> Maak een gesprekssessie aan <i class="material-icons"> navigate_next </i> </a>
 							</div>
-						@endguest
+						
+						@endif
+						
 					</div>
 				</div>
 			</div>

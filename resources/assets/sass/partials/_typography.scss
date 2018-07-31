@@ -18,6 +18,18 @@ h1.display-1 {
 	color: $primary-strong;
 }
 
+h1.warning {
+	text-align: center;
+    padding: 1rem 0;
+    margin: 1rem 0;
+	color: $primary-strong;
+    border-top: 1px solid $primary-strong;
+    border-bottom: 1px solid $primary-strong;
+    // text-decoration: underline;
+    display: block;
+    width: 100%;
+}
+
 h2.subtitle {
 	color: $gray-600;
 }

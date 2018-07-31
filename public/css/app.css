@@ -11272,6 +11272,17 @@ h1.display-1 {
   color: #DF2715;
 }
 
+h1.warning {
+  text-align: center;
+  padding: 1rem 0;
+  margin: 1rem 0;
+  color: #DF2715;
+  border-top: 1px solid #DF2715;
+  border-bottom: 1px solid #DF2715;
+  display: block;
+  width: 100%;
+}
+
 h2.subtitle {
   color: #6c757d;
 }

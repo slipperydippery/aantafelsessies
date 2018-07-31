@@ -87565,6 +87565,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -87725,7 +87727,13 @@ var render = function() {
       "div",
       { staticClass: "row" },
       [
-        _vm.noneSelected ? _c("div", { staticClass: "col-sm-12" }) : _vm._e(),
+        _vm.noneSelected
+          ? _c("div", { staticClass: "col-sm-12" }, [
+              _c("h1", { staticClass: "warning" }, [
+                _vm._v("Je hebt nog geen partners geselecteerd")
+              ])
+            ])
+          : _vm._e(),
         _vm._v(" "),
         _vm._l(_vm.instantietypes, function(instantietype) {
           return _vm._l(instantietype.partners, function(partner) {

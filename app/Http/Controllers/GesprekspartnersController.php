@@ -30,7 +30,10 @@ class GesprekspartnersController extends Controller
         $instantietypes = Instantietype::get();
     	$inventarisatie = Inventarisatie::find(session('inventarisatie'));
 
-		Partner::guaranteeRelationship($inventarisatie, $instantietype);
+        foreach(Instantietype::get() as $thisinstantietype) {
+    		Partner::guaranteeRelationship($inventarisatie, $thisinstantietype);
+        }
+
 
 
         $previous = Instantietype::where('id', '<', $instantietype->id)->orderBy('id', 'desc')->first();

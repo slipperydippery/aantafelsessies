@@ -36,7 +36,9 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-12" v-if="noneSelected"></div>
+			<div class="col-sm-12" v-if="noneSelected">
+				<h1 class="warning">Je hebt nog geen partners geselecteerd</h1>
+			</div>
 			<template v-for="instantietype in instantietypes">
 				<div class="col-sm-2" v-for="partner in instantietype.partners" v-if="partner.invitable == true">
 					<div class="card card__2 card--partner clickable" @click="toggleInvitable(partner)"
