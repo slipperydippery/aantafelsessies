@@ -14,16 +14,16 @@ class GroupscoresUpdated implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $answer_id;
+    public $group_id;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($answer_id)
+    public function __construct($group_id)
     {
-        $this->answer_id = $answer_id;
+        $this->group_id = $group_id;
     }
 
     /**
@@ -33,6 +33,6 @@ class GroupscoresUpdated implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('groupscores.' . $this->answer_id);
+        return new PrivateChannel('groupscores.' . $this->group_id);
     }
 }

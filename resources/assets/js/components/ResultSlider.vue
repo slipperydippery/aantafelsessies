@@ -1,5 +1,6 @@
 <template>
 	<div class="resultslider" v-if="answer.id">
+        
 		<div class="resultslider--result"
 			:style="{ width: cssPercent(answer.answer), background: nullColor(answer) }"
 		>
@@ -12,20 +13,16 @@
 
     export default {
         props: [
-        	'answer_id'
+        	'answer'
         ],
 
         data() {
             return {
-            	'answer': {},
             }
         },
 
         mounted() {
-        	this.getAnswer();
-        	window.Echo.private('groupscores.' + this.answer_id).listen('GroupscoresUpdated', e => {
-        	    this.getAnswer();
-        	});
+        	// this.getAnswer();
         },
 
         computed: {

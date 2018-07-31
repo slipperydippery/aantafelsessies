@@ -94,6 +94,10 @@ input[type=range]:focus::-ms-fill-upper {
 	height: 0.8rem;
 	background: rgba(255, 0, 0, 0.42);
 	box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.38);
+	margin-top: .4rem;
+	&.average {
+		background: rgba($themecolor-2, 0.7);
+	}
 	.resultslider--result {
 		height: 100%;
 		// background: darken($themecolor, 20);
@@ -101,8 +105,12 @@ input[type=range]:focus::-ms-fill-upper {
 	}
 }
 
-.resultstable--row--average .resultslider--result {
-	background: darken($themecolor, 15);
+.resultstable--row--average {
+	// border-bottom: 1px solid $themecolor-2;
+ //    margin-bottom: 0.7rem !important;
+	.resultslider--result {
+		background: desaturate(lighten($themecolor-2, 40%), 40%);
+	}
 }
 
 .question--answer {
@@ -110,6 +118,11 @@ input[type=range]:focus::-ms-fill-upper {
     text-align: center;
     font-size: 2rem;
     color: $gray-600;
+}
+
+.average {
+	color: $themecolor-2;
+	font-weight: 800;
 }
 
 input[type=range]:disabled::-ms-thumb {

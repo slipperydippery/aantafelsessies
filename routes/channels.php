@@ -32,13 +32,12 @@ Broadcast::channel('algemeenbeeld.{group}', function($user, Group $group) {
 	return $canAccess;
 });
 
-Broadcast::channel('groupscores.{answer}', function($user, Answer $answer) {
+Broadcast::channel('groupscores.{group}', function($user, Group $group) {
 	$canAccess = false;
-	foreach($answer->scan->group->scans as $thisscan) {
+	foreach($group->scans as $thisscan) {
 	    if( (int) $thisscan->user->id === (int) $user->id) {
 	        $canAccess = true;
 	    }
 	}
-	return true;
 	return $canAccess;
 });

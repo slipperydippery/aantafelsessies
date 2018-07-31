@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Answer;
-use Carbon\Carbon;
+use App\Theme;
 use Illuminate\Http\Request;
-use App\Events\GroupscoresUpdated;
 
-class ApiAnswerController extends Controller
+class ApiThemeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -46,9 +44,9 @@ class ApiAnswerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Answer $answer)
+    public function show(Theme $theme)
     {
-        return $answer;
+        return Theme::with('questions')->find($theme->id);
     }
 
     /**
@@ -69,14 +67,9 @@ class ApiAnswerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Answer $answer)
+    public function update(Request $request, $id)
     {
-        $answer->answer = $request['answer']['answer'];
-        $answer->updated_at = Carbon::now();
-        $answer->save();
-        GroupscoresUpdated::dispatch($answer->scan->group->id);
-        
-        return $answer;
+        //
     }
 
     /**

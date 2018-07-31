@@ -5361,9 +5361,12 @@ Vue.component('create-groupscan', __webpack_require__(355));
 Vue.component('algemeenbeeld', __webpack_require__(358));
 Vue.component('algemeenbeeldresultaten', __webpack_require__(361));
 
+Vue.component('scan-results', __webpack_require__(425));
+
 Vue.component('scan-slider', __webpack_require__(364));
 Vue.component('result-slider', __webpack_require__(367));
 Vue.component('average-slider', __webpack_require__(370));
+Vue.component('result-slider-average', __webpack_require__(428));
 
 Vue.component('mini-measure', __webpack_require__(373));
 Vue.component('big-measure', __webpack_require__(376));
@@ -88640,24 +88643,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['answer_id'],
+    props: ['answer'],
 
     data: function data() {
-        return {
-            'answer': {}
-        };
+        return {};
     },
     mounted: function mounted() {
-        var _this = this;
-
-        this.getAnswer();
-        window.Echo.private('groupscores.' + this.answer_id).listen('GroupscoresUpdated', function (e) {
-            _this.getAnswer();
-        });
+        // this.getAnswer();
     },
 
 
@@ -88853,7 +88850,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "resultslider" }, [
+  return _c("div", { staticClass: "resultslider average" }, [
     _c("div", {
       staticClass: "resultslider--result",
       style: {
@@ -94296,6 +94293,423 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-72d79e37", module.exports)
+  }
+}
+
+/***/ }),
+/* 425 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(4)
+/* script */
+var __vue_script__ = __webpack_require__(426)
+/* template */
+var __vue_template__ = __webpack_require__(427)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\ScanResults.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-fbf81edc", Component.options)
+  } else {
+    hotAPI.reload("data-v-fbf81edc", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 426 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['group_id', 'theme_id'],
+
+    data: function data() {
+        return {
+            'theme': {},
+            'group': {}
+        };
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        this.getTheme();
+        this.getGroup();
+        window.Echo.private('groupscores.' + this.group_id).listen('GroupscoresUpdated', function (e) {
+            _this.getGroup();
+        });
+    },
+
+
+    computed: {},
+
+    filters: {
+        answerOfQuestion: function answerOfQuestion(value, question_id) {
+            var questionanswer = null;
+            value.forEach(function (answer) {
+                if (answer.question_id === question_id) {
+                    questionanswer = answer;
+                }
+            });
+            return questionanswer;
+        }
+    },
+
+    methods: {
+        getTheme: function getTheme() {
+            console.log('getting theme');
+            var home = this;
+            axios.get('/api/theme/' + this.theme_id).then(function (response) {
+                home.theme = response.data;
+            });
+        },
+        getGroup: function getGroup() {
+            console.log('getting group');
+            var home = this;
+            axios.get('/api/group/' + this.group_id).then(function (response) {
+                home.group = response.data;
+            });
+        },
+        average: function average(question) {
+            if (!this.group.id) {
+                return null;
+            }
+            var scantotal = 0;
+            var scancount = 0;
+            this.group.scans.forEach(function (scan) {
+                scan.answers.forEach(function (answer) {
+                    if (answer.question_id === question.id && answer.answer) {
+                        scantotal += parseFloat(answer.answer);
+                        scancount++;
+                    }
+                });
+            });
+            return scantotal / scancount;
+        }
+    }
+});
+
+/***/ }),
+/* 427 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "col-sm-12 table table__results" },
+    [
+      _c(
+        "div",
+        { staticClass: "row" },
+        [
+          _c("div", { staticClass: "col-sm-2" }),
+          _vm._v(" "),
+          _vm._l(_vm.theme.questions, function(question) {
+            return _c("div", { staticClass: "col-sm-2" }, [
+              _c("strong", [
+                _vm._v("Vraag " + _vm._s(question.id) + " "),
+                _c("br")
+              ]),
+              _vm._v(" "),
+              _c(
+                "span",
+                {
+                  directives: [
+                    {
+                      name: "b-tooltip",
+                      rawName: "v-b-tooltip.hover",
+                      modifiers: { hover: true }
+                    }
+                  ],
+                  attrs: { title: question.body }
+                },
+                [_vm._v(_vm._s(question.title))]
+              )
+            ])
+          })
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "row resultstable--row--average" },
+        [
+          _c("div", { staticClass: "col-sm-2 average" }, [_vm._v("Gemiddeld")]),
+          _vm._v(" "),
+          _vm._l(_vm.theme.questions, function(question) {
+            return _c(
+              "div",
+              { staticClass: "col-sm-2" },
+              [
+                _c("result-slider-average", {
+                  attrs: { average: _vm.average(question) }
+                })
+              ],
+              1
+            )
+          })
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _vm._l(_vm.group.scans, function(scan) {
+        return _c(
+          "div",
+          { staticClass: "row" },
+          [
+            _c(
+              "div",
+              {
+                staticClass: "col-sm-2 nowrap",
+                class: [
+                  "instantietype-" +
+                    scan.instantie.instantietype.id +
+                    "-leftborder",
+                  scan.id == _vm.group.owner.id ? "owner-leftborder" : ""
+                ]
+              },
+              [_vm._v(" \n\t\t\t" + _vm._s(scan.user.name) + " \n\t\t")]
+            ),
+            _vm._v(" "),
+            _vm._l(_vm.theme.questions, function(question) {
+              return _c(
+                "div",
+                { staticClass: "col-sm-2" },
+                [
+                  _c("result-slider", {
+                    attrs: {
+                      answer: _vm._f("answerOfQuestion")(
+                        scan.answers,
+                        question.id
+                      )
+                    }
+                  })
+                ],
+                1
+              )
+            })
+          ],
+          2
+        )
+      })
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-fbf81edc", module.exports)
+  }
+}
+
+/***/ }),
+/* 428 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(4)
+/* script */
+var __vue_script__ = __webpack_require__(429)
+/* template */
+var __vue_template__ = __webpack_require__(430)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\ResultSliderAverage.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-43d8da90", Component.options)
+  } else {
+    hotAPI.reload("data-v-43d8da90", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 429 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['average'],
+
+    data: function data() {
+        return {};
+    },
+    mounted: function mounted() {
+        // this.getAnswers();
+    },
+
+
+    computed: {},
+
+    methods: {
+        getAnswers: function getAnswers() {
+            var home = this;
+            axios.get('/api/scan/' + this.scan_id + '/question/' + this.question_id + '/getanswers').then(function (response) {
+                home.answers = response.data;
+                response.data.forEach(function (answer) {
+                    window.Echo.private('groupscores.' + answer.id).listen('GroupscoresUpdated', function (e) {
+                        home.getAnswers();
+                    });
+                });
+            });
+        },
+
+
+        cssPercent: function cssPercent(value) {
+            if (value == null) {
+                return 100;
+            } else {
+                return value * 10 + '%';
+            }
+        },
+
+        nullColor: function nullColor(answer) {
+            var thiscolor = '';
+            if (answer == null) {
+                thiscolor = 'white';
+            }
+            return thiscolor;
+        }
+    }
+});
+
+/***/ }),
+/* 430 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "resultslider average" }, [
+    _c("div", {
+      staticClass: "resultslider--result",
+      style: {
+        width: _vm.cssPercent(_vm.average),
+        background: _vm.nullColor(_vm.average)
+      }
+    })
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-43d8da90", module.exports)
   }
 }
 

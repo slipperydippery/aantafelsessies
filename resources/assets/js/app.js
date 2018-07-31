@@ -62,9 +62,12 @@ Vue.component('create-groupscan', require('./components/CreateGroupscan.vue'));
 Vue.component('algemeenbeeld', require('./components/Algemeenbeeld.vue'));
 Vue.component('algemeenbeeldresultaten', require('./components/Algemeenbeeldresultaten.vue'));
 
+Vue.component('scan-results', require('./components/ScanResults.vue'));
+
 Vue.component('scan-slider', require('./components/ScanSlider.vue'));
 Vue.component('result-slider', require('./components/ResultSlider.vue'));
 Vue.component('average-slider', require('./components/AverageSlider.vue'));
+Vue.component('result-slider-average', require('./components/ResultSliderAverage.vue'))
 
 Vue.component('mini-measure', require('./components/MiniMeasure.vue'));
 Vue.component('big-measure', require('./components/BigMeasure.vue'));

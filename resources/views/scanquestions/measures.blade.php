@@ -33,8 +33,8 @@
 									</div>
 								@endforeach
 							</div>
-							<div class="row">
-									<div class="col-sm-2">Gemiddeld</div>
+							<div class="row resultstable--row--average">
+									<div class="col-sm-2 average">Gemiddeld</div>
 								@foreach ($theme->questions as $question)
 									<div class="col-sm-2">
 

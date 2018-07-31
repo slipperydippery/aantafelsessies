@@ -8,36 +8,23 @@
 </template>
 
 <script>
-    import {store} from '../app.js';
 
     export default {
         props: [
-        	'scan_id',
-        	'question_id',
+        	'average',
         ],
 
         data() {
             return {
-				'answers': [],            	
             }
         },
 
         mounted() {
-        	this.getAnswers();
+        	// this.getAnswers();
         },
 
         computed: {
-        	average() {
-        		var answertotal = 0;
-        		var answercount = 0;
-        		this.answers.forEach(function(answer){
-                    if(answer.answer) {
-                        answertotal += parseFloat(answer.answer);
-                        answercount++
-                    }
-                })
-        		return (answertotal / answercount);
-        	}
+        	
         },
 
         methods: {

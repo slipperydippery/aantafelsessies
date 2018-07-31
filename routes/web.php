@@ -46,6 +46,8 @@ Route::post('/scan/{scan}/commitdatetime', 'ScanQuestionController@commitdatetim
 Route::get('/sessie/{scan}/afgerond', 'ScanQuestionController@complete')->name('scanquestions.complete');
 Route::get('/sessie/{scan}/markcomplete', 'ScanQuestionController@markcomplete')->name('scanquestions.markcomplete');
 
+Route::get('/api/theme/{theme}', 'ApiThemeController@show');
+
 // Answers stuff
 Route::get('/api/answer/{answer}', 'ApiAnswerController@show');
 Route::post('/api/answer/{answer}/update', 'ApiAnswerController@update');
