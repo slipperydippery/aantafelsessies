@@ -54,15 +54,15 @@
                         </a>
                     </div>
                 </div>
-                
             </div>
         </div>  
+        <br><br>
 
         <div class="row">
             <div class="col-md-12">
                 <div class="section__panel">
                     <div class="section__panel--title">
-                        <p>Dit is de samenstelling van jouw gesprekspartners:</p>
+                        <label >Dit is de samenstelling van jouw gesprekspartners:</label>
                     </div>
                     <div class="row">
                         @foreach ($instantietypes as $instantietype)
@@ -87,7 +87,6 @@
                     </div>
                 </div>
                 <a href=" {{ route('inventarisatie.show', $inventarisatie) }} " class="btn btn-primary">Selectie bewerken</a> 
-                <a href="#" class="btn btn-primary">Nieuwe selectie maken</a>
             </div>
         </div>
 
