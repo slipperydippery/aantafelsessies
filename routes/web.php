@@ -26,6 +26,7 @@ Route::get('/group/{group}/createscan/{code}', 'GroupController@createscan')->na
 
 // Manage group
 Route::get('/api/group/{group}/scan', 'ApiGroupScanController@index');
+Route::get('/group/{group}/participant/', 'GroupParticipantController@index')->name('group.participant.index');
 
 // Scan stuff
 Route::resource('scan', 'ScanController');
@@ -75,6 +76,7 @@ Route::post('/api/followup/{followup}/update', 'ApiFollowupController@update');
 // Gesprekshulp Inventarisaties
 Route::get('/inventarisatie/', 'InventarisatieController@store')->name('inventarisatie.store');
 Route::get('/inventarisatie/{inventarisatie}', 'InventarisatieController@show')->name('inventarisatie.show');
+Route::get('/inventarisatie/{inventarisatie}/edit', 'InventarisatieController@edit')->name('inventarisatie.edit');
 Route::get('/inventarisatie/{inventarisatie}/updateuser/', 'InventarisatieController@updateuser')->name('inventarisatie.updateuser');
 Route::get('/inventarisatie/{inventarisatie}/destroy', 'InventarisatieController@destroy')->name('inventarisatie.destroy');
 Route::post('/inventarisatie/{inventarisatie}/update', 'InventarisatieController@update')->name('inventarisatie.update');

@@ -168,7 +168,7 @@
                         </a>
                     </div>
                     <div class="col-md-6">
-                        <a href="#" data-toggle="modal" data-target="#overtuigingsprincipes">
+                        <a href=" {{ route('group.participant.index', $scan->group) }} ">
                             <div class="card card__dashboard">
                                 <div class="card-body">
                                     <h5 class="card-title">

@@ -75,7 +75,8 @@ class InventarisatieController extends Controller
      */
     public function edit(Inventarisatie $inventarisatie)
     {
-        //
+        session(['inventarisatie' => $inventarisatie->id]);
+        return redirect()->route('gesprekspartners.results', $inventarisatie);
     }
 
     /**

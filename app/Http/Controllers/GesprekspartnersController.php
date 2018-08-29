@@ -54,5 +54,6 @@ class GesprekspartnersController extends Controller
         $instantietypes = Instantietype::get();
 
     	return view('gesprekspartners.results', compact('inventarisatie', 'partners', 'instantietypes'));
-    }    
+    }  
+
 }

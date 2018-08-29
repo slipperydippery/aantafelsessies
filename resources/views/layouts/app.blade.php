@@ -19,7 +19,7 @@
 </head>
 
 <body class="d-flex flex-column">
-    
+
     @include('partials.nav')
 
     <main class="flex-grow" id="app">
