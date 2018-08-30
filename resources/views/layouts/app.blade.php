@@ -40,7 +40,7 @@
 
     <footer class="footer">
         <div class="container">
-            <span class="">Voorkom Schulden Samen is ontwikkeld in opdracht van Schouders Eronder, een samenwerkingsverband tussen Divosa, Landelijke Cliëntenraad, NVVK, Sociaal Werk Nederland en VNG door Ecorys. Concept programmering en uitvoering door EMB AV &copy; </span>
+            <span class="">Voorkom Schulden Samen is in opdracht van Schouders Eronder door Ecorys en EMB AV ontwikkeld. Schouders Eronder is een samenwerkingsverband tussen Divosa, Landelijke Cliëntenraad, NVVK, Sociaal Werk Nederland en VNG</span>
         </div>
     </footer>
 

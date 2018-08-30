@@ -15,7 +15,7 @@ class InstantieTableSeeder extends Seeder
     {
         $instantie_type_vastelasten = Instantietype::where('name', 'Vaste lasten')->first();
         $instantie_type_maatschappelijkeorganisaties = Instantietype::where('name', 'Maatschappelijke organisaties')->first();
-        $instantie_type_werkinkomen = Instantietype::where('name', 'Werk / Inkomen')->first();
+        $instantie_type_afdelingengemeente = Instantietype::where('name', 'Afdelingen gemeente')->first();
         $instantie_type_scholen_werkgevers = Instantietype::where('name', 'Scholen en werkgevers')->first();
 
         $instantie_zorgverzekeraar = new Instantie();
@@ -118,13 +118,22 @@ class InstantieTableSeeder extends Seeder
         $instantie_type_maatschappelijkeorganisaties->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
+        $instantie_next->name = 'Huisarts';
+        $instantie_next->description = 'Huisarts.';
+        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
+        $instantie_next->contactpersoon = '';
+        $instantie_next->scanmodel_id = 1;
+        $instantie_next->save();
+        $instantie_type_maatschappelijkeorganisaties->instanties()->save($instantie_next);
+
+        $instantie_next = new Instantie();
         $instantie_next->name = 'Belastingzaken';
         $instantie_next->description = 'Beleidsmedewerker dienst belastingen gemeente.';
         $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
-        $instantie_type_werkinkomen->instanties()->save($instantie_next);
+        $instantie_type_afdelingengemeente->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
         $instantie_next->name = 'Cliëntenraad';
@@ -133,7 +142,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
-        $instantie_type_werkinkomen->instanties()->save($instantie_next);
+        $instantie_type_afdelingengemeente->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
         $instantie_next->name = 'Sociaal Wijkteam';
@@ -142,16 +151,16 @@ class InstantieTableSeeder extends Seeder
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
-        $instantie_type_werkinkomen->instanties()->save($instantie_next);
+        $instantie_type_afdelingengemeente->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
-        $instantie_next->name = 'Sociale dienst';
-        $instantie_next->description = 'Sociale dienst.';
+        $instantie_next->name = 'Werk / Inkomen';
+        $instantie_next->description = 'Werk / Inkomen.';
         $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
-        $instantie_type_werkinkomen->instanties()->save($instantie_next);
+        $instantie_type_afdelingengemeente->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
         $instantie_next->name = 'Welzijn / Wmo';
@@ -160,7 +169,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
-        $instantie_type_werkinkomen->instanties()->save($instantie_next);
+        $instantie_type_afdelingengemeente->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
         $instantie_next->name = 'Onderwijs / Leerplicht';
@@ -169,7 +178,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
-        $instantie_type_werkinkomen->instanties()->save($instantie_next);
+        $instantie_type_afdelingengemeente->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
         $instantie_next->name = 'Economie / Ondernemerschap';
@@ -178,7 +187,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
         $instantie_next->save();
-        $instantie_type_werkinkomen->instanties()->save($instantie_next);
+        $instantie_type_afdelingengemeente->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
         $instantie_next->name = 'Werkgevers';

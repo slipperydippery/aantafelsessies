@@ -35,7 +35,10 @@
 				</ul>
 				<div class="section__panel section__panel__toptabs">
 					<div class="section__panel--title">
-						<h5>Resultaat:</h5>
+							<h5>
+								Resultaat:
+								<i class="material-icons muted md-24" data-toggle="tooltip" data-placement="top" title=" Ook op het niveau van partijen als het CJIB, belastingdienst, DUO, SVB, en het CAK lopen interessante initiatieven om schulden te voorkomen. Het is handig om hiervan op de hoogte te zijn. Kijk hiervoor op de websites van deze organisaties. "> info</i>
+							</h5>
 		                <p><em>Hieronder zie je een overzicht van partijen waarmee je wel- (<i class="material-icons"> check </i>)  of niet (<i class="material-icons"> close </i>) samenwerkt. </p></em>
 		                <p><em>Je kunt nu een selectie maken van de partijen met wie je een gesprekssessie wilt houden. Doe dit door hieronder meerdere partijen aan te klikken. Wij adviseren om ten minste 1 partij van elke categorie uit te nodigen.</em></p>
 					</div>

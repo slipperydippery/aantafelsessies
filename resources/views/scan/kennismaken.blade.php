@@ -6,7 +6,14 @@
             <div class="col-md-12">
                 <div class="page--title">
                     <h1 class="pagetitle">Kennismaken</h1>
-                    <p>Vaak zal niet iedereen elkaar kennen. Daarom een voorstelrondje, waarbij iedereen aangeeft: wie ben je, namens welke organisatie doe je mee, je rol/functie en wat je hoopt dat uit deze sessie komt (wens of droom).</p>
+                    <p>Waarschijnlijk kent niet iedereen elkaar. We starten met een voorstelrondje waarbij iedereen het volgende over zichzelf verteld:</p>
+                    <ul>
+                        <li>Wat is je naam?</li>
+                        <li>Namens welke organisatie zit je hier?</li>
+                        <li>Wat doet deze organisatie?</li>
+                        <li>Wat is je rol/functie binnen deze organisatie?</li>
+                        <li>Wat hoop je dat er uit deze sessie komt (wens of droom)?</li>
+                    </ul>
                 </div>
             </div>
         </div>

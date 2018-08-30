@@ -11553,11 +11553,6 @@ label.input {
   margin-bottom: .2rem;
 }
 
-.average {
-  color: #841951;
-  font-weight: 800;
-}
-
 .sidebar {
   background: white;
   padding: 1.25rem;
@@ -11603,6 +11598,7 @@ label.input {
 
 .card .card-title {
   text-align: right;
+  padding-left: 1rem;
 }
 
 .card img {
@@ -12285,6 +12281,10 @@ input[type=range]:disabled::-moz-range-thumb {
 
 .alert.cookie-consent {
   margin-bottom: 0;
+}
+
+.modal-content img {
+  width: 100%;
 }
 
 .banner {

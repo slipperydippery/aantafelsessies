@@ -98,43 +98,57 @@
                         </div>
                     </a>
                 </div>
-            @endif
 
-            <div class="col-md-6">
-                @if ($scan->group->dateplanner)
-                    <a href=" {{ route('dateplanner.show', $scan->group->dateplanner) }} " title="">
+                <div class="col-md-6">
+                    @if ($scan->group->dateplanner)
+                        <a href=" {{ route('dateplanner.show', $scan->group->dateplanner) }} " title="">
+                            <div class="card card__dashboard">
+                                <div class="card-body">
+                                    <h5 class="card-title">Datumprikker</h5>
+                                    <img src="/img/dateplanner.jpg" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    @elseif($scan->isOwner())
                         <div class="card card__dashboard">
                             <div class="card-body">
                                 <h5 class="card-title">Datumprikker</h5>
-                                <img src="/img/dateplanner.jpg" alt="">
+                                <form action="{{ route('dateplanner.store') }}" method="post" accept-charset="utf-8">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" id="group_id" name="group_id" value="{{ $scan->group->id }}">
+                                    <input type="submit" value=" Maak een Datumprikker aan " class="btn btn-primary " />
+                                </form>
                             </div>
                         </div>
-                    </a>
-                @elseif($scan->isOwner())
-                    <div class="card card__dashboard">
-                        <div class="card-body">
-                            <h5 class="card-title">Datumprikker</h5>
-                            <form action="{{ route('dateplanner.store') }}" method="post" accept-charset="utf-8">
-                                {{ csrf_field() }}
-                                <input type="hidden" id="group_id" name="group_id" value="{{ $scan->group->id }}">
-                                <input type="submit" value=" Maak een Datumprikker aan " class="btn btn-primary " />
-                            </form>
-                        </div>
-                    </div>
-                @endif
-            </div>
+                    @endif
+                </div>
+            @endif
+
 
 		    @if ($scan->isOwner())
-		    	
+                
                     <div class="col-md-6">
                         <a href="#" data-toggle="modal" data-target="#voorbeeldmail">
                             <div class="card card__dashboard">
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                    	<i class="material-icons" data-toggle="tooltip" data-placement="top" title="Je beheert deze sessie"> star </i>
-                                    	Email om deelnemers uit te nodigen
+                                        <i class="material-icons" data-toggle="tooltip" data-placement="top" title="Je beheert deze sessie"> star </i>
+                                        Email om deelnemers uit te nodigen
                                     </h5>
                                     <img src="/img/letter.jpg" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#" data-toggle="modal" data-target="#voorbeeldmail">
+                            <div class="card card__dashboard">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="material-icons"> star </i>
+                                        Stuur reminder naar alle deelnemers
+                                    </h5>
+                                    <img src="/img/letter_alert.jpg" alt="">
                                 </div>
                             </div>
                         </a>
