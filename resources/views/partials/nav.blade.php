@@ -1,12 +1,12 @@
 <nav class="navbar navbar-expand-md navbar-light border-bottom">
     <div class="container d-flex">
-        <a class="navbar-brand mr-4" href="{{ url('/') }}">
+        <a class="navbar-brand mr-4 d-flex" href="{{ url('/') }}">
             @if(Request::is('/'))
-                    <img src="/img/logo.svg" width="30" height="30" class="d-inline-block align-top mr-1" alt="Logo">
-                    Voorkom schulden samen
+                    <img src="/img/logo.svg" width="120" height="70" class="d-inline-block align-top mr-1" alt="Logo">
+                    <span class="align-self-center brand-title">Digitale Gesprekshulp</span>
             @else
-                    <img src="/img/logo.svg" width="30" height="30" class="d-inline-block align-top mr-1" alt="Logo">
-                    Voorkom schulden samen
+                    <img src="/img/logo.svg" width="120" height="70" class="d-inline-block align-top mr-1" alt="Logo">
+                    <span class="align-self-center brand-title">Digitale Gesprekshulp</span>
             @endif
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

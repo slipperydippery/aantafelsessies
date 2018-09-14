@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="page--title">
                     <h1 class="pagetitle">Kennismaken</h1>
-                    <p>Waarschijnlijk kent niet iedereen elkaar. We starten met een voorstelrondje waarbij iedereen het volgende over zichzelf verteld:</p>
+                    <p>Waarschijnlijk kent niet iedereen elkaar. We starten met een voorstelrondje waarbij iedereen het volgende over zichzelf vertelt:</p>
                     <ul>
                         <li>Wat is je naam?</li>
                         <li>Namens welke organisatie zit je hier?</li>

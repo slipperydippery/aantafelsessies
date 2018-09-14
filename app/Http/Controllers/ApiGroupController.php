@@ -8,6 +8,8 @@ use App\Group;
 use App\Dashmessage;
 use App\Inventarisatie;
 use Illuminate\Http\Request;
+use App\Notifications\GroupCreated;
+use App\Notifications\GroupscanCreated;
 
 class ApiGroupController extends Controller
 {
@@ -64,6 +66,8 @@ class ApiGroupController extends Controller
         }
         $group->scans()->save($scan);
 
+        $user->notify(new GroupCreated($group));
+
         return $group;
     }
 
@@ -97,6 +101,8 @@ class ApiGroupController extends Controller
         //     'message' => $user->name . ' heeft zich aangemeld voor de groepssessie ' . $group->title,
         //     'user_id' => $group->owner->user->id,
         // ]);
+        // 
+        $user->notify(new GroupscanCreated($group, $scan));
 
         return $dashmessage;
         

@@ -4,7 +4,14 @@
             <div class="card ">
                 <div class="card-body">
                     <h5 class="card-title"> {{ partner.instantie.name }} 
-                        <i class="material-icons clickable muted" v-b-tooltip.hover :title="partner.instantie.description"> info </i>
+                        <i 
+                            class="material-icons clickable muted" 
+                            v-b-tooltip.hover 
+                            :title="partner.instantie.description"
+                            v-if="partner.instantie.description"
+                        > 
+                            info 
+                        </i>
                     </h5>
                     <set-partner
 		            	:initPartner = partner

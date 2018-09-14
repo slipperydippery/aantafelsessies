@@ -47,7 +47,7 @@
             <a href=" # " title="">
                 <div class="card card__dashboard">
                     <div class="card-body">
-                        <h5 class="card-title">Kennisbank</h5>
+                        <h5 class="card-title disabled">Kennisbank</h5>
                         <img src="/img/book.jpg" alt="">
                     </div>
                 </div>

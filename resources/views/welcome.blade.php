@@ -17,6 +17,11 @@
                         <a href="/pdf/handleiding_participatiescan.pdf" data-toggle="modal" data-target="#exampleModal"><span class="fineprint fineprint--welcome">hoe werkt een sessie?</span></a>
                     </div>
                 </div>
+                <div class="col-12">
+                    <p>
+                        Deze applicatie werkt het beste met Google Chrome, Firefoox, Safari, en Edge. Internet Explorer wordt niet meer onderhouden en is geen veilige browser. Wij adviseren u daarom om gebruik te maken van een andere browser. 
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -27,9 +32,9 @@
             <div class="col-sm-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Films</h5>
+                        <h5 class="card-title">Instructiefilm</h5>
                         <img class="card-img-top" src="/img/flims_lg.jpg" alt="Card image cap">
-                        <p class="card-text">Morbi ac felis. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris.</p>
+                        <p class="card-text card-text__welcome">Bekijk de instructiefilm om te zien hoe de digitale gesprekshulp werkt.</p>
                         <a href=" # " class="btn btn-outline-primary">Bekijk de films</a>
                     </div>
                 </div>
@@ -37,9 +42,12 @@
             <div class="col-sm-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Ideeën</h5>
-                        <img class="card-img-top" src="/img/idea_lg.jpg" alt="Card image cap">
-                        <p class="card-text">Morbi ac felis. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris.</p>
+                        <h5 class="card-title">Animatiefilm</h5>
+                        <img class="card-img-top" src="/img/flims_lg.jpg" alt="Card image cap">
+                        <p class="card-text card-text__welcome">
+                            Schulden voorkomen? <br>
+                            Hoe kunnen we dat samen doen?
+                        </p>
                         <a href="#" class="btn btn-outline-primary">Doe inspiratie op</a>
                     </div>
                 </div>
@@ -49,8 +57,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Kennisbank</h5>
                         <img class="card-img-top" src="/img/book_lg.jpg" alt="Card image cap">
-                        <p class="card-text">Morbi ac felis. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris.</p>
-                        <a href="#" class="btn btn-outline-primary">Naar de kennisbank</a>
+                        <p class="card-text card-text__welcome">De kennisbank is nog in ontwikkeling.</p>
+                        <a href="#" class="btn btn-outline-primary disabled" >In ontwikkeling</a>
                     </div>
                 </div>
             </div>
