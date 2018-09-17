@@ -44,14 +44,12 @@
             </a>
         </div>
         <div class="col-md-4">
-            <a href=" # " title="">
-                <div class="card card__dashboard">
+                <div class="card card__dashboard" data-toggle="tooltip" data-placement="top" title="De kennisbank is nog in ontwikkeling">
                     <div class="card-body">
                         <h5 class="card-title disabled">Kennisbank</h5>
                         <img src="/img/book.jpg" alt="">
                     </div>
                 </div>
-            </a>
         </div>
     </div>
     <div class="row row__cards">

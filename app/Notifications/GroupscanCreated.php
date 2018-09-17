@@ -48,7 +48,7 @@ class GroupscanCreated extends Notification
         return (new MailMessage)
             ->subject('Je doet mee aan groepssessie: "' . $this->group->title . '"!')
             ->line('Je hebt je deelname bevestigd aan groepssessie: ' . $this->group->title . '.')
-            ->action('Naar de sessie', route('scan.show', $scan))
+            ->action('Naar de sessie', route('scan.show', $this->scan))
             ->line('Veel succes!');
     }
 

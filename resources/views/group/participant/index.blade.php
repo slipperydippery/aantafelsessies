@@ -36,7 +36,37 @@
 		            				<div class="col-sm-10">
 		            					@if ($group->scans->where('instantie_id', $instantie->id)->count())
 					                		@foreach ($group->scans->where('instantie_id', $instantie->id) as $scan)
-					                			{{ $scan->user->name }} <br>
+					                			{{ $scan->user->name }} 
+					                			<span data-toggle="tooltip" data-placement="top" title="Verwijder deze deelnemer van de sessie">
+					                			    <i class="material-icons clickable" data-toggle="modal" data-target="#deleteUserModal-{{ $scan->id }}"> close </i>
+					                			</span>
+					                			<br>
+
+					                			<!-- Modal -->
+					                			<div class="modal fade" id="deleteUserModal-{{ $scan->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true">
+					                			    <div class="modal-dialog" role="document">
+					                			        <div class="modal-content">
+					                			            <div class="modal-header">
+					                			                <h5 class="modal-title" id="deleteUserModalLabel">Verwijder {{ $scan->user->name }}</h5>
+					                			                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					                			                <span aria-hidden="true">&times;</span>
+					                			                </button>
+					                			            </div>
+					                			            <div class="modal-body">
+					                			                <p>Weet je zeker dat je <strong>{{ $scan->user->name }}</strong> van <strong>{{ $scan->instantie->name }}</strong> uit de sessie wilt verwijderen?</p>
+					                			            </div>
+					                			            <div class="modal-footer">
+					                			                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuleer</button>
+					                			                    <form action="{{ route('scan.destroy', $scan) }}" method="post" accept-charset="utf-8">
+					                			                        <input type="hidden" name="_method" value="DELETE">
+					                			                        {{ csrf_field() }}
+					                			                       <!-- Add Submit Field -->
+					                			                       <input type="submit" value="Verwijder deelnemer" class="btn btn-primary" />
+					                			                    </form>
+					                			            </div>
+					                			        </div>
+					                			    </div>
+					                			</div>
 					                		@endforeach
 		            					@else
 		            						<em>Nog geen deelnemers in deze categorie, <a href="#" data-toggle="modal" data-target="#voorbeeldmail">nodig iemand uit</a></em>

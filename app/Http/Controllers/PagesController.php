@@ -22,4 +22,9 @@ class PagesController extends Controller
     {
     	return view('pages.vraag');
     }
+
+    public function cookies()
+    {
+        return view('pages.cookies');
+    }
 }

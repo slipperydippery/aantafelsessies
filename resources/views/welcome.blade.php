@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <p>
+                    <p style="display:none">
                         Deze applicatie werkt het beste met Google Chrome, Firefoox, Safari, en Edge. Internet Explorer wordt niet meer onderhouden en is geen veilige browser. Wij adviseren u daarom om gebruik te maken van een andere browser. 
                     </p>
                 </div>
