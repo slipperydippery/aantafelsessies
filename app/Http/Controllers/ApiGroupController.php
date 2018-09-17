@@ -9,6 +9,7 @@ use App\Dashmessage;
 use App\Inventarisatie;
 use Illuminate\Http\Request;
 use App\Notifications\GroupCreated;
+use App\Notifications\UserJoinedGroup;
 use App\Notifications\GroupscanCreated;
 
 class ApiGroupController extends Controller
@@ -103,6 +104,7 @@ class ApiGroupController extends Controller
         // ]);
         // 
         $user->notify(new GroupscanCreated($group, $scan));
+        $group->owner->user->notify(new UserJoinedGroup($group, $scan));
 
         return $dashmessage;
         

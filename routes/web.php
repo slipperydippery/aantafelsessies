@@ -1,20 +1,8 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
 Route::view('/', 'welcome')->name('welcome');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 // Create group
 Route::resource('group', 'GroupController');
@@ -99,6 +87,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/partners', 'PagesController@partners')->name('partners');
 Route::get('/vraag', 'PagesController@vraag')->name('vraag');
 Route::get('/cookies', 'PagesController@cookies')->name('cookies');
+
+// Mail requests
+Route::get('/sessie/{scan}/emailresultaten', 'MeasureController@mailmeasures')->name('scan.mailmeasures');
 
 
 

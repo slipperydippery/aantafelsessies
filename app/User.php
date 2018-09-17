@@ -7,10 +7,13 @@ use App\Scan;
 use App\Group;
 use App\Dashmessage;
 use App\Inventarisatie;
+use App\Notifications\VerifyEmail;
+use App\Notifications\ResetPassword;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
@@ -56,4 +59,14 @@ class User extends Authenticatable
     {
         return Cache::has('user-is-online-' . $this->id);
     }    
+
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new VerifyEmail);
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+       $this->notify(new ResetPassword($token));
+    }
 }

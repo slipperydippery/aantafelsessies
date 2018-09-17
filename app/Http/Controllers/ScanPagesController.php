@@ -14,6 +14,7 @@ class ScanPagesController extends Controller
     public function __construct()
     {
         $this->middleware('owner', ['except' => ['loggless', 'measureresults']]);
+        $this->middleware('verified');
     }  
 
     public function introductie(Scan $scan)

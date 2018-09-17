@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\Scan;
 use App\Measure;
 use Illuminate\Http\Request;
+use App\Notifications\MeasuresRequested;
 
 class MeasureController extends Controller
 {
@@ -81,5 +84,11 @@ class MeasureController extends Controller
     public function destroy(Measure $measure)
     {
         //
+    }
+
+    public function mailmeasures(Scan $scan)
+    {
+        Auth::user()->notify(new MeasuresRequested($scan));
+        return back();
     }
 }

@@ -89,7 +89,7 @@
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <a href=" {{ route('scan.introductie', $scan) }} " title="">
+                    <a href=" {{ route('scan.mailmeasures', $scan) }} " title="">
                         <div class="card card__dashboard">
                             <div class="card-body">
                                 <h5 class="card-title">Email mij de actiepunten</h5>
