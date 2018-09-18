@@ -47,6 +47,10 @@
     	transition: all .5s;
     }
 }
+.row__cards__doubletitle .card-title {
+	min-height: 3rem;
+
+}
 .card:hover .card-closeicon {
 	width: 1.5rem;
 }

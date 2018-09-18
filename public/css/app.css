@@ -11662,7 +11662,6 @@ label.input {
 .card .card-title {
   text-align: right;
   padding-left: 1rem;
-  min-height: 3rem;
 }
 
 .card img {
@@ -11698,6 +11697,10 @@ label.input {
   width: 0;
   -webkit-transition: all .5s;
   transition: all .5s;
+}
+
+.row__cards__doubletitle .card-title {
+  min-height: 3rem;
 }
 
 .card:hover .card-closeicon {
