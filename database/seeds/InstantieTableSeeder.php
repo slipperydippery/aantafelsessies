@@ -20,7 +20,7 @@ class InstantieTableSeeder extends Seeder
 
         $instantie_zorgverzekeraar = new Instantie();
         $instantie_zorgverzekeraar->name = 'Zorgverzekeraar';
-        $instantie_zorgverzekeraar->description = 'Zorgverzekeraar die de collectieve zorgverzekering voor minima in de gemeente aanbiedt.';
+        $instantie_zorgverzekeraar->description = '';
         $instantie_zorgverzekeraar->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_zorgverzekeraar->contactpersoon = 'Bestaande contactpersoon voor de collectieve zorgverzekering voor minima.';
         $instantie_zorgverzekeraar->scanmodel_id = 1;
@@ -74,7 +74,7 @@ class InstantieTableSeeder extends Seeder
 
         $instantie_next = new Instantie();
         $instantie_next->name = 'Zorg';
-        $instantie_next->description = 'Zoals vrijwilligers thuisadministratie en maatjesprojecten. ';
+        $instantie_next->description = 'Zoals zorginstellingen, ziekenhuizen, en verzorgingstehuizen.';
         $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;
@@ -128,7 +128,7 @@ class InstantieTableSeeder extends Seeder
 
         $instantie_next = new Instantie();
         $instantie_next->name = 'Belastingzaken';
-        $instantie_next->description = 'Beleidsmedewerker dienst belastingen gemeente.';
+        $instantie_next->description = '';
         $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';
         $instantie_next->scanmodel_id = 1;

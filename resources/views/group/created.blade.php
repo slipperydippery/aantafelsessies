@@ -26,7 +26,7 @@
                             <div class="card card__dashboard">
                                 <div class="card-body">
                                     <h5 class="card-title">Bekijk een voorbeeld email</h5>
-                                    <img src="/img/scan.jpg" alt="">
+                                    <img src="/img/letter.jpg" alt="">
                                 </div>
                             </div>
                         </a>
@@ -37,7 +37,7 @@
                                 <div class="card card__dashboard">
                                     <div class="card-body">
                                         <h5 class="card-title">Tips voor het contact maken</h5>
-                                        <img src="/img/scan.jpg" alt="">
+                                        <img src="/img/contacttips.jpg" alt="">
                                     </div>
                                 </div>
                             </a>
@@ -48,7 +48,7 @@
                             <div class="card card__dashboard">
                                 <div class="card-body">
                                     <h5 class="card-title">Argumenten om partijen over te halen</h5>
-                                    <img src="/img/scan.jpg" alt="">
+                                    <img src="/img/overtuiging.jpg" alt="">
                                 </div>
                             </div>
                         </a>

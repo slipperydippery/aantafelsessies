@@ -47,7 +47,7 @@
                 <div class="card card__dashboard" data-toggle="tooltip" data-placement="top" title="De kennisbank is nog in ontwikkeling">
                     <div class="card-body">
                         <h5 class="card-title disabled">Kennisbank</h5>
-                        <img src="/img/book.jpg" alt="">
+                        <img src="/img/book_disabled.jpg" alt="">
                     </div>
                 </div>
         </div>

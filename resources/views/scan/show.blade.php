@@ -161,7 +161,7 @@
                                         <i class="material-icons" data-toggle="tooltip" data-placement="top" title="Je beheert deze sessie"> star </i>
                                         Tips voor het contact maken
                                     </h5>
-                                    <img src="/img/scan.jpg" alt="">
+                                    <img src="/img/contacttips.jpg" alt="">
                                 </div>
                             </div>
                         </a>
@@ -174,7 +174,7 @@
                                         <i class="material-icons" data-toggle="tooltip" data-placement="top" title="Je beheert deze sessie"> star </i>
                                         Argumenten om partijen over te halen
                                     </h5>
-                                    <img src="/img/scan.jpg" alt="">
+                                    <img src="/img/overtuiging.jpg" alt="">
                                 </div>
                             </div>
                         </a>
