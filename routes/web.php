@@ -89,6 +89,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/partners', 'PagesController@partners')->name('partners');
 Route::get('/vraag', 'PagesController@vraag')->name('vraag');
 Route::get('/cookies', 'PagesController@cookies')->name('cookies');
+Route::get('/contact', 'PagesController@contact')->name('contact');
 
 // Mail requests
 Route::get('/sessie/{scan}/emailresultaten', 'MeasureController@mailmeasures')->name('scan.mailmeasures');

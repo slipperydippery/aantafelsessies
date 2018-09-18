@@ -135,7 +135,7 @@
 				</table>
 				<p>&nbsp;</p>
 				<h3>Hoe kan ik mijn gegevens inzien, corrigeren of verwijderen?</h3>
-				<p>Je kunt jouw persoonsgegevens inzien, corrigeren of laten verwijderen. We kunnen gegevens van derden opvragen bij desbetreffende partijen, maar zijn afhankelijk van hun reactie. Stuur dan een e-mail naar: info@digitalegesprekshulp.nl</p>
+				<p>Je kunt jouw persoonsgegevens inzien, corrigeren of laten verwijderen. We kunnen gegevens van derden opvragen bij desbetreffende partijen, maar zijn afhankelijk van hun reactie. Stuur dan een e-mail naar: <a href="mailto:annejetkerckhaert@ecorys.com">annejetkerckhaert@ecorys.com</a></p>
 				<p>&nbsp;</p>
 				<h3>Hoe kan ik cookies uitschakelen of verwijderen?</h3>
 				<p>Je kunt ervoor kiezen geen toestemming te geven voor het plaatsen van cookies. In de internetbrowser kan je ook instellen dat cookies geblokkeerd worden. Het verschilt per browser hoe je dit kan instellen, de meeste browsers geven hier uitleg over in de help-functie. Als je cookies blokkeert, kan het zijn dat onze website minder goed werkt.</p>

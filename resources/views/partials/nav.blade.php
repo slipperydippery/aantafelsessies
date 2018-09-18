@@ -16,6 +16,17 @@
         <div class="collapse navbar-collapse col" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav col">
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        Meer info <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#"> Privacyverklaring </a>
+                        <a class="dropdown-item" href=" {{ route('cookies') }} "> Cookieverklaring </a>
+                        <a class="dropdown-item" href=" {{ route('contact') }} "> Contact </a>
+                    </div>
+                </li>
                 @guest
                 @else
                 	<li><a class="nav-link nav-link--main mr-5 align-top" href=" {{ route('home') }} ">Dashboard</a></li>

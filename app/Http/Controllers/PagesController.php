@@ -27,4 +27,9 @@ class PagesController extends Controller
     {
         return view('pages.cookies');
     }
+
+    public function contact()
+    {
+        return view('pages.contact');
+    }
 }
