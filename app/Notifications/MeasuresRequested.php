@@ -47,7 +47,12 @@ class MeasuresRequested extends Notification
         foreach ($this->scan->group->owner->measures as $measure) {
             if ($measure->active) {
                 $data .= '<h2>' . $measure->question->title . '</h2>' . '<p>' . $measure->measure . '</p>';
-                $data .= '<strong>trekker</strong>: ' . $measure->user->user->name;
+                $data .= '<strong>trekker</strong>: ';
+                if(isset($measure->user)) {
+                    $data .= $measure->user->user->name;
+                } else {
+                    $data .= '<em>geen trekker toegewezen</em>';
+                }
                 $data .= '<br><hr>';
             }
         }
@@ -57,7 +62,6 @@ class MeasuresRequested extends Notification
                     ->action('Bekijk de actiepunten online', url('/sessie/' . $this->scan->id . '/actiepunten'))
                     ->line('<h1>Actiepunten:</h1><hr>')
                     ->line($data)
-                    ->line('<p> bla-la </p>');
     }
 
     /**

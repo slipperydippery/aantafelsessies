@@ -45,12 +45,12 @@ class VerifyEmail extends VerifyEmailNotification
 
         return (new MailMessage)
             ->subject(Lang::getFromJson('E-mailadres verifiëren'))
-            ->line(Lang::getFromJson('Klik op de onderstaande knop om uw e-mailadres te verifiëren.'))
+            ->line(Lang::getFromJson('Klik op de onderstaande knop om jouw e-mailadres te verifiëren.'))
             ->action(
                 Lang::getFromJson('E-mailadres verifiëren'),
                 $this->verificationUrl($notifiable)
             )
-            ->line(Lang::getFromJson('Als u geen account hebt gemaakt, hoeft u verder niets te doen.'));
+            ->line(Lang::getFromJson('Als je geen account hebt gemaakt, hoeft je verder niets te doen.'));
     }
 
     /**
