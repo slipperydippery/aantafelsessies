@@ -18,7 +18,7 @@
         <div class="col-md-4">
             <div class="card card__dashboard">
                 <div class="card-body">
-                    <h5 class="card-title">Mijn gesprekssessies</h5>
+                    <h5 class="card-title">Mijn gespreks&#8203sessies</h5>
                     <p class="card-text">
                         @foreach ($user->scans as $scan)
                             <a href=" {{ route('scan.show', $scan) }} "> 
