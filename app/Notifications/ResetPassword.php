@@ -57,9 +57,9 @@ class ResetPassword extends ResetPasswordNotification
     {
         return (new MailMessage)
             ->subject(Lang::getFromJson('Wachtwoord opnieuw instellen'))
-            ->line(Lang::getFromJson('U ontvangt deze e-mail omdat we een verzoek voor het opnieuw instellen van uw wachtwoord voor uw account hebben ontvangen.'))
+            ->line(Lang::getFromJson('Je ontvangt deze e-mail omdat we een verzoek hebben ontvangen voor het opnieuw instellen van jouw wachtwoord voor de digitale gesprekshulp.'))
             ->action(Lang::getFromJson('Reset wachtwoord'), url(config('app.url').route('password.reset', $this->token, false)))
-            ->line(Lang::getFromJson('Als u geen wachtwoordreset hebt aangevraagd, hoeft u verder niets te doen.'));
+            ->line(Lang::getFromJson('Als je geen wachtwoordreset hebt aangevraagd, hoef je verder niets te doen.'));
     }
 
     /**
