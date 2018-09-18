@@ -11662,6 +11662,7 @@ label.input {
 .card .card-title {
   text-align: right;
   padding-left: 1rem;
+  min-height: 3rem;
 }
 
 .card img {
