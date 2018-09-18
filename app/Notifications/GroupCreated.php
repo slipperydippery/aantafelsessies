@@ -45,10 +45,10 @@ class GroupCreated extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('Groupssessie "' . $this->group->title . '" is aangemaakt')
-            ->line('Je hebt zojuist een groupssessie aangemaakt!')
+            ->subject('Groepssessie "' . $this->group->title . '" is aangemaakt')
+            ->line('Je hebt zojuist een groepssessie aangemaakt!')
             ->action('Naar de sessie', url('/scan/' . $this->group->owner->id))
-            ->line('Veel succes met het uitnodigen van mede deelnemers!');
+            ->line('Veel succes met het uitnodigen van mededeelnemers!');
     }
 
     /**
