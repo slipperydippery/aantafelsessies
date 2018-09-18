@@ -8,6 +8,10 @@
         @endforeach
     @endif
 
+    @foreach ($scan->dashmessages as $dashmessage)
+        @include('partials.dashmessage')
+    @endforeach
+
 	<div class="container">
 		<div class="row">
             <div class="col-md-12">

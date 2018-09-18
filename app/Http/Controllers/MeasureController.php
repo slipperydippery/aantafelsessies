@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Scan;
 use App\Measure;
+use App\Dashmessage;
 use Illuminate\Http\Request;
 use App\Notifications\MeasuresRequested;
 
@@ -89,6 +90,14 @@ class MeasureController extends Controller
     public function mailmeasures(Scan $scan)
     {
         Auth::user()->notify(new MeasuresRequested($scan));
+
+        $dashmessage = new Dashmessage([
+            'type' => 'success',
+            'message' => 'De actiepunten zijn naar ' . $scan->user->email . ' verstuurd!'
+        ]);
+        $scan->dashmessages()->save($dashmessage);
+
+
         return back();
     }
 }

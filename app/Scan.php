@@ -143,5 +143,10 @@ class Scan extends Model
     		}
     	}
     }
+    
+    public function dashmessages()
+    {
+        return $this->morphMany(Dashmessage::class, 'dashmessageable');
+    }
 
 }
