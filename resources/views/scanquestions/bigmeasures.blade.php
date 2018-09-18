@@ -13,39 +13,48 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section__panel">
+					@php
+					    $measurecount = 0;
+					@endphp
 					@foreach ($scan->group->owner->measures->where('active', true) as $measure)
-					@if($measure->question->theme->id == $theme->id)
-						<div class="section__panel--title">
-							{{ $measure->question->title }}
-						</div>
-						<div class="row">
-							<div class="col-sm-3">
-								Actie omschrijving:
+						@if($measure->question->theme->id == $theme->id)
+                            @php
+                                $measurecount++;
+                            @endphp
+							<div class="section__panel--title">
+								{{ $measure->question->title }}
 							</div>
-							<div class="col-sm-9 form-group">
-								<big-measure
-									:measure_id = {{ $measure->id }}
-									:is_manager=" {{ $is_manager = $scan->group->owner->id == $scan->id ? 1 : 0 }} "
-								>
-								</big-measure>
-								
+							<div class="row">
+								<div class="col-sm-3">
+									Actie omschrijving:
+								</div>
+								<div class="col-sm-9 form-group">
+									<big-measure
+										:measure_id = {{ $measure->id }}
+										:is_manager=" {{ $is_manager = $scan->group->owner->id == $scan->id ? 1 : 0 }} "
+									>
+									</big-measure>
+									
+								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-3">
-								Trekker:
+							<div class="row">
+								<div class="col-sm-3">
+									Trekker:
+								</div>
+								<div class="col-sm-9">
+									<frontrunner
+										:measure_id = {{ $measure->id }}
+										:group_id = {{ $measure->scan->group->id }}
+										:is_manager=" {{ $is_manager = $scan->group->owner->id == $scan->id ? 1 : 0 }} "
+									>
+									</frontrunner>
+								</div>
 							</div>
-							<div class="col-sm-9">
-								<frontrunner
-									:measure_id = {{ $measure->id }}
-									:group_id = {{ $measure->scan->group->id }}
-									:is_manager=" {{ $is_manager = $scan->group->owner->id == $scan->id ? 1 : 0 }} "
-								>
-								</frontrunner>
-							</div>
-						</div>
-					@endif
+						@endif
 					@endforeach
+					@if ($measurecount == 0)
+					    <p class="mt-4"><em>Geen actiepunten toegewezen</em></p>
+					@endif
 				</div>
 			</div>
 		</div>

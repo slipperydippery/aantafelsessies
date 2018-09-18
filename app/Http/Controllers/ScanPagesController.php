@@ -55,4 +55,9 @@ class ScanPagesController extends Controller
     {
         return view('scan.results', compact('scan'));
     }
+
+    public function measures(Scan $scan)
+    {
+        return view('scan.measures', compact('scan'));
+    }
 }

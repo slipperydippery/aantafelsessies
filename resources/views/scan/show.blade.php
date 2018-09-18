@@ -69,7 +69,7 @@
 
             @if ($scan->isComplete())
                 <div class="col-md-6">
-                    <a href=" {{ route('scan.introductie', $scan) }} " title="">
+                    <a href=" {{ route('scan.measures', $scan) }} " title="">
                         <div class="card card__dashboard">
                             <div class="card-body">
                                 <h5 class="card-title">Bekijk de actiepunten</h5>
