@@ -52,7 +52,7 @@
 @isset($actionText)
 @component('mail::subcopy')
     @lang(
-        "Als je problemen ondervind bij het klikken op de \":actionText\" knop, kopieert en plakt u de onderstaande URL\n".
+        "Als je problemen ondervindt bij het klikken op de \":actionText\" knop, kopieer en plakt de onderstaande URL\n".
         'in jouw webbrowser: [:actionURL](:actionURL)',
     [
         'actionText' => $actionText,
