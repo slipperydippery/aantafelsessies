@@ -6,22 +6,38 @@
 	        <div class="col-md-12">
 	            <div class="page--title">
 	                <h1 class="pagetitle">Beoordeel de huidige gezamenlijke aanpak</h1>
-	                <p>Kun je een algemene indruk geven van hoe goed jouw gemeente het volgens jou doet als het gaat om het gezamenlijk voorkomen van schulden.</p>
+	                
 	            </div>
 	        </div>
 		</div>
 		
 		<div class="row">
-			<countdown date="60"></countdown>
 			<div class="col-md-12">
-				@php
-					$loggedin = Auth::guest() ? 0 : 1;
-				@endphp
-				<algemeenbeeld 
-					:workscan=" {{ $scan }} " 
-					:loggedin=" {{ $loggedin }} "
-				>
-				</algemeenbeeld>
+				<div class="card card__question">
+                    <div class="card-body">
+
+                        <span class="card-text card-text__question"> 
+			                <h5>Beoordeel de huidige gezamenlijke aanpak</h5>
+			                <p>Kun je een algemene indruk geven van hoe goed jouw gemeente het volgens jou doet als het gaat om het gezamenlijk voorkomen van schulden.</p>
+		            	</span>
+						<countdown date="60"></countdown>
+                        @php
+                        	$loggedin = Auth::guest() ? 0 : 1;
+                        @endphp
+                        <algemeenbeeld 
+                        	:workscan=" {{ $scan }} " 
+                        	:loggedin=" {{ $loggedin }} "
+                        >
+                        </algemeenbeeld>
+                        
+                    </div>
+                    <div class="card-footer">
+	                    <p>Geef met een cijfer aan in hoeverre de stelling van toepassing is.</p>
+                    </div>
+				</div>
+
+
+
 			</div>
 		</div>
 	</div>
