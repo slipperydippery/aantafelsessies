@@ -31,12 +31,22 @@
         (zelf invullen)
          
         <p>Klik hier om een indruk te krijgen van de sessie: (filmpje)</p>
+
+        <p>Meedoen bestaat uit twee stappen:</p>
+        <ol>
+            <li>
+                <p><a href="http://aantafelsessies.test/register">Maak een account aan</a> bij de Digitale Gesprekshulp.</p>
+            </li>
+            <li>
+                 @if (isset($scan))
+                    <p>Klik op de volgende link om je aan te melden voor de sessie: <a href="{{ Request::root() }}/group/{{ $scan->group->id }}/createscan/{{ $scan->group->code }}">{{ Request::root() }}/group/{{ $scan->group->id }}/createscan/{{ $scan->group->code }}</a></p>
+                @elseif (isset($group))
+                    <p>Klik op de volgende link om je aan te melden voor de sessie: <a href="{{ Request::root() }}/group/{{ $group->id }}/createscan/{{ $group->code }}">{{ Request::root() }}/group/{{ $group->id }}/createscan/{{ $group->code }}</a></p>
+                 @endif
+                
+            </li>
+        </ol>
          
-         @if (isset($scan))
-            <p>Klik op de volgende link om je aan te melden voor de sessie: <a href="{{ Request::root() }}/group/{{ $scan->group->id }}/createscan/{{ $scan->group->code }}">{{ Request::root() }}/group/{{ $scan->group->id }}/createscan/{{ $scan->group->code }}</a></p>
-        @elseif (isset($group))
-            <p>Klik op de volgende link om je aan te melden voor de sessie: <a href="{{ Request::root() }}/group/{{ $group->id }}/createscan/{{ $group->code }}">{{ Request::root() }}/group/{{ $group->id }}/createscan/{{ $group->code }}</a></p>
-         @endif
 
          </strong>
         <p>Met vriendelijke groeten,</p>
