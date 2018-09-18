@@ -61,7 +61,7 @@ class MeasuresRequested extends Notification
                     ->line('Je hebt de actiepunten van de sessie "' . $this->scan->title . '" aangevraagd. Je kan ze ook bekijken door het volgen van onderstaande link')
                     ->action('Bekijk de actiepunten online', url('/sessie/' . $this->scan->id . '/actiepunten'))
                     ->line('<h1>Actiepunten:</h1><hr>')
-                    ->line($data)
+                    ->line($data);
     }
 
     /**
