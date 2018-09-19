@@ -14,7 +14,7 @@
 
 				<h3>Voor inhoudelijke vragen:</h3>
 				<p>Annejet Kerckhaert - <em>projectleider sociaal domein</em></p>
-				<a href="mailto:annejetkerckhaert@ecorys.com">annejetkerckhaert@ecorys.com</a> <br>
+				<a href="mailto:annejet.kerckhaert@ecorys.com">annejet.kerckhaert@ecorys.com</a> <br>
 				0651938792
 				
 

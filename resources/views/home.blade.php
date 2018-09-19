@@ -37,7 +37,7 @@
             <a href=" # " title="">
                 <div class="card card__dashboard">
                     <div class="card-body">
-                        <h5 class="card-title">Instructiefilms</h5>
+                        <h5 class="card-title">Instructiefilm</h5>
                         <img src="/img/films.jpg" alt="">
                     </div>
                 </div>

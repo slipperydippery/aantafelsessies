@@ -19,7 +19,7 @@
                     <p>Deze gesprekshulp geeft jou en je geprekspartners inzicht in verbeterpunten ten aanzien van deze thema’s en geeft gerichte handvatten om schulden vroegtijdig te signaleren</p>
                     <p><strong>Stap 1:</strong></p>
                     <p>Bepaal met wie je het beste kunt samenwerken.</p>
-                    <p>De “selectiehulp gesprekspartners” geeft je inzicht in de partijen met welke partijen uit jouw regio je dit gesprek kunt voeren.</p>
+                    <p>De “selectiehulp gesprekspartners” geeft je inzicht in de partners uit jouw regio met wie je dit gesprek kunt voeren.</p>
                     <p><strong>Stap 2:</strong></p>
                     <p>Nodig jouw gesprekspartners uit en ontdek samen aan de hand van deze gesprekshulp hoe je schulden in jouw regio vroegtijdig kunt voorkomen.</p>
                 </div>

@@ -35,7 +35,7 @@
         <p>Meedoen bestaat uit twee stappen:</p>
         <ol>
             <li>
-                <p><a href="http://aantafelsessies.test/register">Maak een account aan</a> bij de Digitale Gesprekshulp.</p>
+                <p><a href="{{ Request::root() }}/register">Maak een account aan</a> bij de Digitale Gesprekshulp.</p>
             </li>
             <li>
                  @if (isset($scan))

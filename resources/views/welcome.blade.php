@@ -10,7 +10,7 @@
         <div class="container container__welcome">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="subtitle">Samen aan tafel om samen schulden te voorkomen.</h2>
+                    <h2 class="subtitle">Samen aan tafel om samen schulden te voorkomen</h2>
                     <p>Samen bereik je meer dan alleen. Zeker als het gaat om het voorkomen van schulden. Daarom heeft Schouders Eronder deze digtale gesprekshulp ontwikkeld om samen schulden te signaleren en actie te ondernemen. </p>
                     <div class="mainbutton--container">
                         <a href="  {{ route('inventarisatie.store') }}  " class="btn btn-primary btn-lg">Start gesprekssessie</a> <br>

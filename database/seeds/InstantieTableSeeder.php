@@ -190,6 +190,15 @@ class InstantieTableSeeder extends Seeder
         $instantie_type_afdelingengemeente->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
+        $instantie_next->name = 'Sociale raadslieden';
+        $instantie_next->description = '';
+        $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
+        $instantie_next->contactpersoon = '';
+        $instantie_next->scanmodel_id = 1;
+        $instantie_next->save();
+        $instantie_type_afdelingengemeente->instanties()->save($instantie_next);
+
+        $instantie_next = new Instantie();
         $instantie_next->name = 'Werkgevers';
         $instantie_next->description = '';
         $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
