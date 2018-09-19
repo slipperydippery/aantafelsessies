@@ -16,8 +16,13 @@ use Illuminate\Database\Eloquent\Model;
 class Scan extends Model
 {
     protected $fillable = [
-        'title', 'description', 'algemeenbeeld', 'user_id', 'group_id', 'instantie_id', 'scanmodel_id'
+        'title', 'description', 'algemeenbeeld', 'user_id', 'group_id', 'instantie_id', 'scanmodel_id', 'uuid'
     ];
+
+    // public function getRouteKeyName()
+    // {
+    //     return 'uuid';
+    // }
 
     public function user()
     {
@@ -113,7 +118,8 @@ class Scan extends Model
 
     public static function register(User $user, $attributes)
     {
-    	$scan = new Scan($attributes);
+        $attributes += [ "uuid" =>  str_random(16) ];
+        $scan = new Scan($attributes);
     	$user->scans()->save($scan);
 
     	foreach ($attributes['districts'] as $district) {
@@ -143,7 +149,7 @@ class Scan extends Model
     		}
     	}
     }
-    
+
     public function dashmessages()
     {
         return $this->morphMany(Dashmessage::class, 'dashmessageable');

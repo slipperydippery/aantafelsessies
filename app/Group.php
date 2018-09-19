@@ -11,8 +11,13 @@ use Illuminate\Database\Eloquent\Model;
 class Group extends Model
 {
     protected $fillable = [
-        'title', 'scan_id', 'user_id', 'code'
+        'title', 'scan_id', 'user_id', 'code', 'uuid'
     ];
+
+    // public function getRouteKeyName()
+    // {
+    //     return 'uuid';
+    // }
 
     public function scans()
     {

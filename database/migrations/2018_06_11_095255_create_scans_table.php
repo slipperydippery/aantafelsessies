@@ -15,6 +15,7 @@ class CreateScansTable extends Migration
     {
         Schema::create('scans', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('uuid')->unique();;
             $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->decimal('algemeenbeeld', 3, 1)->nullable();

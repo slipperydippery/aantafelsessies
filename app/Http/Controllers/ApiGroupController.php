@@ -50,10 +50,10 @@ class ApiGroupController extends Controller
         $user = Auth::user();
         $scan = Scan::register($user, $request->all());
 
-        $code = str_random(10);
         $group = new Group([
             'title' => $request->title,
-            'code' => $code,
+            'uuid' => str_random(16),
+            'code' => str_random(10),
             'user_id' => $user->id,
             'scan_id' => $scan->id,
             'scanmodel_id' => $scan->scanmodel->id,
