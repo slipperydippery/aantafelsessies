@@ -20,7 +20,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="row row__cards">
+                <div class="row row__cards row__cards__doubletitle">
                     <div class="col-md-4">
                         <a href="#" data-toggle="modal" data-target="#voorbeeldmail">
                             <div class="card card__dashboard">
