@@ -98,3 +98,7 @@ Route::get('/sessie/{scan}/emailresultaten', 'MeasureController@mailmeasures')->
 
 // Dashmessages
 Route::delete('/api/dashmessage/{dashmessage}', 'ApiDashmessageController@destroy');
+
+
+// Admin functions
+Route::get('/fillallanswers', 'AdminFunctionController@fillallanswers');
