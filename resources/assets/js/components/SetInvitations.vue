@@ -19,7 +19,7 @@
 					>
 						<div 
 							class="card--partner card--partner__small clickable" 
-							:class="[{active: partner.collaboration == 'no'}, thisClass(instantietype), {selected: partner.invitable}]"
+							:class="[{active: partner.collaboration == 'no_bk'}, thisClass(instantietype), {selected: partner.invitable}]"
 							@click="toggleInvitable(partner)"
 						>
 							{{ partner.instantie.name }} 

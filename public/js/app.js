@@ -87695,7 +87695,7 @@ var render = function() {
                           staticClass:
                             "card--partner card--partner__small clickable",
                           class: [
-                            { active: partner.collaboration == "no" },
+                            { active: partner.collaboration == "no_bk" },
                             _vm.thisClass(instantietype),
                             { selected: partner.invitable }
                           ],
