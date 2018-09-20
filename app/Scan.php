@@ -105,6 +105,7 @@ class Scan extends Model
 
     public static function registerWithGroup(User $user, Group $group, $attributes)
     {
+        $attributes += [ "uuid" =>  str_random(16) ];
         $scan = new Scan($attributes);
         $scan->title = $group->title;
         $user->scans()->save($scan);
