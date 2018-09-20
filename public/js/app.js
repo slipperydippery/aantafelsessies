@@ -88271,7 +88271,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getScan: function getScan() {
             if (__WEBPACK_IMPORTED_MODULE_0__app_js__["store"].loggedin) {
                 var home = this;
-                axios.get('/api/scan/' + home.workscan.id).then(function (response) {
+                axios.get('/api/scan/' + home.workscan.uuid).then(function (response) {
                     home.store.scan = response.data;
                 }).catch(function (error) {
                     console.log(error);
@@ -88281,7 +88281,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         getAnswers: function getAnswers() {
             var home = this;
-            axios.get('/api/scan/' + home.workscan.id + '/answers').then(function (response) {
+            axios.get('/api/scan/' + home.workscan.uuid + '/answers').then(function (response) {
                 home.answers = response.data;
             }).catch(function (error) {
                 console.log(error);

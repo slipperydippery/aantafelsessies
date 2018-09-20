@@ -73,7 +73,7 @@
             getScan: function() {
                 if(store.loggedin) {
                     var home = this;
-                    axios.get('/api/scan/' + home.workscan.id )
+                    axios.get('/api/scan/' + home.workscan.uuid )
                         .then(function(response){
                             home.store.scan = response.data;
                         })
@@ -85,7 +85,7 @@
 
             getAnswers: function() {
                 var home = this;
-                axios.get('/api/scan/' + home.workscan.id + '/answers')
+                axios.get('/api/scan/' + home.workscan.uuid + '/answers')
                     .then(function(response){
                         home.answers = response.data;
                     })
