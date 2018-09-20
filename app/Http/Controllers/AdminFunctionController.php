@@ -11,7 +11,7 @@ class AdminFunctionController extends Controller
     {
     	foreach (Scanmodel::find(1)->scans as $scan) {
     		foreach ($scan->answers as $answer) {
-    			$answer->answer = round((rand(1, 10) + rand(1, 10)) + rand(1, 10)) + rand(1, 10)) / 4);
+    			$answer->answer = round((rand(1, 10) + rand(1, 10) + rand(1, 10) + rand(1, 10)) / 4);
     			$answer->save();
     		}
     	}
