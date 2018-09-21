@@ -87219,6 +87219,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.alldistricts.splice(this.alldistricts.indexOf(thisdistrict), 1);
             this.filtereddistricts.splice(this.filtereddistricts.indexOf(thisdistrict), 1);
             this.$forceUpdate();
+            this.districtsearch = '';
         },
 
         removeDistrictFromSelection: function removeDistrictFromSelection(thisdistrict) {
@@ -87252,6 +87253,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 home.clickedOnce = false;
                 home.errors = error.response.data.errors;
             });
+        },
+        enterSearch: function enterSearch() {
+            alert('Klik op een van je zoekresultaten (in het rood) om hem toe te voegen aan je lijst van gemeenten. Je kan indien nodig daarna nog een gemeente zoeken en toevoegen.');
         }
     }
 });
@@ -87348,6 +87352,15 @@ var render = function() {
           attrs: { type: "text", placeholder: "Zoek je gemeente" },
           domProps: { value: _vm.districtsearch },
           on: {
+            keydown: function($event) {
+              if (
+                !("button" in $event) &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              _vm.enterSearch()
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return

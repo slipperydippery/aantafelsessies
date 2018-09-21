@@ -17,12 +17,12 @@
             <div class="alert alert-danger" v-if="errors.districts" v-for="error in errors.districts">
                 <strong>Incompleet</strong> {{ error }}
             </div>
-            <input type="text" v-model="districtsearch" class="form-control" placeholder="Zoek je gemeente">
+            <input type="text" v-model="districtsearch" class="form-control" placeholder="Zoek je gemeente" @keydown.enter="enterSearch()">
             <div class="row resultstable--row">
                 <div class="col-sm-12">
                     <div class="infoblock" v-if="selecteddistricts.length || districtsearch != '' ">
-                        <span v-if=" ! selecteddistricts.length">Klik op een gemeente om het aan je lijst toe te voegen</span>
-                        <span v-if=" selecteddistricts.length ">Je kan meer dan meer dan 1 gemeente kiezen</span> <br>
+                            <span v-if=" ! selecteddistricts.length">Klik op een gemeente om het aan je lijst toe te voegen</span>
+                            <span v-if=" selecteddistricts.length ">Je kan meer dan meer dan 1 gemeente kiezen</span> <br>
                         <span
                             v-for="district in selecteddistricts"
                             @click="removeDistrictFromSelection(district)"
@@ -127,6 +127,7 @@
                 this.alldistricts.splice(this.alldistricts.indexOf(thisdistrict), 1);
                 this.filtereddistricts.splice(this.filtereddistricts.indexOf(thisdistrict), 1);
                 this.$forceUpdate();
+                this.districtsearch = '';
             },
 
             removeDistrictFromSelection: function(thisdistrict) {
@@ -164,9 +165,11 @@
                         home.clickedOnce = false;
                         home.errors = error.response.data.errors;
                     })
+        	},
 
-
-        	}
+            enterSearch() {
+                alert('Klik op een van je zoekresultaten (in het rood) om hem toe te voegen aan je lijst van gemeenten. Je kan indien nodig daarna nog een gemeente zoeken en toevoegen.');
+            }
         }
     }
 </script>
