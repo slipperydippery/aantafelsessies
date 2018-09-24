@@ -32,4 +32,9 @@ class PagesController extends Controller
     {
         return view('pages.contact');
     }
+
+    public function introductiefilm()
+    {
+        return view('pages.introductiefilm');
+    }
 }

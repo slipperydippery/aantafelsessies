@@ -35,7 +35,7 @@
                         <h5 class="card-title">Instructiefilm</h5>
                         <img class="card-img-top" src="/img/flims_lg.jpg" alt="Card image cap">
                         <p class="card-text card-text__welcome">Bekijk de instructiefilm om te zien hoe de digitale gesprekshulp werkt.</p>
-                        <a href=" # " class="btn btn-outline-primary">Bekijk de films</a>
+                        <a href=" {{ route('introductiefilm') }} " class="btn btn-outline-primary">Bekijk de film</a>
                     </div>
                 </div>
             </div>
