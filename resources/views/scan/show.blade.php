@@ -32,9 +32,11 @@
                             </copy-icon>
                         </p>
                     @endif
-                    <p class="page-highlight page-highlight-secondary">
-                        Er is een vervolgsessie gepland
-                    </p>
+                    @if ($scan->followup)
+                        <p class="page-highlight page-highlight-secondary">
+                            Er is een vervolgsessie gepland op {{ date('d-m-Y', strtotime($scan->followup->datetime)) }} om {{ date('H:m', strtotime($scan->followup->datetime)) }}
+                        </p>
+                    @endif
                 </div>
             </div>
 		</div>

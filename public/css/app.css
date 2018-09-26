@@ -11490,12 +11490,12 @@ span.selectable--passive:hover {
 }
 
 .page-highlight-secondary {
-  border: 1px solid #841951;
-  background: rgba(206, 212, 218, 0.07);
+  border: 1px solid #165f77;
+  background: rgba(116, 201, 229, 0.08);
   padding: .7rem;
   text-align: center;
   font-weight: 800;
-  color: #841951;
+  color: #165f77;
   border-radius: 5rem;
 }
 

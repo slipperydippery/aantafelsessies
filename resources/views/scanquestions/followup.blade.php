@@ -8,9 +8,9 @@
 	                <h1 class="pagetitle">Plan een Vervolgafspraak</h1>
 	                <p>Je hebt alle vragen al beantwoord. We adviseren om nu alvast een vervolgafspraak te maken om de uitgevoerde actiepunten om te zetten naar een werkagenda. De beheerder kan op de kalender een datum prikken zodat deze afspraak naar alle deelnemers van de groep kan worden gemaild.</p>
 					@if($scan->followup)
-					    <p  class="scandate page-highlight">Er is een vervolgafspraak gepland op: {{ $scan->followup->datetime }}.</p>
+					    <p  class="scandate page-highlight page-highlight-secondary">Er is een vervolgsessie gepland op: {{ date('d-m-Y', strtotime($scan->followup->datetime)) }} om {{ date('H:m', strtotime($scan->followup->datetime)) }}</p>
 					@else
-					    <p  class="scandate page-highlight">Er is nog geen vervolgafspraak gepland</p>
+					    <p  class="scandate page-highlight page-highlight-secondary">Er is nog geen vervolgafspraak gepland</p>
 					@endif
 	            </div>
 	        </div>

@@ -65,11 +65,11 @@ span.selectable--passive:hover {
 }
 
 .page-highlight-secondary {
-	border: 1px solid $themecolor-2;
-	background: rgba($themecolor, .07);
+	border: 1px solid darken($info, 40%);
+	background: rgba($info, .08);
 	padding: .7rem;
 	text-align: center;
 	font-weight: 800;
-	color: $themecolor-2;
+	color: darken($info, 40%);
 	border-radius: 5rem;
 }
