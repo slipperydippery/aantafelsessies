@@ -91,6 +91,7 @@ Route::get('/vraag', 'PagesController@vraag')->name('vraag');
 Route::get('/cookies', 'PagesController@cookies')->name('cookies');
 Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::get('/introductiefilm', 'PagesController@introductiefilm')->name('introductiefilm');
+Route::get('/animatiefilm', 'PagesController@animatiefilm')->name('animatiefilm');
 
 // Mail requests
 Route::get('/sessie/{scan}/emailresultaten', 'MeasureController@mailmeasures')->name('scan.mailmeasures');

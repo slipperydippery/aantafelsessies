@@ -37,4 +37,9 @@ class PagesController extends Controller
     {
         return view('pages.introductiefilm');
     }
+
+    public function animatiefilm()
+    {
+        return view('pages.animatiefilm');
+    }
 }
