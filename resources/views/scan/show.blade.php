@@ -32,6 +32,9 @@
                             </copy-icon>
                         </p>
                     @endif
+                    <p class="page-highlight page-highlight-secondary">
+                        Er is een vervolgsessie gepland
+                    </p>
                 </div>
             </div>
 		</div>
@@ -218,7 +221,7 @@
 		    @endif
 	</div>
 
-        
+
     <!-- Modal -->
     <div class="modal fade" id="argumenten" tabindex="-1" role="dialog" aria-labelledby="overtuigingsprincipesLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
