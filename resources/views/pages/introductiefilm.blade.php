@@ -5,14 +5,14 @@
 		<div class="row">
 	        <div class="col-md-12">
 	            <div class="page--title">
-	                <h1 class="pagetitle">Introductiefilm</h1>
+	                <h1 class="pagetitle">Instructiefilm</h1>
 	            </div>
 	        </div>
 		</div>
 		<div class="row">	
 			<div class="col-md-12">	
 
-		        <h4>Bekijk de introductiefilm over de Digitale Gesprekshulp. In de introductiefilm zie je waarvoor de Digitale Gesprekshulp is gemaakt, en hoe je hem kunt gebruiken</h4>
+		        <h4>Bekijk de instructiefilm over de Digitale Gesprekshulp. In de instructiefilm zie je waarvoor de Digitale Gesprekshulp is gemaakt, en hoe je hem kunt gebruiken</h4>
 		        <div class="embed-responsive embed-responsive-16by9">
 		          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dIxZWO0Fohk?rel=0" allowfullscreen></iframe>
 		        </div>
