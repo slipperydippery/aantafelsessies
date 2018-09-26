@@ -190,7 +190,7 @@ class InstantieTableSeeder extends Seeder
         $instantie_type_afdelingengemeente->instanties()->save($instantie_next);
 
         $instantie_next = new Instantie();
-        $instantie_next->name = 'Sociale raadslieden';
+        $instantie_next->name = 'Sociaal raadslieden';
         $instantie_next->description = '';
         $instantie_next->reason = 'Het is verstandige om met deze partij samen te werken want...';
         $instantie_next->contactpersoon = '';

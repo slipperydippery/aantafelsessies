@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="row row__cards row__cards__doubletitle">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <a href="#" data-toggle="modal" data-target="#voorbeeldmail">
                             <div class="card card__dashboard">
                                 <div class="card-body">
@@ -31,23 +31,31 @@
                             </div>
                         </a>
                     </div>
-                    @if ($group->inventarisatie)
-                        <div class="col-md-4">
-                            <a href="#" data-toggle="modal" data-target="#tipsvoorcontact">
-                                <div class="card card__dashboard">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Tips voor het contact maken</h5>
-                                        <img src="/img/contacttips.jpg" alt="">
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    @endif
-                    <div class="col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#overtuigingsprincipes">
+                    <div class="col-md-6">
+                        <a href="#" data-toggle="modal" data-target="#tipsvoorcontact">
                             <div class="card card__dashboard">
                                 <div class="card-body">
-                                    <h5 class="card-title">Argumenten om partijen over te halen</h5>
+                                    <h5 class="card-title">Tips voor het contact maken</h5>
+                                    <img src="/img/contacttips.jpg" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#" data-toggle="modal" data-target="#argumenten">
+                            <div class="card card__dashboard">
+                                <div class="card-body">
+                                    <h5 class="card-title">Argumenten om partijen uit te nodigen</h5>
+                                    <img src="/img/overtuiging.jpg" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#" data-toggle="modal" data-target="#tipsvoorgesprek">
+                            <div class="card card__dashboard">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tips voor het gesprek</h5>
                                     <img src="/img/overtuiging.jpg" alt="">
                                 </div>
                             </div>
@@ -104,18 +112,18 @@
 
         
         <!-- Modal -->
-        <div class="modal fade" id="overtuigingsprincipes" tabindex="-1" role="dialog" aria-labelledby="overtuigingsprincipesLabel" aria-hidden="true">
+        <div class="modal fade" id="argumenten" tabindex="-1" role="dialog" aria-labelledby="overtuigingsprincipesLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="overtuigingsprincipesLabel">Argumenten om partijen over te halen</h5>
+                        <h5 class="modal-title" id="overtuigingsprincipesLabel">Argumenten om partijen uit te nodigen</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <a href="/img/Argumenten om partijen over te halen.jpg" target="_blank">
-                            <img src="/img/Argumenten om partijen over te halen.jpg" alt="">
+                        <a href="/img/Argumenten om partijen uit te nodigen.jpg" target="_blank">
+                            <img src="/img/Argumenten om partijen uit te nodigen.jpg" alt="">
                         </a>
                     </div>
                     <div class="modal-footer">
@@ -134,30 +142,51 @@
     </div>
 
         
-        <!-- Modal -->
-        @if ($group->inventarisatie)
-            <div class="modal fade" id="tipsvoorcontact" tabindex="-1" role="dialog" aria-labelledby="gesprekspartnersLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="gesprekspartnersLabel">Tips voor het contact maken</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <a href="/img/Tips voor het contact maken.jpg" target="_blank">
-                                <img src="/img/Tips voor het contact maken.jpg" alt="">
-                            </a>
-                        </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Sluit</button>
-                            </div>
-                        </div>
+    <!-- Modal -->
+    <div class="modal fade" id="tipsvoorcontact" tabindex="-1" role="dialog" aria-labelledby="gesprekspartnersLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="gesprekspartnersLabel">Tips voor het contact maken</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <a href="/img/Tips voor het contact maken.jpg" target="_blank">
+                        <img src="/img/Tips voor het contact maken.jpg" alt="">
+                    </a>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Sluit</button>
                     </div>
                 </div>
             </div>
-        @endif
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="tipsvoorgesprek" tabindex="-1" role="dialog" aria-labelledby="gesprekspartnersLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="gesprekspartnersLabel">Tips voor het gesprek</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <a href="/img/Tips voor het gesprek.jpg" target="_blank">
+                        <img src="/img/Tips voor het gesprek.jpg" alt="">
+                    </a>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Sluit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 

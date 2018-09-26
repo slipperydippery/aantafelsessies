@@ -397,7 +397,7 @@ class DistrictTableSeeder extends Seeder
             [
                 'id' => '77',
                 'scanmodel_id' => '1',
-                'title' => 'Den Haag (&#39;s-Gravenhage)',
+                'title' => "Den Haag ('s-Gravenhage)",
             ],
             [
                 'id' => '78',
@@ -772,7 +772,7 @@ class DistrictTableSeeder extends Seeder
             [
                 'id' => '152',
                 'scanmodel_id' => '1',
-                'title' => 'Den Bosch (&#39;s-Hertogenbosch)',
+                'title' => "Den Bosch ('s-Hertogenbosch)",
             ],
             [
                 'id' => '153',
