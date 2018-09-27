@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <a href=" # " title="">
+            <a href=" {{ route('introductiefilm') }} " title="">
                 <div class="card card__dashboard">
                     <div class="card-body">
                         <h5 class="card-title">Instructiefilm</h5>
