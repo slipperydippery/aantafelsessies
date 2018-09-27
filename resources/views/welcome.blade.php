@@ -48,7 +48,7 @@
                             Schulden voorkomen? <br>
                             Hoe kunnen we dat samen doen?
                         </p>
-                        <a href=" {{ route('animatiefilm') }} " class="btn btn-outline-primary">Doe inspiratie op</a>
+                        <a href=" {{ route('animatiefilm') }} " class="btn btn-outline-primary">Bekijk de film</a>
                     </div>
                 </div>
             </div>
