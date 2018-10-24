@@ -6,6 +6,7 @@
             <div class="col-md-12">
                 <div class="page--title">
                     <h1 class="pagetitle">Je hebt succesvol een sessie aangemaakt</h1>
+                    <p>Hieronder vind je tips en argumenten om de partijen waarmee je wilt samenwerken over te halen deel te nemen aan een groepssessie. Hierna kunnen de partijen worden uitgenodigd. Je kunt hiervoor de voorbeeldmail gebruiken en daarin de link verwerken, zodat deelnemers zich direct kunnen aanmelden.</p>
                     <p>Nodig nu jouw gesprekspartners uit per mail. Deze link geeft de deelnemers direct toegang tot de sessie die je zojuist hebt aangemaakt:</p>
                     <p class="page-highlight">
                         <span id="groupcode">{{ Request::root() }}/group/{{ $group->id }}/createscan/{{ $group->code }} </span>

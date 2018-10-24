@@ -80,8 +80,8 @@ class QuestionTableSeeder extends Seeder
                     >
                          toegankelijk en makkelijk vindbaar
                     </span>
-                    voor alle inwoners. <i>Als jouw organisatie zelf geen dienstverlening aanbiedt, vink dan ‘niet van toepassing’ aan.</i>',
-                'body'                      => 'Mijn organisatie biedt hulp bij het op orde krijgen van de financiële situatie en deze hulp is toegankelijk en makkelijk vindbaar voor alle inwoners. <i>Als jouw organisatie zelf geen dienstverlening aanbiedt, vink dan ‘niet van toepassing’ aan.</i>',
+                    voor alle inwoners. <i>Als jouw organisatie zelf geen dienstverlening aanbiedt, klik dan ‘niet van toepassing’ aan.</i>',
+                'body'                      => 'Mijn organisatie biedt hulp bij het op orde krijgen van de financiële situatie en deze hulp is toegankelijk en makkelijk vindbaar voor alle inwoners. <i>Als jouw organisatie zelf geen dienstverlening aanbiedt, klik dan ‘niet van toepassing’ aan.</i>',
                 'nvt'                       => true,
                 'weergave_succesfactor'     => '',
                 'theme_id' => 2,

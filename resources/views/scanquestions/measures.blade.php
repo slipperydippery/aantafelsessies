@@ -11,7 +11,7 @@
 	                		<i class="material-icons clickable muted h1" data-toggle="tooltip" data-placement="top" title=" {{ $theme->info }} "> info </i>
 	                	@endif
 	                </h1>
-	                <p>Selecteer de belangrijkste verbeterpunten en licht eventueel toe wat de concrete is. Deze notities komen verderop in de sessie terug. Alleen de beheerder kan actiepunten aanvinken en notities maken.</p>
+	                <p>Selecteer de belangrijkste verbeterpunten en licht eventueel toe wat de concrete actiepunten zijn. Deze notities komen verderop in de sessie terug. Alleen de beheerder kan actiepunten aanvinken en notities maken.</p>
 	            </div>
 	        </div>
 		</div>

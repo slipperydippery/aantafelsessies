@@ -50,7 +50,8 @@
                         <a class="dropdown-item" href="#"> Privacyverklaring </a>
                         <a class="dropdown-item" href=" {{ route('cookies') }} "> Cookieverklaring </a>
                         <a class="dropdown-item" href=" {{ route('contact') }} "> Contact </a>
-                        <a class="dropdown-item" href="/pdf/Handleiding digitale gesprekshulp.pdf"> Handleiding </a>
+                        <a class="dropdown-item" href="/pdf/Handleiding digitale gesprekshulp.pdf" target="blank"> Handleiding </a>
+                        <a class="dropdown-item" href="/pdf/Literatuurlijst digitale gesprekshulp.pdf" target="blank"> Literatuurlijst </a>
                     </div>
                 </li>
                 @guest

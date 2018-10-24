@@ -15,6 +15,8 @@
 	                <h1 class="pagetitle">Bepaal je gesprekspartners</h1>
 	                <p>We weten uit de literatuur dat er een aantal belangrijke partijen zijn bij het signaleren en aanpakken van schuldenproblematiek. De eerste stap van een geslaagde sessie is daarom ook om te onderzoeken wie de geschikte gesprekspartners zijn om uit te nodigen voor een sessie. Hier volgen 4 categorieën met partijen. Geef per partij aan of er al een samenwerking bestaat, nog niet bestaat, of dat deze partij niet van toepassing is.</p>
 
+	                <p>Het is ook mogelijk om met meerdere woningcorporaties, vrijwilligersorganisaties, scholen etc. om tafel te gaan.</p>
+
 	                <p>Na het doorlopen van alle categorieën verschijnt een overzicht van samenwerkende partijen. Deze geven we weer als “poppetjes” met daaronder de naam van de instantie.</p>
 	            </div>
 	        </div>
