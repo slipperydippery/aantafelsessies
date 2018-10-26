@@ -14,7 +14,7 @@
 
         <p><strong>De sessie vindt plaats op: (zelf invullen) locatie (zelf invullen)</strong></p>
 
-        <p>Voorkom schulden samen is een digitale gesprekshulp ontwikkeld om samen schulden te signaleren en te informeren en actie te ondernemen. De digitale gesprekshulp helpt ons om aan tafel samen inzicht te krijgen in noodzakelijke verbeteracties om schulden van inwoners in de gemeente te voorkomen.</p>
+        <p>De digitale gesprekshulp is ontwikkeld om samen schulden te signaleren, en actie te ondernemen. De digitale gesprekshulp helpt ons om aan tafel samen inzicht te krijgen in noodzakelijke verbeteracties om schulden van inwoners in de gemeente te voorkomen.</p>
 
         <p>Samen bereiken we meer dan alleen, dus ik hoop op jouw deelname aan deze sessie. De sessie duurt 2 uur.</p>
 <strong>
