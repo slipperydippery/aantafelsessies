@@ -8,7 +8,8 @@ return [
          * The name of this application. You can use this name to monitor
          * the backups.
          */
-        'name' => config('app.name'),
+        // 'name' => config('app.name'),
+        'name' => env('GOOGLE_DRIVE_FOLDER_ID', ''),
 
         'source' => [
 
@@ -79,7 +80,7 @@ return [
             /*
              * The filename prefix used for the backup zip file.
              */
-            'filename_prefix' => '',
+            'filename_prefix' => 'digitalegesprekshulp_',
 
             /*
              * The disk names on which the backups will be stored.
