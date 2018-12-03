@@ -87,7 +87,7 @@ return [
              */
             'disks' => [
                 'google',
-                'local',
+                // 'local',
             ],
         ],
 
