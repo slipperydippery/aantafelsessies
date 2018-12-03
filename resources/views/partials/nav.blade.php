@@ -1,13 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light border-bottom">
     <div class="container">
         <a class="navbar-brand mr-4 d-flex" href="{{ url('/') }}">
-            @if(Request::is('/'))
-                    <img src="/img/logo.svg" width="120" height="70" class="align-top mr-1 d-none d-xl-block" alt="Logo">
-                    <span class="align-self-center brand-title">Digitale Gesprekshulp</span>
-            @else
-                    <img src="/img/logo.svg" width="120" height="70" class="align-top mr-1 d-none d-xl-block" alt="Logo">
-                    <span class="align-self-center brand-title">Digitale Gesprekshulp</span>
-            @endif
+            <img src="/img/logo.svg" width="120" height="70" class="align-top mr-1 d-none d-xl-block" alt="Logo">
+            <span class="align-self-center brand-title">Digitale Gesprekshulp</span>
         </a>
         
         <button class="navbar-toggler hidden-lg-up pull-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
