@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-12">
                     <h2 class="subtitle">Samen aan tafel om samen schulden te voorkomen</h2>
-                    <p>De digitale gesprekshulp is momenteel offline.</p>
+                    <p>In mei 2019 komt de digitale gesprekshulp live en is deze gratis te gebruiken voor gemeenten.</p>
                     <p class="hidden">Samen bereik je meer dan alleen. Zeker als het gaat om het voorkomen van schulden. Daarom heeft Schouders Eronder deze digtale gesprekshulp ontwikkeld om samen schulden te signaleren en actie te ondernemen. </p>
                     <div class="mainbutton--container hidden">
                         <a href="  {{ route('inventarisatie.store') }}  " class="btn btn-primary btn-lg">Start gesprekssessie</a> <br>
@@ -56,9 +56,9 @@
             <div class="col-sm-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Kennisbank</h5>
+                        <h5 class="card-title">Kennisbundel</h5>
                         <img class="card-img-top" src="/img/book_lg.jpg" alt="Card image cap">
-                        <p class="card-text card-text__welcome">De kennisbank is nog in ontwikkeling.</p>
+                        <p class="card-text card-text__welcome">De kennisbundel is nog in ontwikkeling.</p>
                         <a href="#" class="btn btn-outline-primary disabled" >In ontwikkeling</a>
                     </div>
                 </div>
