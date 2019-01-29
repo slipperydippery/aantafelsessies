@@ -1,8 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light border-bottom">
     <div class="container">
         <a class="navbar-brand mr-4 d-flex" href="{{ url('/') }}">
-            <img src="/img/logo.svg" width="120" height="70" class="align-top mr-1 d-none d-xl-block" alt="Logo">
-            <span class="align-self-center brand-title">Digitale Gesprekshulp</span>
+            @if(Request::is('/'))
+                    <img src="/img/logo.svg" width="120" height="70" class="align-top mr-1 d-none d-xl-block" alt="Logo">
+                    <span class="align-self-center brand-title">Digitale Gesprekshulp</span>
+            @else
+                    <img src="/img/logo.svg" width="120" height="70" class="align-top mr-1 d-none d-xl-block" alt="Logo">
+                    <span class="align-self-center brand-title">Digitale Gesprekshulp</span>
+            @endif
         </a>
         
         <button class="navbar-toggler hidden-lg-up pull-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -14,8 +19,8 @@
             <ul class="navbar-nav mr-auto col">
                 <!-- Authentication Links -->
                 @guest
-                    <li><a class="nav-link" href="{{ route('login') }}">{{ __('Log in') }}</a></li>
-                    <li><a class="nav-link" href="{{ route('register') }}">{{ __('Registreer') }}</a></li>
+                    <li class="hidden"><a class="nav-link" href="{{ route('login') }}">{{ __('Log in') }}</a></li>
+                    <li class="hidden"><a class="nav-link" href="{{ route('register') }}">{{ __('Registreer') }}</a></li>
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

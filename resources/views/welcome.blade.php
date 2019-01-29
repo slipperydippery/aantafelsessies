@@ -11,8 +11,9 @@
             <div class="row">
                 <div class="col-12">
                     <h2 class="subtitle">Samen aan tafel om samen schulden te voorkomen</h2>
-                    <p>Samen bereik je meer dan alleen. Zeker als het gaat om het voorkomen van schulden. Daarom heeft Schouders Eronder deze digtale gesprekshulp ontwikkeld om samen schulden te signaleren en actie te ondernemen. </p>
-                    <div class="mainbutton--container">
+                    <p>De digitale gesprekshulp is momenteel offline.</p>
+                    <p class="hidden">Samen bereik je meer dan alleen. Zeker als het gaat om het voorkomen van schulden. Daarom heeft Schouders Eronder deze digtale gesprekshulp ontwikkeld om samen schulden te signaleren en actie te ondernemen. </p>
+                    <div class="mainbutton--container hidden">
                         <a href="  {{ route('inventarisatie.store') }}  " class="btn btn-primary btn-lg">Start gesprekssessie</a> <br>
                         <a href="/pdf/handleiding_participatiescan.pdf" data-toggle="modal" data-target="#exampleModal"><span class="fineprint fineprint--welcome">hoe werkt een sessie?</span></a>
                     </div>
