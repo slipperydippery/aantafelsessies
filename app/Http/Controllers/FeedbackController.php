@@ -2,21 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Scan;
+use App\Feedback;
 use Illuminate\Http\Request;
-use App\Notifications\ScanCompleted;
 
-class ScanController extends Controller
+class FeedbackController extends Controller
 {
-    /**
-     * Enforce middleware.
-     */
-    public function __construct()
-    {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
-        $this->middleware('owner', ['except' => ['index', 'create', 'store']]);
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -51,22 +41,21 @@ class ScanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Scan  $scan
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function show(Scan $scan)
+    public function show(Feedback $feedback)
     {
-        if($scan->complete) $scan->user->notify(new ScanCompleted($scan));
-        return view('scan.show', compact('scan'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Scan  $scan
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function edit(Scan $scan)
+    public function edit(Feedback $feedback)
     {
         //
     }
@@ -75,10 +64,10 @@ class ScanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Scan  $scan
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Scan $scan)
+    public function update(Request $request, Feedback $feedback)
     {
         //
     }
@@ -86,13 +75,11 @@ class ScanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Scan  $scan
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Scan $scan)
+    public function destroy(Feedback $feedback)
     {
-        $scan->districts()->detach();
-        $scan->delete();
-        return redirect()->route('home');
+        //
     }
 }

@@ -37,6 +37,10 @@ Route::get('/sessie/{scan}/markcomplete', 'ScanQuestionController@markcomplete')
 Route::get('/sessie/{scan}/resultaten', 'ScanPagesController@results')->name('scan.results');
 Route::get('/sessie/{scan}/actiepunten', 'ScanPagesController@measures')->name('scan.measures');
 
+Route::get('/sessie/{scan}/feedback', 'FeedbackPagesController@start')->name('feedback.start');
+Route::get('/sessie/{scan}/feedback/{order}', 'FeedbackPagesController@showquestion')->name('feedback.showquestion');
+Route::post('/api/feedbackanswer/{feedbackanswer}/update', 'ApiFeedbackanswerController@update');
+
 Route::get('/api/theme/{theme}', 'ApiThemeController@show');
 
 // Answers stuff

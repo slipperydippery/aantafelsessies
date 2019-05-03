@@ -80,6 +80,8 @@ Vue.component('dateoption', require('./components/Dateoption.vue'));
 Vue.component('add-dateoption', require('./components/AddDateoption.vue'));
 Vue.component('set-availability', require('./components/SetAvailability.vue'));
 
+Vue.component('feedback', require('./components/Feedback.vue'));
+
 // Utility
 Vue.component('countdown', require('./components/Countdown.vue'));
 
@@ -99,3 +101,4 @@ const app = new Vue({
     el: '#app'
 });
 
+e

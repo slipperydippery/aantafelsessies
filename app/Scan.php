@@ -7,10 +7,12 @@ use App\Group;
 use App\Answer;
 use App\Measure;
 use App\District;
+use App\Feedback;
 use App\Followup;
 use App\Instantie;
 use App\Scanmodel;
 use App\Availability;
+use App\Feedbackanswer;
 use Illuminate\Database\Eloquent\Model;
 
 class Scan extends Model
@@ -72,6 +74,16 @@ class Scan extends Model
     public function availabilities()
     {
         return $this->hasMany(Availability::class);
+    }
+
+    public function feedback()
+    {
+        return $this->hasOne(Feedback::class);
+    }
+
+    public function feedbackanswers()
+    {
+        return $this->hasMany(Feedbackanswer::class);
     }
 
     public function isOwner()

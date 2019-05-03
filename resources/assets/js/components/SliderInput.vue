@@ -22,6 +22,7 @@
 
         methods: {
         	onChange(newValue) {
+        		console.log('onchange');
         		this.$emit('input', newValue);
         	}
         }
