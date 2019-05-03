@@ -2,8 +2,8 @@
     <div class="">
         <slider-input v-model="feedbackanswer.answer" @input="onChange"></slider-input>
         <div class="form-group" v-if="lowScore">
-            <label for="exampleFormControlTextarea1">Oef! waarom zo slecht? kun je een toelichting geven?</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" v-model="feedbackanswer.justification" @blur="onChange"></textarea>
+            <label for="whysolow">Oef! waarom zo slecht? kun je een toelichting geven?</label>
+            <textarea class="form-control" id="whysolow" rows="5" v-model="feedbackanswer.justification" @blur="onChange"></textarea>
         </div>
     </div>
 </template>
@@ -28,6 +28,7 @@
 
         computed: {
             lowScore() {
+                if (this.feedbackanswer.answer == null) return false
                 return this.feedbackanswer.answer < 6;
             }
         },

@@ -23,4 +23,14 @@ class FeedbackPagesController extends Controller
     	$feedbackanswer = Feedbackanswer::where('feedbackquestion_id', $feedbackquestion->id)->where('scan_id', $scan->id)->first();
     	return view('feedback.show', compact('scan', 'feedbackquestion', 'feedbackanswer'));
     }
+
+    public function tips(Scan $scan)
+    {
+        return view('feedback.tips', compact('scan'));
+    }
+
+    public function thanks(Scan $scan)
+    {
+        return view('feedback.thanks', compact('scan'));
+    }
 }

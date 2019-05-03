@@ -38,8 +38,11 @@ Route::get('/sessie/{scan}/resultaten', 'ScanPagesController@results')->name('sc
 Route::get('/sessie/{scan}/actiepunten', 'ScanPagesController@measures')->name('scan.measures');
 
 Route::get('/sessie/{scan}/feedback', 'FeedbackPagesController@start')->name('feedback.start');
+Route::get('/sessie/{scan}/feedbacktips', 'FeedbackPagesController@tips')->name('feedback.tips');
 Route::get('/sessie/{scan}/feedback/{order}', 'FeedbackPagesController@showquestion')->name('feedback.showquestion');
 Route::post('/api/feedbackanswer/{feedbackanswer}/update', 'ApiFeedbackanswerController@update');
+Route::post('/api/feedback/{feedback}/update', 'ApiFeedbackController@update');
+Route::get('/sessie/{scan}/bedanktvoorjefeedback', 'FeedbackPagesController@thanks')->name('feedback.thanks');
 
 Route::get('/api/theme/{theme}', 'ApiThemeController@show');
 

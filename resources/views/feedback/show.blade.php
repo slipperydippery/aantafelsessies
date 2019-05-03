@@ -39,20 +39,26 @@
 			</div>
 		</div>
 	</div>
-@stop
-
-@section('prevnext')
-	<div class="row row__prevnext justify-content-between">
-		@if ($feedbackquestion->order > 1)
-			<div class="col-md-4 ">
-				<a href=" {{ route('scan.kennismaken', $scan) }} " class="btn btn-primary btn-block btn__prevnext"><i class="material-icons"> navigate_before </i> vorige</a>
-			</div>
-		@endif
-		<div class="col-md-4 ml-auto">
-			<a href=" {{ route('scan.algemeenbeeldresultaten', $scan) }} " class="btn btn-primary btn-block btn__prevnext">volgende <i class="material-icons"> navigate_next </i></a>
+	<div class="container">
+		<div class="row row__prevnext justify-content-between">
+			@if ($feedbackquestion->order > 1)
+				<div class="col-md-4 ">
+					<a href=" {{ route('feedback.showquestion', [$scan, ($feedbackquestion->order - 1)]) }} " class="btn btn-primary btn-block btn__prevnext"><i class="material-icons"> navigate_before </i> vorige</a>
+				</div>
+			@endif
+			@if ($feedbackquestion->order == $scan->scanmodel->feedbackquestions->count())
+				<div class="col-md-4 ml-auto">
+					<a href=" {{ route('feedback.tips', $scan) }} " class="btn btn-primary btn-block btn__prevnext">volgende <i class="material-icons"> navigate_next </i></a>
+				</div>
+			@else
+				<div class="col-md-4 ml-auto">
+					<a href=" {{ route('feedback.showquestion', [$scan, ($feedbackquestion->order + 1)]) }} " class="btn btn-primary btn-block btn__prevnext">volgende <i class="material-icons"> navigate_next </i></a>
+				</div>
+			@endif
 		</div>
 	</div>
 @stop
+
 
 @section('additional-scripts')
 @endsection
