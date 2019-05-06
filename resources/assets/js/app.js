@@ -11,6 +11,7 @@ $(function () {
 })
 
 window.Vue = require('vue');
+import 'babel-polyfill'
 import BootstrapVue from 'bootstrap-vue'
 import PortalVue from 'portal-vue'
 Vue.use(BootstrapVue);

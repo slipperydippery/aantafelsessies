@@ -36,7 +36,7 @@
 				<div class="section__panel section__panel__toptabs">
 					<div class="section__panel--title">
 						<h5>{{ $instantietype->description }} </h5>
-		                <span><em> Geef per partij aan of er op dit moment al een samenwerking bestaat, een samenwerking niet van toepassing is, of dat er geen samenwerking is.</span></em>
+		                <span><em> Geef per partij aan of er op dit moment al een samenwerking bestaat, een samenwerking niet van toepassing is, of dat er geen samenwerking is.</em></span>
 					</div>
 
 					<partner-cluster

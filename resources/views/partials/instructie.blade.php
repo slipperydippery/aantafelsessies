@@ -22,7 +22,6 @@
                     <p>De “selectiehulp gesprekspartners” geeft je inzicht in de partners uit jouw regio met wie je dit gesprek kunt voeren.</p>
                     <p><strong>Stap 2:</strong></p>
                     <p>Nodig jouw gesprekspartners uit en ontdek samen aan de hand van deze gesprekshulp hoe je schulden in jouw regio vroegtijdig kunt voorkomen.</p>
-                    <a href="/img/Tips voor het gesprek.jpg" target="_blank">
                     <a href="/pdf/Handleiding digitale gesprekshulp.pdf" class="btn"> Lees de handleiding</a>
                 </div>
                 <div class="modal-footer">
