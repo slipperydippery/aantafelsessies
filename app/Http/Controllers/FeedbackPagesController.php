@@ -33,8 +33,8 @@ class FeedbackPagesController extends Controller
 
     public function thanks(Scan $scan)
     {
-        // $admin = User::where('email', 'annejet.kerckhaert@ecorys.com')->first();
-        $admin = User::where('email', 'maartendejager@gmail.com')->first();
+        $admin = User::where('email', 'annejet.kerckhaert@ecorys.com')->first();
+        // $admin = User::where('email', 'maartendejager@gmail.com')->first();
         $admin->notify(new FeedbackReceived($scan->feedback));
         return view('feedback.thanks', compact('scan'));
     }
