@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Scan;
+use App\User;
 use App\Feedback;
 use App\Feedbackanswer;
 use App\Feedbackquestion;
 use Illuminate\Http\Request;
+use App\Notifications\FeedbackReceived;
 
 class FeedbackPagesController extends Controller
 {
@@ -31,6 +33,9 @@ class FeedbackPagesController extends Controller
 
     public function thanks(Scan $scan)
     {
+        // $admin = User::where('email', 'annejet.kerckhaert@ecorys.com')->first();
+        $admin = User::where('email', 'maartendejager@gmail.com')->first();
+        $admin->notify(new FeedbackReceived($scan->feedback));
         return view('feedback.thanks', compact('scan'));
     }
 }

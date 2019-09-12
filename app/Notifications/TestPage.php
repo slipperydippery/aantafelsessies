@@ -7,10 +7,8 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class FeedbackReceived extends Notification
+class TestPage extends Notification
 {
-    protected $feedback;
-
     use Queueable;
 
     /**
@@ -18,10 +16,9 @@ class FeedbackReceived extends Notification
      *
      * @return void
      */
-    public function __construct($feedback)
+    public function __construct()
     {
         //
-        $this->feedback = $feedback;
     }
 
     /**
@@ -43,12 +40,7 @@ class FeedbackReceived extends Notification
      */
     public function toMail($notifiable)
     {
-        $url = url('/feedback/'.$this->feedback->id);
-        $urlall = url('/feedback/');
-        return (new MailMessage)
-            ->subject('Iemand heeft feedback ingevuld')
-            ->markdown('mail.feedback.received', ['feedback' => $this->feedback, 'url' => $url, 'urlall' => $urlall]);
-            
+        return (new MailMessage)->markdown('mail.test.page');
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Feedback;
+use App\Scanmodel;
 use Illuminate\Http\Request;
 
 class FeedbackController extends Controller
@@ -14,7 +15,9 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        //
+        $feedbacks = Feedback::get();
+        $scanmodel = Scanmodel::get()->first();
+        return view('feedback.index', compact('feedbacks', 'scanmodel'));
     }
 
     /**
@@ -46,7 +49,7 @@ class FeedbackController extends Controller
      */
     public function show(Feedback $feedback)
     {
-        //
+        return view('feedback.result', compact('feedback'));
     }
 
     /**
