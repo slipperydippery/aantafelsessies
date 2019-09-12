@@ -115,6 +115,8 @@ class ScanQuestionController extends Controller
             $previous = '/sessie/' . $scan->id . '/vervolgafspraak';
             return view('scanquestions.incomplete', compact('scan', 'previous'));
         }
+        $scan->complete = true;
+        $scan->save();
         return redirect()->route('scan.show', $scan);
         return view('scanquestions.complete', compact('scan'));
     }
