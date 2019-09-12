@@ -18,7 +18,7 @@
 			<div class="col-md-12">	
 				<div class="card card__question">
                     <div class="card-body">
-                        <h5 class="card-title">Vraag {{ $question->id }}/17 </h5>
+                        
 
                         <span class="card-text card-text__question"> 
 			                <h5> {{ $question->title }} </h5>

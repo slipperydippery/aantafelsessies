@@ -21,6 +21,9 @@
 					<div class="section__panel--title">
 						<h5>resultaten</h5>
 		                <span><em></em></span>
+						<div class="countdown--resultscontainer">
+							<countdown date="600"></countdown>
+						</div>
 					</div>
 
 					<div class="row">
@@ -32,7 +35,6 @@
 					</div>
 
 
-					<countdown date="600"></countdown>
 					
 				</div>
 			</div>

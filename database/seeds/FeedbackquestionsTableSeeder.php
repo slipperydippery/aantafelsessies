@@ -24,7 +24,7 @@ class FeedbackquestionsTableSeeder extends Seeder
     	$question_two->scanmodel_id = 1;
     	$question_two->order = 2;
     	$question_two->title = 'Hoe gebruiksvriendelijk was de Digitale Gesprekshulp?';
-    	$question_two->body = 'Kun je een algemene indruk geven van hoe gebruiksvriendelijk je de Digitale Gesprekshulp vond??';
+    	$question_two->body = 'Kun je een algemene indruk geven van hoe gebruiksvriendelijk je de Digitale Gesprekshulp vond?';
     	$question_two->save();
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Session;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -28,7 +29,18 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    // protected $redirectTo = '/home';
+    public function redirectTo()
+    {
+        $intended = Session::get('url.intended');
+
+        if (!empty($intended)) {
+            Session::forget('url.intended');
+            return $intended;
+        }
+
+        return '/dashboard';
+    }    
 
     /**
      * Create a new controller instance.

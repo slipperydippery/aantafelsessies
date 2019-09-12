@@ -20,7 +20,9 @@
 				<div class="section__panel">
 					<div class="section__panel--title">
 						<h5>Verbeterpunten</h5>
-		                <span><em></em></span>
+						<div class="countdown--resultscontainer">
+							<countdown date="300"></countdown>
+						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm-12 table table__results">
@@ -60,7 +62,6 @@
 									</div>	
 								@endforeach
 							</div>
-							<countdown date="300"></countdown>
 						</div>
 						</div>
 					</div>
