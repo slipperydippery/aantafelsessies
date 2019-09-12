@@ -114999,6 +114999,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -115098,7 +115099,7 @@ var render = function() {
         )
       : _vm._e(),
     _vm._v(" "),
-    _vm.is_manager && _vm.measuer.active
+    _vm.is_manager
       ? _c("textarea", {
           directives: [
             {
@@ -115117,6 +115118,7 @@ var render = function() {
           attrs: {
             placeholder: "Actie Omschrijving",
             rows: "6",
+            disabled: !_vm.measure.active,
             title: _vm.title
           },
           domProps: { value: _vm.measure.measure },

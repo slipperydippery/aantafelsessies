@@ -7,7 +7,8 @@
             placeholder="Actie Omschrijving"
             rows="6"
             v-model="measure.measure" 
-            v-if="is_manager && measuer.active"
+            v-if="is_manager"
+            :disabled="! measure.active"
             v-b-tooltip.hover
             :title="title"
             @blur="updateMeasure()"
