@@ -194,7 +194,7 @@ class QuestionTableSeeder extends Seeder
             ],
             [
                 'title'                     => 'Kennis over signaleren, informeren en doorverwijzen',
-                'bodytooltip'                      => 'De medewerkers van alle partijen aan tafel hebben samen voldoende professionaliteit om inwoners/medewerkers/klanten met beginnende schulden te signaleren, informeren en door te verwijzen naar de juiste ondersteuning.',
+                'bodytooltip'                      => 'De medewerkers van alle <u>partijen aan tafel</u> hebben samen voldoende professionaliteit om inwoners/medewerkers/klanten met beginnende schulden te signaleren, informeren en door te verwijzen naar de juiste ondersteuning.',
                 'body'              		=> 'De medewerkers van alle partijen aan tafel hebben samen voldoende professionaliteit om inwoners/medewerkers/klanten met beginnende schulden te signaleren, informeren en door te verwijzen naar de juiste ondersteuning.',
                 'nvt'                       => false,
                 'weergave_succesfactor'     => '',

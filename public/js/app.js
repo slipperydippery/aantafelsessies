@@ -114285,7 +114285,7 @@ var render = function() {
                   scan.id == _vm.group.owner.id ? "owner-leftborder" : ""
                 ]
               },
-              [_vm._v(" \n\t\t\t" + _vm._s(scan.user.name) + " \n\t\t")]
+              [_vm._v(" \n\t\t\t" + _vm._s(scan.instantie.name) + " \n\t\t")]
             ),
             _vm._v(" "),
             _vm._l(_vm.theme.questions, function(question) {
@@ -114996,6 +114996,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -115095,40 +115098,47 @@ var render = function() {
         )
       : _vm._e(),
     _vm._v(" "),
-    _c("textarea", {
-      directives: [
-        {
-          name: "model",
-          rawName: "v-model",
-          value: _vm.measure.measure,
-          expression: "measure.measure"
-        },
-        {
-          name: "b-tooltip",
-          rawName: "v-b-tooltip.hover",
-          modifiers: { hover: true }
-        }
-      ],
-      staticClass: "form-control",
-      attrs: {
-        placeholder: "Actie Omschrijving",
-        rows: "6",
-        disabled: !_vm.is_manager || !_vm.measure.active,
-        title: _vm.title
-      },
-      domProps: { value: _vm.measure.measure },
-      on: {
-        blur: function($event) {
-          _vm.updateMeasure()
-        },
-        input: function($event) {
-          if ($event.target.composing) {
-            return
+    _vm.is_manager && _vm.measuer.active
+      ? _c("textarea", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.measure.measure,
+              expression: "measure.measure"
+            },
+            {
+              name: "b-tooltip",
+              rawName: "v-b-tooltip.hover",
+              modifiers: { hover: true }
+            }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            placeholder: "Actie Omschrijving",
+            rows: "6",
+            title: _vm.title
+          },
+          domProps: { value: _vm.measure.measure },
+          on: {
+            blur: function($event) {
+              _vm.updateMeasure()
+            },
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.measure, "measure", $event.target.value)
+            }
           }
-          _vm.$set(_vm.measure, "measure", $event.target.value)
-        }
-      }
-    })
+        })
+      : _vm._e(),
+    _vm._v(" "),
+    !_vm.is_manager
+      ? _c("div", {}, [
+          _vm._v("\n            " + _vm._s(_vm.measure.measure) + "\n        ")
+        ])
+      : _vm._e()
   ])
 }
 var staticRenderFns = []

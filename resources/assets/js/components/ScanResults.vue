@@ -21,7 +21,7 @@
 				class="col-sm-2 nowrap" 
 				:class="['instantietype-' + scan.instantie.instantietype.id + '-leftborder', (scan.id == group.owner.id) ? 'owner-leftborder' : '' ]"
 			> 
-				{{ scan.user.name }} 
+				{{ scan.instantie.name }} 
 			</div>
 			<div class="col-sm-2" v-for="question in theme.questions">
 				<result-slider
