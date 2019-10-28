@@ -122,7 +122,7 @@ return [
         'notifiable' => \Spatie\Backup\Notifications\Notifiable::class,
 
         'mail' => [
-            'to' => 'your@example.com',
+            'to' => 'maartendejager@gmail.com',
         ],
 
         'slack' => [
@@ -147,7 +147,7 @@ return [
      */
     'monitorBackups' => [
         [
-            'name' => config('app.name'),
+            'name' => env('APP_NAME', 'laravel-backup'),
             'disks' => ['local'],
             'newestBackupsShouldNotBeOlderThanDays' => 1,
             'storageUsedMayNotBeHigherThanMegabytes' => 5000,
