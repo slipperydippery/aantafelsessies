@@ -11,9 +11,8 @@
             <div class="row">
                 <div class="col-12">
                     <h2 class="subtitle">Samen aan tafel om samen schulden te voorkomen</h2>
-                    <p>In mei 2019 komt de digitale gesprekshulp live en is deze gratis te gebruiken voor gemeenten.</p>
-                    <p class="hidden">Samen bereik je meer dan alleen. Zeker als het gaat om het voorkomen van schulden. Daarom heeft Schouders Eronder deze digtale gesprekshulp ontwikkeld om samen schulden te signaleren en actie te ondernemen. </p>
-                    <div class="mainbutton--container hidden">
+                    <p>Samen bereik je meer dan alleen. Zeker als het gaat om het voorkomen van schulden. Daarom heeft Schouders Eronder deze digtale gesprekshulp ontwikkeld om samen schulden te signaleren en actie te ondernemen. </p>
+                    <div class="mainbutton--container">
                         <a href="  {{ route('inventarisatie.store') }}  " class="btn btn-primary btn-lg">Start gesprekssessie</a> <br>
                         <a href="/pdf/handleiding_participatiescan.pdf" data-toggle="modal" data-target="#exampleModal"><span class="fineprint fineprint--welcome">hoe werkt een sessie?</span></a>
                     </div>
@@ -56,10 +55,10 @@
             <div class="col-sm-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Kennisbundel</h5>
+                        <h5 class="card-title">Kennisbank</h5>
                         <img class="card-img-top" src="/img/book_lg.jpg" alt="Card image cap">
-                        <p class="card-text card-text__welcome">Kennis over schuldhulpverlening vinden en delen.</p>
-                        <a href=" https://www.kennisbundel.nl" class="btn btn-outline-primary" target="_blank">Naar de kennisbundel</a>
+                        <p class="card-text card-text__welcome">De kennisbank is nog in ontwikkeling.</p>
+                        <a href="#" class="btn btn-outline-primary disabled" >In ontwikkeling</a>
                     </div>
                 </div>
             </div>
