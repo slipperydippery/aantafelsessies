@@ -57,8 +57,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Kennisbank</h5>
                         <img class="card-img-top" src="/img/book_lg.jpg" alt="Card image cap">
-                        <p class="card-text card-text__welcome">De kennisbank is nog in ontwikkeling.</p>
-                        <a href="#" class="btn btn-outline-primary disabled" >In ontwikkeling</a>
+                        <p class="card-text card-text__welcome">Kennis over schuldhulpverlening vinden en delen.</p>
+                        <a href="http://www.kennisbundel.nl/" target="_blank" class="btn btn-outline-primary" > Naar de site </a>
                     </div>
                 </div>
             </div>
