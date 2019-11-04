@@ -44,12 +44,14 @@
             </a>
         </div>
         <div class="col-md-4">
-                <div class="card card__dashboard" data-toggle="tooltip" data-placement="top" title="De kennisbank is nog in ontwikkeling">
+            <a href="http://www.kennisbundel.nl/" target="_blank">
+                <div class="card card__dashboard">
                     <div class="card-body">
                         <h5 class="card-title disabled">Kennisbank</h5>
                         <img src="/img/book_disabled.jpg" alt="">
                     </div>
                 </div>
+            </a>
         </div>
     </div>
     <div class="row row__cards">
