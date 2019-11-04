@@ -48,7 +48,7 @@
                 <div class="card card__dashboard">
                     <div class="card-body">
                         <h5 class="card-title disabled">Kennisbank</h5>
-                        <img src="/img/book_disabled.jpg" alt="">
+                        <img src="/img/book.jpg" alt="">
                     </div>
                 </div>
             </a>
