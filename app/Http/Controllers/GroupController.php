@@ -36,7 +36,7 @@ class GroupController extends Controller
      */
     public function create()
     {
-    	$inventarisatie = Auth::user()->inventarisaties->where('group_id', null)->first();
+    	$inventarisatie = Auth::user()->inventarisaties->where('group_id', null)->last();
         $instantietypes = Instantietype::with('instanties')->get();
         $districts = District::get();
         return view('group.create', compact('instantietypes', 'districts', 'inventarisatie'));

@@ -112858,8 +112858,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 scanmodel_id: 1,
                 inventarisatie_id: this.inventarisatie_id
             }).then(function (response) {
-                // home.clickedOnce = false;
+                home.clickedOnce = false;
                 window.location.href = '/group/' + response.data.id + '/created';
+                // console.log( response.data )
                 // window.location.href = '/home'; 
             }).catch(function (error) {
                 home.clickedOnce = false;
